@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2020 The BitcoinII Core developers
+// Copyright (c) 2009-2020 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_ATTRIBUTES_H
-#define BITCOINII_ATTRIBUTES_H
+#ifndef BITCOINIII_ATTRIBUTES_H
+#define BITCOINIII_ATTRIBUTES_H
 
 #if defined(__clang__)
 #  if __has_attribute(lifetimebound)
@@ -24,4 +24,4 @@
 #  error No known always_inline attribute for this platform.
 #endif
 
-#endif // BITCOINII_ATTRIBUTES_H
+#endif // BITCOINIII_ATTRIBUTES_H

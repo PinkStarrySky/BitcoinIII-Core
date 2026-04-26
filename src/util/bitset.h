@@ -1,9 +1,9 @@
-// Copyright (c) The BitcoinII Core developers
+// Copyright (c) The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UTIL_BITSET_H
-#define BITCOINII_UTIL_BITSET_H
+#ifndef BITCOINIII_UTIL_BITSET_H
+#define BITCOINIII_UTIL_BITSET_H
 
 #include <util/check.h>
 
@@ -524,4 +524,4 @@ using BitSet = std::conditional_t<(BITS <= 32), bitset_detail::IntBitSet<uint32_
                std::conditional_t<(BITS <= std::numeric_limits<size_t>::digits), bitset_detail::IntBitSet<size_t>,
                bitset_detail::MultiIntBitSet<size_t, (BITS + std::numeric_limits<size_t>::digits - 1) / std::numeric_limits<size_t>::digits>>>;
 
-#endif // BITCOINII_UTIL_BITSET_H
+#endif // BITCOINIII_UTIL_BITSET_H

@@ -1,9 +1,9 @@
-// Copyright (c) 2023 The BitcoinII Core developers
+// Copyright (c) 2023 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UTIL_INSERT_H
-#define BITCOINII_UTIL_INSERT_H
+#ifndef BITCOINIII_UTIL_INSERT_H
+#define BITCOINIII_UTIL_INSERT_H
 
 #include <set>
 
@@ -21,4 +21,4 @@ inline void insert(std::set<TsetT>& dst, const Tsrc& src) {
 
 } // namespace util
 
-#endif // BITCOINII_UTIL_INSERT_H
+#endif // BITCOINIII_UTIL_INSERT_H

@@ -1,9 +1,9 @@
-// Copyright (c) 2017-2022 The BitcoinII Core developers
+// Copyright (c) 2017-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_RPC_UTIL_H
-#define BITCOINII_RPC_UTIL_H
+#ifndef BITCOINIII_RPC_UTIL_H
+#define BITCOINIII_RPC_UTIL_H
 
 #include <addresstype.h>
 #include <consensus/amount.h>
@@ -120,8 +120,8 @@ int ParseVerbosity(const UniValue& arg, int default_verbosity, bool allow_bool);
  */
 CAmount AmountFromValue(const UniValue& value, int decimals = 8);
 /**
- * Parse a json number or string, denoting BC2/kvB, into a CFeeRate (sat/kvB).
- * Reject negative values or rates larger than 1BC2/kvB.
+ * Parse a json number or string, denoting BC3/kvB, into a CFeeRate (sat/kvB).
+ * Reject negative values or rates larger than 1BC3/kvB.
  */
 CFeeRate ParseFeeRate(const UniValue& json);
 
@@ -526,4 +526,4 @@ std::vector<RPCResult> ScriptPubKeyDoc();
  */
 uint256 GetTarget(const CBlockIndex& blockindex, const uint256 pow_limit);
 
-#endif // BITCOINII_RPC_UTIL_H
+#endif // BITCOINIII_RPC_UTIL_H

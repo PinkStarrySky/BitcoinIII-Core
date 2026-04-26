@@ -1,9 +1,9 @@
-// Copyright (c) 2018-2019 The BitcoinII Core developers
+// Copyright (c) 2018-2019 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UTIL_THREADNAMES_H
-#define BITCOINII_UTIL_THREADNAMES_H
+#ifndef BITCOINIII_UTIL_THREADNAMES_H
+#define BITCOINIII_UTIL_THREADNAMES_H
 
 #include <string>
 
@@ -23,4 +23,4 @@ std::string ThreadGetInternalName();
 
 } // namespace util
 
-#endif // BITCOINII_UTIL_THREADNAMES_H
+#endif // BITCOINIII_UTIL_THREADNAMES_H

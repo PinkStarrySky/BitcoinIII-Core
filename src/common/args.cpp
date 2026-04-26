@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -36,8 +36,8 @@
 #include <utility>
 #include <variant>
 
-const char * const BITCOINII_CONF_FILENAME = "bitcoinII.conf";
-const char * const BITCOINII_SETTINGS_FILENAME = "settings.json";
+const char * const BITCOINIII_CONF_FILENAME = "bitcoinIII.conf";
+const char * const BITCOINIII_SETTINGS_FILENAME = "settings.json";
 
 ArgsManager gArgs;
 
@@ -192,7 +192,7 @@ bool ArgsManager::ParseParameters(int argc, const char* const argv[], std::strin
         if (key.substr(0, 5) == "-psn_") continue;
 #endif
 
-        if (key == "-") break; //bitcoinII-tx using stdin
+        if (key == "-") break; //bitcoinIII-tx using stdin
         std::optional<std::string> val;
         size_t is_index = key.find('=');
         if (is_index != std::string::npos) {
@@ -375,7 +375,7 @@ bool ArgsManager::IsArgSet(const std::string& strArg) const
 
 bool ArgsManager::GetSettingsPath(fs::path* filepath, bool temp, bool backup) const
 {
-    fs::path settings = GetPathArg("-settings", BITCOINII_SETTINGS_FILENAME);
+    fs::path settings = GetPathArg("-settings", BITCOINIII_SETTINGS_FILENAME);
     if (settings.empty()) {
         return false;
     }
@@ -723,18 +723,18 @@ bool HasTestOption(const ArgsManager& args, const std::string& test_option)
 fs::path GetDefaultDataDir()
 {
     // Windows:
-    //   old: C:\Users\Username\AppData\Roaming\BitcoinII
-    //   new: C:\Users\Username\AppData\Local\BitcoinII
-    // macOS: ~/Library/Application Support/BitcoinII
-    // Unix-like: ~/.bitcoinII
+    //   old: C:\Users\Username\AppData\Roaming\BitcoinIII
+    //   new: C:\Users\Username\AppData\Local\BitcoinIII
+    // macOS: ~/Library/Application Support/BitcoinIII
+    // Unix-like: ~/.bitcoinIII
 #ifdef WIN32
     // Windows
     // Check for existence of datadir in old location and keep it there
-    fs::path legacy_path = GetSpecialFolderPath(CSIDL_APPDATA) / "BitcoinII";
+    fs::path legacy_path = GetSpecialFolderPath(CSIDL_APPDATA) / "BitcoinIII";
     if (fs::exists(legacy_path)) return legacy_path;
 
     // Otherwise, fresh installs can start in the new, "proper" location
-    return GetSpecialFolderPath(CSIDL_LOCAL_APPDATA) / "BitcoinII";
+    return GetSpecialFolderPath(CSIDL_LOCAL_APPDATA) / "BitcoinIII";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -744,10 +744,10 @@ fs::path GetDefaultDataDir()
         pathRet = fs::path(pszHome);
 #ifdef __APPLE__
     // macOS
-    return pathRet / "Library/Application Support/BitcoinII";
+    return pathRet / "Library/Application Support/BitcoinIII";
 #else
     // Unix-like
-    return pathRet / ".bitcoinII";
+    return pathRet / ".bitcoinIII";
 #endif
 #endif
 }

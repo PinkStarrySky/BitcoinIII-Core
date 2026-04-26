@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-# Copyright (c) 2020-present The BitcoinII Core developers
+# Copyright (c) 2020-present The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test indices in conjunction with prune."""
 import concurrent.futures
 import os
-from test_framework.test_framework import BitcoinIITestFramework
+from test_framework.test_framework import BitcoinIIITestFramework
 from test_framework.util import (
     assert_equal,
     assert_greater_than,
@@ -13,7 +13,7 @@ from test_framework.util import (
 )
 
 
-class FeatureIndexPruneTest(BitcoinIITestFramework):
+class FeatureIndexPruneTest(BitcoinIIITestFramework):
     def set_test_params(self):
         self.num_nodes = 4
         self.extra_args = [

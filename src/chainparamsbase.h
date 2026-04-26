@@ -1,9 +1,9 @@
-// Copyright (c) 2014-2020 The BitcoinII Core developers
+// Copyright (c) 2014-2020 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_CHAINPARAMSBASE_H
-#define BITCOINII_CHAINPARAMSBASE_H
+#ifndef BITCOINIII_CHAINPARAMSBASE_H
+#define BITCOINIII_CHAINPARAMSBASE_H
 
 #include <util/chaintype.h>
 
@@ -14,8 +14,8 @@
 class ArgsManager;
 
 /**
- * CBaseChainParams defines the base parameters (shared between bitcoinII-cli and bitcoinIId)
- * of a given instance of the BitcoinII system.
+ * CBaseChainParams defines the base parameters (shared between bitcoinIII-cli and bitcoinIIId)
+ * of a given instance of the BitcoinIII system.
  */
 class CBaseChainParams
 {
@@ -54,4 +54,4 @@ void SelectBaseParams(const ChainType chain);
 /** List of possible chain / network names  */
 #define LIST_CHAIN_NAMES "main, test, testnet4, signet, regtest"
 
-#endif // BITCOINII_CHAINPARAMSBASE_H
+#endif // BITCOINIII_CHAINPARAMSBASE_H

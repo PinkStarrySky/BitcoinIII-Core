@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 #
-# Copyright (c) The BitcoinII Core developers
+# Copyright (c) The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 export LC_ALL=C.UTF-8
 
 export CMAKE_GENERATOR="Ninja"
-export BITCOINII_CONFIG="-DBUILD_FOR_FUZZING=ON"
+export BITCOINIII_CONFIG="-DBUILD_FOR_FUZZING=ON"
 export CI_OS_NAME="macos"
 export NO_DEPENDS=1
 export OSX_SDK=""

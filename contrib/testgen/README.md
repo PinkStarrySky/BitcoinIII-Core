@@ -1,6 +1,6 @@
 ### TestGen ###
 
-Utilities to generate test vectors for the data-driven BitcoinII tests.
+Utilities to generate test vectors for the data-driven BitcoinIII tests.
 
 To use inside a scripted-diff (or just execute directly):
 

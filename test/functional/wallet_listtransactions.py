@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2014-present The BitcoinII Core developers
+# Copyright (c) 2014-present The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test the listtransactions API."""
@@ -12,7 +12,7 @@ from test_framework.messages import (
     COIN,
     tx_from_hex,
 )
-from test_framework.test_framework import BitcoinIITestFramework
+from test_framework.test_framework import BitcoinIIITestFramework
 from test_framework.util import (
     assert_array_result,
     assert_equal,
@@ -20,7 +20,7 @@ from test_framework.util import (
 )
 
 
-class ListTransactionsTest(BitcoinIITestFramework):
+class ListTransactionsTest(BitcoinIIITestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser)
 
@@ -306,7 +306,7 @@ class ListTransactionsTest(BitcoinIITestFramework):
         txid_join = self.nodes[0].sendrawtransaction(hexstring=raw_hex, maxfeerate=0)
         fee_join = self.nodes[0].getmempoolentry(txid_join)["fees"]["base"]
         # Fee should be correct: assert_equal(fee_join, self.nodes[0].gettransaction(txid_join)['fee'])
-        # But it is not, see for example https://github.com/bitcoinII/bitcoinII/issues/14136:
+        # But it is not, see for example https://github.com/bitcoinIII/bitcoinIII/issues/14136:
         assert fee_join != self.nodes[0].gettransaction(txid_join)["fee"]
 
     def run_invalid_parameters_test(self):

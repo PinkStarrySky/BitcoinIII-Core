@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_PRIMITIVES_BLOCK_H
-#define BITCOINII_PRIMITIVES_BLOCK_H
+#ifndef BITCOINIII_PRIMITIVES_BLOCK_H
+#define BITCOINIII_PRIMITIVES_BLOCK_H
 
 #include <primitives/transaction.h>
 #include <serialize.h>
@@ -155,4 +155,4 @@ struct CBlockLocator
     }
 };
 
-#endif // BITCOINII_PRIMITIVES_BLOCK_H
+#endif // BITCOINIII_PRIMITIVES_BLOCK_H

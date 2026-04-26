@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Copyright (c) 2021-2022 The BitcoinII Core developers
+# Copyright (c) 2021-2022 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 export LC_ALL=C
@@ -109,7 +109,7 @@ mkdir -p "$DISTSRC"
             esac
 
             # Apply detached codesignatures (in-place)
-            signapple apply dist/BitcoinII-Qt.app codesignatures/osx/"${HOST}"/dist/BitcoinII-Qt.app
+            signapple apply dist/BitcoinIII-Qt.app codesignatures/osx/"${HOST}"/dist/BitcoinIII-Qt.app
             find "${DISTNAME}" -wholename "*/bin/*" -type f | while read -r bin
             do
                 signapple apply "${bin}" "codesignatures/osx/${HOST}/${bin}.${ARCH}sign"

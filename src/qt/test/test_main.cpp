@@ -1,12 +1,12 @@
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include <bitcoinII-build-config.h> // IWYU pragma: keep
+#include <bitcoinIII-build-config.h> // IWYU pragma: keep
 
 #include <interfaces/init.h>
 #include <interfaces/node.h>
-#include <qt/bitcoinII.h>
+#include <qt/bitcoinIII.h>
 #include <qt/guiconstants.h>
 #include <qt/test/apptests.h>
 #include <qt/test/optiontests.h>
@@ -75,7 +75,7 @@ int main(int argc, char* argv[])
     int num_test_failures{0};
 
     {
-        BitcoinIIApplication app;
+        BitcoinIIIApplication app;
         app.createNode(*init);
 
         AppTests app_tests(app);

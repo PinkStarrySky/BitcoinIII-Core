@@ -1,9 +1,9 @@
-// Copyright (c) The BitcoinII Core developers
+// Copyright (c) The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_TEST_UTIL_CLUSTER_LINEARIZE_H
-#define BITCOINII_TEST_UTIL_CLUSTER_LINEARIZE_H
+#ifndef BITCOINIII_TEST_UTIL_CLUSTER_LINEARIZE_H
+#define BITCOINIII_TEST_UTIL_CLUSTER_LINEARIZE_H
 
 #include <cluster_linearize.h>
 #include <serialize.h>
@@ -223,7 +223,7 @@ struct DepGraphFormatter
                 // Read fee, encoded as an unsigned varint (odd=negative, even=non-negative).
                 uint64_t coded_fee;
                 s >> VARINT(coded_fee);
-                coded_fee &= 0xFFFFFFFFFFFFF; // Enough for fee between -21M...21M BC2.
+                coded_fee &= 0xFFFFFFFFFFFFF; // Enough for fee between -21M...21M BC3.
                 static_assert(0xFFFFFFFFFFFFF > uint64_t{2} * 21000000 * 100000000);
                 new_feerate = {UnsignedToSigned(coded_fee), size};
                 // Read dependency information.
@@ -408,4 +408,4 @@ void SanityCheck(const DepGraph<SetType>& depgraph, Span<const ClusterIndex> lin
 
 } // namespace
 
-#endif // BITCOINII_TEST_UTIL_CLUSTER_LINEARIZE_H
+#endif // BITCOINIII_TEST_UTIL_CLUSTER_LINEARIZE_H

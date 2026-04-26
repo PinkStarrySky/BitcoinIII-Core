@@ -1,9 +1,9 @@
-// Copyright (c) 2019-2022 The BitcoinII Core developers
+// Copyright (c) 2019-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UTIL_HASHER_H
-#define BITCOINII_UTIL_HASHER_H
+#ifndef BITCOINIII_UTIL_HASHER_H
+#define BITCOINIII_UTIL_HASHER_H
 
 #include <crypto/common.h>
 #include <crypto/siphash.h>
@@ -97,4 +97,4 @@ public:
     size_t operator()(const Span<const unsigned char>& script) const;
 };
 
-#endif // BITCOINII_UTIL_HASHER_H
+#endif // BITCOINIII_UTIL_HASHER_H

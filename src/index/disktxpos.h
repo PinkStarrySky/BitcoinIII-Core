@@ -1,9 +1,9 @@
-// Copyright (c) 2019-2020 The BitcoinII Core developers
+// Copyright (c) 2019-2020 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_INDEX_DISKTXPOS_H
-#define BITCOINII_INDEX_DISKTXPOS_H
+#ifndef BITCOINIII_INDEX_DISKTXPOS_H
+#define BITCOINIII_INDEX_DISKTXPOS_H
 
 #include <flatfile.h>
 #include <serialize.h>
@@ -23,4 +23,4 @@ struct CDiskTxPos : public FlatFilePos
     CDiskTxPos() = default;
 };
 
-#endif // BITCOINII_INDEX_DISKTXPOS_H
+#endif // BITCOINIII_INDEX_DISKTXPOS_H

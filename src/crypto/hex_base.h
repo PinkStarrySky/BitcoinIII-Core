@@ -1,9 +1,9 @@
-// Copyright (c) 2009-present The BitcoinII Core developers
+// Copyright (c) 2009-present The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_CRYPTO_HEX_BASE_H
-#define BITCOINII_CRYPTO_HEX_BASE_H
+#ifndef BITCOINIII_CRYPTO_HEX_BASE_H
+#define BITCOINIII_CRYPTO_HEX_BASE_H
 
 #include <span.h>
 
@@ -20,4 +20,4 @@ inline std::string HexStr(const Span<const std::byte> s) { return HexStr(MakeUCh
 
 signed char HexDigit(char c);
 
-#endif // BITCOINII_CRYPTO_HEX_BASE_H
+#endif // BITCOINIII_CRYPTO_HEX_BASE_H

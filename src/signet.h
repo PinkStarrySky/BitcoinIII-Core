@@ -1,9 +1,9 @@
-// Copyright (c) 2019-2021 The BitcoinII Core developers
+// Copyright (c) 2019-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_SIGNET_H
-#define BITCOINII_SIGNET_H
+#ifndef BITCOINIII_SIGNET_H
+#define BITCOINIII_SIGNET_H
 
 #include <consensus/params.h>
 #include <primitives/block.h>
@@ -34,4 +34,4 @@ public:
     const CTransaction m_to_sign;
 };
 
-#endif // BITCOINII_SIGNET_H
+#endif // BITCOINIII_SIGNET_H

@@ -1,13 +1,13 @@
-BitcoinII Core version 0.18.1 is now available from:
+BitcoinIII Core version 0.18.1 is now available from:
 
-  <https://bitcoincore.org/bin/bitcoinII-core-0.18.1/>
+  <https://bitcoincore.org/bin/bitcoinIII-core-0.18.1/>
 
 This is a new minor version release, including new features, various bug
 fixes and performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at GitHub:
 
-  <https://github.com/bitcoinII/bitcoinII/issues>
+  <https://github.com/bitcoinIII/bitcoinIII/issues>
 
 To receive security and update notifications, please subscribe to:
 
@@ -19,7 +19,7 @@ How to Upgrade
 If you are running an older version, shut it down. Wait until it has
 completely shut down (which might take a few minutes for older
 versions), then run the installer (on Windows) or just copy over
-`/Applications/BitcoinII-Qt` (on Mac) or `bitcoinIId`/`bitcoinII-qt` (on
+`/Applications/BitcoinIII-Qt` (on Mac) or `bitcoinIIId`/`bitcoinIII-qt` (on
 Linux).
 
 The first time you run version 0.15.0 or newer, your chainstate database
@@ -35,16 +35,16 @@ wallet versions are still supported.
 Compatibility
 ==============
 
-BitcoinII Core is supported and extensively tested on operating systems
+BitcoinIII Core is supported and extensively tested on operating systems
 using the Linux kernel, macOS 10.10+, and Windows 7 and newer. It is not
-recommended to use BitcoinII Core on unsupported systems.
+recommended to use BitcoinIII Core on unsupported systems.
 
-BitcoinII Core should also work on most other Unix-like systems but is not
+BitcoinIII Core should also work on most other Unix-like systems but is not
 as frequently tested on them.
 
 From 0.17.0 onwards, macOS <10.10 is no longer supported. 0.17.0 is
 built using Qt 5.9.x, which doesn't support versions of macOS older than
-10.10. Additionally, BitcoinII Core does not yet change appearance when
+10.10. Additionally, BitcoinIII Core does not yet change appearance when
 macOS "dark mode" is activated.
 
 Known issues
@@ -91,7 +91,7 @@ not to use coin control features with multiple wallets loaded.
 
 ### Build system
 - #15985 Add test for GCC bug 90348 (sipa)
-- #15947 Install bitcoinII-wallet manpage (domob1812)
+- #15947 Install bitcoinIII-wallet manpage (domob1812)
 - #15983 build with -fstack-reuse=none (MarcoFalke)
 
 ### Tests and QA
@@ -133,4 +133,4 @@ Thanks to everyone who directly contributed to this release:
 - tecnovert
 - Wladimir J. van der Laan
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/bitcoinII/).
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/bitcoinIII/).

@@ -1,4 +1,4 @@
-# Copyright (c) 2023-present The BitcoinII Core developers
+# Copyright (c) 2023-present The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://opensource.org/license/mit/.
 
@@ -6,7 +6,7 @@ include(CheckCXXSourceCompiles)
 include(CheckCXXSymbolExists)
 include(CheckIncludeFileCXX)
 
-# The following HAVE_{HEADER}_H variables go to the bitcoinII-build-config.h header.
+# The following HAVE_{HEADER}_H variables go to the bitcoinIII-build-config.h header.
 check_include_file_cxx(sys/prctl.h HAVE_SYS_PRCTL_H)
 check_include_file_cxx(sys/resources.h HAVE_SYS_RESOURCES_H)
 check_include_file_cxx(sys/vmmeter.h HAVE_SYS_VMMETER_H)

@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-# Copyright (c) 2018-2022 The BitcoinII Core developers
+# Copyright (c) 2018-2022 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test the avoid_reuse and setwalletflag features."""
 
 from test_framework.address import address_to_scriptpubkey
-from test_framework.test_framework import BitcoinIITestFramework
+from test_framework.test_framework import BitcoinIIITestFramework
 from test_framework.util import (
     assert_approx,
     assert_equal,
@@ -63,7 +63,7 @@ def assert_balances(node, mine, margin=0.001):
     for k,v in mine.items():
         assert_approx(got[k], v, margin)
 
-class AvoidReuseTest(BitcoinIITestFramework):
+class AvoidReuseTest(BitcoinIIITestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser)
 
@@ -178,8 +178,8 @@ class AvoidReuseTest(BitcoinIITestFramework):
 
     def test_sending_from_reused_address_without_avoid_reuse(self):
         '''
-        Test the same as test_sending_from_reused_address_fails, except send the 10 BC2 with
-        the avoid_reuse flag set to false. This means the 10 BC2 send should succeed,
+        Test the same as test_sending_from_reused_address_fails, except send the 10 BC3 with
+        the avoid_reuse flag set to false. This means the 10 BC3 send should succeed,
         where it fails in test_sending_from_reused_address_fails.
         '''
         self.log.info("Test sending from reused address with avoid_reuse=false")
@@ -227,11 +227,11 @@ class AvoidReuseTest(BitcoinIITestFramework):
     def test_sending_from_reused_address_fails(self, second_addr_type):
         '''
         Test the simple case where [1] generates a new address A, then
-        [0] sends 10 BC2 to A.
-        [1] spends 5 BC2 from A. (leaving roughly 5 BC2 useable)
-        [0] sends 10 BC2 to A again.
-        [1] tries to spend 10 BC2 (fails; dirty).
-        [1] tries to spend 4 BC2 (succeeds; change address sufficient)
+        [0] sends 10 BC3 to A.
+        [1] spends 5 BC3 from A. (leaving roughly 5 BC3 useable)
+        [0] sends 10 BC3 to A again.
+        [1] tries to spend 10 BC3 (fails; dirty).
+        [1] tries to spend 4 BC3 (succeeds; change address sufficient)
         '''
         self.log.info("Test sending from reused {} address fails".format(second_addr_type))
 
@@ -323,10 +323,10 @@ class AvoidReuseTest(BitcoinIITestFramework):
 
     def test_full_destination_group_is_preferred(self):
         '''
-        Test the case where [1] only has 101 outputs of 1 BC2 in the same reused
-        address and tries to send a small payment of 0.5 BC2. The wallet
+        Test the case where [1] only has 101 outputs of 1 BC3 in the same reused
+        address and tries to send a small payment of 0.5 BC3. The wallet
         should use 100 outputs from the reused address as inputs and not a
-        single 1 BC2 input, in order to join several outputs from the reused
+        single 1 BC3 input, in order to join several outputs from the reused
         address.
         '''
         self.log.info("Test that full destination groups are preferred in coin selection")
@@ -337,7 +337,7 @@ class AvoidReuseTest(BitcoinIITestFramework):
         new_addr = self.nodes[1].getnewaddress()
         ret_addr = self.nodes[0].getnewaddress()
 
-        # Send 101 outputs of 1 BC2 to the same, reused address in the wallet
+        # Send 101 outputs of 1 BC3 to the same, reused address in the wallet
         for _ in range(101):
             self.nodes[0].sendtoaddress(new_addr, 1)
 
@@ -353,8 +353,8 @@ class AvoidReuseTest(BitcoinIITestFramework):
 
     def test_all_destination_groups_are_used(self):
         '''
-        Test the case where [1] only has 202 outputs of 1 BC2 in the same reused
-        address and tries to send a payment of 200.5 BC2. The wallet
+        Test the case where [1] only has 202 outputs of 1 BC3 in the same reused
+        address and tries to send a payment of 200.5 BC3. The wallet
         should use all 202 outputs from the reused address as inputs.
         '''
         self.log.info("Test that all destination groups are used")
@@ -365,7 +365,7 @@ class AvoidReuseTest(BitcoinIITestFramework):
         new_addr = self.nodes[1].getnewaddress()
         ret_addr = self.nodes[0].getnewaddress()
 
-        # Send 202 outputs of 1 BC2 to the same, reused address in the wallet
+        # Send 202 outputs of 1 BC3 to the same, reused address in the wallet
         for _ in range(202):
             self.nodes[0].sendtoaddress(new_addr, 1)
 

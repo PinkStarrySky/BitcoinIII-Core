@@ -40,7 +40,7 @@ git diff -U0 HEAD~1.. | ./contrib/devtools/clang-format-diff.py -p1 -i -v
 copyright\_header.py
 ====================
 
-Provides utilities for managing copyright headers of `The BitcoinII Core
+Provides utilities for managing copyright headers of `The BitcoinIII Core
 developers` in repository source files. It has three subcommands:
 
 ```
@@ -59,31 +59,31 @@ Specifying `verbose` will list the full filenames of files of each category.
 
 copyright\_header.py update \<base\_directory\> [verbose]
 ---------------------------------------------------------
-Updates all the copyright headers of `The BitcoinII Core developers` which were
+Updates all the copyright headers of `The BitcoinIII Core developers` which were
 changed in a year more recent than is listed. For example:
 ```
-// Copyright (c) <firstYear>-<lastYear> The BitcoinII Core developers
+// Copyright (c) <firstYear>-<lastYear> The BitcoinIII Core developers
 ```
 will be updated to:
 ```
-// Copyright (c) <firstYear>-<lastModifiedYear> The BitcoinII Core developers
+// Copyright (c) <firstYear>-<lastModifiedYear> The BitcoinIII Core developers
 ```
 where `<lastModifiedYear>` is obtained from the `git log` history.
 
 This subcommand also handles copyright headers that have only a single year. In
 those cases:
 ```
-// Copyright (c) <year> The BitcoinII Core developers
+// Copyright (c) <year> The BitcoinIII Core developers
 ```
 will be updated to:
 ```
-// Copyright (c) <year>-<lastModifiedYear> The BitcoinII Core developers
+// Copyright (c) <year>-<lastModifiedYear> The BitcoinIII Core developers
 ```
 where the update is appropriate.
 
 copyright\_header.py insert \<file\>
 ------------------------------------
-Inserts a copyright header for `The BitcoinII Core developers` at the top of the
+Inserts a copyright header for `The BitcoinIII Core developers` at the top of the
 file in either Python or C++ style as determined by the file extension. If the
 file is a Python file and it has  `#!` starting the first line, the header is
 inserted in the line below it.
@@ -93,7 +93,7 @@ The copyright dates will be set to be `<year_introduced>-<current_year>` where
 `<year_introduced>` is equal to `<current_year>`, it will be set as a single
 year rather than two hyphenated years.
 
-If the file already has a copyright for `The BitcoinII Core developers`, the
+If the file already has a copyright for `The BitcoinIII Core developers`, the
 script will exit.
 
 gen-manpages.py
@@ -120,11 +120,11 @@ options, as all its configuration is set at the top of the file. It runs many ti
 pypy3 contrib/devtools/headerssync-params.py
 ```
 
-gen-bitcoinII-conf.sh
+gen-bitcoinIII-conf.sh
 ===================
 
-Generates a bitcoinII.conf file in `share/examples/` by parsing the output from `bitcoinIId --help`. This script is run during the
-release process to include a bitcoinII.conf with the release binaries and can also be run by users to generate a file locally.
+Generates a bitcoinIII.conf file in `share/examples/` by parsing the output from `bitcoinIIId --help`. This script is run during the
+release process to include a bitcoinIII.conf with the release binaries and can also be run by users to generate a file locally.
 When generating a file as part of the release process, make sure to commit the changes after running the script.
 
 This script assumes a build directory named `build` as suggested by example build documentation.
@@ -132,7 +132,7 @@ To use it with a different build directory, set `BUILDDIR`.
 For example:
 
 ```bash
-BUILDDIR=$PWD/my-build-dir contrib/devtools/gen-bitcoinII-conf.sh
+BUILDDIR=$PWD/my-build-dir contrib/devtools/gen-bitcoinIII-conf.sh
 ```
 
 security-check.py
@@ -159,10 +159,10 @@ If no errors occur the return value will be 0 and the output will be empty.
 
 If there are any errors the return value will be 1 and output like this will be printed:
 
-    .../64/test_bitcoinII: symbol memcpy from unsupported version GLIBC_2.14
-    .../64/test_bitcoinII: symbol __fdelt_chk from unsupported version GLIBC_2.15
-    .../64/test_bitcoinII: symbol std::out_of_range::~out_of_range() from unsupported version GLIBCXX_3.4.15
-    .../64/test_bitcoinII: symbol _ZNSt8__detail15_List_nod from unsupported version GLIBCXX_3.4.15
+    .../64/test_bitcoinIII: symbol memcpy from unsupported version GLIBC_2.14
+    .../64/test_bitcoinIII: symbol __fdelt_chk from unsupported version GLIBC_2.15
+    .../64/test_bitcoinIII: symbol std::out_of_range::~out_of_range() from unsupported version GLIBCXX_3.4.15
+    .../64/test_bitcoinIII: symbol _ZNSt8__detail15_List_nod from unsupported version GLIBCXX_3.4.15
 
 circular-dependencies.py
 ========================

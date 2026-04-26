@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2021 The BitcoinII Core developers
+# Copyright (c) 2021 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test ThreadDNSAddressSeed logic for querying DNS seeds."""
@@ -8,10 +8,10 @@ import itertools
 
 from test_framework.netutil import UNREACHABLE_PROXY_ARG
 from test_framework.p2p import P2PInterface
-from test_framework.test_framework import BitcoinIITestFramework
+from test_framework.test_framework import BitcoinIIITestFramework
 
 
-class P2PDNSSeeds(BitcoinIITestFramework):
+class P2PDNSSeeds(BitcoinIIITestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1
@@ -51,7 +51,7 @@ class P2PDNSSeeds(BitcoinIITestFramework):
             extra_args=["-forcednsseed=1", f"-connect={fakeaddr}"],
         )
 
-        # Restore default bitcoinIId settings
+        # Restore default bitcoinIIId settings
         self.restart_node(0)
 
     def existing_outbound_connections_test(self):
@@ -87,7 +87,7 @@ class P2PDNSSeeds(BitcoinIITestFramework):
         self.log.info("Check that we query DNS seeds if -forcednsseed param is set")
 
         with self.nodes[0].assert_debug_log(expected_msgs=["Loading addresses from DNS seed"], timeout=12):
-            # -dnsseed defaults to 1 in bitcoinIId, but 0 in the test framework,
+            # -dnsseed defaults to 1 in bitcoinIIId, but 0 in the test framework,
             # so pass it explicitly here
             self.restart_node(0, ["-forcednsseed", "-dnsseed=1", UNREACHABLE_PROXY_ARG])
 

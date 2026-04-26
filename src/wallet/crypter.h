@@ -1,9 +1,9 @@
-// Copyright (c) 2009-2021 The BitcoinII Core developers
+// Copyright (c) 2009-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_WALLET_CRYPTER_H
-#define BITCOINII_WALLET_CRYPTER_H
+#ifndef BITCOINIII_WALLET_CRYPTER_H
+#define BITCOINIII_WALLET_CRYPTER_H
 
 #include <serialize.h>
 #include <support/allocators/secure.h>
@@ -108,4 +108,4 @@ bool DecryptSecret(const CKeyingMaterial& master_key, std::span<const unsigned c
 bool DecryptKey(const CKeyingMaterial& master_key, std::span<const unsigned char> crypted_secret, const CPubKey& pub_key, CKey& key);
 } // namespace wallet
 
-#endif // BITCOINII_WALLET_CRYPTER_H
+#endif // BITCOINIII_WALLET_CRYPTER_H

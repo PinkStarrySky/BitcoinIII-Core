@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2017-2022 The BitcoinII Core developers
+# Copyright (c) 2017-2022 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test recovery from a crash during chainstate writing.
@@ -34,7 +34,7 @@ from test_framework.blocktools import COINBASE_MATURITY
 from test_framework.messages import (
     COIN,
 )
-from test_framework.test_framework import BitcoinIITestFramework
+from test_framework.test_framework import BitcoinIIITestFramework
 from test_framework.util import (
     assert_equal,
 )
@@ -44,7 +44,7 @@ from test_framework.wallet import (
 )
 
 
-class ChainstateWriteCrashTest(BitcoinIITestFramework):
+class ChainstateWriteCrashTest(BitcoinIIITestFramework):
     def set_test_params(self):
         self.num_nodes = 4
         self.rpc_timeout = 480
@@ -89,14 +89,14 @@ class ChainstateWriteCrashTest(BitcoinIITestFramework):
                 return utxo_hash
             except Exception:
                 # An exception here should mean the node is about to crash.
-                # If bitcoinIId exits, then try again.  wait_for_node_exit()
-                # should raise an exception if bitcoinIId doesn't exit.
+                # If bitcoinIIId exits, then try again.  wait_for_node_exit()
+                # should raise an exception if bitcoinIIId doesn't exit.
                 self.wait_for_node_exit(node_index, timeout=10)
             self.crashed_on_restart += 1
             time.sleep(1)
 
-        # If we got here, bitcoinIId isn't coming back up on restart.  Could be a
-        # bug in bitcoinIId, or we've gotten unlucky with our dbcrash ratio --
+        # If we got here, bitcoinIIId isn't coming back up on restart.  Could be a
+        # bug in bitcoinIIId, or we've gotten unlucky with our dbcrash ratio --
         # perhaps we generated a test case that blew up our cache?
         # TODO: If this happens a lot, we should try to restart without -dbcrashratio
         # and make sure that recovery happens.

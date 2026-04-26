@@ -1,11 +1,11 @@
-// Copyright (c) 2011-2022 The BitcoinII Core developers
+// Copyright (c) 2011-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_RPCCONSOLE_H
-#define BITCOINII_QT_RPCCONSOLE_H
+#ifndef BITCOINIII_QT_RPCCONSOLE_H
+#define BITCOINIII_QT_RPCCONSOLE_H
 
-#include <bitcoinII-build-config.h> // IWYU pragma: keep
+#include <bitcoinIII-build-config.h> // IWYU pragma: keep
 
 #include <qt/clientmodel.h>
 #include <qt/guiutil.h>
@@ -37,7 +37,7 @@ class QMenu;
 class QItemSelection;
 QT_END_NAMESPACE
 
-/** Local BitcoinII RPC console. */
+/** Local BitcoinIII RPC console. */
 class RPCConsole: public QWidget
 {
     Q_OBJECT
@@ -193,4 +193,4 @@ private Q_SLOTS:
     void updateAlerts(const QString& warnings);
 };
 
-#endif // BITCOINII_QT_RPCCONSOLE_H
+#endif // BITCOINIII_QT_RPCCONSOLE_H

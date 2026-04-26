@@ -1,4 +1,4 @@
-// Copyright (c) 2023 BitcoinII Developers
+// Copyright (c) 2023 BitcoinIII Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -16,7 +16,7 @@ AST_MATCHER(clang::CXXRecordDecl, hasNonTrivialDestructor) {
 }
 } // namespace
 
-namespace bitcoinII {
+namespace bitcoinIII {
 
 void NonTrivialThreadLocal::registerMatchers(clang::ast_matchers::MatchFinder* finder)
 {
@@ -41,4 +41,4 @@ void NonTrivialThreadLocal::check(const clang::ast_matchers::MatchFinder::MatchR
     }
 }
 
-} // namespace bitcoinII
+} // namespace bitcoinIII

@@ -1,9 +1,9 @@
-// Copyright (c) 2024-present The BitcoinII Core developers
+// Copyright (c) 2024-present The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_NODE_TIMEOFFSETS_H
-#define BITCOINII_NODE_TIMEOFFSETS_H
+#ifndef BITCOINIII_NODE_TIMEOFFSETS_H
+#define BITCOINIII_NODE_TIMEOFFSETS_H
 
 #include <sync.h>
 
@@ -46,4 +46,4 @@ public:
     bool WarnIfOutOfSync() const EXCLUSIVE_LOCKS_REQUIRED(!m_mutex);
 };
 
-#endif // BITCOINII_NODE_TIMEOFFSETS_H
+#endif // BITCOINIII_NODE_TIMEOFFSETS_H

@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
-# Copyright (c) 2019-2021 The BitcoinII Core developers
+# Copyright (c) 2019-2021 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-"""Test bitcoinIId aborts if can't disconnect a block.
+"""Test bitcoinIIId aborts if can't disconnect a block.
 
 - Start a single node and generate 3 blocks.
 - Delete the undo data.
 - Mine a fork that requires disconnecting the tip.
-- Verify that bitcoinIId AbortNode's.
+- Verify that bitcoinIIId AbortNode's.
 """
-from test_framework.test_framework import BitcoinIITestFramework
+from test_framework.test_framework import BitcoinIIITestFramework
 
 
-class AbortNodeTest(BitcoinIITestFramework):
+class AbortNodeTest(BitcoinIIITestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 2

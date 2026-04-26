@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2021 The BitcoinII Core developers
+// Copyright (c) 2011-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_RECENTREQUESTSTABLEMODEL_H
-#define BITCOINII_QT_RECENTREQUESTSTABLEMODEL_H
+#ifndef BITCOINIII_QT_RECENTREQUESTSTABLEMODEL_H
+#define BITCOINIII_QT_RECENTREQUESTSTABLEMODEL_H
 
 #include <qt/sendcoinsrecipient.h>
 
@@ -46,7 +46,7 @@ private:
     Qt::SortOrder order;
 };
 
-/** Model for list of recently generated payment requests / bitcoinII: URIs.
+/** Model for list of recently generated payment requests / bitcoinIII: URIs.
  * Part of wallet model.
  */
 class RecentRequestsTableModel: public QAbstractTableModel
@@ -98,4 +98,4 @@ private:
     QString getAmountTitle();
 };
 
-#endif // BITCOINII_QT_RECENTREQUESTSTABLEMODEL_H
+#endif // BITCOINIII_QT_RECENTREQUESTSTABLEMODEL_H

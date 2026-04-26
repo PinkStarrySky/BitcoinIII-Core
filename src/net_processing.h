@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_NET_PROCESSING_H
-#define BITCOINII_NET_PROCESSING_H
+#ifndef BITCOINIII_NET_PROCESSING_H
+#define BITCOINIII_NET_PROCESSING_H
 
 #include <net.h>
 #include <txorphanage.h>
@@ -154,4 +154,4 @@ public:
     virtual ServiceFlags GetDesirableServiceFlags(ServiceFlags services) const = 0;
 };
 
-#endif // BITCOINII_NET_PROCESSING_H
+#endif // BITCOINIII_NET_PROCESSING_H

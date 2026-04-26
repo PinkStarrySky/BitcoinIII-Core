@@ -1,9 +1,9 @@
-// Copyright (c) 2020 The BitcoinII Core developers
+// Copyright (c) 2020 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_TXREQUEST_H
-#define BITCOINII_TXREQUEST_H
+#ifndef BITCOINIII_TXREQUEST_H
+#define BITCOINIII_TXREQUEST_H
 
 #include <primitives/transaction.h>
 #include <net.h> // For NodeId
@@ -212,4 +212,4 @@ public:
     void PostGetRequestableSanityCheck(std::chrono::microseconds now) const;
 };
 
-#endif // BITCOINII_TXREQUEST_H
+#endif // BITCOINIII_TXREQUEST_H

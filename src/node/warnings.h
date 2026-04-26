@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2021 The BitcoinII Core developers
+// Copyright (c) 2009-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_NODE_WARNINGS_H
-#define BITCOINII_NODE_WARNINGS_H
+#ifndef BITCOINIII_NODE_WARNINGS_H
+#define BITCOINIII_NODE_WARNINGS_H
 
 #include <sync.h>
 #include <util/translation.h>
@@ -87,4 +87,4 @@ public:
 UniValue GetWarningsForRpc(const Warnings& warnings, bool use_deprecated);
 } // namespace node
 
-#endif // BITCOINII_NODE_WARNINGS_H
+#endif // BITCOINIII_NODE_WARNINGS_H

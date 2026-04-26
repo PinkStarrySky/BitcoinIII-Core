@@ -1,10 +1,10 @@
-# Copyright (c) 2023-present The BitcoinII Core developers
+# Copyright (c) 2023-present The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://opensource.org/license/mit/.
 
 include(AddWindowsResources)
 
-configure_file(${PROJECT_SOURCE_DIR}/cmake/bitcoinII-build-config.h.in bitcoinII-build-config.h USE_SOURCE_PERMISSIONS @ONLY)
+configure_file(${PROJECT_SOURCE_DIR}/cmake/bitcoinIII-build-config.h.in bitcoinIII-build-config.h USE_SOURCE_PERMISSIONS @ONLY)
 include_directories(${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
 
 #=============================
@@ -80,19 +80,19 @@ if(NOT CMAKE_ARCHIVE_OUTPUT_DIRECTORY)
 endif()
 
 add_custom_target(generate_build_info
-  BYPRODUCTS ${PROJECT_BINARY_DIR}/src/bitcoinII-build-info.h
-  COMMAND ${CMAKE_COMMAND} -DBUILD_INFO_HEADER_PATH=${PROJECT_BINARY_DIR}/src/bitcoinII-build-info.h -DSOURCE_DIR=${PROJECT_SOURCE_DIR} -P ${PROJECT_SOURCE_DIR}/cmake/script/GenerateBuildInfo.cmake
-  COMMENT "Generating bitcoinII-build-info.h"
+  BYPRODUCTS ${PROJECT_BINARY_DIR}/src/bitcoinIII-build-info.h
+  COMMAND ${CMAKE_COMMAND} -DBUILD_INFO_HEADER_PATH=${PROJECT_BINARY_DIR}/src/bitcoinIII-build-info.h -DSOURCE_DIR=${PROJECT_SOURCE_DIR} -P ${PROJECT_SOURCE_DIR}/cmake/script/GenerateBuildInfo.cmake
+  COMMENT "Generating bitcoinIII-build-info.h"
   VERBATIM
 )
-add_library(bitcoinII_clientversion STATIC EXCLUDE_FROM_ALL
+add_library(bitcoinIII_clientversion STATIC EXCLUDE_FROM_ALL
   clientversion.cpp
 )
-target_link_libraries(bitcoinII_clientversion
+target_link_libraries(bitcoinIII_clientversion
   PRIVATE
     core_interface
 )
-add_dependencies(bitcoinII_clientversion generate_build_info)
+add_dependencies(bitcoinIII_clientversion generate_build_info)
 
 add_subdirectory(crypto)
 add_subdirectory(util)
@@ -100,7 +100,7 @@ if(WITH_MULTIPROCESS)
   add_subdirectory(ipc)
 endif()
 
-add_library(bitcoinII_consensus STATIC EXCLUDE_FROM_ALL
+add_library(bitcoinIII_consensus STATIC EXCLUDE_FROM_ALL
   arith_uint256.cpp
   consensus/merkle.cpp
   consensus/tx_check.cpp
@@ -113,10 +113,10 @@ add_library(bitcoinII_consensus STATIC EXCLUDE_FROM_ALL
   script/script_error.cpp
   uint256.cpp
 )
-target_link_libraries(bitcoinII_consensus
+target_link_libraries(bitcoinIII_consensus
   PRIVATE
     core_interface
-    bitcoinII_crypto
+    bitcoinIII_crypto
     secp256k1
 )
 
@@ -125,8 +125,8 @@ if(WITH_ZMQ)
 endif()
 
 # Home for common functionality shared by different executables and libraries.
-# Similar to `bitcoinII_util` library, but higher-level.
-add_library(bitcoinII_common STATIC EXCLUDE_FROM_ALL
+# Similar to `bitcoinIII_util` library, but higher-level.
+add_library(bitcoinIII_common STATIC EXCLUDE_FROM_ALL
   addresstype.cpp
   base58.cpp
   bech32.cpp
@@ -178,11 +178,11 @@ add_library(bitcoinII_common STATIC EXCLUDE_FROM_ALL
   script/signingprovider.cpp
   script/solver.cpp
 )
-target_link_libraries(bitcoinII_common
+target_link_libraries(bitcoinIII_common
   PRIVATE
     core_interface
-    bitcoinII_consensus
-    bitcoinII_util
+    bitcoinIII_consensus
+    bitcoinIII_util
     univalue
     secp256k1
     Boost::headers
@@ -196,26 +196,26 @@ if(ENABLE_WALLET)
   add_subdirectory(wallet)
 
   if(BUILD_WALLET_TOOL)
-    add_executable(bitcoinII-wallet
-      bitcoinII-wallet.cpp
-      init/bitcoinII-wallet.cpp
+    add_executable(bitcoinIII-wallet
+      bitcoinIII-wallet.cpp
+      init/bitcoinIII-wallet.cpp
       wallet/wallettool.cpp
     )
-    add_windows_resources(bitcoinII-wallet bitcoinII-wallet-res.rc)
-    target_link_libraries(bitcoinII-wallet
+    add_windows_resources(bitcoinIII-wallet bitcoinIII-wallet-res.rc)
+    target_link_libraries(bitcoinIII-wallet
       core_interface
-      bitcoinII_wallet
-      bitcoinII_common
-      bitcoinII_util
+      bitcoinIII_wallet
+      bitcoinIII_common
+      bitcoinIII_util
       Boost::headers
     )
-    install_binary_component(bitcoinII-wallet HAS_MANPAGE)
+    install_binary_component(bitcoinIII-wallet HAS_MANPAGE)
   endif()
 endif()
 
 
-# P2P and RPC server functionality used by `bitcoinIId` and `bitcoinII-qt` executables.
-add_library(bitcoinII_node STATIC EXCLUDE_FROM_ALL
+# P2P and RPC server functionality used by `bitcoinIIId` and `bitcoinIII-qt` executables.
+add_library(bitcoinIII_node STATIC EXCLUDE_FROM_ALL
   addrdb.cpp
   addrman.cpp
   banman.cpp
@@ -307,15 +307,15 @@ add_library(bitcoinII_node STATIC EXCLUDE_FROM_ALL
   validation.cpp
   validationinterface.cpp
   versionbits.cpp
-  $<$<TARGET_EXISTS:bitcoinII_wallet>:wallet/init.cpp>
-  $<$<NOT:$<TARGET_EXISTS:bitcoinII_wallet>>:dummywallet.cpp>
+  $<$<TARGET_EXISTS:bitcoinIII_wallet>:wallet/init.cpp>
+  $<$<NOT:$<TARGET_EXISTS:bitcoinIII_wallet>>:dummywallet.cpp>
 )
-target_link_libraries(bitcoinII_node
+target_link_libraries(bitcoinIII_node
   PRIVATE
     core_interface
-    bitcoinII_common
-    bitcoinII_util
-    $<TARGET_NAME_IF_EXISTS:bitcoinII_zmq>
+    bitcoinIII_common
+    bitcoinIII_util
+    $<TARGET_NAME_IF_EXISTS:bitcoinIII_zmq>
     leveldb
     minisketch
     univalue
@@ -327,100 +327,100 @@ target_link_libraries(bitcoinII_node
 )
 
 
-# BitcoinII Core bitcoinIId.
+# BitcoinIII Core bitcoinIIId.
 if(BUILD_DAEMON)
-  add_executable(bitcoinIId
-    bitcoinIId.cpp
-    init/bitcoinIId.cpp
+  add_executable(bitcoinIIId
+    bitcoinIIId.cpp
+    init/bitcoinIIId.cpp
   )
-  add_windows_resources(bitcoinIId bitcoinIId-res.rc)
-  target_link_libraries(bitcoinIId
+  add_windows_resources(bitcoinIIId bitcoinIIId-res.rc)
+  target_link_libraries(bitcoinIIId
     core_interface
-    bitcoinII_node
-    $<TARGET_NAME_IF_EXISTS:bitcoinII_wallet>
+    bitcoinIII_node
+    $<TARGET_NAME_IF_EXISTS:bitcoinIII_wallet>
   )
-  install_binary_component(bitcoinIId HAS_MANPAGE)
+  install_binary_component(bitcoinIIId HAS_MANPAGE)
 endif()
 if(WITH_MULTIPROCESS AND BUILD_DAEMON)
-  add_executable(bitcoinII-node
-    bitcoinIId.cpp
-    init/bitcoinII-node.cpp
+  add_executable(bitcoinIII-node
+    bitcoinIIId.cpp
+    init/bitcoinIII-node.cpp
   )
-  target_link_libraries(bitcoinII-node
+  target_link_libraries(bitcoinIII-node
     core_interface
-    bitcoinII_node
-    bitcoinII_ipc
-    $<TARGET_NAME_IF_EXISTS:bitcoinII_wallet>
+    bitcoinIII_node
+    bitcoinIII_ipc
+    $<TARGET_NAME_IF_EXISTS:bitcoinIII_wallet>
   )
-  install_binary_component(bitcoinII-node)
+  install_binary_component(bitcoinIII-node)
 endif()
 
 if(WITH_MULTIPROCESS AND BUILD_TESTS)
-    # bitcoinII_ipc_test library target is defined here in src/CMakeLists.txt
+    # bitcoinIII_ipc_test library target is defined here in src/CMakeLists.txt
     # instead of src/test/CMakeLists.txt so capnp files in src/test/ are able to
     # reference capnp files in src/ipc/capnp/ by relative path. The Cap'n Proto
     # compiler only allows importing by relative path when the importing and
     # imported files are underneath the same compilation source prefix, so the
     # source prefix must be src/, not src/test/
-    add_library(bitcoinII_ipc_test STATIC EXCLUDE_FROM_ALL
+    add_library(bitcoinIII_ipc_test STATIC EXCLUDE_FROM_ALL
       test/ipc_test.cpp
     )
-    target_capnp_sources(bitcoinII_ipc_test ${PROJECT_SOURCE_DIR}
+    target_capnp_sources(bitcoinIII_ipc_test ${PROJECT_SOURCE_DIR}
       test/ipc_test.capnp
     )
-    add_dependencies(bitcoinII_ipc_test bitcoinII_ipc_headers)
+    add_dependencies(bitcoinIII_ipc_test bitcoinIII_ipc_headers)
 endif()
 
 
-add_library(bitcoinII_cli STATIC EXCLUDE_FROM_ALL
+add_library(bitcoinIII_cli STATIC EXCLUDE_FROM_ALL
   compat/stdin.cpp
   rpc/client.cpp
 )
-target_link_libraries(bitcoinII_cli
+target_link_libraries(bitcoinIII_cli
   PUBLIC
     core_interface
     univalue
 )
 
 
-# BitcoinII Core RPC client
+# BitcoinIII Core RPC client
 if(BUILD_CLI)
-  add_executable(bitcoinII-cli bitcoinII-cli.cpp)
-  add_windows_resources(bitcoinII-cli bitcoinII-cli-res.rc)
-  target_link_libraries(bitcoinII-cli
+  add_executable(bitcoinIII-cli bitcoinIII-cli.cpp)
+  add_windows_resources(bitcoinIII-cli bitcoinIII-cli-res.rc)
+  target_link_libraries(bitcoinIII-cli
     core_interface
-    bitcoinII_cli
-    bitcoinII_common
-    bitcoinII_util
+    bitcoinIII_cli
+    bitcoinIII_common
+    bitcoinIII_util
     libevent::core
     libevent::extra
   )
-  install_binary_component(bitcoinII-cli HAS_MANPAGE)
+  install_binary_component(bitcoinIII-cli HAS_MANPAGE)
 endif()
 
 
 if(BUILD_TX)
-  add_executable(bitcoinII-tx bitcoinII-tx.cpp)
-  add_windows_resources(bitcoinII-tx bitcoinII-tx-res.rc)
-  target_link_libraries(bitcoinII-tx
+  add_executable(bitcoinIII-tx bitcoinIII-tx.cpp)
+  add_windows_resources(bitcoinIII-tx bitcoinIII-tx-res.rc)
+  target_link_libraries(bitcoinIII-tx
     core_interface
-    bitcoinII_common
-    bitcoinII_util
+    bitcoinIII_common
+    bitcoinIII_util
     univalue
   )
-  install_binary_component(bitcoinII-tx HAS_MANPAGE)
+  install_binary_component(bitcoinIII-tx HAS_MANPAGE)
 endif()
 
 
 if(BUILD_UTIL)
-  add_executable(bitcoinII-util bitcoinII-util.cpp)
-  add_windows_resources(bitcoinII-util bitcoinII-util-res.rc)
-  target_link_libraries(bitcoinII-util
+  add_executable(bitcoinIII-util bitcoinIII-util.cpp)
+  add_windows_resources(bitcoinIII-util bitcoinIII-util-res.rc)
+  target_link_libraries(bitcoinIII-util
     core_interface
-    bitcoinII_common
-    bitcoinII_util
+    bitcoinIII_common
+    bitcoinIII_util
   )
-  install_binary_component(bitcoinII-util HAS_MANPAGE)
+  install_binary_component(bitcoinIII-util HAS_MANPAGE)
 endif()
 
 
@@ -434,22 +434,22 @@ if(BUILD_KERNEL_LIB)
 endif()
 
 if(BUILD_UTIL_CHAINSTATE)
-  add_executable(bitcoinII-chainstate
-    bitcoinII-chainstate.cpp
+  add_executable(bitcoinIII-chainstate
+    bitcoinIII-chainstate.cpp
   )
   # TODO: The `SKIP_BUILD_RPATH` property setting can be deleted
   #       in the future after reordering Guix script commands to
   #       perform binary checks after the installation step.
   # Relevant discussions:
-  # - https://github.com/hebasto/bitcoinII/pull/236#issuecomment-2183120953
-  # - https://github.com/bitcoinII/bitcoinII/pull/30312#issuecomment-2191235833
-  set_target_properties(bitcoinII-chainstate PROPERTIES
+  # - https://github.com/hebasto/bitcoinIII/pull/236#issuecomment-2183120953
+  # - https://github.com/bitcoinIII/bitcoinIII/pull/30312#issuecomment-2191235833
+  set_target_properties(bitcoinIII-chainstate PROPERTIES
     SKIP_BUILD_RPATH OFF
   )
-  target_link_libraries(bitcoinII-chainstate
+  target_link_libraries(bitcoinIII-chainstate
     PRIVATE
       core_interface
-      bitcoinIIkernel
+      bitcoinIIIkernel
   )
 endif()
 

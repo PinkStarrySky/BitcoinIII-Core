@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2020 The BitcoinII Core developers
+// Copyright (c) 2009-2020 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_FLATFILE_H
-#define BITCOINII_FLATFILE_H
+#ifndef BITCOINIII_FLATFILE_H
+#define BITCOINIII_FLATFILE_H
 
 #include <string>
 
@@ -86,4 +86,4 @@ public:
     bool Flush(const FlatFilePos& pos, bool finalize = false) const;
 };
 
-#endif // BITCOINII_FLATFILE_H
+#endif // BITCOINIII_FLATFILE_H

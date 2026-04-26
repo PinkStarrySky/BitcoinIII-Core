@@ -1,9 +1,9 @@
-// Copyright (c) The BitcoinII Core developers
+// Copyright (c) The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_CLUSTER_LINEARIZE_H
-#define BITCOINII_CLUSTER_LINEARIZE_H
+#ifndef BITCOINIII_CLUSTER_LINEARIZE_H
+#define BITCOINIII_CLUSTER_LINEARIZE_H
 
 #include <algorithm>
 #include <numeric>
@@ -1338,4 +1338,4 @@ std::vector<ClusterIndex> MergeLinearizations(const DepGraph<SetType>& depgraph,
 
 } // namespace cluster_linearize
 
-#endif // BITCOINII_CLUSTER_LINEARIZE_H
+#endif // BITCOINIII_CLUSTER_LINEARIZE_H

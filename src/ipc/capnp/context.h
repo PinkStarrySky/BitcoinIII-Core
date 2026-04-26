@@ -1,9 +1,9 @@
-// Copyright (c) 2021 The BitcoinII Core developers
+// Copyright (c) 2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_IPC_CAPNP_CONTEXT_H
-#define BITCOINII_IPC_CAPNP_CONTEXT_H
+#ifndef BITCOINIII_IPC_CAPNP_CONTEXT_H
+#define BITCOINIII_IPC_CAPNP_CONTEXT_H
 
 #include <ipc/context.h>
 
@@ -20,4 +20,4 @@ struct Context : ipc::Context
 } // namespace capnp
 } // namespace ipc
 
-#endif // BITCOINII_IPC_CAPNP_CONTEXT_H
+#endif // BITCOINIII_IPC_CAPNP_CONTEXT_H

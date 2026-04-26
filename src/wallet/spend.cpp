@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2022 The BitcoinII Core developers
+// Copyright (c) 2021-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -1107,7 +1107,7 @@ static util::Result<CreatedTransactionResult> CreateTransactionInternal(
     // Do not, ever, assume that it's fine to change the fee rate if the user has explicitly
     // provided one
     if (coin_control.m_feerate && coin_selection_params.m_effective_feerate > *coin_control.m_feerate) {
-        return util::Error{strprintf(_("Fee rate (%s) is lower than the minimum fee rate setting (%s)"), coin_control.m_feerate->ToString(FeeEstimateMode::SAT2_VB), coin_selection_params.m_effective_feerate.ToString(FeeEstimateMode::SAT2_VB))};
+        return util::Error{strprintf(_("Fee rate (%s) is lower than the minimum fee rate setting (%s)"), coin_control.m_feerate->ToString(FeeEstimateMode::SAT3_VB), coin_selection_params.m_effective_feerate.ToString(FeeEstimateMode::SAT3_VB))};
     }
     if (feeCalc.reason == FeeReason::FALLBACK && !wallet.m_allow_fallback_fee) {
         // eventually allow a fallback fee
@@ -1126,7 +1126,7 @@ static util::Result<CreatedTransactionResult> CreateTransactionInternal(
 
     // The smallest change amount should be:
     // 1. at least equal to dust threshold
-    // 2. at least 1 sat2 greater than fees to spend it at m_discard_feerate
+    // 2. at least 1 sat3 greater than fees to spend it at m_discard_feerate
     const auto dust = GetDustThreshold(change_prototype_txout, coin_selection_params.m_discard_feerate);
     const auto change_spend_fee = coin_selection_params.m_discard_feerate.GetFee(coin_selection_params.change_spend_size);
     coin_selection_params.min_viable_change = std::max(change_spend_fee + 1, dust);

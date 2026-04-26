@@ -1,22 +1,22 @@
-# Copyright (c) 2023-present The BitcoinII Core developers
+# Copyright (c) 2023-present The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://opensource.org/license/mit/.
 
-add_library(bitcoinII_ipc STATIC EXCLUDE_FROM_ALL
+add_library(bitcoinIII_ipc STATIC EXCLUDE_FROM_ALL
   capnp/mining.cpp
   capnp/protocol.cpp
   interfaces.cpp
   process.cpp
 )
 
-target_capnp_sources(bitcoinII_ipc ${PROJECT_SOURCE_DIR}
+target_capnp_sources(bitcoinIII_ipc ${PROJECT_SOURCE_DIR}
   capnp/common.capnp
   capnp/echo.capnp
   capnp/init.capnp
   capnp/mining.capnp
 )
 
-target_link_libraries(bitcoinII_ipc
+target_link_libraries(bitcoinIII_ipc
   PRIVATE
     core_interface
     univalue

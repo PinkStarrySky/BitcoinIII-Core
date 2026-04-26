@@ -25,7 +25,7 @@ Developer Notes
     - [Threads](#threads)
     - [Ignoring IDE/editor files](#ignoring-ideeditor-files)
 - [Development guidelines](#development-guidelines)
-    - [General BitcoinII Core](#general-bitcoinII-core)
+    - [General BitcoinIII Core](#general-bitcoinIII-core)
     - [Wallet](#wallet)
     - [General C++](#general-c)
     - [C++ data structures](#c-data-structures)
@@ -247,7 +247,7 @@ Refer to [/test/functional/README.md#style-guidelines](/test/functional/README.m
 Coding Style (Doxygen-compatible comments)
 ------------------------------------------
 
-BitcoinII Core uses [Doxygen](https://www.doxygen.nl/) to generate its official documentation.
+BitcoinIII Core uses [Doxygen](https://www.doxygen.nl/) to generate its official documentation.
 
 Use Doxygen-compatible comment blocks for functions, methods, and fields.
 
@@ -400,8 +400,8 @@ If the code is behaving strangely, take a look in the `debug.log` file in the da
 error and debugging messages are written there.
 
 Debug logging can be enabled on startup with the `-debug` and `-loglevel`
-configuration options and toggled while bitcoinIId is running with the `logging`
-RPC.  For instance, launching bitcoinIId with `-debug` or `-debug=1` will turn on
+configuration options and toggled while bitcoinIIId is running with the `logging`
+RPC.  For instance, launching bitcoinIIId with `-debug` or `-debug=1` will turn on
 all log categories and `-loglevel=trace` will turn on all log severity levels.
 
 The Qt code routes `qDebug()` output to `debug.log` under category "qt": run with `-debug=qt`
@@ -411,7 +411,7 @@ to see it.
 
 If you are testing multi-machine code that needs to operate across the internet,
 you can run with either the `-signet` or the `-testnet` config option to test
-with "play bitcoinIIs" on a test network.
+with "play bitcoinIIIs" on a test network.
 
 If you are testing something that can run on one machine, run with the
 `-regtest` option.  In regression test mode, blocks can be created on demand;
@@ -419,7 +419,7 @@ see [test/functional/](/test/functional) for tests that run in `-regtest` mode.
 
 ### DEBUG_LOCKORDER
 
-BitcoinII Core is a multi-threaded application, and deadlocks or other
+BitcoinIII Core is a multi-threaded application, and deadlocks or other
 multi-threading bugs can be very difficult to track down. The `-DCMAKE_BUILD_TYPE=Debug`
 build option adds `-DDEBUG_LOCKORDER` to the compiler flags. This inserts
 run-time checks to keep track of which locks are held and adds warnings to the
@@ -435,9 +435,9 @@ The `-DCMAKE_BUILD_TYPE=Debug` build option adds `-DDEBUG_LOCKCONTENTION` to the
 compiler flags. You may also enable it manually by building with `-DDEBUG_LOCKCONTENTION`
 added to your CPPFLAGS, i.e. `-DAPPEND_CPPFLAGS="-DDEBUG_LOCKCONTENTION"`.
 
-You can then use the `-debug=lock` configuration option at bitcoinIId startup or
-`bitcoinII-cli logging '["lock"]'` at runtime to turn on lock contention logging.
-It can be toggled off again with `bitcoinII-cli logging [] '["lock"]'`.
+You can then use the `-debug=lock` configuration option at bitcoinIIId startup or
+`bitcoinIII-cli logging '["lock"]'` at runtime to turn on lock contention logging.
+It can be toggled off again with `bitcoinIII-cli logging [] '["lock"]'`.
 
 ### Assertions and Checks
 
@@ -470,15 +470,15 @@ other input.
 
 Valgrind is a programming tool for memory debugging, memory leak detection, and
 profiling. The repo contains a Valgrind suppressions file
-([`valgrind.supp`](https://github.com/bitcoinII/bitcoinII/blob/master/contrib/valgrind.supp))
+([`valgrind.supp`](https://github.com/bitcoinIII/bitcoinIII/blob/master/contrib/valgrind.supp))
 which includes known Valgrind warnings in our dependencies that cannot be fixed
 in-tree. Example use:
 
 ```shell
-$ valgrind --suppressions=contrib/valgrind.supp build/bin/test_bitcoinII
+$ valgrind --suppressions=contrib/valgrind.supp build/bin/test_bitcoinIII
 $ valgrind --suppressions=contrib/valgrind.supp --leak-check=full \
-      --show-leak-kinds=all build/bin/test_bitcoinII --log_level=test_suite
-$ valgrind -v --leak-check=full build/bin/bitcoinIId -printtoconsole
+      --show-leak-kinds=all build/bin/test_bitcoinIII --log_level=test_suite
+$ valgrind -v --leak-check=full build/bin/bitcoinIIId -printtoconsole
 $ ./build/test/functional/test_runner.py --valgrind
 ```
 
@@ -495,7 +495,7 @@ cmake -B build -DCMAKE_BUILD_TYPE=Coverage
 cmake --build build
 cmake -P build/Coverage.cmake
 
-# A coverage report will now be accessible at `./build/test_bitcoinII.coverage/index.html`,
+# A coverage report will now be accessible at `./build/test_bitcoinIII.coverage/index.html`,
 # which covers unit tests, and `./build/total.coverage/index.html`, which covers
 # unit and functional tests.
 ```
@@ -537,13 +537,13 @@ Make sure you [understand the security
 trade-offs](https://lwn.net/Articles/420403/) of setting these kernel
 parameters.
 
-To profile a running bitcoinIId process for 60 seconds, you could use an
+To profile a running bitcoinIIId process for 60 seconds, you could use an
 invocation of `perf record` like this:
 
 ```sh
 $ perf record \
     -g --call-graph dwarf --per-thread -F 140 \
-    -p `pgrep bitcoinIId` -- sleep 60
+    -p `pgrep bitcoinIIId` -- sleep 60
 ```
 
 You could then analyze the results by running:
@@ -559,7 +559,7 @@ See the functional test documentation for how to invoke perf within tests.
 
 ### Sanitizers
 
-BitcoinII Core can be compiled with various "sanitizers" enabled, which add
+BitcoinIII Core can be compiled with various "sanitizers" enabled, which add
 instrumentation for issues regarding things like memory safety, thread race
 conditions, or undefined behavior. This is controlled with the
 `-DSANITIZERS` cmake build flag, which should be a comma separated list of
@@ -631,8 +631,8 @@ and its `cs_KeyStore` lock for example).
 Threads
 -------
 
-- [Main thread (`bitcoinIId`)](https://doxygen.bitcoincore.org/bitcoinIId_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97)
-  : Started from `main()` in `bitcoinIId.cpp`. Responsible for starting up and
+- [Main thread (`bitcoinIIId`)](https://doxygen.bitcoincore.org/bitcoinIIId_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97)
+  : Started from `main()` in `bitcoinIIId.cpp`. Responsible for starting up and
   shutting down the application.
 
 - [Init load (`b-initload`)](https://doxygen.bitcoincore.org/namespacenode.html#ab4305679079866f0f420f7dbf278381d)
@@ -688,7 +688,7 @@ Ignoring IDE/editor files
 In closed-source environments in which everyone uses the same IDE, it is common
 to add temporary files it produces to the project-wide `.gitignore` file.
 
-However, in open source software such as BitcoinII Core, where everyone uses
+However, in open source software such as BitcoinIII Core, where everyone uses
 their own editors/IDE/tools, it is less common. Only you know what files your
 editor produces and this may change from version to version. The canonical way
 to do this is thus to create your local gitignore. Add this to `~/.gitconfig`:
@@ -718,9 +718,9 @@ Development guidelines
 ============================
 
 A few non-style-related recommendations for developers, as well as points to
-pay attention to for reviewers of BitcoinII Core code.
+pay attention to for reviewers of BitcoinIII Core code.
 
-General BitcoinII Core
+General BitcoinIII Core
 ----------------------
 
 - New features should be exposed on RPC first, then can be made available in the GUI.
@@ -940,7 +940,7 @@ Strings and formatting
 
 - For `strprintf`, `LogInfo`, `LogDebug`, etc formatting characters don't need size specifiers.
 
-  - *Rationale*: BitcoinII Core uses tinyformat, which is type safe. Leave them out to avoid confusion.
+  - *Rationale*: BitcoinIII Core uses tinyformat, which is type safe. Leave them out to avoid confusion.
 
 - Use `.c_str()` sparingly. Its only valid use is to pass C++ strings to C functions that take NULL-terminated
   strings.
@@ -1161,13 +1161,13 @@ namespace {
     the location of the source file actually is relevant.
 
 - Use include guards to avoid the problem of double inclusion. The header file
-  `foo/bar.h` should use the include guard identifier `BITCOINII_FOO_BAR_H`, e.g.
+  `foo/bar.h` should use the include guard identifier `BITCOINIII_FOO_BAR_H`, e.g.
 
 ```c++
-#ifndef BITCOINII_FOO_BAR_H
-#define BITCOINII_FOO_BAR_H
+#ifndef BITCOINIII_FOO_BAR_H
+#define BITCOINIII_FOO_BAR_H
 ...
-#endif // BITCOINII_FOO_BAR_H
+#endif // BITCOINIII_FOO_BAR_H
 ```
 
 GUI
@@ -1197,13 +1197,13 @@ Subtrees
 
 Several parts of the repository are subtrees of software maintained elsewhere.
 
-Some of these are maintained by active developers of BitcoinII Core, in which case
+Some of these are maintained by active developers of BitcoinIII Core, in which case
 changes should go directly upstream without being PRed directly against the project.
 They will be merged back in the next subtree merge.
 
 Others are external projects without a tight relationship with our project. Changes
 to these should also be sent upstream, but bugfixes may also be prudent to PR against
-a BitcoinII Core subtree, so that they can be integrated quickly. Cosmetic changes
+a BitcoinIII Core subtree, so that they can be integrated quickly. Cosmetic changes
 should be taken upstream.
 
 There is a tool in `test/lint/git-subtree-check.sh` ([instructions](../test/lint#git-subtree-checksh))
@@ -1212,7 +1212,7 @@ to check a subtree directory for consistency with its upstream repository.
 Current subtrees include:
 
 - src/leveldb
-  - Subtree at https://github.com/bitcoinII-core/leveldb-subtree ; maintained by Core contributors.
+  - Subtree at https://github.com/bitcoinIII-core/leveldb-subtree ; maintained by Core contributors.
   - Upstream at https://github.com/google/leveldb ; maintained by Google. Open
     important PRs to the subtree to avoid delay.
   - **Note**: Follow the instructions in [Upgrading LevelDB](#upgrading-leveldb) when
@@ -1220,17 +1220,17 @@ Current subtrees include:
 
 - src/crc32c
   - Used by leveldb for hardware acceleration of CRC32C checksums for data integrity.
-  - Subtree at https://github.com/bitcoinII-core/crc32c-subtree ; maintained by Core contributors.
+  - Subtree at https://github.com/bitcoinIII-core/crc32c-subtree ; maintained by Core contributors.
   - Upstream at https://github.com/google/crc32c ; maintained by Google.
 
 - src/secp256k1
-  - Upstream at https://github.com/bitcoinII-core/secp256k1/ ; maintained by Core contributors.
+  - Upstream at https://github.com/bitcoinIII-core/secp256k1/ ; maintained by Core contributors.
 
 - src/crypto/ctaes
-  - Upstream at https://github.com/bitcoinII-core/ctaes ; maintained by Core contributors.
+  - Upstream at https://github.com/bitcoinIII-core/ctaes ; maintained by Core contributors.
 
 - src/minisketch
-  - Upstream at https://github.com/bitcoinII-core/minisketch ; maintained by Core contributors.
+  - Upstream at https://github.com/bitcoinIII-core/minisketch ; maintained by Core contributors.
 
 Upgrading LevelDB
 ---------------------
@@ -1242,7 +1242,7 @@ you must be aware of.
 
 In most configurations, we use the default LevelDB value for `max_open_files`,
 which is 1000 at the time of this writing. If LevelDB actually uses this many
-file descriptors, it will cause problems with BitcoinII's `select()` loop, because
+file descriptors, it will cause problems with BitcoinIII's `select()` loop, because
 it may cause new sockets to be created where the fd value is >= 1024. For this
 reason, on 64-bit Unix systems, we rely on an internal LevelDB optimization that
 uses `mmap()` + `close()` to open table files without actually retaining
@@ -1253,7 +1253,7 @@ In addition to reviewing the upstream changes in `env_posix.cc`, you can use `ls
 check this. For example, on Linux this command will show open `.ldb` file counts:
 
 ```bash
-$ lsof -p $(pidof bitcoinIId) |\
+$ lsof -p $(pidof bitcoinIIId) |\
     awk 'BEGIN { fd=0; mem=0; } /ldb$/ { if ($4 == "mem") mem++; else fd++ } END { printf "mem = %s, fd = %s\n", mem, fd}'
 mem = 119, fd = 0
 ```
@@ -1268,14 +1268,14 @@ details.
 ### Consensus Compatibility
 
 It is possible for LevelDB changes to inadvertently change consensus
-compatibility between nodes. This happened in BitcoinII 0.8 (when LevelDB was
+compatibility between nodes. This happened in BitcoinIII 0.8 (when LevelDB was
 first introduced). When upgrading LevelDB, you should review the upstream changes
 to check for issues affecting consensus compatibility.
 
 For example, if LevelDB had a bug that accidentally prevented a key from being
 returned in an edge case, and that bug was fixed upstream, the bug "fix" would
 be an incompatible consensus change. In this situation, the correct behavior
-would be to revert the upstream fix before applying the updates to BitcoinII's
+would be to revert the upstream fix before applying the updates to BitcoinIII's
 copy of LevelDB. In general, you should be wary of any upstream changes affecting
 what data is returned from LevelDB queries.
 
@@ -1321,13 +1321,13 @@ introduce accidental changes.
 
 Some good examples of scripted-diff:
 
-- [scripted-diff: Rename InitInterfaces to NodeContext](https://github.com/bitcoinII/bitcoinII/commit/301bd41a2e6765b185bd55f4c541f9e27aeea29d)
+- [scripted-diff: Rename InitInterfaces to NodeContext](https://github.com/bitcoinIII/bitcoinIII/commit/301bd41a2e6765b185bd55f4c541f9e27aeea29d)
 uses an elegant script to replace occurrences of multiple terms in all source files.
 
-- [scripted-diff: Remove g_connman, g_banman globals](https://github.com/bitcoinII/bitcoinII/commit/8922d7f6b751a3e6b3b9f6fb7961c442877fb65a)
+- [scripted-diff: Remove g_connman, g_banman globals](https://github.com/bitcoinIII/bitcoinIII/commit/8922d7f6b751a3e6b3b9f6fb7961c442877fb65a)
 replaces specific terms in a list of specific source files.
 
-- [scripted-diff: Replace fprintf with tfm::format](https://github.com/bitcoinII/bitcoinII/commit/fac03ec43a15ad547161e37e53ea82482cc508f9)
+- [scripted-diff: Replace fprintf with tfm::format](https://github.com/bitcoinIII/bitcoinIII/commit/fac03ec43a15ad547161e37e53ea82482cc508f9)
 does a global replacement but excludes certain directories.
 
 To find all previous uses of scripted diffs in the repository, do:
@@ -1393,7 +1393,7 @@ A few guidelines for introducing and reviewing new RPC interfaces:
 - Try not to overload methods on argument type. E.g. don't make `getblock(true)` and `getblock("hash")`
   do different things.
 
-  - *Rationale*: This is impossible to use with `bitcoinII-cli`, and can be surprising to users.
+  - *Rationale*: This is impossible to use with `bitcoinIII-cli`, and can be surprising to users.
 
   - *Exception*: Some RPC calls can take both an `int` and `bool`, most notably when a bool was switched
     to a multi-value, or due to other historical reasons. **Always** have false map to 0 and
@@ -1411,7 +1411,7 @@ A few guidelines for introducing and reviewing new RPC interfaces:
 
 - Add every non-string RPC argument `(method, idx, name)` to the table `vRPCConvertParams` in `rpc/client.cpp`.
 
-  - *Rationale*: `bitcoinII-cli` and the GUI debug console use this table to determine how to
+  - *Rationale*: `bitcoinIII-cli` and the GUI debug console use this table to determine how to
     convert a plaintext command line to JSON. If the types don't match, the method can be unusable
     from there.
 
@@ -1432,7 +1432,7 @@ A few guidelines for introducing and reviewing new RPC interfaces:
   RPCs whose behavior does *not* depend on the current chainstate may omit this
   call.
 
-  - *Rationale*: In previous versions of BitcoinII Core, the wallet was always
+  - *Rationale*: In previous versions of BitcoinIII Core, the wallet was always
     in-sync with the chainstate (by virtue of them all being updated in the
     same cs_main lock). In order to maintain the behavior that wallet RPCs
     return results as of at least the highest best-known block an RPC
@@ -1578,4 +1578,4 @@ communication:
 
   Note: This last convention isn't generally followed outside of
   [`src/interfaces/`](../src/interfaces/), though it did come up for discussion
-  before in [#14635](https://github.com/bitcoinII/bitcoinII/pull/14635).
+  before in [#14635](https://github.com/bitcoinIII/bitcoinIII/pull/14635).

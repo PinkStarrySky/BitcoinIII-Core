@@ -1,9 +1,9 @@
-// Copyright (c) 2019-present The BitcoinII Core developers
+// Copyright (c) 2019-present The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UTIL_TRANSLATION_H
-#define BITCOINII_UTIL_TRANSLATION_H
+#ifndef BITCOINIII_UTIL_TRANSLATION_H
+#define BITCOINIII_UTIL_TRANSLATION_H
 
 #include <tinyformat.h>
 #include <util/string.h>
@@ -107,4 +107,4 @@ bilingual_str format(util::BilingualFmt<sizeof...(Args)> fmt, const Args&... arg
 }
 } // namespace tinyformat
 
-#endif // BITCOINII_UTIL_TRANSLATION_H
+#endif // BITCOINIII_UTIL_TRANSLATION_H

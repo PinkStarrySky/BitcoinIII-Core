@@ -1,9 +1,9 @@
-// Copyright (c) 2017-present The BitcoinII Core developers
+// Copyright (c) 2017-present The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_INDEX_BASE_H
-#define BITCOINII_INDEX_BASE_H
+#ifndef BITCOINIII_INDEX_BASE_H
+#define BITCOINIII_INDEX_BASE_H
 
 #include <dbwrapper.h>
 #include <interfaces/chain.h>
@@ -164,4 +164,4 @@ public:
     IndexSummary GetSummary() const;
 };
 
-#endif // BITCOINII_INDEX_BASE_H
+#endif // BITCOINIII_INDEX_BASE_H

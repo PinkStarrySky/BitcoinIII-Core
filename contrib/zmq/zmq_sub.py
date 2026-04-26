@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-# Copyright (c) 2014-2021 The BitcoinII Core developers
+# Copyright (c) 2014-2021 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 """
     ZMQ example using python3's asyncio
 
-    BitcoinII should be started with the command line arguments:
-        bitcoinIId -testnet -daemon \
+    BitcoinIII should be started with the command line arguments:
+        bitcoinIIId -testnet -daemon \
                 -zmqpubrawtx=tcp://127.0.0.1:28338 \
                 -zmqpubrawblock=tcp://127.0.0.1:28338 \
                 -zmqpubhashtx=tcp://127.0.0.1:28338 \
@@ -20,7 +20,7 @@
     alternative is to wrap the contents of `handle` inside `while True`.
 
     A blocking example using python 2.7 can be obtained from the git history:
-    https://github.com/bitcoinII/bitcoinII/blob/37a7fe9e440b83e2364d5498931253937abe9294/contrib/zmq/zmq_sub.py
+    https://github.com/bitcoinIII/bitcoinIII/blob/37a7fe9e440b83e2364d5498931253937abe9294/contrib/zmq/zmq_sub.py
 """
 
 import asyncio

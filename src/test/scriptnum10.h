@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2021 The BitcoinII Core developers
+// Copyright (c) 2009-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_TEST_SCRIPTNUM10_H
-#define BITCOINII_TEST_SCRIPTNUM10_H
+#ifndef BITCOINIII_TEST_SCRIPTNUM10_H
+#define BITCOINIII_TEST_SCRIPTNUM10_H
 
 #include <assert.h>
 #include <limits>
@@ -22,7 +22,7 @@ public:
 class CScriptNum10
 {
 /**
- * The ScriptNum implementation from BitcoinII Core 0.10.0, for cross-comparison.
+ * The ScriptNum implementation from BitcoinIII Core 0.10.0, for cross-comparison.
  */
 public:
 
@@ -179,4 +179,4 @@ private:
 };
 
 
-#endif // BITCOINII_TEST_SCRIPTNUM10_H
+#endif // BITCOINIII_TEST_SCRIPTNUM10_H

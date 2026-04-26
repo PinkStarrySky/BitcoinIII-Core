@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_NODE_MINER_H
-#define BITCOINII_NODE_MINER_H
+#ifndef BITCOINIII_NODE_MINER_H
+#define BITCOINIII_NODE_MINER_H
 
 #include <node/types.h>
 #include <policy/policy.h>
@@ -229,4 +229,4 @@ void RegenerateCommitments(CBlock& block, ChainstateManager& chainman);
 void ApplyArgsManOptions(const ArgsManager& gArgs, BlockAssembler::Options& options);
 } // namespace node
 
-#endif // BITCOINII_NODE_MINER_H
+#endif // BITCOINIII_NODE_MINER_H

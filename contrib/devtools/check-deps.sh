@@ -5,13 +5,13 @@ set -Eeuo pipefail
 
 # Declare paths to libraries
 declare -A LIBS
-LIBS[cli]="libbitcoinII_cli.a"
-LIBS[common]="libbitcoinII_common.a"
-LIBS[consensus]="libbitcoinII_consensus.a"
-LIBS[crypto]="libbitcoinII_crypto.a"
-LIBS[node]="libbitcoinII_node.a"
-LIBS[util]="libbitcoinII_util.a"
-LIBS[wallet]="libbitcoinII_wallet.a"
+LIBS[cli]="libbitcoinIII_cli.a"
+LIBS[common]="libbitcoinIII_common.a"
+LIBS[consensus]="libbitcoinIII_consensus.a"
+LIBS[crypto]="libbitcoinIII_crypto.a"
+LIBS[node]="libbitcoinIII_node.a"
+LIBS[util]="libbitcoinIII_util.a"
+LIBS[wallet]="libbitcoinIII_wallet.a"
 
 # Declare allowed dependencies "X Y" where X is allowed to depend on Y. This
 # list is taken from doc/design/libraries.md.
@@ -47,7 +47,7 @@ SUPPRESS["init.cpp.o bdb.cpp.o _ZN6wallet27BerkeleyDatabaseSanityCheckEv"]=1
 # init/common.cpp file calls InitError and InitWarning from interface_ui which
 # is currently part of the node library. interface_ui should just be part of the
 # common library instead, and is moved in
-# https://github.com/bitcoinII/bitcoinII/issues/10102
+# https://github.com/bitcoinIII/bitcoinIII/issues/10102
 SUPPRESS["common.cpp.o interface_ui.cpp.o _Z11InitWarningRK13bilingual_str"]=1
 SUPPRESS["common.cpp.o interface_ui.cpp.o _Z9InitErrorRK13bilingual_str"]=1
 

@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_STREAMS_H
-#define BITCOINII_STREAMS_H
+#ifndef BITCOINIII_STREAMS_H
+#define BITCOINIII_STREAMS_H
 
 #include <serialize.h>
 #include <span.h>
@@ -614,4 +614,4 @@ public:
     }
 };
 
-#endif // BITCOINII_STREAMS_H
+#endif // BITCOINIII_STREAMS_H

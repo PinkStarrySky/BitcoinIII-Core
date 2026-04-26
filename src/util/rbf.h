@@ -1,9 +1,9 @@
-// Copyright (c) 2016-2021 The BitcoinII Core developers
+// Copyright (c) 2016-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UTIL_RBF_H
-#define BITCOINII_UTIL_RBF_H
+#ifndef BITCOINIII_UTIL_RBF_H
+#define BITCOINIII_UTIL_RBF_H
 
 #include <cstdint>
 
@@ -20,4 +20,4 @@ static constexpr uint32_t MAX_BIP125_RBF_SEQUENCE{0xfffffffd};
 * party to be able to disable replacement by opting out in their own input. */
 bool SignalsOptInRBF(const CTransaction& tx);
 
-#endif // BITCOINII_UTIL_RBF_H
+#endif // BITCOINIII_UTIL_RBF_H

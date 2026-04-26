@@ -1,9 +1,9 @@
-// Copyright (c) 2017-present The BitcoinII Core developers
+// Copyright (c) 2017-present The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UTIL_FS_H
-#define BITCOINII_UTIL_FS_H
+#ifndef BITCOINIII_UTIL_FS_H
+#define BITCOINIII_UTIL_FS_H
 
 #include <tinyformat.h>
 
@@ -250,4 +250,4 @@ template<> inline void formatValue(std::ostream&, const char*, const char*, int,
 template<> inline void formatValue(std::ostream&, const char*, const char*, int, const fs::path&) = delete;
 } // namespace tinyformat
 
-#endif // BITCOINII_UTIL_FS_H
+#endif // BITCOINIII_UTIL_FS_H

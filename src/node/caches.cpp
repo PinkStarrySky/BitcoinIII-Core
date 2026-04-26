@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2022 The BitcoinII Core developers
+// Copyright (c) 2021-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -14,7 +14,7 @@
 #include <string>
 
 // Unlike for the UTXO database, for the txindex scenario the leveldb cache make
-// a meaningful difference: https://github.com/bitcoinII/bitcoinII/pull/8273#issuecomment-229601991
+// a meaningful difference: https://github.com/bitcoinIII/bitcoinIII/pull/8273#issuecomment-229601991
 //! Max memory allocated to tx index DB specific cache in bytes.
 static constexpr size_t MAX_TX_INDEX_CACHE{1024_MiB};
 //! Max memory allocated to all block filter index caches combined in bytes.

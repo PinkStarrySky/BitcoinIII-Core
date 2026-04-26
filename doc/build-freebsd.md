@@ -2,7 +2,7 @@
 
 **Updated for FreeBSD [14.0](https://www.freebsd.org/releases/14.0R/announce/)**
 
-This guide describes how to build bitcoinIId, command-line utilities, and GUI on FreeBSD.
+This guide describes how to build bitcoinIIId, command-line utilities, and GUI on FreeBSD.
 
 ## Preparation
 
@@ -15,16 +15,16 @@ pkg install boost-libs cmake git libevent pkgconf
 
 See [dependencies.md](dependencies.md) for a complete overview.
 
-### 2. Clone BitcoinII Repo
-Now that `git` and all the required dependencies are installed, let's clone the BitcoinII Core repository to a directory. All build scripts and commands will run from this directory.
+### 2. Clone BitcoinIII Repo
+Now that `git` and all the required dependencies are installed, let's clone the BitcoinIII Core repository to a directory. All build scripts and commands will run from this directory.
 ```bash
-git clone https://github.com/bitcoinII/bitcoinII.git
+git clone https://github.com/bitcoinIII/bitcoinIII.git
 ```
 
 ### 3. Install Optional Dependencies
 
 #### Wallet Dependencies
-It is not necessary to build wallet functionality to run either `bitcoinIId` or `bitcoinII-qt`.
+It is not necessary to build wallet functionality to run either `bitcoinIIId` or `bitcoinIII-qt`.
 
 ###### Descriptor Wallet Support
 
@@ -48,7 +48,7 @@ gmake -C depends NO_BOOST=1 NO_LIBEVENT=1 NO_QT=1 NO_SQLITE=1 NO_ZMQ=1 NO_USDT=1
 When the build is complete, the Berkeley DB installation location will be displayed:
 
 ```
-to: /path/to/bitcoinII/depends/x86_64-unknown-freebsd[release-number]
+to: /path/to/bitcoinIII/depends/x86_64-unknown-freebsd[release-number]
 ```
 
 Finally, set `BDB_PREFIX` to this path according to your shell:
@@ -64,7 +64,7 @@ sh/bash: export BDB_PREFIX=[path displayed above]
 #### GUI Dependencies
 ###### Qt5
 
-BitcoinII Core includes a GUI built with the cross-platform Qt Framework. To compile the GUI, we need to install
+BitcoinIII Core includes a GUI built with the cross-platform Qt Framework. To compile the GUI, we need to install
 the necessary parts of Qt, the libqrencode and pass `-DBUILD_GUI=ON`. Skip if you don't intend to use the GUI.
 
 ```bash
@@ -86,7 +86,7 @@ Otherwise, if you don't need QR encoding support, use the `-DWITH_QRENCODE=OFF` 
 #### Notifications
 ###### ZeroMQ
 
-BitcoinII Core can provide notifications via ZeroMQ. If the package is installed, support will be compiled in.
+BitcoinIII Core can provide notifications via ZeroMQ. If the package is installed, support will be compiled in.
 ```bash
 pkg install libzmq4
 ```
@@ -100,11 +100,11 @@ pkg install python3 databases/py-sqlite3 net/py-pyzmq
 ```
 ---
 
-## Building BitcoinII Core
+## Building BitcoinIII Core
 
 ### 1. Configuration
 
-There are many ways to configure BitcoinII Core, here are a few common examples:
+There are many ways to configure BitcoinIII Core, here are a few common examples:
 
 ##### Descriptor Wallet and GUI:
 This disables legacy wallet support and enables the GUI, assuming `sqlite` and `qt` are installed.

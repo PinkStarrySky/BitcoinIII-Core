@@ -9,7 +9,7 @@ project(libsecp256k1
   # backwards-compatible and therefore at most increase the minor version.
   VERSION 0.6.0
   DESCRIPTION "Optimized C library for ECDSA signatures and secret/public key operations on curve secp256k1."
-  HOMEPAGE_URL "https://github.com/bitcoinII-core/secp256k1"
+  HOMEPAGE_URL "https://github.com/bitcoinIII-core/secp256k1"
   LANGUAGES C
 )
 enable_testing()

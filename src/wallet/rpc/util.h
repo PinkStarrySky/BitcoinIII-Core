@@ -1,9 +1,9 @@
-// Copyright (c) 2017-present The BitcoinII Core developers
+// Copyright (c) 2017-present The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_WALLET_RPC_UTIL_H
-#define BITCOINII_WALLET_RPC_UTIL_H
+#ifndef BITCOINIII_WALLET_RPC_UTIL_H
+#define BITCOINIII_WALLET_RPC_UTIL_H
 
 #include <rpc/util.h>
 #include <script/script.h>
@@ -54,4 +54,4 @@ void HandleWalletError(const std::shared_ptr<CWallet> wallet, DatabaseStatus& st
 void AppendLastProcessedBlock(UniValue& entry, const CWallet& wallet) EXCLUSIVE_LOCKS_REQUIRED(wallet.cs_wallet);
 } //  namespace wallet
 
-#endif // BITCOINII_WALLET_RPC_UTIL_H
+#endif // BITCOINIII_WALLET_RPC_UTIL_H

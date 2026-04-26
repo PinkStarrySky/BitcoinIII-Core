@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-# Copyright (c) 2016-2022 The BitcoinII Core developers
+# Copyright (c) 2016-2022 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test Wallet commands for signing and verifying messages."""
 
-from test_framework.test_framework import BitcoinIITestFramework
+from test_framework.test_framework import BitcoinIIITestFramework
 from test_framework.util import (
     assert_raises_rpc_error,
 )
 
-class SignMessagesWithAddressTest(BitcoinIITestFramework):
+class SignMessagesWithAddressTest(BitcoinIIITestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser)
 

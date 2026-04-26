@@ -1,9 +1,9 @@
-// Copyright (c) 2024 The BitcoinII Core developers
+// Copyright (c) 2024 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_NODE_TXDOWNLOADMAN_H
-#define BITCOINII_NODE_TXDOWNLOADMAN_H
+#ifndef BITCOINIII_NODE_TXDOWNLOADMAN_H
+#define BITCOINIII_NODE_TXDOWNLOADMAN_H
 
 #include <net.h>
 #include <policy/packages.h>
@@ -175,4 +175,4 @@ public:
     std::vector<TxOrphanage::OrphanTxBase> GetOrphanTransactions() const;
 };
 } // namespace node
-#endif // BITCOINII_NODE_TXDOWNLOADMAN_H
+#endif // BITCOINIII_NODE_TXDOWNLOADMAN_H

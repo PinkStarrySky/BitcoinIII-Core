@@ -1,9 +1,9 @@
-// Copyright (c) 2022 The BitcoinII Core developers
+// Copyright (c) 2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UTIL_RESULT_H
-#define BITCOINII_UTIL_RESULT_H
+#ifndef BITCOINIII_UTIL_RESULT_H
+#define BITCOINIII_UTIL_RESULT_H
 
 #include <attributes.h>
 #include <util/translation.h>
@@ -96,4 +96,4 @@ bilingual_str ErrorString(const Result<T>& result)
 }
 } // namespace util
 
-#endif // BITCOINII_UTIL_RESULT_H
+#endif // BITCOINIII_UTIL_RESULT_H

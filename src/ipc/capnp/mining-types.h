@@ -1,9 +1,9 @@
-// Copyright (c) 2024 The BitcoinII Core developers
+// Copyright (c) 2024 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_IPC_CAPNP_MINING_TYPES_H
-#define BITCOINII_IPC_CAPNP_MINING_TYPES_H
+#ifndef BITCOINIII_IPC_CAPNP_MINING_TYPES_H
+#define BITCOINIII_IPC_CAPNP_MINING_TYPES_H
 
 #include <interfaces/mining.h>
 #include <ipc/capnp/common.capnp.proxy-types.h>
@@ -23,4 +23,4 @@ void CustomReadMessage(InvokeContext& invoke_context,
                        BlockValidationState& dest);
 } // namespace mp
 
-#endif // BITCOINII_IPC_CAPNP_MINING_TYPES_H
+#endif // BITCOINIII_IPC_CAPNP_MINING_TYPES_H

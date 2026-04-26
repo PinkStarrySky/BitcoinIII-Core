@@ -1,4 +1,4 @@
-// Copyright (c) 2023 BitcoinII Developers
+// Copyright (c) 2023 BitcoinIII Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,7 +7,7 @@
 
 #include <clang-tidy/ClangTidyCheck.h>
 
-namespace bitcoinII {
+namespace bitcoinIII {
 
 // Warn about any thread_local variable with a non-trivial destructor.
 class NonTrivialThreadLocal final : public clang::tidy::ClangTidyCheck
@@ -24,6 +24,6 @@ public:
     void check(const clang::ast_matchers::MatchFinder::MatchResult& Result) override;
 };
 
-} // namespace bitcoinII
+} // namespace bitcoinIII
 
 #endif // NONTRIVIAL_THREADLOCAL_CHECK_H

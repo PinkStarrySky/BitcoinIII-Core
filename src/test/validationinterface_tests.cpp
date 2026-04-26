@@ -1,4 +1,4 @@
-// Copyright (c) 2020 The BitcoinII Core developers
+// Copyright (c) 2020 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -77,7 +77,7 @@ public:
 
 // Regression test to ensure UnregisterAllValidationInterfaces calls don't
 // destroy a validation interface while it is being called. Bug:
-// https://github.com/bitcoinII/bitcoinII/pull/18551
+// https://github.com/bitcoinIII/bitcoinIII/pull/18551
 BOOST_AUTO_TEST_CASE(unregister_all_during_call)
 {
     bool destroyed = false;

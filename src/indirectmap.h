@@ -1,9 +1,9 @@
-// Copyright (c) 2016-2020 The BitcoinII Core developers
+// Copyright (c) 2016-2020 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_INDIRECTMAP_H
-#define BITCOINII_INDIRECTMAP_H
+#ifndef BITCOINIII_INDIRECTMAP_H
+#define BITCOINIII_INDIRECTMAP_H
 
 #include <map>
 
@@ -55,4 +55,4 @@ public:
     const_iterator cend() const     { return m.cend(); }
 };
 
-#endif // BITCOINII_INDIRECTMAP_H
+#endif // BITCOINIII_INDIRECTMAP_H

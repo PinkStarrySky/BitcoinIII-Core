@@ -1,10 +1,10 @@
 // Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2009-2021 The BitcoinII Core developers
+// Copyright (c) 2009-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_RPC_REQUEST_H
-#define BITCOINII_RPC_REQUEST_H
+#ifndef BITCOINIII_RPC_REQUEST_H
+#define BITCOINIII_RPC_REQUEST_H
 
 #include <any>
 #include <optional>
@@ -18,7 +18,7 @@ enum class JSONRPCVersion {
     V2
 };
 
-/** JSON-RPC 2.0 request, only used in bitcoinII-cli **/
+/** JSON-RPC 2.0 request, only used in bitcoinIII-cli **/
 UniValue JSONRPCRequestObj(const std::string& strMethod, const UniValue& params, const UniValue& id);
 UniValue JSONRPCReplyObj(UniValue result, UniValue error, std::optional<UniValue> id, JSONRPCVersion jsonrpc_version);
 UniValue JSONRPCError(int code, const std::string& message);
@@ -49,4 +49,4 @@ public:
     [[nodiscard]] bool IsNotification() const { return !id.has_value() && m_json_version == JSONRPCVersion::V2; };
 };
 
-#endif // BITCOINII_RPC_REQUEST_H
+#endif // BITCOINIII_RPC_REQUEST_H

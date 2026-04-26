@@ -1,9 +1,9 @@
-// Copyright (c) 2016-2021 The BitcoinII Core developers
+// Copyright (c) 2016-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_DEPLOYMENTINFO_H
-#define BITCOINII_DEPLOYMENTINFO_H
+#ifndef BITCOINIII_DEPLOYMENTINFO_H
+#define BITCOINIII_DEPLOYMENTINFO_H
 
 #include <consensus/params.h>
 
@@ -29,4 +29,4 @@ inline std::string DeploymentName(Consensus::DeploymentPos pos)
 
 std::optional<Consensus::BuriedDeployment> GetBuriedDeployment(const std::string_view deployment_name);
 
-#endif // BITCOINII_DEPLOYMENTINFO_H
+#endif // BITCOINIII_DEPLOYMENTINFO_H

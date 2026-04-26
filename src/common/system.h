@@ -1,12 +1,12 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-present The BitcoinII Core developers
+// Copyright (c) 2009-present The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_COMMON_SYSTEM_H
-#define BITCOINII_COMMON_SYSTEM_H
+#ifndef BITCOINIII_COMMON_SYSTEM_H
+#define BITCOINIII_COMMON_SYSTEM_H
 
-#include <bitcoinII-build-config.h> // IWYU pragma: keep
+#include <bitcoinIII-build-config.h> // IWYU pragma: keep
 
 #include <cstdint>
 #include <string>
@@ -29,4 +29,4 @@ void runCommand(const std::string& strCommand);
  */
 int GetNumCores();
 
-#endif // BITCOINII_COMMON_SYSTEM_H
+#endif // BITCOINIII_COMMON_SYSTEM_H

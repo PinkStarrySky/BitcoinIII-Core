@@ -1,9 +1,9 @@
-// Copyright (c) 2021-present The BitcoinII Core developers
+// Copyright (c) 2021-present The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UTIL_OVERLOADED_H
-#define BITCOINII_UTIL_OVERLOADED_H
+#ifndef BITCOINIII_UTIL_OVERLOADED_H
+#define BITCOINIII_UTIL_OVERLOADED_H
 
 namespace util {
 //! Overloaded helper for std::visit. This helper and std::visit in general are
@@ -19,4 +19,4 @@ template<class... Ts> struct Overloaded : Ts... { using Ts::operator()...; };
 template<class... Ts> Overloaded(Ts...) -> Overloaded<Ts...>;
 } // namespace util
 
-#endif // BITCOINII_UTIL_OVERLOADED_H
+#endif // BITCOINIII_UTIL_OVERLOADED_H

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2018-2021 The BitcoinII Core developers
+# Copyright (c) 2018-2021 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test the blocksdir option.
@@ -8,10 +8,10 @@
 import shutil
 from pathlib import Path
 
-from test_framework.test_framework import BitcoinIITestFramework, initialize_datadir
+from test_framework.test_framework import BitcoinIIITestFramework, initialize_datadir
 
 
-class BlocksdirTest(BitcoinIITestFramework):
+class BlocksdirTest(BitcoinIIITestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1

@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2022 The BitcoinII Core developers
+// Copyright (c) 2011-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_SENDCOINSDIALOG_H
-#define BITCOINII_QT_SENDCOINSDIALOG_H
+#ifndef BITCOINIII_QT_SENDCOINSDIALOG_H
+#define BITCOINIII_QT_SENDCOINSDIALOG_H
 
 #include <qt/clientmodel.h>
 #include <qt/walletmodel.h>
@@ -29,7 +29,7 @@ QT_BEGIN_NAMESPACE
 class QUrl;
 QT_END_NAMESPACE
 
-/** Dialog for sending bitcoinIIs */
+/** Dialog for sending bitcoinIIIs */
 class SendCoinsDialog : public QDialog
 {
     Q_OBJECT
@@ -148,4 +148,4 @@ private:
     QString m_psbt_button_text{tr("Create Unsigned")};
 };
 
-#endif // BITCOINII_QT_SENDCOINSDIALOG_H
+#endif // BITCOINIII_QT_SENDCOINSDIALOG_H

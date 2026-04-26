@@ -1,6 +1,6 @@
-# User-space, Statically Defined Tracing (USDT) for BitcoinII Core
+# User-space, Statically Defined Tracing (USDT) for BitcoinIII Core
 
-BitcoinII Core includes statically defined tracepoints to allow for more
+BitcoinIII Core includes statically defined tracepoints to allow for more
 observability during development, debugging, code review, and production usage.
 These tracepoints make it possible to keep track of custom statistics and
 enable detailed monitoring of otherwise hidden internals. They have
@@ -11,7 +11,7 @@ eBPF and USDT Overview
 ======================
 
                 ┌──────────────────┐            ┌──────────────┐
-                │ tracing script   │            │ bitcoinIId     │
+                │ tracing script   │            │ bitcoinIIId     │
                 │==================│      2.    │==============│
                 │  eBPF  │ tracing │      hooks │              │
                 │  code  │ logic   │      into┌─┤►tracepoint 1─┼───┐ 3.
@@ -171,7 +171,7 @@ Arguments passed:
 
 The following tracepoints cover the in-memory UTXO cache. UTXOs are, for example,
 added to and removed (spent) from the cache when we connect a new block.
-**Note**: BitcoinII Core uses temporary clones of the _main_ UTXO cache
+**Note**: BitcoinIII Core uses temporary clones of the _main_ UTXO cache
 (`chainstate.CoinsTip()`). For example, the RPCs `generateblock` and
 `getblocktemplate` call `TestBlockValidity()`, which applies the UTXO set
 changes to a temporary cache. Similarly, mempool consistency checks, which are
@@ -323,7 +323,7 @@ Arguments passed:
 1. Transaction ID (hash) as `pointer to unsigned chars` (i.e. 32 bytes in little-endian)
 2. Reject reason as `pointer to C-style String` (max. length 118 characters)
 
-## Adding tracepoints to BitcoinII Core
+## Adding tracepoints to BitcoinIII Core
 
 Use the `TRACEPOINT` macro to add a new tracepoint. If not yet included, include
 `util/trace.h` (defines the tracepoint macros) with `#include <util/trace.h>`.
@@ -422,31 +422,31 @@ maximum expected string size if known.
 
 ## Listing available tracepoints
 
-Multiple tools can list the available tracepoints in a `bitcoinIId` binary with
+Multiple tools can list the available tracepoints in a `bitcoinIIId` binary with
 USDT support.
 
 ### GDB - GNU Project Debugger
 
-To list probes in BitcoinII Core, use `info probes` in `gdb`:
+To list probes in BitcoinIII Core, use `info probes` in `gdb`:
 
 ```
-$ gdb ./build/bin/bitcoinIId
+$ gdb ./build/bin/bitcoinIIId
 …
 (gdb) info probes
 Type Provider   Name             Where              Semaphore Object
-stap net        inbound_message  0x000000000014419e 0x0000000000d29bd2 /build/bin/bitcoinIId
-stap net        outbound_message 0x0000000000107c05 0x0000000000d29bd0 /build/bin/bitcoinIId
-stap validation block_connected  0x00000000002fb10c 0x0000000000d29bd8 /build/bin/bitcoinIId
+stap net        inbound_message  0x000000000014419e 0x0000000000d29bd2 /build/bin/bitcoinIIId
+stap net        outbound_message 0x0000000000107c05 0x0000000000d29bd0 /build/bin/bitcoinIIId
+stap validation block_connected  0x00000000002fb10c 0x0000000000d29bd8 /build/bin/bitcoinIIId
 …
 ```
 
 ### With `readelf`
 
-The `readelf` tool can be used to display the USDT tracepoints in BitcoinII Core.
+The `readelf` tool can be used to display the USDT tracepoints in BitcoinIII Core.
 Look for the notes with the description `NT_STAPSDT`.
 
 ```
-$ readelf -n ./build/bin/bitcoinIId | grep NT_STAPSDT -A 4 -B 2
+$ readelf -n ./build/bin/bitcoinIIId | grep NT_STAPSDT -A 4 -B 2
 Displaying notes found in: .note.stapsdt
   Owner                 Data size	Description
   stapsdt              0x0000005d	NT_STAPSDT (SystemTap probe descriptors)
@@ -470,7 +470,7 @@ between distributions. For example, on
 [ubuntu binary]: https://github.com/iovisor/bcc/blob/master/INSTALL.md#ubuntu---binary
 
 ```
-$ tplist -l ./build/bin/bitcoinIId -v
+$ tplist -l ./build/bin/bitcoinIIId -v
 b'net':b'outbound_message' [sema 0xd29bd0]
   1 location(s)
   6 argument(s)

@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2021 The BitcoinII Core developers
+// Copyright (c) 2009-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_COMPRESSOR_H
-#define BITCOINII_COMPRESSOR_H
+#ifndef BITCOINIII_COMPRESSOR_H
+#define BITCOINIII_COMPRESSOR_H
 
 #include <prevector.h>
 #include <primitives/transaction.h>
@@ -115,4 +115,4 @@ struct TxOutCompression
     FORMATTER_METHODS(CTxOut, obj) { READWRITE(Using<AmountCompression>(obj.nValue), Using<ScriptCompression>(obj.scriptPubKey)); }
 };
 
-#endif // BITCOINII_COMPRESSOR_H
+#endif // BITCOINIII_COMPRESSOR_H

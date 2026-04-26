@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2014-2022 The BitcoinII Core developers
+# Copyright (c) 2014-2022 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test mining RPCs
@@ -33,7 +33,7 @@ from test_framework.messages import (
     WITNESS_SCALE_FACTOR
 )
 from test_framework.p2p import P2PDataStore
-from test_framework.test_framework import BitcoinIITestFramework
+from test_framework.test_framework import BitcoinIIITestFramework
 from test_framework.util import (
     assert_equal,
     assert_greater_than_or_equal,
@@ -62,7 +62,7 @@ def assert_template(node, block, expect, rehash=True):
     assert_equal(rsp, expect)
 
 
-class MiningTest(BitcoinIITestFramework):
+class MiningTest(BitcoinIIITestFramework):
     def set_test_params(self):
         self.num_nodes = 3
         self.extra_args = [

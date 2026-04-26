@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-# Copyright (c) 2021-2022 The BitcoinII Core developers
+# Copyright (c) 2021-2022 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test logic for limiting mempool and package ancestors/descendants."""
 from test_framework.blocktools import COINBASE_MATURITY
-from test_framework.test_framework import BitcoinIITestFramework
+from test_framework.test_framework import BitcoinIIITestFramework
 from test_framework.util import (
     assert_equal,
 )
@@ -35,7 +35,7 @@ def check_package_limits(func):
     return func_wrapper
 
 
-class MempoolPackageLimitsTest(BitcoinIITestFramework):
+class MempoolPackageLimitsTest(BitcoinIIITestFramework):
     def set_test_params(self):
         self.num_nodes = 1
         self.setup_clean_chain = True

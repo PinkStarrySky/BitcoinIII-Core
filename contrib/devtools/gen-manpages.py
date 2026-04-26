@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2022 The BitcoinII Core developers
+# Copyright (c) 2022 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 import os
@@ -9,12 +9,12 @@ import tempfile
 import argparse
 
 BINARIES = [
-'bin/bitcoinIId',
-'bin/bitcoinII-cli',
-'bin/bitcoinII-tx',
-'bin/bitcoinII-wallet',
-'bin/bitcoinII-util',
-'bin/bitcoinII-qt',
+'bin/bitcoinIIId',
+'bin/bitcoinIII-cli',
+'bin/bitcoinIII-tx',
+'bin/bitcoinIII-wallet',
+'bin/bitcoinIII-util',
+'bin/bitcoinIII-qt',
 ]
 
 parser = argparse.ArgumentParser(

@@ -1,9 +1,9 @@
-// Copyright (c) 2019-2020 The BitcoinII Core developers
+// Copyright (c) 2019-2020 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_TEST_UTIL_TRANSACTION_UTILS_H
-#define BITCOINII_TEST_UTIL_TRANSACTION_UTILS_H
+#ifndef BITCOINIII_TEST_UTIL_TRANSACTION_UTILS_H
+#define BITCOINIII_TEST_UTIL_TRANSACTION_UTILS_H
 
 #include <primitives/transaction.h>
 #include <script/sign.h>
@@ -50,4 +50,4 @@ bool SignSignature(const SigningProvider &provider, const CScript& fromPubKey, C
 bool SignSignature(const SigningProvider &provider, const CTransaction& txFrom, CMutableTransaction& txTo,
                    unsigned int nIn, int nHashType, SignatureData& sig_data);
 
-#endif // BITCOINII_TEST_UTIL_TRANSACTION_UTILS_H
+#endif // BITCOINIII_TEST_UTIL_TRANSACTION_UTILS_H

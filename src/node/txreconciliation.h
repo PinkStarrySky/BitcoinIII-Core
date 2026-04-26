@@ -1,9 +1,9 @@
-// Copyright (c) 2022 The BitcoinII Core developers
+// Copyright (c) 2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_NODE_TXRECONCILIATION_H
-#define BITCOINII_NODE_TXRECONCILIATION_H
+#ifndef BITCOINIII_NODE_TXRECONCILIATION_H
+#define BITCOINIII_NODE_TXRECONCILIATION_H
 
 #include <net.h>
 #include <sync.h>
@@ -86,4 +86,4 @@ public:
     bool IsPeerRegistered(NodeId peer_id) const;
 };
 
-#endif // BITCOINII_NODE_TXRECONCILIATION_H
+#endif // BITCOINIII_NODE_TXRECONCILIATION_H

@@ -1,9 +1,9 @@
-// Copyright (c) 2014-2021 The BitcoinII Core developers
+// Copyright (c) 2014-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_WINSHUTDOWNMONITOR_H
-#define BITCOINII_QT_WINSHUTDOWNMONITOR_H
+#ifndef BITCOINIII_QT_WINSHUTDOWNMONITOR_H
+#define BITCOINIII_QT_WINSHUTDOWNMONITOR_H
 
 #ifdef WIN32
 #include <QByteArray>
@@ -34,4 +34,4 @@ private:
 };
 #endif
 
-#endif // BITCOINII_QT_WINSHUTDOWNMONITOR_H
+#endif // BITCOINIII_QT_WINSHUTDOWNMONITOR_H

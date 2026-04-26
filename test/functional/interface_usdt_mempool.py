@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-# Copyright (c) 2022 The BitcoinII Core developers
+# Copyright (c) 2022 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 """  Tests the mempool:* tracepoint API interface.
-     See https://github.com/bitcoinII/bitcoinII/blob/master/doc/tracing.md#context-mempool
+     See https://github.com/bitcoinIII/bitcoinIII/blob/master/doc/tracing.md#context-mempool
 """
 
 import ctypes
@@ -19,7 +19,7 @@ except ImportError:
 from test_framework.blocktools import COINBASE_MATURITY
 from test_framework.messages import COIN, DEFAULT_MEMPOOL_EXPIRY_HOURS
 from test_framework.p2p import P2PDataStore
-from test_framework.test_framework import BitcoinIITestFramework
+from test_framework.test_framework import BitcoinIIITestFramework
 from test_framework.util import assert_equal
 from test_framework.wallet import MiniWallet
 
@@ -145,14 +145,14 @@ class MempoolReplaced(ctypes.Structure):
     ]
 
 
-class MempoolTracepointTest(BitcoinIITestFramework):
+class MempoolTracepointTest(BitcoinIIITestFramework):
     def set_test_params(self):
         self.num_nodes = 1
         self.setup_clean_chain = True
 
     def skip_test_if_missing_module(self):
         self.skip_if_platform_not_linux()
-        self.skip_if_no_bitcoinIId_tracepoints()
+        self.skip_if_no_bitcoinIIId_tracepoints()
         self.skip_if_no_python_bcc()
         self.skip_if_no_bpf_permissions()
 

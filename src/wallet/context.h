@@ -1,9 +1,9 @@
-// Copyright (c) 2020-2021 The BitcoinII Core developers
+// Copyright (c) 2020-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_WALLET_CONTEXT_H
-#define BITCOINII_WALLET_CONTEXT_H
+#ifndef BITCOINIII_WALLET_CONTEXT_H
+#define BITCOINIII_WALLET_CONTEXT_H
 
 #include <sync.h>
 
@@ -51,4 +51,4 @@ struct WalletContext {
 };
 } // namespace wallet
 
-#endif // BITCOINII_WALLET_CONTEXT_H
+#endif // BITCOINIII_WALLET_CONTEXT_H

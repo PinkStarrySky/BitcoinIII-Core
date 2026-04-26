@@ -1,9 +1,9 @@
-// Copyright (c) 2019-present The BitcoinII Core developers
+// Copyright (c) 2019-present The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_SCRIPT_MINISCRIPT_H
-#define BITCOINII_SCRIPT_MINISCRIPT_H
+#ifndef BITCOINIII_SCRIPT_MINISCRIPT_H
+#define BITCOINIII_SCRIPT_MINISCRIPT_H
 
 #include <algorithm>
 #include <compare>
@@ -2246,7 +2246,7 @@ enum class DecodeContext {
     ENDIF_ELSE,
 };
 
-//! Parse a miniscript from a bitcoinII script
+//! Parse a miniscript from a bitcoinIII script
 template<typename Key, typename Ctx, typename I>
 inline NodeRef<Key> DecodeScript(I& in, I last, const Ctx& ctx)
 {
@@ -2657,4 +2657,4 @@ inline NodeRef<typename Ctx::Key> FromScript(const CScript& script, const Ctx& c
 
 } // namespace miniscript
 
-#endif // BITCOINII_SCRIPT_MINISCRIPT_H
+#endif // BITCOINIII_SCRIPT_MINISCRIPT_H

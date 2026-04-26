@@ -1,9 +1,9 @@
-// Copyright (c) 2021 The BitcoinII Core developers
+// Copyright (c) 2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_NODE_MINISKETCHWRAPPER_H
-#define BITCOINII_NODE_MINISKETCHWRAPPER_H
+#ifndef BITCOINIII_NODE_MINISKETCHWRAPPER_H
+#define BITCOINIII_NODE_MINISKETCHWRAPPER_H
 
 #include <minisketch.h>
 
@@ -17,4 +17,4 @@ Minisketch MakeMinisketch32(size_t capacity);
 Minisketch MakeMinisketch32FP(size_t max_elements, uint32_t fpbits);
 } // namespace node
 
-#endif // BITCOINII_NODE_MINISKETCHWRAPPER_H
+#endif // BITCOINIII_NODE_MINISKETCHWRAPPER_H

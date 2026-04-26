@@ -1,12 +1,12 @@
-// Copyright (c) 2011-2022 The BitcoinII Core developers
+// Copyright (c) 2011-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_OPTIONSMODEL_H
-#define BITCOINII_QT_OPTIONSMODEL_H
+#ifndef BITCOINIII_QT_OPTIONSMODEL_H
+#define BITCOINIII_QT_OPTIONSMODEL_H
 
 #include <cstdint>
-#include <qt/bitcoinIIunits.h>
+#include <qt/bitcoinIIIunits.h>
 #include <qt/guiconstants.h>
 
 #include <QAbstractListModel>
@@ -33,7 +33,7 @@ static inline int PruneMiBtoGB(int64_t mib) { return (mib * 1024 * 1024 + GB_BYT
  */
 static inline int64_t PruneGBtoMiB(int gb) { return gb * GB_BYTES / 1024 / 1024; }
 
-/** Interface from Qt to configuration data structure for BitcoinII client.
+/** Interface from Qt to configuration data structure for BitcoinIII client.
    To Qt, the options are presented as a list with the different options
    laid out vertically.
    This can be changed to a tree once the settings become sufficiently
@@ -58,7 +58,7 @@ public:
         ProxyUseTor,            // bool
         ProxyIPTor,             // QString
         ProxyPortTor,           // int
-        DisplayUnit,            // BitcoinIIUnit
+        DisplayUnit,            // BitcoinIIIUnit
         ThirdPartyTxUrls,       // QString
         Language,               // QString
         FontForMoney,           // FontChoice
@@ -72,7 +72,7 @@ public:
         SpendZeroConfChange,    // bool
         Listen,                 // bool
         Server,                 // bool
-        EnablePSBC2ontrols,     // bool
+        EnablePSBC3ontrols,     // bool
         MaskValues,             // bool
         OptionIDRowCount,
     };
@@ -100,12 +100,12 @@ public:
     bool getShowTrayIcon() const { return m_show_tray_icon; }
     bool getMinimizeToTray() const { return fMinimizeToTray; }
     bool getMinimizeOnClose() const { return fMinimizeOnClose; }
-    BitcoinIIUnit getDisplayUnit() const { return m_display_bitcoinII_unit; }
+    BitcoinIIIUnit getDisplayUnit() const { return m_display_bitcoinIII_unit; }
     QString getThirdPartyTxUrls() const { return strThirdPartyTxUrls; }
     QFont getFontForMoney() const;
     bool getCoinControlFeatures() const { return fCoinControlFeatures; }
     bool getSubFeeFromAmount() const { return m_sub_fee_from_amount; }
-    bool getEnablePSBC2ontrols() const { return m_enable_psbt_controls; }
+    bool getEnablePSBC3ontrols() const { return m_enable_psbt_controls; }
     const QString& getOverriddenByCommandLine() { return strOverriddenByCommandLine; }
 
     /** Whether -signer was set or not */
@@ -127,7 +127,7 @@ private:
     bool fMinimizeToTray;
     bool fMinimizeOnClose;
     QString language;
-    BitcoinIIUnit m_display_bitcoinII_unit;
+    BitcoinIIIUnit m_display_bitcoinIII_unit;
     QString strThirdPartyTxUrls;
     FontChoice m_font_money{FontChoiceAbstract::EmbeddedFont};
     bool fCoinControlFeatures;
@@ -148,7 +148,7 @@ private:
     void checkAndMigrate();
 
 Q_SIGNALS:
-    void displayUnitChanged(BitcoinIIUnit unit);
+    void displayUnitChanged(BitcoinIIIUnit unit);
     void coinControlFeaturesChanged(bool);
     void showTrayIconChanged(bool);
     void fontForMoneyChanged(const QFont&);
@@ -156,4 +156,4 @@ Q_SIGNALS:
 
 Q_DECLARE_METATYPE(OptionsModel::FontChoice)
 
-#endif // BITCOINII_QT_OPTIONSMODEL_H
+#endif // BITCOINIII_QT_OPTIONSMODEL_H

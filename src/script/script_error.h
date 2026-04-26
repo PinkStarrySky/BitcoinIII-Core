@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2020 The BitcoinII Core developers
+// Copyright (c) 2009-2020 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_SCRIPT_SCRIPT_ERROR_H
-#define BITCOINII_SCRIPT_SCRIPT_ERROR_H
+#ifndef BITCOINIII_SCRIPT_SCRIPT_ERROR_H
+#define BITCOINIII_SCRIPT_SCRIPT_ERROR_H
 
 #include <string>
 
@@ -89,4 +89,4 @@ typedef enum ScriptError_t
 
 std::string ScriptErrorString(const ScriptError error);
 
-#endif // BITCOINII_SCRIPT_SCRIPT_ERROR_H
+#endif // BITCOINIII_SCRIPT_SCRIPT_ERROR_H

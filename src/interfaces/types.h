@@ -1,9 +1,9 @@
-// Copyright (c) 2024 The BitcoinII Core developers
+// Copyright (c) 2024 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_INTERFACES_TYPES_H
-#define BITCOINII_INTERFACES_TYPES_H
+#ifndef BITCOINIII_INTERFACES_TYPES_H
+#define BITCOINIII_INTERFACES_TYPES_H
 
 #include <uint256.h>
 
@@ -17,4 +17,4 @@ struct BlockRef {
 
 } // namespace interfaces
 
-#endif // BITCOINII_INTERFACES_TYPES_H
+#endif // BITCOINIII_INTERFACES_TYPES_H

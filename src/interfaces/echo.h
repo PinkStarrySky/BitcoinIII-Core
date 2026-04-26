@@ -1,9 +1,9 @@
-// Copyright (c) 2021 The BitcoinII Core developers
+// Copyright (c) 2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_INTERFACES_ECHO_H
-#define BITCOINII_INTERFACES_ECHO_H
+#ifndef BITCOINIII_INTERFACES_ECHO_H
+#define BITCOINIII_INTERFACES_ECHO_H
 
 #include <memory>
 #include <string>
@@ -23,4 +23,4 @@ public:
 std::unique_ptr<Echo> MakeEcho();
 } // namespace interfaces
 
-#endif // BITCOINII_INTERFACES_ECHO_H
+#endif // BITCOINIII_INTERFACES_ECHO_H

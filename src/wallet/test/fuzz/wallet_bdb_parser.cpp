@@ -1,8 +1,8 @@
-// Copyright (c) 2023-present The BitcoinII Core developers
+// Copyright (c) 2023-present The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include <bitcoinII-build-config.h> // IWYU pragma: keep
+#include <bitcoinIII-build-config.h> // IWYU pragma: keep
 #include <test/fuzz/FuzzedDataProvider.h>
 #include <test/fuzz/fuzz.h>
 #include <test/fuzz/util.h>
@@ -19,7 +19,7 @@
 #include <iostream>
 
 // There is an inconsistency in BDB on Windows.
-// See: https://github.com/bitcoinII/bitcoinII/pull/26606#issuecomment-2322763212
+// See: https://github.com/bitcoinIII/bitcoinIII/pull/26606#issuecomment-2322763212
 #undef USE_BDB_NON_MSVC
 #if defined(USE_BDB) && !defined(_MSC_VER)
 #define USE_BDB_NON_MSVC

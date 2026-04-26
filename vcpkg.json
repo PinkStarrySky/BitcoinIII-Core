@@ -35,7 +35,7 @@
       ]
     },
     "tests": {
-      "description": "Build test_bitcoinII.exe executable",
+      "description": "Build test_bitcoinIII.exe executable",
       "dependencies": [
         "boost-test"
       ]
@@ -56,7 +56,7 @@
   },
   "overrides": [
     {
-      "$comment": "Newer unreleased libevent versions cause https://github.com/bitcoinII/bitcoinII/issues/30096",
+      "$comment": "Newer unreleased libevent versions cause https://github.com/bitcoinIII/bitcoinIII/issues/30096",
       "name": "libevent",
       "version": "2.1.12#7"
     }

@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2020 The BitcoinII Core developers
+// Copyright (c) 2009-2020 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_NETMESSAGEMAKER_H
-#define BITCOINII_NETMESSAGEMAKER_H
+#ifndef BITCOINIII_NETMESSAGEMAKER_H
+#define BITCOINIII_NETMESSAGEMAKER_H
 
 #include <net.h>
 #include <serialize.h>
@@ -20,4 +20,4 @@ namespace NetMsg {
     }
 } // namespace NetMsg
 
-#endif // BITCOINII_NETMESSAGEMAKER_H
+#endif // BITCOINIII_NETMESSAGEMAKER_H

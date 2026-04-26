@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2022 The BitcoinII Core developers
+// Copyright (c) 2011-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_WALLET_COINCONTROL_H
-#define BITCOINII_WALLET_COINCONTROL_H
+#ifndef BITCOINIII_WALLET_COINCONTROL_H
+#define BITCOINIII_WALLET_COINCONTROL_H
 
 #include <outputtype.h>
 #include <policy/feerate.h>
@@ -187,4 +187,4 @@ private:
 };
 } // namespace wallet
 
-#endif // BITCOINII_WALLET_COINCONTROL_H
+#endif // BITCOINIII_WALLET_COINCONTROL_H

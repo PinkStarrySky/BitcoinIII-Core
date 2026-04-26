@@ -1,12 +1,12 @@
-// Copyright (c) 2021-2022 The BitcoinII Core developers
+// Copyright (c) 2021-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 //! @file
-//! @brief Common init functions shared by bitcoinII-node, bitcoinII-wallet, etc.
+//! @brief Common init functions shared by bitcoinIII-node, bitcoinIII-wallet, etc.
 
-#ifndef BITCOINII_INIT_COMMON_H
-#define BITCOINII_INIT_COMMON_H
+#ifndef BITCOINIII_INIT_COMMON_H
+#define BITCOINIII_INIT_COMMON_H
 
 #include <util/result.h>
 
@@ -21,4 +21,4 @@ bool StartLogging(const ArgsManager& args);
 void LogPackageVersion();
 } // namespace init
 
-#endif // BITCOINII_INIT_COMMON_H
+#endif // BITCOINIII_INIT_COMMON_H

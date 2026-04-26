@@ -1,9 +1,9 @@
-// Copyright (c) 2023 The BitcoinII Core developers
+// Copyright (c) 2023 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UTIL_SIGNALINTERRUPT_H
-#define BITCOINII_UTIL_SIGNALINTERRUPT_H
+#ifndef BITCOINIII_UTIL_SIGNALINTERRUPT_H
+#define BITCOINIII_UTIL_SIGNALINTERRUPT_H
 
 #ifdef WIN32
 #include <condition_variable>
@@ -49,4 +49,4 @@ private:
 };
 } // namespace util
 
-#endif // BITCOINII_UTIL_SIGNALINTERRUPT_H
+#endif // BITCOINIII_UTIL_SIGNALINTERRUPT_H

@@ -1,9 +1,9 @@
-// Copyright (c) 2021 The BitcoinII Core developers
+// Copyright (c) 2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_NETGROUP_H
-#define BITCOINII_NETGROUP_H
+#ifndef BITCOINIII_NETGROUP_H
+#define BITCOINIII_NETGROUP_H
 
 #include <netaddress.h>
 #include <uint256.h>
@@ -73,4 +73,4 @@ private:
     const std::vector<bool> m_asmap;
 };
 
-#endif // BITCOINII_NETGROUP_H
+#endif // BITCOINIII_NETGROUP_H

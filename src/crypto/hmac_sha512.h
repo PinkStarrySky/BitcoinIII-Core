@@ -1,9 +1,9 @@
-// Copyright (c) 2014-2022 The BitcoinII Core developers
+// Copyright (c) 2014-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_CRYPTO_HMAC_SHA512_H
-#define BITCOINII_CRYPTO_HMAC_SHA512_H
+#ifndef BITCOINIII_CRYPTO_HMAC_SHA512_H
+#define BITCOINIII_CRYPTO_HMAC_SHA512_H
 
 #include <crypto/sha512.h>
 
@@ -29,4 +29,4 @@ public:
     void Finalize(unsigned char hash[OUTPUT_SIZE]);
 };
 
-#endif // BITCOINII_CRYPTO_HMAC_SHA512_H
+#endif // BITCOINIII_CRYPTO_HMAC_SHA512_H

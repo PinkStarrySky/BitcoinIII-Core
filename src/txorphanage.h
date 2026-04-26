@@ -1,9 +1,9 @@
-// Copyright (c) 2021-2022 The BitcoinII Core developers
+// Copyright (c) 2021-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_TXORPHANAGE_H
-#define BITCOINII_TXORPHANAGE_H
+#ifndef BITCOINIII_TXORPHANAGE_H
+#define BITCOINIII_TXORPHANAGE_H
 
 #include <consensus/validation.h>
 #include <net.h>
@@ -163,4 +163,4 @@ protected:
     NodeSeconds m_next_sweep{0s};
 };
 
-#endif // BITCOINII_TXORPHANAGE_H
+#endif // BITCOINIII_TXORPHANAGE_H

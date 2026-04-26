@@ -1,9 +1,9 @@
-// Copyright (c) 2018-2022 The BitcoinII Core developers
+// Copyright (c) 2018-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_INDEX_BLOCKFILTERINDEX_H
-#define BITCOINII_INDEX_BLOCKFILTERINDEX_H
+#ifndef BITCOINIII_INDEX_BLOCKFILTERINDEX_H
+#define BITCOINIII_INDEX_BLOCKFILTERINDEX_H
 
 #include <attributes.h>
 #include <blockfilter.h>
@@ -110,4 +110,4 @@ bool DestroyBlockFilterIndex(BlockFilterType filter_type);
 /** Destroy all open block filter indexes. */
 void DestroyAllBlockFilterIndexes();
 
-#endif // BITCOINII_INDEX_BLOCKFILTERINDEX_H
+#endif // BITCOINIII_INDEX_BLOCKFILTERINDEX_H

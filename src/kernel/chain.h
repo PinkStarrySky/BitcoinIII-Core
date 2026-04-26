@@ -1,9 +1,9 @@
-// Copyright (c) 2022 The BitcoinII Core developers
+// Copyright (c) 2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_KERNEL_CHAIN_H
-#define BITCOINII_KERNEL_CHAIN_H
+#ifndef BITCOINIII_KERNEL_CHAIN_H
+#define BITCOINIII_KERNEL_CHAIN_H
 
 #include<iostream>
 
@@ -36,4 +36,4 @@ enum class ChainstateRole {
 
 std::ostream& operator<<(std::ostream& os, const ChainstateRole& role);
 
-#endif // BITCOINII_KERNEL_CHAIN_H
+#endif // BITCOINIII_KERNEL_CHAIN_H

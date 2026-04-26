@@ -1,4 +1,4 @@
-# Copyright (c) 2023-present The BitcoinII Core developers
+# Copyright (c) 2023-present The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://opensource.org/license/mit/.
 
@@ -30,7 +30,7 @@ endif()
 
 set(GIT_TAG)
 set(GIT_COMMIT)
-if(NOT "$ENV{BITCOINII_GENBUILD_NO_GIT}" STREQUAL "1")
+if(NOT "$ENV{BITCOINIII_GENBUILD_NO_GIT}" STREQUAL "1")
   find_package(Git QUIET)
   if(Git_FOUND)
     execute_process(

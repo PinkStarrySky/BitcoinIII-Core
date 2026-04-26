@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_CONSENSUS_PARAMS_H
-#define BITCOINII_CONSENSUS_PARAMS_H
+#ifndef BITCOINIII_CONSENSUS_PARAMS_H
+#define BITCOINIII_CONSENSUS_PARAMS_H
 
 #include <uint256.h>
 
@@ -127,7 +127,7 @@ struct Params {
     uint256 defaultAssumeValid;
 
     /**
-     * If true, witness commitments contain a payload equal to a BitcoinII Script solution
+     * If true, witness commitments contain a payload equal to a BitcoinIII Script solution
      * to the signet challenge. See BIP325.
      */
     bool signet_blocks{false};
@@ -153,4 +153,4 @@ struct Params {
 
 } // namespace Consensus
 
-#endif // BITCOINII_CONSENSUS_PARAMS_H
+#endif // BITCOINIII_CONSENSUS_PARAMS_H

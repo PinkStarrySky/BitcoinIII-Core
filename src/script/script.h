@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-present The BitcoinII Core developers
+// Copyright (c) 2009-present The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_SCRIPT_SCRIPT_H
-#define BITCOINII_SCRIPT_SCRIPT_H
+#ifndef BITCOINIII_SCRIPT_SCRIPT_H
+#define BITCOINIII_SCRIPT_SCRIPT_H
 
 #include <attributes.h>
 #include <crypto/common.h>
@@ -530,7 +530,7 @@ public:
     }
 
     /**
-     * Pre-version-0.6, BitcoinII always counted CHECKMULTISIGs
+     * Pre-version-0.6, BitcoinIII always counted CHECKMULTISIGs
      * as 20 sigops. With pay-to-script-hash, that changed:
      * CHECKMULTISIGs serialized in scriptSigs are
      * counted more accurately, assuming they are of the form
@@ -636,4 +636,4 @@ CScript BuildScript(Ts&&... inputs)
     return ret;
 }
 
-#endif // BITCOINII_SCRIPT_SCRIPT_H
+#endif // BITCOINIII_SCRIPT_SCRIPT_H

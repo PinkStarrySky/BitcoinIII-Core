@@ -1,9 +1,9 @@
-// Copyright (c) 2019-2021 The BitcoinII Core developers
+// Copyright (c) 2019-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_NODE_COIN_H
-#define BITCOINII_NODE_COIN_H
+#ifndef BITCOINIII_NODE_COIN_H
+#define BITCOINIII_NODE_COIN_H
 
 #include <map>
 
@@ -24,4 +24,4 @@ struct NodeContext;
 void FindCoins(const node::NodeContext& node, std::map<COutPoint, Coin>& coins);
 } // namespace node
 
-#endif // BITCOINII_NODE_COIN_H
+#endif // BITCOINIII_NODE_COIN_H

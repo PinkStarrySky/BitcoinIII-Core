@@ -1,11 +1,11 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Copyright (c) 2017 The Zcash developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_PUBKEY_H
-#define BITCOINII_PUBKEY_H
+#ifndef BITCOINIII_PUBKEY_H
+#define BITCOINIII_PUBKEY_H
 
 #include <hash.h>
 #include <serialize.h>
@@ -378,4 +378,4 @@ struct CExtPubKey {
     [[nodiscard]] bool Derive(CExtPubKey& out, unsigned int nChild) const;
 };
 
-#endif // BITCOINII_PUBKEY_H
+#endif // BITCOINIII_PUBKEY_H

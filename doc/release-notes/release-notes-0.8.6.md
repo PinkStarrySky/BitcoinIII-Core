@@ -1,12 +1,12 @@
-BitcoinII-Qt version 0.8.6 final is now available from:
+BitcoinIII-Qt version 0.8.6 final is now available from:
 
-  http://sourceforge.net/projects/bitcoinII/files/BitcoinII/bitcoinII-0.8.6/
+  http://sourceforge.net/projects/bitcoinIII/files/BitcoinIII/bitcoinIII-0.8.6/
 
 This is a maintenance release to fix a critical bug; we urge all users to upgrade.
 
 Please report bugs using the issue tracker at github:
 
-  https://github.com/bitcoinII/bitcoinII/issues
+  https://github.com/bitcoinIII/bitcoinIII/issues
 
 How to Upgrade
 --------------
@@ -16,7 +16,7 @@ If you already downloaded 0.8.6rc1 you do not need to re-download. This release 
 If you are running an older version, shut it down. Wait
 until it has completely shut down (which might take a few minutes for older
 versions), then run the installer (on Windows) or just copy over
-/Applications/BitcoinII-Qt (on Mac) or bitcoinIId/bitcoinII-qt (on Linux).
+/Applications/BitcoinIII-Qt (on Mac) or bitcoinIIId/bitcoinIII-qt (on Linux).
 
 If you are upgrading from version 0.7.2 or earlier, the first time you
 run 0.8.6 your blockchain files will be re-indexed, which will take
@@ -47,7 +47,7 @@ your machine.
 
 - Additional debug.log logging for diagnosis of network problems, log timestamps by default
 
-- Fix BitcoinII-Qt startup crash when clicking dock icon on OSX 
+- Fix BitcoinIII-Qt startup crash when clicking dock icon on OSX 
 
 - Fix memory leaks in CKey::SetCompactSignature() and Key::SignCompact()
 
@@ -63,4 +63,4 @@ Warning
   Hence it is recommended to use a 64-bit executable if possible.
   A 64-bit executable for Windows is planned for 0.9.
 
-Note: Gavin Andresen's GPG signing key for SHA256SUMS.asc has been changed from  key id 1FC730C1 to sub key 7BF6E212 (see https://github.com/bitcoinII/bitcoin.org/pull/279).
+Note: Gavin Andresen's GPG signing key for SHA256SUMS.asc has been changed from  key id 1FC730C1 to sub key 7BF6E212 (see https://github.com/bitcoinIII/bitcoin.org/pull/279).

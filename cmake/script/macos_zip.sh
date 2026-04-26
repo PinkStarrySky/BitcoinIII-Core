@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copyright (c) 2024-present The BitcoinII Core developers
+# Copyright (c) 2024-present The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://opensource.org/license/mit/.
 

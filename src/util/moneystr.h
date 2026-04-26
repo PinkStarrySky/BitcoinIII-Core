@@ -1,13 +1,13 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 /**
  * Money parsing/formatting utilities.
  */
-#ifndef BITCOINII_UTIL_MONEYSTR_H
-#define BITCOINII_UTIL_MONEYSTR_H
+#ifndef BITCOINIII_UTIL_MONEYSTR_H
+#define BITCOINIII_UTIL_MONEYSTR_H
 
 #include <consensus/amount.h>
 
@@ -21,4 +21,4 @@ std::string FormatMoney(const CAmount n);
 /** Parse an amount denoted in full coins. E.g. "0.0034" supplied on the command line. **/
 std::optional<CAmount> ParseMoney(const std::string& str);
 
-#endif // BITCOINII_UTIL_MONEYSTR_H
+#endif // BITCOINIII_UTIL_MONEYSTR_H

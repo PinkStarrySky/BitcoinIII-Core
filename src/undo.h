@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2020 The BitcoinII Core developers
+// Copyright (c) 2009-2020 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UNDO_H
-#define BITCOINII_UNDO_H
+#ifndef BITCOINIII_UNDO_H
+#define BITCOINIII_UNDO_H
 
 #include <coins.h>
 #include <compressor.h>
@@ -67,4 +67,4 @@ public:
     SERIALIZE_METHODS(CBlockUndo, obj) { READWRITE(obj.vtxundo); }
 };
 
-#endif // BITCOINII_UNDO_H
+#endif // BITCOINIII_UNDO_H

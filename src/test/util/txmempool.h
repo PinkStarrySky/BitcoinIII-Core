@@ -1,9 +1,9 @@
-// Copyright (c) 2022 The BitcoinII Core developers
+// Copyright (c) 2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_TEST_UTIL_TXMEMPOOL_H
-#define BITCOINII_TEST_UTIL_TXMEMPOOL_H
+#ifndef BITCOINIII_TEST_UTIL_TXMEMPOOL_H
+#define BITCOINIII_TEST_UTIL_TXMEMPOOL_H
 
 #include <policy/packages.h>
 #include <txmempool.h>
@@ -67,4 +67,4 @@ void CheckMempoolTRUCInvariants(const CTxMemPool& tx_pool);
  *  and applying it. */
 void AddToMempool(CTxMemPool& tx_pool, const CTxMemPoolEntry& entry);
 
-#endif // BITCOINII_TEST_UTIL_TXMEMPOOL_H
+#endif // BITCOINIII_TEST_UTIL_TXMEMPOOL_H

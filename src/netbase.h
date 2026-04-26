@@ -1,9 +1,9 @@
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_NETBASE_H
-#define BITCOINII_NETBASE_H
+#ifndef BITCOINIII_NETBASE_H
+#define BITCOINIII_NETBASE_H
 
 #include <compat/compat.h>
 #include <netaddress.h>
@@ -351,4 +351,4 @@ bool IsBadPort(uint16_t port);
  */
 CService MaybeFlipIPv6toCJDNS(const CService& service);
 
-#endif // BITCOINII_NETBASE_H
+#endif // BITCOINIII_NETBASE_H

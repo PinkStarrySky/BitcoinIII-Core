@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2021 The BitcoinII Core developers
+// Copyright (c) 2009-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_ADDRDB_H
-#define BITCOINII_ADDRDB_H
+#ifndef BITCOINIII_ADDRDB_H
+#define BITCOINIII_ADDRDB_H
 
 #include <net_types.h>
 #include <util/fs.h>
@@ -67,4 +67,4 @@ void DumpAnchors(const fs::path& anchors_db_path, const std::vector<CAddress>& a
  */
 std::vector<CAddress> ReadAnchors(const fs::path& anchors_db_path);
 
-#endif // BITCOINII_ADDRDB_H
+#endif // BITCOINIII_ADDRDB_H

@@ -1,9 +1,9 @@
-// Copyright (c) 2021 The BitcoinII Core developers
+// Copyright (c) 2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_IPC_PROCESS_H
-#define BITCOINII_IPC_PROCESS_H
+#ifndef BITCOINIII_IPC_PROCESS_H
+#define BITCOINIII_IPC_PROCESS_H
 
 #include <util/fs.h>
 
@@ -13,7 +13,7 @@
 namespace ipc {
 class Protocol;
 
-//! IPC process interface for spawning bitcoinII processes and serving requests
+//! IPC process interface for spawning bitcoinIII processes and serving requests
 //! in processes that have been spawned.
 //!
 //! There will be different implementations of this interface depending on the
@@ -51,4 +51,4 @@ public:
 std::unique_ptr<Process> MakeProcess();
 } // namespace ipc
 
-#endif // BITCOINII_IPC_PROCESS_H
+#endif // BITCOINIII_IPC_PROCESS_H

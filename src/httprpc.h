@@ -1,9 +1,9 @@
-// Copyright (c) 2015-2021 The BitcoinII Core developers
+// Copyright (c) 2015-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_HTTPRPC_H
-#define BITCOINII_HTTPRPC_H
+#ifndef BITCOINIII_HTTPRPC_H
+#define BITCOINIII_HTTPRPC_H
 
 #include <any>
 
@@ -31,4 +31,4 @@ void InterruptREST();
  */
 void StopREST();
 
-#endif // BITCOINII_HTTPRPC_H
+#endif // BITCOINIII_HTTPRPC_H

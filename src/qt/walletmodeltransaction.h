@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2021 The BitcoinII Core developers
+// Copyright (c) 2011-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_WALLETMODELTRANSACTION_H
-#define BITCOINII_QT_WALLETMODELTRANSACTION_H
+#ifndef BITCOINIII_QT_WALLETMODELTRANSACTION_H
+#define BITCOINIII_QT_WALLETMODELTRANSACTION_H
 
 #include <primitives/transaction.h>
 #include <qt/sendcoinsrecipient.h>
@@ -44,4 +44,4 @@ private:
     CAmount fee{0};
 };
 
-#endif // BITCOINII_QT_WALLETMODELTRANSACTION_H
+#endif // BITCOINIII_QT_WALLETMODELTRANSACTION_H

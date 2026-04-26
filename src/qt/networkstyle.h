@@ -1,9 +1,9 @@
-// Copyright (c) 2014-2019 The BitcoinII Core developers
+// Copyright (c) 2014-2019 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_NETWORKSTYLE_H
-#define BITCOINII_QT_NETWORKSTYLE_H
+#ifndef BITCOINIII_QT_NETWORKSTYLE_H
+#define BITCOINIII_QT_NETWORKSTYLE_H
 
 #include <util/chaintype.h>
 
@@ -32,4 +32,4 @@ private:
     QString titleAddText;
 };
 
-#endif // BITCOINII_QT_NETWORKSTYLE_H
+#endif // BITCOINIII_QT_NETWORKSTYLE_H

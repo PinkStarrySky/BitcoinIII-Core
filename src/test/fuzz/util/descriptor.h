@@ -1,9 +1,9 @@
-// Copyright (c) 2023-present The BitcoinII Core developers
+// Copyright (c) 2023-present The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_TEST_FUZZ_UTIL_DESCRIPTOR_H
-#define BITCOINII_TEST_FUZZ_UTIL_DESCRIPTOR_H
+#ifndef BITCOINIII_TEST_FUZZ_UTIL_DESCRIPTOR_H
+#define BITCOINIII_TEST_FUZZ_UTIL_DESCRIPTOR_H
 
 #include <key_io.h>
 #include <util/strencodings.h>
@@ -76,4 +76,4 @@ constexpr int MAX_WRAPPERS{100};
  */
 bool HasTooManyWrappers(const FuzzBufferType& buff, const int max_wrappers = MAX_WRAPPERS);
 
-#endif // BITCOINII_TEST_FUZZ_UTIL_DESCRIPTOR_H
+#endif // BITCOINIII_TEST_FUZZ_UTIL_DESCRIPTOR_H

@@ -1,28 +1,28 @@
-// Copyright (c) 2018-2020 The BitcoinII Core developers
+// Copyright (c) 2018-2020 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_TEST_APPTESTS_H
-#define BITCOINII_QT_TEST_APPTESTS_H
+#ifndef BITCOINIII_QT_TEST_APPTESTS_H
+#define BITCOINIII_QT_TEST_APPTESTS_H
 
 #include <QObject>
 #include <set>
 #include <string>
 #include <utility>
 
-class BitcoinIIApplication;
-class BitcoinIIGUI;
+class BitcoinIIIApplication;
+class BitcoinIIIGUI;
 class RPCConsole;
 
 class AppTests : public QObject
 {
     Q_OBJECT
 public:
-    explicit AppTests(BitcoinIIApplication& app) : m_app(app) {}
+    explicit AppTests(BitcoinIIIApplication& app) : m_app(app) {}
 
 private Q_SLOTS:
     void appTests();
-    void guiTests(BitcoinIIGUI* window);
+    void guiTests(BitcoinIIIGUI* window);
     void consoleTests(RPCConsole* console);
 
 private:
@@ -37,8 +37,8 @@ private:
         ~HandleCallback();
     };
 
-    //! BitcoinII application.
-    BitcoinIIApplication& m_app;
+    //! BitcoinIII application.
+    BitcoinIIIApplication& m_app;
 
     //! Set of pending callback names. Used to track expected callbacks and shut
     //! down the app after the last callback has been handled and all tests have
@@ -47,4 +47,4 @@ private:
     std::multiset<std::string> m_callbacks;
 };
 
-#endif // BITCOINII_QT_TEST_APPTESTS_H
+#endif // BITCOINIII_QT_TEST_APPTESTS_H

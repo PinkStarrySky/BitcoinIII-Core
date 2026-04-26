@@ -1,9 +1,9 @@
-// Copyright (c) 2015-2022 The BitcoinII Core developers
+// Copyright (c) 2015-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_BENCH_BENCH_H
-#define BITCOINII_BENCH_BENCH_H
+#ifndef BITCOINIII_BENCH_BENCH_H
+#define BITCOINIII_BENCH_BENCH_H
 
 #include <bench/nanobench.h> // IWYU pragma: export
 #include <util/fs.h>
@@ -81,4 +81,4 @@ public:
 #define BENCHMARK(n, priority_level) \
     benchmark::BenchRunner PASTE2(bench_, PASTE2(__LINE__, n))(STRINGIZE(n), n, priority_level);
 
-#endif // BITCOINII_BENCH_BENCH_H
+#endif // BITCOINIII_BENCH_BENCH_H

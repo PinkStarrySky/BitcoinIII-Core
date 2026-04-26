@@ -1,9 +1,9 @@
-// Copyright (c) 2016-2022 The BitcoinII Core developers
+// Copyright (c) 2016-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_MODALOVERLAY_H
-#define BITCOINII_QT_MODALOVERLAY_H
+#ifndef BITCOINIII_QT_MODALOVERLAY_H
+#define BITCOINIII_QT_MODALOVERLAY_H
 
 #include <QDateTime>
 #include <QPropertyAnimation>
@@ -55,4 +55,4 @@ private:
     void UpdateHeaderPresyncLabel(int height, const QDateTime& blockDate);
 };
 
-#endif // BITCOINII_QT_MODALOVERLAY_H
+#endif // BITCOINIII_QT_MODALOVERLAY_H

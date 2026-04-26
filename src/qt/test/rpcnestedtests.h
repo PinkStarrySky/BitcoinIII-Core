@@ -1,9 +1,9 @@
-// Copyright (c) 2016-2020 The BitcoinII Core developers
+// Copyright (c) 2016-2020 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_TEST_RPCNESTEDTESTS_H
-#define BITCOINII_QT_TEST_RPCNESTEDTESTS_H
+#ifndef BITCOINIII_QT_TEST_RPCNESTEDTESTS_H
+#define BITCOINIII_QT_TEST_RPCNESTEDTESTS_H
 
 #include <QObject>
 #include <QTest>
@@ -24,4 +24,4 @@ public:
     void rpcNestedTests();
 };
 
-#endif // BITCOINII_QT_TEST_RPCNESTEDTESTS_H
+#endif // BITCOINIII_QT_TEST_RPCNESTEDTESTS_H

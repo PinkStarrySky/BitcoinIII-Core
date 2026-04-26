@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_RANDOM_H
-#define BITCOINII_RANDOM_H
+#ifndef BITCOINIII_RANDOM_H
+#define BITCOINIII_RANDOM_H
 
 #include <crypto/chacha20.h>
 #include <crypto/common.h>
@@ -465,4 +465,4 @@ inline uint256 GetRandHash() noexcept
  */
 bool Random_SanityCheck();
 
-#endif // BITCOINII_RANDOM_H
+#endif // BITCOINIII_RANDOM_H

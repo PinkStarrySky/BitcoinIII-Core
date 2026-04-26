@@ -1,9 +1,9 @@
-// Copyright (c) 2019-2022 The BitcoinII Core developers
+// Copyright (c) 2019-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_COMMON_SETTINGS_H
-#define BITCOINII_COMMON_SETTINGS_H
+#ifndef BITCOINIII_COMMON_SETTINGS_H
+#define BITCOINIII_COMMON_SETTINGS_H
 
 #include <util/fs.h>
 
@@ -24,7 +24,7 @@ namespace common {
 //!       getInt<int64_t>(), get_bool(), isNum(), isBool(), isFalse(), isTrue() and
 //!       isNull() methods can be substituted if there's a need to move away
 //!       from UniValue. (An implementation with boost::variant was posted at
-//!       https://github.com/bitcoinII/bitcoinII/pull/15934/files#r337691812)
+//!       https://github.com/bitcoinIII/bitcoinIII/pull/15934/files#r337691812)
 using SettingsValue = UniValue;
 
 //! Stored settings. This struct combines settings from the command line, a
@@ -112,4 +112,4 @@ auto FindKey(Map&& map, Key&& key) -> decltype(&map.at(key))
 
 } // namespace common
 
-#endif // BITCOINII_COMMON_SETTINGS_H
+#endif // BITCOINIII_COMMON_SETTINGS_H

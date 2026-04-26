@@ -1,10 +1,10 @@
 // Copyright 2014 BitPay Inc.
-// Copyright 2015 BitcoinII Core Developers
+// Copyright 2015 BitcoinIII Core Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UNIVALUE_INCLUDE_UNIVALUE_H
-#define BITCOINII_UNIVALUE_INCLUDE_UNIVALUE_H
+#ifndef BITCOINIII_UNIVALUE_INCLUDE_UNIVALUE_H
+#define BITCOINIII_UNIVALUE_INCLUDE_UNIVALUE_H
 
 #include <charconv>
 #include <cstddef>
@@ -202,4 +202,4 @@ static inline bool json_isspace(int ch)
 
 extern const UniValue NullUniValue;
 
-#endif // BITCOINII_UNIVALUE_INCLUDE_UNIVALUE_H
+#endif // BITCOINIII_UNIVALUE_INCLUDE_UNIVALUE_H

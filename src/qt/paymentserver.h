@@ -1,12 +1,12 @@
-// Copyright (c) 2011-2020 The BitcoinII Core developers
+// Copyright (c) 2011-2020 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_PAYMENTSERVER_H
-#define BITCOINII_QT_PAYMENTSERVER_H
+#ifndef BITCOINIII_QT_PAYMENTSERVER_H
+#define BITCOINIII_QT_PAYMENTSERVER_H
 
 // This class handles payment requests from clicking on
-// bitcoinII: URIs
+// bitcoinIII: URIs
 //
 // This is somewhat tricky, because we have to deal with
 // the situation where the user clicks on a link during
@@ -50,7 +50,7 @@ class QLocalServer;
 class QUrl;
 QT_END_NAMESPACE
 
-extern const QString BITCOINII_IPC_PREFIX;
+extern const QString BITCOINIII_IPC_PREFIX;
 
 class PaymentServer : public QObject
 {
@@ -104,4 +104,4 @@ private:
     OptionsModel* optionsModel{nullptr};
 };
 
-#endif // BITCOINII_QT_PAYMENTSERVER_H
+#endif // BITCOINIII_QT_PAYMENTSERVER_H

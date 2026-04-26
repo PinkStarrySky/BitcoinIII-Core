@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2020 The BitcoinII Core developers
+// Copyright (c) 2009-2020 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_THREADSAFETY_H
-#define BITCOINII_THREADSAFETY_H
+#ifndef BITCOINIII_THREADSAFETY_H
+#define BITCOINIII_THREADSAFETY_H
 
 #include <mutex>
 
@@ -74,4 +74,4 @@ public:
     ~StdLockGuard() UNLOCK_FUNCTION() = default;
 };
 
-#endif // BITCOINII_THREADSAFETY_H
+#endif // BITCOINIII_THREADSAFETY_H

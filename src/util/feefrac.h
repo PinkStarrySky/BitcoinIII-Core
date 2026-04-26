@@ -1,9 +1,9 @@
-// Copyright (c) The BitcoinII Core developers
+// Copyright (c) The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UTIL_FEEFRAC_H
-#define BITCOINII_UTIL_FEEFRAC_H
+#ifndef BITCOINIII_UTIL_FEEFRAC_H
+#define BITCOINIII_UTIL_FEEFRAC_H
 
 #include <stdint.h>
 #include <compare>
@@ -156,4 +156,4 @@ struct FeeFrac
  */
 std::partial_ordering CompareChunks(Span<const FeeFrac> chunks0, Span<const FeeFrac> chunks1);
 
-#endif // BITCOINII_UTIL_FEEFRAC_H
+#endif // BITCOINIII_UTIL_FEEFRAC_H

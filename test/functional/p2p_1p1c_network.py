@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2024-present The BitcoinII Core developers
+# Copyright (c) 2024-present The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """
@@ -21,7 +21,7 @@ from test_framework.messages import (
 from test_framework.p2p import (
     P2PInterface,
 )
-from test_framework.test_framework import BitcoinIITestFramework
+from test_framework.test_framework import BitcoinIIITestFramework
 from test_framework.util import (
     assert_equal,
     assert_greater_than,
@@ -31,10 +31,10 @@ from test_framework.wallet import (
     MiniWalletMode,
 )
 
-# 1sat2/vB feerate denominated in BC2/KvB
-FEERATE_1SAT2_VB = Decimal("0.00001000")
+# 1sat3/vB feerate denominated in BC3/KvB
+FEERATE_1SAT3_VB = Decimal("0.00001000")
 
-class PackageRelayTest(BitcoinIITestFramework):
+class PackageRelayTest(BitcoinIIITestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 4
@@ -51,12 +51,12 @@ class PackageRelayTest(BitcoinIITestFramework):
 
         self.log.debug("Check that all nodes' mempool minimum feerates are above min relay feerate")
         for node in self.nodes:
-            assert_equal(node.getmempoolinfo()['minrelaytxfee'], FEERATE_1SAT2_VB)
-            assert_greater_than(node.getmempoolinfo()['mempoolminfee'], FEERATE_1SAT2_VB)
+            assert_equal(node.getmempoolinfo()['minrelaytxfee'], FEERATE_1SAT3_VB)
+            assert_greater_than(node.getmempoolinfo()['mempoolminfee'], FEERATE_1SAT3_VB)
 
     def create_basic_1p1c(self, wallet):
-        low_fee_parent = wallet.create_self_transfer(fee_rate=FEERATE_1SAT2_VB, confirmed_only=True)
-        high_fee_child = wallet.create_self_transfer(utxo_to_spend=low_fee_parent["new_utxo"], fee_rate=999*FEERATE_1SAT2_VB)
+        low_fee_parent = wallet.create_self_transfer(fee_rate=FEERATE_1SAT3_VB, confirmed_only=True)
+        high_fee_child = wallet.create_self_transfer(utxo_to_spend=low_fee_parent["new_utxo"], fee_rate=999*FEERATE_1SAT3_VB)
         package_hex_basic = [low_fee_parent["hex"], high_fee_child["hex"]]
         return package_hex_basic, low_fee_parent["tx"], high_fee_child["tx"]
 
@@ -69,7 +69,7 @@ class PackageRelayTest(BitcoinIITestFramework):
             num_outputs=2,
         )
 
-        # Target 1sat2/vB so the number of satooshis is equal to the vsize.
+        # Target 1sat3/vB so the number of satoooshis is equal to the vsize.
         # Round up. The goal is to be between min relay feerate and mempool min feerate.
         fee_2outs = ceil(low_fee_parent_2outs_tester["tx"].get_vsize() / 2)
 
@@ -87,8 +87,8 @@ class PackageRelayTest(BitcoinIITestFramework):
         return [low_fee_parent_2outs["hex"], high_fee_child_2outs["hex"]], low_fee_parent_2outs["tx"], high_fee_child_2outs["tx"]
 
     def create_package_2p1c(self, wallet):
-        parent1 = wallet.create_self_transfer(fee_rate=FEERATE_1SAT2_VB*10, confirmed_only=True)
-        parent2 = wallet.create_self_transfer(fee_rate=FEERATE_1SAT2_VB*20, confirmed_only=True)
+        parent1 = wallet.create_self_transfer(fee_rate=FEERATE_1SAT3_VB*10, confirmed_only=True)
+        parent2 = wallet.create_self_transfer(fee_rate=FEERATE_1SAT3_VB*20, confirmed_only=True)
         child = wallet.create_self_transfer_multi(
             utxos_to_spend=[parent1["new_utxo"], parent2["new_utxo"]],
             fee_per_output=999*parent1["tx"].get_vsize(),
@@ -96,7 +96,7 @@ class PackageRelayTest(BitcoinIITestFramework):
         return [parent1["hex"], parent2["hex"], child["hex"]], parent1["tx"], parent2["tx"], child["tx"]
 
     def create_packages(self):
-        # 1: Basic 1-parent-1-child package, parent 1sat2/vB, child 999sat2/vB
+        # 1: Basic 1-parent-1-child package, parent 1sat3/vB, child 999sat3/vB
         package_hex_1, parent_1, child_1 = self.create_basic_1p1c(self.wallet)
 
         # 2: same as 1, parent's txid is the same as its wtxid.

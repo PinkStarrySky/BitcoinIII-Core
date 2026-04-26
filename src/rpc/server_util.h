@@ -1,9 +1,9 @@
-// Copyright (c) 2021-2022 The BitcoinII Core developers
+// Copyright (c) 2021-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_RPC_SERVER_UTIL_H
-#define BITCOINII_RPC_SERVER_UTIL_H
+#ifndef BITCOINIII_RPC_SERVER_UTIL_H
+#define BITCOINIII_RPC_SERVER_UTIL_H
 
 #include <any>
 
@@ -45,4 +45,4 @@ AddrMan& EnsureAnyAddrman(const std::any& context);
 /** Return an empty block index on top of the tip, with height, time and nBits set */
 void NextEmptyBlockIndex(CBlockIndex& tip, const Consensus::Params& consensusParams, CBlockIndex& next_index);
 
-#endif // BITCOINII_RPC_SERVER_UTIL_H
+#endif // BITCOINIII_RPC_SERVER_UTIL_H

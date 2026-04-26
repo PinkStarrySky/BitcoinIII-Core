@@ -1,9 +1,9 @@
-// Copyright (c) 2018 The BitcoinII Core developers
+// Copyright (c) 2018 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_COMPAT_STDIN_H
-#define BITCOINII_COMPAT_STDIN_H
+#ifndef BITCOINIII_COMPAT_STDIN_H
+#define BITCOINIII_COMPAT_STDIN_H
 
 struct NoechoInst {
     NoechoInst();
@@ -15,4 +15,4 @@ struct NoechoInst {
 bool StdinTerminal();
 bool StdinReady();
 
-#endif // BITCOINII_COMPAT_STDIN_H
+#endif // BITCOINIII_COMPAT_STDIN_H

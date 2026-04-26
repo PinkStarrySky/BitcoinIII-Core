@@ -1,9 +1,9 @@
-// Copyright (c) 2022 The BitcoinII Core developers
+// Copyright (c) 2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_POLICY_TRUC_POLICY_H
-#define BITCOINII_POLICY_TRUC_POLICY_H
+#ifndef BITCOINIII_POLICY_TRUC_POLICY_H
+#define BITCOINIII_POLICY_TRUC_POLICY_H
 
 #include <consensus/amount.h>
 #include <policy/packages.h>
@@ -91,4 +91,4 @@ std::optional<std::string> PackageTRUCChecks(const CTransactionRef& ptx, int64_t
                                            const Package& package,
                                            const CTxMemPool::setEntries& mempool_ancestors);
 
-#endif // BITCOINII_POLICY_TRUC_POLICY_H
+#endif // BITCOINIII_POLICY_TRUC_POLICY_H

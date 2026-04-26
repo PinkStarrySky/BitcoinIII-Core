@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2021 The BitcoinII Core developers
+// Copyright (c) 2009-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_WALLET_DB_H
-#define BITCOINII_WALLET_DB_H
+#ifndef BITCOINIII_WALLET_DB_H
+#define BITCOINIII_WALLET_DB_H
 
 #include <clientversion.h>
 #include <streams.h>
@@ -228,4 +228,4 @@ bool IsBDBFile(const fs::path& path);
 bool IsSQLiteFile(const fs::path& path);
 } // namespace wallet
 
-#endif // BITCOINII_WALLET_DB_H
+#endif // BITCOINIII_WALLET_DB_H

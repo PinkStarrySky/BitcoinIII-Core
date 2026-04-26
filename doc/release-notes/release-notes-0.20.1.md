@@ -1,16 +1,16 @@
 0.20.1 Release Notes
 ====================
 
-BitcoinII Core version 0.20.1 is now available from:
+BitcoinIII Core version 0.20.1 is now available from:
 
-  <https://bitcoincore.org/bin/bitcoinII-core-0.20.1/>
+  <https://bitcoincore.org/bin/bitcoinIII-core-0.20.1/>
 
 This minor release includes various bug fixes and performance
 improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at GitHub:
 
-  <https://github.com/bitcoinII/bitcoinII/issues>
+  <https://github.com/bitcoinIII/bitcoinIII/issues>
 
 To receive security and update notifications, please subscribe to:
 
@@ -21,24 +21,24 @@ How to Upgrade
 
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes in some cases), then run the
-installer (on Windows) or just copy over `/Applications/BitcoinII-Qt` (on Mac)
-or `bitcoinIId`/`bitcoinII-qt` (on Linux).
+installer (on Windows) or just copy over `/Applications/BitcoinIII-Qt` (on Mac)
+or `bitcoinIIId`/`bitcoinIII-qt` (on Linux).
 
-Upgrading directly from a version of BitcoinII Core that has reached its EOL is
+Upgrading directly from a version of BitcoinIII Core that has reached its EOL is
 possible, but it might take some time if the data directory needs to be migrated. Old
-wallet versions of BitcoinII Core are generally supported.
+wallet versions of BitcoinIII Core are generally supported.
 
 Compatibility
 ==============
 
-BitcoinII Core is supported and extensively tested on operating systems
-using the Linux kernel, macOS 10.12+, and Windows 7 and newer.  BitcoinII
+BitcoinIII Core is supported and extensively tested on operating systems
+using the Linux kernel, macOS 10.12+, and Windows 7 and newer.  BitcoinIII
 Core should also work on most other Unix-like systems but is not as
-frequently tested on them.  It is not recommended to use BitcoinII Core on
+frequently tested on them.  It is not recommended to use BitcoinIII Core on
 unsupported systems.
 
-From BitcoinII Core 0.20.0 onwards, macOS versions earlier than 10.12 are no
-longer supported. Additionally, BitcoinII Core does not yet change appearance
+From BitcoinIII Core 0.20.0 onwards, macOS versions earlier than 10.12 are no
+longer supported. Additionally, BitcoinIII Core does not yet change appearance
 when macOS "dark mode" is activated.
 
 Known Bugs
@@ -53,7 +53,7 @@ this release:
   `./configure`. This is the same as when checking out from git.
 
 - Instead of running `make` simply, you should instead run
-  `BITCOINII_GENBUILD_NO_GIT=1 make`.
+  `BITCOINIII_GENBUILD_NO_GIT=1 make`.
 
 Notable changes
 ===============
@@ -90,7 +90,7 @@ Notification changes
 removed from the mempool because they conflict with a new block. These
 notifications were sent previously before the v0.19 release, but had been
 broken since that release (bug
-[#18325](https://github.com/bitcoinII/bitcoinII/issues/18325)).
+[#18325](https://github.com/bitcoinIII/bitcoinIII/issues/18325)).
 
 PSBT changes
 ------------
@@ -155,4 +155,4 @@ Thanks to everyone who directly contributed to this release:
 - Wladimir J. van der Laan
 
 As well as to everyone that helped with translations on
-[Transifex](https://www.transifex.com/bitcoinII/bitcoinII/).
+[Transifex](https://www.transifex.com/bitcoinIII/bitcoinIII/).

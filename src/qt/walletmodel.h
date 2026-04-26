@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2022 The BitcoinII Core developers
+// Copyright (c) 2011-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_WALLETMODEL_H
-#define BITCOINII_QT_WALLETMODEL_H
+#ifndef BITCOINIII_QT_WALLETMODEL_H
+#define BITCOINIII_QT_WALLETMODEL_H
 
 #include <key.h>
 
@@ -43,7 +43,7 @@ QT_BEGIN_NAMESPACE
 class QTimer;
 QT_END_NAMESPACE
 
-/** Interface to BitcoinII wallet from Qt view code. */
+/** Interface to BitcoinIII wallet from Qt view code. */
 class WalletModel : public QObject
 {
     Q_OBJECT
@@ -238,4 +238,4 @@ public Q_SLOTS:
     void pollBalanceChanged();
 };
 
-#endif // BITCOINII_QT_WALLETMODEL_H
+#endif // BITCOINIII_QT_WALLETMODEL_H

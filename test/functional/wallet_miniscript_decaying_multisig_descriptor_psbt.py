@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2024 The BitcoinII Core developers
+# Copyright (c) 2024 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test a miniscript multisig that starts as 4-of-4 and "decays" to 3-of-4, 2-of-4, and finally 1-of-4 at each future halvening block height.
@@ -9,7 +9,7 @@ This is similar to `test/functional/wallet_multisig_descriptor_psbt.py`.
 """
 
 import random
-from test_framework.test_framework import BitcoinIITestFramework
+from test_framework.test_framework import BitcoinIIITestFramework
 from test_framework.util import (
     assert_approx,
     assert_equal,
@@ -17,7 +17,7 @@ from test_framework.util import (
 )
 
 
-class WalletMiniscriptDecayingMultisigDescriptorPSBTTest(BitcoinIITestFramework):
+class WalletMiniscriptDecayingMultisigDescriptorPSBTTest(BitcoinIIITestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser, legacy=False)
 

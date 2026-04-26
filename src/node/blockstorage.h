@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2022 The BitcoinII Core developers
+// Copyright (c) 2011-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_NODE_BLOCKSTORAGE_H
-#define BITCOINII_NODE_BLOCKSTORAGE_H
+#ifndef BITCOINIII_NODE_BLOCKSTORAGE_H
+#define BITCOINIII_NODE_BLOCKSTORAGE_H
 
 #include <attributes.h>
 #include <chain.h>
@@ -427,4 +427,4 @@ public:
 void ImportBlocks(ChainstateManager& chainman, std::span<const fs::path> import_paths);
 } // namespace node
 
-#endif // BITCOINII_NODE_BLOCKSTORAGE_H
+#endif // BITCOINIII_NODE_BLOCKSTORAGE_H

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2014-2022 The BitcoinII Core developers
+# Copyright (c) 2014-2022 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test the abandontransaction RPC.
@@ -13,14 +13,14 @@
 from decimal import Decimal
 
 from test_framework.blocktools import COINBASE_MATURITY
-from test_framework.test_framework import BitcoinIITestFramework
+from test_framework.test_framework import BitcoinIIITestFramework
 from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error,
 )
 
 
-class AbandonConflictTest(BitcoinIITestFramework):
+class AbandonConflictTest(BitcoinIIITestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser)
 
@@ -89,11 +89,11 @@ class AbandonConflictTest(BitcoinIITestFramework):
         outputs = {}
         outputs[alice.getnewaddress()] = Decimal("24.9996")
         signed2 = alice.signrawtransactionwithwallet(alice.createrawtransaction(inputs, outputs))
-        txABC2 = self.nodes[0].sendrawtransaction(signed2["hex"])
+        txABC3 = self.nodes[0].sendrawtransaction(signed2["hex"])
 
-        # Create a child tx spending ABC2
+        # Create a child tx spending ABC3
         signed3_change = Decimal("24.999")
-        inputs = [{"txid": txABC2, "vout": 0}]
+        inputs = [{"txid": txABC3, "vout": 0}]
         outputs = {alice.getnewaddress(): signed3_change}
         signed3 = alice.signrawtransactionwithwallet(alice.createrawtransaction(inputs, outputs))
         # note tx is never directly referenced, only abandoned as a child of the above
@@ -123,7 +123,7 @@ class AbandonConflictTest(BitcoinIITestFramework):
         balances = alice.getbalances()['mine']
         assert_equal(balances['untrusted_pending'] + balances['trusted'], newbalance)
         # Also shouldn't show up in listunspent
-        assert not txABC2 in [utxo["txid"] for utxo in alice.listunspent(0)]
+        assert not txABC3 in [utxo["txid"] for utxo in alice.listunspent(0)]
         balance = newbalance
 
         # Abandon original transaction and verify inputs are available again
@@ -228,13 +228,13 @@ class AbandonConflictTest(BitcoinIITestFramework):
         assert_equal(double_spend_txid, double_spend['txid'])
         assert_equal(double_spend["walletconflicts"], [txAB1])
 
-        # Verify that B and C's 10 BC2 outputs are available for spending again because AB1 is now conflicted
+        # Verify that B and C's 10 BC3 outputs are available for spending again because AB1 is now conflicted
         assert_equal(alice.gettransaction(txAB1)["confirmations"], -1)
         newbalance = alice.getbalance()
         assert_equal(newbalance, balance + Decimal("20"))
         balance = newbalance
 
-        # Invalidate the block with the double spend. B & C's 10 BC2 outputs should no longer be available
+        # Invalidate the block with the double spend. B & C's 10 BC3 outputs should no longer be available
         blk = self.nodes[0].getbestblockhash()
         # mine 10 blocks so that when the blk is invalidated, the transactions are not
         # returned to the mempool

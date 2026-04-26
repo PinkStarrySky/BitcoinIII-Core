@@ -1,11 +1,11 @@
 #!/bin/sh
-# Copyright (c) 2014-2019 The BitcoinII Core developers
+# Copyright (c) 2014-2019 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 export LC_ALL=C
 INPUT=$(cat /dev/stdin)
-if [ "$BITCOINII_VERIFY_COMMITS_ALLOW_SHA1" = 1 ]; then
+if [ "$BITCOINIII_VERIFY_COMMITS_ALLOW_SHA1" = 1 ]; then
     printf '%s\n' "$INPUT" | gpg --trust-model always "$@" 2>/dev/null
     exit $?
 else

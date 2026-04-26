@@ -1,9 +1,9 @@
-// Copyright (c) 2023 The BitcoinII Core developers
+// Copyright (c) 2023 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_BIP324_H
-#define BITCOINII_BIP324_H
+#ifndef BITCOINIII_BIP324_H
+#define BITCOINIII_BIP324_H
 
 #include <array>
 #include <cstddef>
@@ -93,4 +93,4 @@ public:
     Span<const std::byte> GetReceiveGarbageTerminator() const noexcept { return m_recv_garbage_terminator; }
 };
 
-#endif // BITCOINII_BIP324_H
+#endif // BITCOINIII_BIP324_H

@@ -1,5 +1,5 @@
 // Copyright (c) 2017, 2021 Pieter Wuille
-// Copyright (c) 2021 The BitcoinII Core developers
+// Copyright (c) 2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,8 +11,8 @@
 //
 // For more information, see BIP 173 and BIP 350.
 
-#ifndef BITCOINII_BECH32_H
-#define BITCOINII_BECH32_H
+#ifndef BITCOINIII_BECH32_H
+#define BITCOINIII_BECH32_H
 
 #include <stdint.h>
 #include <string>
@@ -61,4 +61,4 @@ std::pair<std::string, std::vector<int>> LocateErrors(const std::string& str, Ch
 
 } // namespace bech32
 
-#endif // BITCOINII_BECH32_H
+#endif // BITCOINIII_BECH32_H

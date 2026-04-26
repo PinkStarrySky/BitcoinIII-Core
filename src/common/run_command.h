@@ -1,9 +1,9 @@
-// Copyright (c) 2022 The BitcoinII Core developers
+// Copyright (c) 2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_COMMON_RUN_COMMAND_H
-#define BITCOINII_COMMON_RUN_COMMAND_H
+#ifndef BITCOINIII_COMMON_RUN_COMMAND_H
+#define BITCOINIII_COMMON_RUN_COMMAND_H
 
 #include <string>
 
@@ -18,4 +18,4 @@ class UniValue;
  */
 UniValue RunCommandParseJSON(const std::string& str_command, const std::string& str_std_in="");
 
-#endif // BITCOINII_COMMON_RUN_COMMAND_H
+#endif // BITCOINIII_COMMON_RUN_COMMAND_H

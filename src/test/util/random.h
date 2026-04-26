@@ -1,9 +1,9 @@
-// Copyright (c) 2023-present The BitcoinII Core developers
+// Copyright (c) 2023-present The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_TEST_UTIL_RANDOM_H
-#define BITCOINII_TEST_UTIL_RANDOM_H
+#ifndef BITCOINIII_TEST_UTIL_RANDOM_H
+#define BITCOINIII_TEST_UTIL_RANDOM_H
 
 #include <consensus/amount.h>
 #include <random.h>
@@ -37,4 +37,4 @@ inline CAmount RandMoney(Rng&& rng)
     return CAmount{rng.randrange(MAX_MONEY + 1)};
 }
 
-#endif // BITCOINII_TEST_UTIL_RANDOM_H
+#endif // BITCOINIII_TEST_UTIL_RANDOM_H

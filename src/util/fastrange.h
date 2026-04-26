@@ -1,9 +1,9 @@
-// Copyright (c) 2018-2022 The BitcoinII Core developers
+// Copyright (c) 2018-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UTIL_FASTRANGE_H
-#define BITCOINII_UTIL_FASTRANGE_H
+#ifndef BITCOINIII_UTIL_FASTRANGE_H
+#define BITCOINIII_UTIL_FASTRANGE_H
 
 #include <cstdint>
 
@@ -48,4 +48,4 @@ static inline uint64_t FastRange64(uint64_t x, uint64_t n)
 #endif
 }
 
-#endif // BITCOINII_UTIL_FASTRANGE_H
+#endif // BITCOINIII_UTIL_FASTRANGE_H

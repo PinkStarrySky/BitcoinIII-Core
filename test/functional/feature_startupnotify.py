@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-# Copyright (c) 2020-2022 The BitcoinII Core developers
+# Copyright (c) 2020-2022 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test -startupnotify."""
-from test_framework.test_framework import BitcoinIITestFramework
+from test_framework.test_framework import BitcoinIIITestFramework
 from test_framework.util import (
     assert_equal,
 )
@@ -12,7 +12,7 @@ NODE_DIR = "node0"
 FILE_NAME = "test.txt"
 
 
-class StartupNotifyTest(BitcoinIITestFramework):
+class StartupNotifyTest(BitcoinIIITestFramework):
     def set_test_params(self):
         self.num_nodes = 1
 

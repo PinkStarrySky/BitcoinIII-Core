@@ -1,9 +1,9 @@
-// Copyright (c) 2012-2022 The BitcoinII Core developers
+// Copyright (c) 2012-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_DBWRAPPER_H
-#define BITCOINII_DBWRAPPER_H
+#ifndef BITCOINIII_DBWRAPPER_H
+#define BITCOINIII_DBWRAPPER_H
 
 #include <attributes.h>
 #include <serialize.h>
@@ -295,4 +295,4 @@ public:
     }
 };
 
-#endif // BITCOINII_DBWRAPPER_H
+#endif // BITCOINIII_DBWRAPPER_H

@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_PRIMITIVES_TRANSACTION_H
-#define BITCOINII_PRIMITIVES_TRANSACTION_H
+#ifndef BITCOINIII_PRIMITIVES_TRANSACTION_H
+#define BITCOINIII_PRIMITIVES_TRANSACTION_H
 
 #include <attributes.h>
 #include <consensus/amount.h>
@@ -439,4 +439,4 @@ public:
     friend bool operator<(const GenTxid& a, const GenTxid& b) { return std::tie(a.m_is_wtxid, a.m_hash) < std::tie(b.m_is_wtxid, b.m_hash); }
 };
 
-#endif // BITCOINII_PRIMITIVES_TRANSACTION_H
+#endif // BITCOINIII_PRIMITIVES_TRANSACTION_H

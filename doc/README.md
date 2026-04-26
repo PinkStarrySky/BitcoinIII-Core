@@ -1,42 +1,42 @@
-BitcoinII Core
+BitcoinIII Core
 =============
 
 Setup
 ---------------------
-BitcoinII Core is the original BitcoinII client and it builds the backbone of the network. It downloads and, by default, stores the entire history of BitcoinII transactions, which requires several hundred gigabytes or more of disk space. Depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to several days or more.
+BitcoinIII Core is the original BitcoinIII client and it builds the backbone of the network. It downloads and, by default, stores the entire history of BitcoinIII transactions, which requires several hundred gigabytes or more of disk space. Depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to several days or more.
 
-To download BitcoinII Core, visit [bitcoincore.org](https://bitcoincore.org/en/download/).
+To download BitcoinIII Core, visit [bitcoincore.org](https://bitcoincore.org/en/download/).
 
 Running
 ---------------------
-The following are some helpful notes on how to run BitcoinII Core on your native platform.
+The following are some helpful notes on how to run BitcoinIII Core on your native platform.
 
 ### Unix
 
 Unpack the files into a directory and run:
 
-- `bin/bitcoinII-qt` (GUI) or
-- `bin/bitcoinIId` (headless)
+- `bin/bitcoinIII-qt` (GUI) or
+- `bin/bitcoinIIId` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run bitcoinII-qt.exe.
+Unpack the files into a directory, and then run bitcoinIII-qt.exe.
 
 ### macOS
 
-Drag BitcoinII Core to your applications folder, and then run BitcoinII Core.
+Drag BitcoinIII Core to your applications folder, and then run BitcoinIII Core.
 
 ### Need Help?
 
-* See the documentation at the [BitcoinII Wiki](https://en.bitcoinII.it/wiki/Main_Page)
+* See the documentation at the [BitcoinIII Wiki](https://en.bitcoinIII.it/wiki/Main_Page)
 for help and more information.
-* Ask for help on [BitcoinII StackExchange](https://bitcoinII.stackexchange.com).
-* Ask for help on #bitcoinII on Libera Chat. If you don't have an IRC client, you can use [web.libera.chat](https://web.libera.chat/#bitcoinII).
-* Ask for help on the [BitcoinIITalk](https://bitcoinIItalk.org/) forums, in the [Technical Support board](https://bitcoinIItalk.org/index.php?board=4.0).
+* Ask for help on [BitcoinIII StackExchange](https://bitcoinIII.stackexchange.com).
+* Ask for help on #bitcoinIII on Libera Chat. If you don't have an IRC client, you can use [web.libera.chat](https://web.libera.chat/#bitcoinIII).
+* Ask for help on the [BitcoinIIITalk](https://bitcoinIIItalk.org/) forums, in the [Technical Support board](https://bitcoinIIItalk.org/index.php?board=4.0).
 
 Building
 ---------------------
-The following are developer notes on how to build BitcoinII Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build BitcoinIII Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [Dependencies](dependencies.md)
 - [macOS Build Notes](build-osx.md)
@@ -48,7 +48,7 @@ The following are developer notes on how to build BitcoinII Core on your native 
 
 Development
 ---------------------
-The BitcoinII repo's [root README](/README.md) contains relevant information on the development process and automated testing.
+The BitcoinIII repo's [root README](/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Productivity Notes](productivity.md)
@@ -64,12 +64,12 @@ The BitcoinII repo's [root README](/README.md) contains relevant information on 
 - [Internal Design Docs](design/)
 
 ### Resources
-* Discuss on the [BitcoinIITalk](https://bitcoinIItalk.org/) forums, in the [Development & Technical Discussion board](https://bitcoinIItalk.org/index.php?board=6.0).
-* Discuss project-specific development on #bitcoinII-core-dev on Libera Chat. If you don't have an IRC client, you can use [web.libera.chat](https://web.libera.chat/#bitcoinII-core-dev).
+* Discuss on the [BitcoinIIITalk](https://bitcoinIIItalk.org/) forums, in the [Development & Technical Discussion board](https://bitcoinIIItalk.org/index.php?board=6.0).
+* Discuss project-specific development on #bitcoinIII-core-dev on Libera Chat. If you don't have an IRC client, you can use [web.libera.chat](https://web.libera.chat/#bitcoinIII-core-dev).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)
-- [bitcoinII.conf Configuration File](bitcoinII-conf.md)
+- [bitcoinIII.conf Configuration File](bitcoinIII-conf.md)
 - [CJDNS Support](cjdns.md)
 - [Files](files.md)
 - [Fuzz-testing](fuzzing.md)

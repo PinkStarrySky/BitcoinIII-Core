@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_HASH_H
-#define BITCOINII_HASH_H
+#ifndef BITCOINIII_HASH_H
+#define BITCOINIII_HASH_H
 
 #include <attributes.h>
 #include <crypto/common.h>
@@ -20,7 +20,7 @@
 
 typedef uint256 ChainCode;
 
-/** A hasher class for BitcoinII's 256-bit hash (double SHA-256). */
+/** A hasher class for BitcoinIII's 256-bit hash (double SHA-256). */
 class CHash256 {
 private:
     CSHA256 sha;
@@ -45,7 +45,7 @@ public:
     }
 };
 
-/** A hasher class for BitcoinII's 160-bit hash (SHA-256 + RIPEMD-160). */
+/** A hasher class for BitcoinIII's 160-bit hash (SHA-256 + RIPEMD-160). */
 class CHash160 {
 private:
     CSHA256 sha;
@@ -226,4 +226,4 @@ inline uint160 RIPEMD160(Span<const unsigned char> data)
     return result;
 }
 
-#endif // BITCOINII_HASH_H
+#endif // BITCOINIII_HASH_H

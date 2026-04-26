@@ -1,9 +1,9 @@
-// Copyright (c) 2021-2022 The BitcoinII Core developers
+// Copyright (c) 2021-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 //
-#ifndef BITCOINII_TEST_UTIL_CHAINSTATE_H
-#define BITCOINII_TEST_UTIL_CHAINSTATE_H
+#ifndef BITCOINIII_TEST_UTIL_CHAINSTATE_H
+#define BITCOINIII_TEST_UTIL_CHAINSTATE_H
 
 #include <clientversion.h>
 #include <logging.h>
@@ -132,4 +132,4 @@ CreateAndActivateUTXOSnapshot(
 }
 
 
-#endif // BITCOINII_TEST_UTIL_CHAINSTATE_H
+#endif // BITCOINIII_TEST_UTIL_CHAINSTATE_H

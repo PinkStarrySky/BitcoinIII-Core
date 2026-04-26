@@ -1,7 +1,7 @@
-BitcoinII v0.3.24 is now available for download at
-https://sourceforge.net/projects/bitcoinII/files/BitcoinII/bitcoinII-0.3.24/
+BitcoinIII v0.3.24 is now available for download at
+https://sourceforge.net/projects/bitcoinIII/files/BitcoinIII/bitcoinIII-0.3.24/
 
-This is another bug fix release.  We had hoped to have wallet encryption ready for release, but more urgent fixes for existing clients were needed -- most notably block download problems were getting severe.  Wallet encryption is ready for testing at https://github.com/bitcoinII/bitcoinII/pull/352 for the git-savvy, and hopefully will follow shortly in the next release, v0.4.
+This is another bug fix release.  We had hoped to have wallet encryption ready for release, but more urgent fixes for existing clients were needed -- most notably block download problems were getting severe.  Wallet encryption is ready for testing at https://github.com/bitcoinIII/bitcoinIII/pull/352 for the git-savvy, and hopefully will follow shortly in the next release, v0.4.
 
 Notable fixes in v0.3.24, and the main reasons for this release:
 
@@ -13,8 +13,8 @@ Notable changes in v0.3.24:
 
 C1) DNS seeding enabled by default.
 
-C2) UPNP enabled by default in the GUI client.  The percentage of bitcoinII clients that accept incoming connections is quite small, and that is a problem.  This should help.  bitcoinIId, and unofficial builds, are unchanged (though we encourage use of "-upnp" to help the network!)
+C2) UPNP enabled by default in the GUI client.  The percentage of bitcoinIII clients that accept incoming connections is quite small, and that is a problem.  This should help.  bitcoinIIId, and unofficial builds, are unchanged (though we encourage use of "-upnp" to help the network!)
 
-C3) Initial unit testing framework.  BitcoinII sorely needs automated tests, and this is a beginning.  Contributions welcome.
+C3) Initial unit testing framework.  BitcoinIII sorely needs automated tests, and this is a beginning.  Contributions welcome.
 
 C4) Internal wallet code cleanup.  While invisible to an end user, this change provides the basis for v0.4's wallet encryption.

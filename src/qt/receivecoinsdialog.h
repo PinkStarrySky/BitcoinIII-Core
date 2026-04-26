@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2021 The BitcoinII Core developers
+// Copyright (c) 2011-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_RECEIVECOINSDIALOG_H
-#define BITCOINII_QT_RECEIVECOINSDIALOG_H
+#ifndef BITCOINIII_QT_RECEIVECOINSDIALOG_H
+#define BITCOINIII_QT_RECEIVECOINSDIALOG_H
 
 #include <qt/guiutil.h>
 
@@ -26,7 +26,7 @@ QT_BEGIN_NAMESPACE
 class QModelIndex;
 QT_END_NAMESPACE
 
-/** Dialog for requesting payment of bitcoinIIs */
+/** Dialog for requesting payment of bitcoinIIIs */
 class ReceiveCoinsDialog : public QDialog
 {
     Q_OBJECT
@@ -76,4 +76,4 @@ private Q_SLOTS:
     void copyAmount();
 };
 
-#endif // BITCOINII_QT_RECEIVECOINSDIALOG_H
+#endif // BITCOINIII_QT_RECEIVECOINSDIALOG_H

@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_SCRIPT_SIGNINGPROVIDER_H
-#define BITCOINII_SCRIPT_SIGNINGPROVIDER_H
+#ifndef BITCOINIII_SCRIPT_SIGNINGPROVIDER_H
+#define BITCOINIII_SCRIPT_SIGNINGPROVIDER_H
 
 #include <addresstype.h>
 #include <attributes.h>
@@ -316,4 +316,4 @@ public:
     bool GetTaprootBuilder(const XOnlyPubKey& output_key, TaprootBuilder& builder) const override;
 };
 
-#endif // BITCOINII_SCRIPT_SIGNINGPROVIDER_H
+#endif // BITCOINIII_SCRIPT_SIGNINGPROVIDER_H

@@ -1,11 +1,11 @@
 // Copyright (c) 2009-2025 Satoshi Nakamoto
 // Copyright (c) 2009-2022 The Bitcoin Core developers
-// Copyright (c) 2025 The BitcoinII Core Developers
+// Copyright (c) 2025 The BitcoinIII Core Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_CONSENSUS_CONSENSUS_H
-#define BITCOINII_CONSENSUS_CONSENSUS_H
+#ifndef BITCOINIII_CONSENSUS_CONSENSUS_H
+#define BITCOINIII_CONSENSUS_CONSENSUS_H
 
 #include <cstdlib>
 #include <stdint.h>
@@ -35,4 +35,4 @@ static constexpr unsigned int LOCKTIME_VERIFY_SEQUENCE = (1 << 0);
  */
 static constexpr int64_t MAX_TIMEWARP = 600;
 
-#endif // BITCOINII_CONSENSUS_CONSENSUS_H
+#endif // BITCOINIII_CONSENSUS_CONSENSUS_H

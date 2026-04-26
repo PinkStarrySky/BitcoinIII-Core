@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2022 The BitcoinII Core developers
+// Copyright (c) 2011-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_GUIUTIL_H
-#define BITCOINII_QT_GUIUTIL_H
+#ifndef BITCOINIII_QT_GUIUTIL_H
+#define BITCOINIII_QT_GUIUTIL_H
 
 #include <consensus/amount.h>
 #include <net.h>
@@ -52,7 +52,7 @@ class QUrl;
 class QWidget;
 QT_END_NAMESPACE
 
-/** Utility functions used by the BitcoinII Qt UI.
+/** Utility functions used by the BitcoinIII Qt UI.
  */
 namespace GUIUtil
 {
@@ -77,10 +77,10 @@ namespace GUIUtil
      */
     void AddButtonShortcut(QAbstractButton* button, const QKeySequence& shortcut);
 
-    // Parse "bitcoinII:" URI into recipient object, return true on successful parsing
-    bool parseBitcoinIIURI(const QUrl &uri, SendCoinsRecipient *out);
-    bool parseBitcoinIIURI(QString uri, SendCoinsRecipient *out);
-    QString formatBitcoinIIURI(const SendCoinsRecipient &info);
+    // Parse "bitcoinIII:" URI into recipient object, return true on successful parsing
+    bool parseBitcoinIIIURI(const QUrl &uri, SendCoinsRecipient *out);
+    bool parseBitcoinIIIURI(QString uri, SendCoinsRecipient *out);
+    QString formatBitcoinIIIURI(const SendCoinsRecipient &info);
 
     // Returns true if given address+amount meets "dust" definition
     bool isDust(interfaces::Node& node, const QString& address, const CAmount& amount);
@@ -178,7 +178,7 @@ namespace GUIUtil
     void openDebugLogfile();
 
     // Open the config file
-    bool openBitcoinIIConf();
+    bool openBitcoinIIIConf();
 
     /** Qt event filter that intercepts ToolTipChange events, and replaces the tooltip with a rich text
       representation if needed. This assures that Qt can word-wrap long tooltip messages.
@@ -441,4 +441,4 @@ namespace GUIUtil
 
 } // namespace GUIUtil
 
-#endif // BITCOINII_QT_GUIUTIL_H
+#endif // BITCOINIII_QT_GUIUTIL_H

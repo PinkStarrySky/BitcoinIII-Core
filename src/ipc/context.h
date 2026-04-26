@@ -1,9 +1,9 @@
-// Copyright (c) 2021 The BitcoinII Core developers
+// Copyright (c) 2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_IPC_CONTEXT_H
-#define BITCOINII_IPC_CONTEXT_H
+#ifndef BITCOINIII_IPC_CONTEXT_H
+#define BITCOINIII_IPC_CONTEXT_H
 
 namespace ipc {
 //! Context struct used to give IPC protocol implementations or implementation
@@ -16,4 +16,4 @@ struct Context
 };
 } // namespace ipc
 
-#endif // BITCOINII_IPC_CONTEXT_H
+#endif // BITCOINIII_IPC_CONTEXT_H

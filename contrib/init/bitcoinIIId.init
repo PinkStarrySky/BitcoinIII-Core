@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+#
+#  bitcoinIIId The bitcoinIII core server.
+#
+#
+# chkconfig: 345 80 20
+# description: bitcoinIIId
+# processname: bitcoinIIId
+#
+
+# Source function library.
+. /etc/init.d/functions
+
+# you can override defaults in /etc/sysconfig/bitcoinIIId, see below
+if [ -f /etc/sysconfig/bitcoinIIId ]; then
+        . /etc/sysconfig/bitcoinIIId
+fi
+
+RETVAL=0
+
+prog=bitcoinIIId
+# you can override the lockfile via BITCOINIIID_LOCKFILE in /etc/sysconfig/bitcoinIIId
+lockfile=${BITCOINIIID_LOCKFILE-/var/lock/subsys/bitcoinIIId}
+
+# bitcoinIIId defaults to /usr/bin/bitcoinIIId, override with BITCOINIIID_BIN
+bitcoinIIId=${BITCOINIIID_BIN-/usr/bin/bitcoinIIId}
+
+# bitcoinIIId opts default to -disablewallet, override with BITCOINIIID_OPTS
+bitcoinIIId_opts=${BITCOINIIID_OPTS--disablewallet}
+
+start() {
+    echo -n $"Starting $prog: "
+    daemon $DAEMONOPTS $bitcoinIIId $bitcoinIIId_opts
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc $prog -t600
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    return $RETVAL
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status $prog
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: service $prog {start|stop|status|restart}"
+        exit 1
+        ;;
+esac

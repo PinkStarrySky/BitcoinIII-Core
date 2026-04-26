@@ -1,24 +1,24 @@
 #!/usr/bin/env python3
-# Copyright (c) 2017-2022 The BitcoinII Core developers
+# Copyright (c) 2017-2022 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test external signer.
 
-Verify that a bitcoinIId node can use an external signer command.
+Verify that a bitcoinIIId node can use an external signer command.
 See also wallet_signer.py for tests that require wallet context.
 """
 import os
 import platform
 import sys
 
-from test_framework.test_framework import BitcoinIITestFramework
+from test_framework.test_framework import BitcoinIIITestFramework
 from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error,
 )
 
 
-class RPCSignerTest(BitcoinIITestFramework):
+class RPCSignerTest(BitcoinIIITestFramework):
     def mock_signer_path(self):
         path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'mocks', 'signer.py')
         return sys.executable + " " + path
@@ -46,7 +46,7 @@ class RPCSignerTest(BitcoinIITestFramework):
     def run_test(self):
         self.log.debug(f"-signer={self.mock_signer_path()}")
 
-        assert_raises_rpc_error(-1, 'Error: restart bitcoinIId with -signer=<cmd>',
+        assert_raises_rpc_error(-1, 'Error: restart bitcoinIIId with -signer=<cmd>',
             self.nodes[0].enumeratesigners
         )
 

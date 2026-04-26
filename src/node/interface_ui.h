@@ -1,10 +1,10 @@
 // Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2012-2022 The BitcoinII Core developers
+// Copyright (c) 2012-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_NODE_INTERFACE_UI_H
-#define BITCOINII_NODE_INTERFACE_UI_H
+#ifndef BITCOINIII_NODE_INTERFACE_UI_H
+#define BITCOINIII_NODE_INTERFACE_UI_H
 
 #include <cstdint>
 #include <functional>
@@ -121,4 +121,4 @@ bool InitError(const bilingual_str& str, const std::vector<std::string>& details
 
 extern CClientUIInterface uiInterface;
 
-#endif // BITCOINII_NODE_INTERFACE_UI_H
+#endif // BITCOINIII_NODE_INTERFACE_UI_H

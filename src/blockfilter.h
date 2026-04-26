@@ -1,9 +1,9 @@
-// Copyright (c) 2018-2022 The BitcoinII Core developers
+// Copyright (c) 2018-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_BLOCKFILTER_H
-#define BITCOINII_BLOCKFILTER_H
+#ifndef BITCOINIII_BLOCKFILTER_H
+#define BITCOINIII_BLOCKFILTER_H
 
 #include <cstddef>
 #include <cstdint>
@@ -172,4 +172,4 @@ public:
     }
 };
 
-#endif // BITCOINII_BLOCKFILTER_H
+#endif // BITCOINIII_BLOCKFILTER_H

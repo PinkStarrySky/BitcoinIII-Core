@@ -1,9 +1,9 @@
-// Copyright (c) 2016-2020 The BitcoinII Core developers
+// Copyright (c) 2016-2020 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_SUPPORT_LOCKEDPOOL_H
-#define BITCOINII_SUPPORT_LOCKEDPOOL_H
+#ifndef BITCOINIII_SUPPORT_LOCKEDPOOL_H
+#define BITCOINIII_SUPPORT_LOCKEDPOOL_H
 
 #include <cstddef>
 #include <list>
@@ -237,4 +237,4 @@ private:
     static LockedPoolManager* _instance;
 };
 
-#endif // BITCOINII_SUPPORT_LOCKEDPOOL_H
+#endif // BITCOINIII_SUPPORT_LOCKEDPOOL_H

@@ -1,9 +1,9 @@
-// Copyright (c) 2012-2022 The BitcoinII Core developers
+// Copyright (c) 2012-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_CHECKQUEUE_H
-#define BITCOINII_CHECKQUEUE_H
+#ifndef BITCOINIII_CHECKQUEUE_H
+#define BITCOINIII_CHECKQUEUE_H
 
 #include <logging.h>
 #include <sync.h>
@@ -248,4 +248,4 @@ public:
     }
 };
 
-#endif // BITCOINII_CHECKQUEUE_H
+#endif // BITCOINIII_CHECKQUEUE_H

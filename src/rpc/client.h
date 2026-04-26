@@ -1,10 +1,10 @@
 // Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2009-2018 The BitcoinII Core developers
+// Copyright (c) 2009-2018 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_RPC_CLIENT_H
-#define BITCOINII_RPC_CLIENT_H
+#ifndef BITCOINIII_RPC_CLIENT_H
+#define BITCOINIII_RPC_CLIENT_H
 
 #include <string>
 #include <string_view>
@@ -17,4 +17,4 @@ UniValue RPCConvertValues(const std::string& strMethod, const std::vector<std::s
 /** Convert named arguments to command-specific RPC representation */
 UniValue RPCConvertNamedValues(const std::string& strMethod, const std::vector<std::string>& strParams);
 
-#endif // BITCOINII_RPC_CLIENT_H
+#endif // BITCOINIII_RPC_CLIENT_H

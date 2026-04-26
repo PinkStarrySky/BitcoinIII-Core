@@ -1,9 +1,9 @@
-// Copyright (c) 2022 The BitcoinII Core developers
+// Copyright (c) 2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_TEST_UTIL_POOLRESOURCETESTER_H
-#define BITCOINII_TEST_UTIL_POOLRESOURCETESTER_H
+#ifndef BITCOINIII_TEST_UTIL_POOLRESOURCETESTER_H
+#define BITCOINIII_TEST_UTIL_POOLRESOURCETESTER_H
 
 #include <support/allocators/pool.h>
 
@@ -126,4 +126,4 @@ public:
     }
 };
 
-#endif // BITCOINII_TEST_UTIL_POOLRESOURCETESTER_H
+#endif // BITCOINIII_TEST_UTIL_POOLRESOURCETESTER_H

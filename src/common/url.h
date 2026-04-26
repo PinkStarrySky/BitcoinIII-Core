@@ -1,9 +1,9 @@
-// Copyright (c) 2015-2022 The BitcoinII Core developers
+// Copyright (c) 2015-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_COMMON_URL_H
-#define BITCOINII_COMMON_URL_H
+#ifndef BITCOINIII_COMMON_URL_H
+#define BITCOINIII_COMMON_URL_H
 
 #include <string>
 #include <string_view>
@@ -14,4 +14,4 @@
  */
 std::string UrlDecode(std::string_view url_encoded);
 
-#endif // BITCOINII_COMMON_URL_H
+#endif // BITCOINIII_COMMON_URL_H

@@ -1,9 +1,9 @@
-// Copyright (c) 2024-present The BitcoinII Core developers
+// Copyright (c) 2024-present The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_POLICY_EPHEMERAL_POLICY_H
-#define BITCOINII_POLICY_EPHEMERAL_POLICY_H
+#ifndef BITCOINIII_POLICY_EPHEMERAL_POLICY_H
+#define BITCOINIII_POLICY_EPHEMERAL_POLICY_H
 
 #include <consensus/amount.h>
 #include <policy/packages.h>
@@ -55,4 +55,4 @@ bool PreCheckEphemeralTx(const CTransaction& tx, CFeeRate dust_relay_rate, CAmou
  */
 bool CheckEphemeralSpends(const Package& package, CFeeRate dust_relay_rate, const CTxMemPool& tx_pool, TxValidationState& out_child_state, Wtxid& out_child_wtxid);
 
-#endif // BITCOINII_POLICY_EPHEMERAL_POLICY_H
+#endif // BITCOINIII_POLICY_EPHEMERAL_POLICY_H

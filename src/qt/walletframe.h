@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2021 The BitcoinII Core developers
+// Copyright (c) 2011-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_WALLETFRAME_H
-#define BITCOINII_QT_WALLETFRAME_H
+#ifndef BITCOINIII_QT_WALLETFRAME_H
+#define BITCOINIII_QT_WALLETFRAME_H
 
 #include <QFrame>
 #include <QMap>
@@ -20,9 +20,9 @@ QT_END_NAMESPACE
 
 /**
  * A container for embedding all wallet-related
- * controls into BitcoinIIGUI. The purpose of this class is to allow future
+ * controls into BitcoinIIIGUI. The purpose of this class is to allow future
  * refinements of the wallet controls with minimal need for further
- * modifications to BitcoinIIGUI, thus greatly simplifying merges while
+ * modifications to BitcoinIIIGUI, thus greatly simplifying merges while
  * reducing the risk of breaking top-level stuff.
  */
 class WalletFrame : public QFrame
@@ -81,7 +81,7 @@ public Q_SLOTS:
     /** Show Sign/Verify Message dialog and switch to verify message tab */
     void gotoVerifyMessageTab(QString addr = "");
 
-    /** Load Partially Signed BitcoinII Transaction */
+    /** Load Partially Signed BitcoinIII Transaction */
     void gotoLoadPSBT(bool from_clipboard = false);
 
     /** Encrypt the wallet */
@@ -99,4 +99,4 @@ public Q_SLOTS:
     void usedReceivingAddresses();
 };
 
-#endif // BITCOINII_QT_WALLETFRAME_H
+#endif // BITCOINIII_QT_WALLETFRAME_H

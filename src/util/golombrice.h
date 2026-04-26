@@ -1,9 +1,9 @@
-// Copyright (c) 2018-2022 The BitcoinII Core developers
+// Copyright (c) 2018-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UTIL_GOLOMBRICE_H
-#define BITCOINII_UTIL_GOLOMBRICE_H
+#ifndef BITCOINIII_UTIL_GOLOMBRICE_H
+#define BITCOINIII_UTIL_GOLOMBRICE_H
 
 #include <util/fastrange.h>
 
@@ -42,4 +42,4 @@ uint64_t GolombRiceDecode(BitStreamReader<IStream>& bitreader, uint8_t P)
     return (q << P) + r;
 }
 
-#endif // BITCOINII_UTIL_GOLOMBRICE_H
+#endif // BITCOINIII_UTIL_GOLOMBRICE_H

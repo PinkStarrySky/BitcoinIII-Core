@@ -1,9 +1,9 @@
-// Copyright (c) 2015-2022 The BitcoinII Core developers
+// Copyright (c) 2015-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_ZMQ_ZMQNOTIFICATIONINTERFACE_H
-#define BITCOINII_ZMQ_ZMQNOTIFICATIONINTERFACE_H
+#ifndef BITCOINIII_ZMQ_ZMQNOTIFICATIONINTERFACE_H
+#define BITCOINIII_ZMQ_ZMQNOTIFICATIONINTERFACE_H
 
 #include <primitives/transaction.h>
 #include <validationinterface.h>
@@ -48,4 +48,4 @@ private:
 
 extern std::unique_ptr<CZMQNotificationInterface> g_zmq_notification_interface;
 
-#endif // BITCOINII_ZMQ_ZMQNOTIFICATIONINTERFACE_H
+#endif // BITCOINIII_ZMQ_ZMQNOTIFICATIONINTERFACE_H

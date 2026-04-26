@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2020 The BitcoinII Core developers
+// Copyright (c) 2011-2020 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_COINCONTROLTREEWIDGET_H
-#define BITCOINII_QT_COINCONTROLTREEWIDGET_H
+#ifndef BITCOINIII_QT_COINCONTROLTREEWIDGET_H
+#define BITCOINIII_QT_COINCONTROLTREEWIDGET_H
 
 #include <QKeyEvent>
 #include <QTreeWidget>
@@ -19,4 +19,4 @@ protected:
     virtual void keyPressEvent(QKeyEvent *event) override;
 };
 
-#endif // BITCOINII_QT_COINCONTROLTREEWIDGET_H
+#endif // BITCOINIII_QT_COINCONTROLTREEWIDGET_H

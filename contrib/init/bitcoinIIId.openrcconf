@@ -1,0 +1,33 @@
+# /etc/conf.d/bitcoinIIId: config file for /etc/init.d/bitcoinIIId
+
+# Config file location
+#BITCOINIIID_CONFIGFILE="/etc/bitcoinIII/bitcoinIII.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOINIIID_USER)
+#BITCOINIIID_PIDDIR="/var/run/bitcoinIIId"
+
+# What filename to give the pidfile
+#BITCOINIIID_PIDFILE="${BITCOINIIID_PIDDIR}/bitcoinIIId.pid"
+
+# Where to write bitcoinIIId data (be mindful that the blockchain is large)
+#BITCOINIIID_DATADIR="/var/lib/bitcoinIIId"
+
+# User and group to own bitcoinIIId process
+#BITCOINIIID_USER="bitcoinIII"
+#BITCOINIIID_GROUP="bitcoinIII"
+
+# Path to bitcoinIIId executable
+#BITCOINIIID_BIN="/usr/bin/bitcoinIIId"
+
+# Nice value to run bitcoinIIId under
+#BITCOINIIID_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+#BITCOINIIID_OPTS=""
+
+# The timeout in seconds OpenRC will wait for bitcoinIIId to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+BITCOINIIID_SIGTERM_TIMEOUT=600

@@ -1,9 +1,9 @@
-// Copyright (c) 2018-2021 The BitcoinII Core developers
+// Copyright (c) 2018-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_SCRIPT_DESCRIPTOR_H
-#define BITCOINII_SCRIPT_DESCRIPTOR_H
+#ifndef BITCOINIII_SCRIPT_DESCRIPTOR_H
+#define BITCOINIII_SCRIPT_DESCRIPTOR_H
 
 #include <outputtype.h>
 #include <script/script.h>
@@ -206,4 +206,4 @@ std::unique_ptr<Descriptor> InferDescriptor(const CScript& script, const Signing
 */
 uint256 DescriptorID(const Descriptor& desc);
 
-#endif // BITCOINII_SCRIPT_DESCRIPTOR_H
+#endif // BITCOINIII_SCRIPT_DESCRIPTOR_H

@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_COINS_H
-#define BITCOINII_COINS_H
+#ifndef BITCOINIII_COINS_H
+#define BITCOINIII_COINS_H
 
 #include <compressor.h>
 #include <core_memusage.h>
@@ -504,7 +504,7 @@ const Coin& AccessByTxid(const CCoinsViewCache& cache, const Txid& txid);
 /**
  * This is a minimally invasive approach to shutdown on LevelDB read errors from the
  * chainstate, while keeping user interface out of the common library, which is shared
- * between bitcoinIId, and bitcoinII-qt and non-server tools.
+ * between bitcoinIIId, and bitcoinIII-qt and non-server tools.
  *
  * Writes do not need similar protection, as failure to write is handled by the caller.
 */
@@ -526,4 +526,4 @@ private:
 
 };
 
-#endif // BITCOINII_COINS_H
+#endif // BITCOINIII_COINS_H

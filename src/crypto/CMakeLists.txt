@@ -1,8 +1,8 @@
-# Copyright (c) 2023-present The BitcoinII Core developers
+# Copyright (c) 2023-present The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://opensource.org/license/mit/.
 
-add_library(bitcoinII_crypto STATIC EXCLUDE_FROM_ALL
+add_library(bitcoinIII_crypto STATIC EXCLUDE_FROM_ALL
   aes.cpp
   chacha20.cpp
   chacha20poly1305.cpp
@@ -22,38 +22,38 @@ add_library(bitcoinII_crypto STATIC EXCLUDE_FROM_ALL
   ../support/cleanse.cpp
 )
 
-target_link_libraries(bitcoinII_crypto
+target_link_libraries(bitcoinIII_crypto
   PRIVATE
     core_interface
 )
 
 if(HAVE_SSE41)
-  target_compile_definitions(bitcoinII_crypto PRIVATE ENABLE_SSE41)
-  target_sources(bitcoinII_crypto PRIVATE sha256_sse41.cpp)
+  target_compile_definitions(bitcoinIII_crypto PRIVATE ENABLE_SSE41)
+  target_sources(bitcoinIII_crypto PRIVATE sha256_sse41.cpp)
   set_property(SOURCE sha256_sse41.cpp PROPERTY
     COMPILE_OPTIONS ${SSE41_CXXFLAGS}
   )
 endif()
 
 if(HAVE_AVX2)
-  target_compile_definitions(bitcoinII_crypto PRIVATE ENABLE_AVX2)
-  target_sources(bitcoinII_crypto PRIVATE sha256_avx2.cpp)
+  target_compile_definitions(bitcoinIII_crypto PRIVATE ENABLE_AVX2)
+  target_sources(bitcoinIII_crypto PRIVATE sha256_avx2.cpp)
   set_property(SOURCE sha256_avx2.cpp PROPERTY
     COMPILE_OPTIONS ${AVX2_CXXFLAGS}
   )
 endif()
 
 if(HAVE_SSE41 AND HAVE_X86_SHANI)
-  target_compile_definitions(bitcoinII_crypto PRIVATE ENABLE_SSE41 ENABLE_X86_SHANI)
-  target_sources(bitcoinII_crypto PRIVATE sha256_x86_shani.cpp)
+  target_compile_definitions(bitcoinIII_crypto PRIVATE ENABLE_SSE41 ENABLE_X86_SHANI)
+  target_sources(bitcoinIII_crypto PRIVATE sha256_x86_shani.cpp)
   set_property(SOURCE sha256_x86_shani.cpp PROPERTY
     COMPILE_OPTIONS ${X86_SHANI_CXXFLAGS}
   )
 endif()
 
 if(HAVE_ARM_SHANI)
-  target_compile_definitions(bitcoinII_crypto PRIVATE ENABLE_ARM_SHANI)
-  target_sources(bitcoinII_crypto PRIVATE sha256_arm_shani.cpp)
+  target_compile_definitions(bitcoinIII_crypto PRIVATE ENABLE_ARM_SHANI)
+  target_sources(bitcoinIII_crypto PRIVATE sha256_arm_shani.cpp)
   set_property(SOURCE sha256_arm_shani.cpp PROPERTY
     COMPILE_OPTIONS ${ARM_SHANI_CXXFLAGS}
   )

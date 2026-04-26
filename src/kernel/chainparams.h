@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2021 The BitcoinII Core developers
+// Copyright (c) 2009-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_KERNEL_CHAINPARAMS_H
-#define BITCOINII_KERNEL_CHAINPARAMS_H
+#ifndef BITCOINIII_KERNEL_CHAINPARAMS_H
+#define BITCOINIII_KERNEL_CHAINPARAMS_H
 
 #include <consensus/params.h>
 #include <kernel/messagestartchars.h>
@@ -75,7 +75,7 @@ struct ChainTxData {
 
 /**
  * CChainParams defines various tweakable parameters of a given instance of the
- * BitcoinII system.
+ * BitcoinIII system.
  */
 class CChainParams
 {
@@ -188,4 +188,4 @@ protected:
 
 std::optional<ChainType> GetNetworkForMagic(const MessageStartChars& pchMessageStart);
 
-#endif // BITCOINII_KERNEL_CHAINPARAMS_H
+#endif // BITCOINIII_KERNEL_CHAINPARAMS_H

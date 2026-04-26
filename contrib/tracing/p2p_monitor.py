@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-# Copyright (c) 2021 The BitcoinII Core developers
+# Copyright (c) 2021 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-""" Interactive bitcoinIId P2P network traffic monitor utilizing USDT and the
+""" Interactive bitcoinIIId P2P network traffic monitor utilizing USDT and the
     net:inbound_message and net:outbound_message tracepoints. """
 
-# This script demonstrates what USDT for BitcoinII Core can enable. It uses BCC
+# This script demonstrates what USDT for BitcoinIII Core can enable. It uses BCC
 # (https://github.com/iovisor/bcc) to load a sandboxed eBPF program into the
 # Linux kernel (root privileges are required). The eBPF program attaches to two
 # statically defined tracepoints. The tracepoint 'net:inbound_message' is called
@@ -126,15 +126,15 @@ class Peer:
 
 def main(pid):
     peers = dict()
-    print(f"Hooking into bitcoinIId with pid {pid}")
-    bitcoinIId_with_usdts = USDT(pid=int(pid))
+    print(f"Hooking into bitcoinIIId with pid {pid}")
+    bitcoinIIId_with_usdts = USDT(pid=int(pid))
 
     # attaching the trace functions defined in the BPF program to the tracepoints
-    bitcoinIId_with_usdts.enable_probe(
+    bitcoinIIId_with_usdts.enable_probe(
         probe="inbound_message", fn_name="trace_inbound_message")
-    bitcoinIId_with_usdts.enable_probe(
+    bitcoinIIId_with_usdts.enable_probe(
         probe="outbound_message", fn_name="trace_outbound_message")
-    bpf = BPF(text=program, usdt_contexts=[bitcoinIId_with_usdts])
+    bpf = BPF(text=program, usdt_contexts=[bitcoinIIId_with_usdts])
 
     # BCC: perf buffer handle function for inbound_messages
     def handle_inbound(_, data, size):
@@ -259,7 +259,7 @@ def running_as_root():
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("USAGE:", sys.argv[0], "<pid of bitcoinIId>")
+        print("USAGE:", sys.argv[0], "<pid of bitcoinIIId>")
         exit()
     if not running_as_root():
         print("You might not have the privileges required to hook into the tracepoints!")

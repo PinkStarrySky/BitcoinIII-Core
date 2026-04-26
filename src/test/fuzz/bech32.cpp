@@ -1,4 +1,4 @@
-// Copyright (c) 2019-2021 The BitcoinII Core developers
+// Copyright (c) 2019-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -30,7 +30,7 @@ FUZZ_TARGET(bech32_random_decode)
     }
 }
 
-// https://github.com/bitcoinII/bips/blob/master/bip-0173.mediawiki and https://github.com/bitcoinII/bips/blob/master/bip-0350.mediawiki
+// https://github.com/bitcoinIII/bips/blob/master/bip-0173.mediawiki and https://github.com/bitcoinIII/bips/blob/master/bip-0350.mediawiki
 std::string GenerateRandomHRP(FuzzedDataProvider& fdp)
 {
     std::string hrp;

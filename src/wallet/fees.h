@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2021 The BitcoinII Core developers
+// Copyright (c) 2009-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_WALLET_FEES_H
-#define BITCOINII_WALLET_FEES_H
+#ifndef BITCOINIII_WALLET_FEES_H
+#define BITCOINIII_WALLET_FEES_H
 
 #include <consensus/amount.h>
 
@@ -45,4 +45,4 @@ CFeeRate GetMinimumFeeRate(const CWallet& wallet, const CCoinControl& coin_contr
 CFeeRate GetDiscardRate(const CWallet& wallet);
 } // namespace wallet
 
-#endif // BITCOINII_WALLET_FEES_H
+#endif // BITCOINIII_WALLET_FEES_H

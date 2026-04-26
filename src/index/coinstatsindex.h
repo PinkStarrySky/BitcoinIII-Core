@@ -1,9 +1,9 @@
-// Copyright (c) 2020-2022 The BitcoinII Core developers
+// Copyright (c) 2020-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_INDEX_COINSTATSINDEX_H
-#define BITCOINII_INDEX_COINSTATSINDEX_H
+#ifndef BITCOINIII_INDEX_COINSTATSINDEX_H
+#define BITCOINIII_INDEX_COINSTATSINDEX_H
 
 #include <crypto/muhash.h>
 #include <index/base.h>
@@ -64,4 +64,4 @@ public:
 /// The global UTXO set hash object.
 extern std::unique_ptr<CoinStatsIndex> g_coin_stats_index;
 
-#endif // BITCOINII_INDEX_COINSTATSINDEX_H
+#endif // BITCOINIII_INDEX_COINSTATSINDEX_H

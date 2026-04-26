@@ -1,9 +1,9 @@
-// Copyright (c) 2018-2022 The BitcoinII Core developers
+// Copyright (c) 2018-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_SCRIPT_PARSING_H
-#define BITCOINII_SCRIPT_PARSING_H
+#ifndef BITCOINIII_SCRIPT_PARSING_H
+#define BITCOINIII_SCRIPT_PARSING_H
 
 #include <span.h>
 
@@ -37,4 +37,4 @@ Span<const char> Expr(Span<const char>& sp);
 
 } // namespace script
 
-#endif // BITCOINII_SCRIPT_PARSING_H
+#endif // BITCOINIII_SCRIPT_PARSING_H

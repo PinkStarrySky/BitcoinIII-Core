@@ -1,12 +1,12 @@
-// Copyright (c) 2018-2022 The BitcoinII Core developers
+// Copyright (c) 2018-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include <bitcoinII-build-config.h> // IWYU pragma: keep
+#include <bitcoinIII-build-config.h> // IWYU pragma: keep
 
 #include <common/args.h>
 #include <init.h>
-#include <qt/bitcoinII.h>
+#include <qt/bitcoinIII.h>
 #include <qt/guiutil.h>
 #include <qt/test/optiontests.h>
 #include <test/util/setup_common.h>
@@ -87,7 +87,7 @@ void OptionTests::migrateSettings()
 
 void OptionTests::integerGetArgBug()
 {
-    // Test regression https://github.com/bitcoinII/bitcoinII/issues/24457. Ensure
+    // Test regression https://github.com/bitcoinIII/bitcoinIII/issues/24457. Ensure
     // that setting integer prune value doesn't cause an exception to be thrown
     // in the OptionsModel constructor
     gArgs.LockSettings([&](common::Settings& settings) {
@@ -105,10 +105,10 @@ void OptionTests::integerGetArgBug()
 
 void OptionTests::parametersInteraction()
 {
-    // Test that the bug https://github.com/bitcoinII-core/gui/issues/567 does not resurface.
-    // It was fixed via https://github.com/bitcoinII-core/gui/pull/568.
-    // With fListen=false in ~/.config/BitcoinII/BitcoinII-Qt.conf and all else left as default,
-    // bitcoinII-qt should set both -listen and -listenonion to false and start successfully.
+    // Test that the bug https://github.com/bitcoinIII-core/gui/issues/567 does not resurface.
+    // It was fixed via https://github.com/bitcoinIII-core/gui/pull/568.
+    // With fListen=false in ~/.config/BitcoinIII/BitcoinIII-Qt.conf and all else left as default,
+    // bitcoinIII-qt should set both -listen and -listenonion to false and start successfully.
     gArgs.LockSettings([&](common::Settings& s) {
         s.forced_settings.erase("listen");
         s.forced_settings.erase("listenonion");

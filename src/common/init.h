@@ -1,9 +1,9 @@
-// Copyright (c) 2023 The BitcoinII Core developers
+// Copyright (c) 2023 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_COMMON_INIT_H
-#define BITCOINII_COMMON_INIT_H
+#ifndef BITCOINIII_COMMON_INIT_H
+#define BITCOINIII_COMMON_INIT_H
 
 #include <util/translation.h>
 
@@ -36,4 +36,4 @@ using SettingsAbortFn = std::function<bool(const bilingual_str& message, const s
 std::optional<ConfigError> InitConfig(ArgsManager& args, SettingsAbortFn settings_abort_fn = nullptr);
 } // namespace common
 
-#endif // BITCOINII_COMMON_INIT_H
+#endif // BITCOINIII_COMMON_INIT_H

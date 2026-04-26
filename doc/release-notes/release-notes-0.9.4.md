@@ -1,4 +1,4 @@
-BitcoinII Core version 0.9.4 is now available from:
+BitcoinIII Core version 0.9.4 is now available from:
 
   https://bitcoin.org/bin/0.9.4/
 
@@ -7,33 +7,33 @@ translations. Upgrading to this release is recommended.
 
 Please report bugs using the issue tracker at github:
 
-  https://github.com/bitcoinII/bitcoinII/issues
+  https://github.com/bitcoinIII/bitcoinIII/issues
 
 How to Upgrade
 ===============
 
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the
-installer (on Windows) or just copy over /Applications/BitcoinII-Qt (on Mac) or
-bitcoinIId/bitcoinII-qt (on Linux).
+installer (on Windows) or just copy over /Applications/BitcoinIII-Qt (on Mac) or
+bitcoinIIId/bitcoinIII-qt (on Linux).
 
 OpenSSL Warning
 ================
 
 OpenSSL 1.0.0p / 1.0.1k was recently released and is being pushed out by
 various operating system maintainers. Review by Gregory Maxwell determined that
-this update is incompatible with the BitcoinII system and could lead to consensus
+this update is incompatible with the BitcoinIII system and could lead to consensus
 forks.
 
-BitcoinII Core released binaries from https://bitcoin.org are unaffected,
+BitcoinIII Core released binaries from https://bitcoin.org are unaffected,
 as are any built with the gitian deterministic build system.
 
 However, if you are running either
 
-- The Ubuntu PPA from https://launchpad.net/~bitcoinII/+archive/ubuntu/bitcoinII
-- A third-party or self-compiled BitcoinII Core
+- The Ubuntu PPA from https://launchpad.net/~bitcoinIII/+archive/ubuntu/bitcoinIII
+- A third-party or self-compiled BitcoinIII Core
 
-upgrade to BitcoinII Core 0.9.4, which includes a workaround, **before** updating
+upgrade to BitcoinIII Core 0.9.4, which includes a workaround, **before** updating
 OpenSSL.
 
 The incompatibility is due to the OpenSSL update changing the
@@ -92,4 +92,4 @@ Thanks to who contributed to this release, at least:
 - Sergio Demian Lerner
 - Wladimir J. van der Laan
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/bitcoinII/).
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/bitcoinIII/).

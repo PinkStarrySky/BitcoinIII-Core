@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2014-2022 The BitcoinII Core developers
+# Copyright (c) 2014-2022 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Helpful routines for regression testing."""
@@ -43,16 +43,16 @@ def assert_approx(v, vexp, vspan=0.00001):
         raise AssertionError("%s > [%s..%s]" % (str(v), str(vexp - vspan), str(vexp + vspan)))
 
 
-def assert_fee_amount(fee, tx_size, feerate_BC2_kvB):
+def assert_fee_amount(fee, tx_size, feerate_BC3_kvB):
     """Assert the fee is in range."""
     assert isinstance(tx_size, int)
-    target_fee = get_fee(tx_size, feerate_BC2_kvB)
+    target_fee = get_fee(tx_size, feerate_BC3_kvB)
     if fee < target_fee:
-        raise AssertionError("Fee of %s BC2 too low! (Should be %s BC2)" % (str(fee), str(target_fee)))
+        raise AssertionError("Fee of %s BC3 too low! (Should be %s BC3)" % (str(fee), str(target_fee)))
     # allow the wallet's estimation to be at most 2 bytes off
-    high_fee = get_fee(tx_size + 2, feerate_BC2_kvB)
+    high_fee = get_fee(tx_size + 2, feerate_BC3_kvB)
     if fee > high_fee:
-        raise AssertionError("Fee of %s BC2 too high! (Should be %s BC2)" % (str(fee), str(target_fee)))
+        raise AssertionError("Fee of %s BC3 too high! (Should be %s BC3)" % (str(fee), str(target_fee)))
 
 
 def summarise_dict_differences(thing1, thing2):
@@ -224,7 +224,7 @@ def assert_array_result(object_array, to_match, expected, should_not_find=False)
 
 
 def check_json_precision():
-    """Make sure json library being used does not lose precision converting BC2 values"""
+    """Make sure json library being used does not lose precision converting BC3 values"""
     n = Decimal("20000000.00000003")
     satoshis = int(json.loads(json.dumps(float(n))) * 1.0e8)
     if satoshis != 2000000000000003:
@@ -257,10 +257,10 @@ def random_bitflip(data):
 
 
 def get_fee(tx_size, feerate_btc_kvb):
-    """Calculate the fee in BC2 given a feerate is BC2/kvB. Reflects CFeeRate::GetFee"""
+    """Calculate the fee in BC3 given a feerate is BC3/kvB. Reflects CFeeRate::GetFee"""
     feerate_sat_kvb = int(feerate_btc_kvb * Decimal(1e8)) # Fee in sat/kvb as an int to avoid float precision errors
     target_fee_sat = ceildiv(feerate_sat_kvb * tx_size, 1000) # Round calculated fee up to nearest sat
-    return target_fee_sat / Decimal(1e8) # Return result in  BC2
+    return target_fee_sat / Decimal(1e8) # Return result in  BC3
 
 
 def satoshi_round(amount: Union[int, float, str], *, rounding: str) -> Decimal:
@@ -294,7 +294,7 @@ def wait_until_helper_internal(predicate, *, timeout=60, lock=None, timeout_fact
 
     Warning: Note that this method is not recommended to be used in tests as it is
     not aware of the context of the test framework. Using the `wait_until()` members
-    from `BitcoinIITestFramework` or `P2PInterface` class ensures the timeout is
+    from `BitcoinIIITestFramework` or `P2PInterface` class ensures the timeout is
     properly scaled. Furthermore, `wait_until()` from `P2PInterface` class in
     `p2p.py` has a preset lock.
     """
@@ -409,7 +409,7 @@ def initialize_datadir(dirname, n, chain, disable_autoconnect=True):
     datadir = get_datadir_path(dirname, n)
     if not os.path.isdir(datadir):
         os.makedirs(datadir)
-    write_config(os.path.join(datadir, "bitcoinII.conf"), n=n, chain=chain, disable_autoconnect=disable_autoconnect)
+    write_config(os.path.join(datadir, "bitcoinIII.conf"), n=n, chain=chain, disable_autoconnect=disable_autoconnect)
     os.makedirs(os.path.join(datadir, 'stderr'), exist_ok=True)
     os.makedirs(os.path.join(datadir, 'stdout'), exist_ok=True)
     return datadir
@@ -477,18 +477,18 @@ def get_temp_default_datadir(temp_dir: pathlib.Path) -> tuple[dict, pathlib.Path
     temp_dir, as well as the complete path it would return."""
     if platform.system() == "Windows":
         env = dict(APPDATA=str(temp_dir))
-        datadir = temp_dir / "BitcoinII"
+        datadir = temp_dir / "BitcoinIII"
     else:
         env = dict(HOME=str(temp_dir))
         if platform.system() == "Darwin":
-            datadir = temp_dir / "Library/Application Support/BitcoinII"
+            datadir = temp_dir / "Library/Application Support/BitcoinIII"
         else:
-            datadir = temp_dir / ".bitcoinII"
+            datadir = temp_dir / ".bitcoinIII"
     return env, datadir
 
 
 def append_config(datadir, options):
-    with open(os.path.join(datadir, "bitcoinII.conf"), 'a', encoding='utf8') as f:
+    with open(os.path.join(datadir, "bitcoinIII.conf"), 'a', encoding='utf8') as f:
         for option in options:
             f.write(option + "\n")
 
@@ -496,8 +496,8 @@ def append_config(datadir, options):
 def get_auth_cookie(datadir, chain):
     user = None
     password = None
-    if os.path.isfile(os.path.join(datadir, "bitcoinII.conf")):
-        with open(os.path.join(datadir, "bitcoinII.conf"), 'r', encoding='utf8') as f:
+    if os.path.isfile(os.path.join(datadir, "bitcoinIII.conf")):
+        with open(os.path.join(datadir, "bitcoinIII.conf"), 'r', encoding='utf8') as f:
             for line in f:
                 if line.startswith("rpcuser="):
                     assert user is None  # Ensure that there is only one rpcuser line

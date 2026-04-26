@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2015-2022 The BitcoinII Core developers
+# Copyright (c) 2015-2022 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 '''
@@ -119,8 +119,8 @@ def check_ELF_CONTROL_FLOW(binary) -> bool:
 
 def check_ELF_FORTIFY(binary) -> bool:
 
-    # bitcoinII-util does not currently contain any fortified functions
-    if 'BitcoinII Core bitcoinII-util utility version ' in binary.strings:
+    # bitcoinIII-util does not currently contain any fortified functions
+    if 'BitcoinIII Core bitcoinIII-util utility version ' in binary.strings:
         return True
 
     chk_funcs = set()

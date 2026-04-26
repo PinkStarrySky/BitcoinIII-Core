@@ -1,9 +1,9 @@
-// Copyright (c) 2015-2022 The BitcoinII Core developers
+// Copyright (c) 2015-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_MEMUSAGE_H
-#define BITCOINII_MEMUSAGE_H
+#ifndef BITCOINIII_MEMUSAGE_H
+#define BITCOINIII_MEMUSAGE_H
 
 #include <indirectmap.h>
 #include <prevector.h>
@@ -217,4 +217,4 @@ static inline size_t DynamicUsage(const std::unordered_map<Key,
 
 } // namespace memusage
 
-#endif // BITCOINII_MEMUSAGE_H
+#endif // BITCOINIII_MEMUSAGE_H

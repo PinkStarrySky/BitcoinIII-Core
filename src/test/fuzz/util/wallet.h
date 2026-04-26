@@ -1,9 +1,9 @@
-// Copyright (c) 2024-present The BitcoinII Core developers
+// Copyright (c) 2024-present The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_TEST_FUZZ_UTIL_WALLET_H
-#define BITCOINII_TEST_FUZZ_UTIL_WALLET_H
+#ifndef BITCOINIII_TEST_FUZZ_UTIL_WALLET_H
+#define BITCOINIII_TEST_FUZZ_UTIL_WALLET_H
 
 #include <test/fuzz/FuzzedDataProvider.h>
 #include <test/fuzz/fuzz.h>
@@ -131,4 +131,4 @@ struct FuzzedWallet {
 };
 }
 
-#endif // BITCOINII_TEST_FUZZ_UTIL_WALLET_H
+#endif // BITCOINIII_TEST_FUZZ_UTIL_WALLET_H

@@ -1,9 +1,9 @@
-// Copyright (c) 2012-2020 The BitcoinII Core developers
+// Copyright (c) 2012-2020 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UTIL_UI_CHANGE_TYPE_H
-#define BITCOINII_UTIL_UI_CHANGE_TYPE_H
+#ifndef BITCOINIII_UTIL_UI_CHANGE_TYPE_H
+#define BITCOINIII_UTIL_UI_CHANGE_TYPE_H
 
 /** General change type (added, updated, removed). */
 enum ChangeType {
@@ -12,4 +12,4 @@ enum ChangeType {
     CT_DELETED
 };
 
-#endif // BITCOINII_UTIL_UI_CHANGE_TYPE_H
+#endif // BITCOINIII_UTIL_UI_CHANGE_TYPE_H

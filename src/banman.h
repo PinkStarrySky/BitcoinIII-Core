@@ -1,9 +1,9 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef BITCOINII_BANMAN_H
-#define BITCOINII_BANMAN_H
+#ifndef BITCOINIII_BANMAN_H
+#define BITCOINIII_BANMAN_H
 
 #include <addrdb.h>
 #include <common/bloom.h>
@@ -93,4 +93,4 @@ private:
     CRollingBloomFilter m_discouraged GUARDED_BY(m_banned_mutex) {50000, 0.000001};
 };
 
-#endif // BITCOINII_BANMAN_H
+#endif // BITCOINIII_BANMAN_H

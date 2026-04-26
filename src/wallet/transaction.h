@@ -1,9 +1,9 @@
-// Copyright (c) 2021-2022 The BitcoinII Core developers
+// Copyright (c) 2021-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_WALLET_TRANSACTION_H
-#define BITCOINII_WALLET_TRANSACTION_H
+#ifndef BITCOINIII_WALLET_TRANSACTION_H
+#define BITCOINIII_WALLET_TRANSACTION_H
 
 #include <attributes.h>
 #include <consensus/amount.h>
@@ -217,7 +217,7 @@ public:
     unsigned int nTimeSmart;
     /**
      * From me flag is set to 1 for transactions that were created by the wallet
-     * on this bitcoinII node, and set to 0 for transactions that were created
+     * on this bitcoinIII node, and set to 0 for transactions that were created
      * externally and came in through the network or sendrawtransaction RPC.
      */
     bool fFromMe;
@@ -371,4 +371,4 @@ struct WalletTxOrderComparator {
 };
 } // namespace wallet
 
-#endif // BITCOINII_WALLET_TRANSACTION_H
+#endif // BITCOINIII_WALLET_TRANSACTION_H

@@ -1,9 +1,9 @@
-// Copyright (c) 2019-2022 The BitcoinII Core developers
+// Copyright (c) 2019-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UTIL_CHECK_H
-#define BITCOINII_UTIL_CHECK_H
+#ifndef BITCOINIII_UTIL_CHECK_H
+#define BITCOINIII_UTIL_CHECK_H
 
 #include <attributes.h>
 
@@ -105,4 +105,4 @@ constexpr T&& inline_assertion_check(LIFETIMEBOUND T&& val, [[maybe_unused]] con
 
 // NOLINTEND(bugprone-lambda-function-name)
 
-#endif // BITCOINII_UTIL_CHECK_H
+#endif // BITCOINIII_UTIL_CHECK_H

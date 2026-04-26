@@ -1,9 +1,9 @@
-// Copyright (c) 2015-2022 The BitcoinII Core developers
+// Copyright (c) 2015-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_PREVECTOR_H
-#define BITCOINII_PREVECTOR_H
+#ifndef BITCOINIII_PREVECTOR_H
+#define BITCOINIII_PREVECTOR_H
 
 #include <algorithm>
 #include <cassert>
@@ -539,4 +539,4 @@ public:
     }
 };
 
-#endif // BITCOINII_PREVECTOR_H
+#endif // BITCOINIII_PREVECTOR_H

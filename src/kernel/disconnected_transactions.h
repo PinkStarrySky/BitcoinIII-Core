@@ -1,9 +1,9 @@
-// Copyright (c) 2023 The BitcoinII Core developers
+// Copyright (c) 2023 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_KERNEL_DISCONNECTED_TRANSACTIONS_H
-#define BITCOINII_KERNEL_DISCONNECTED_TRANSACTIONS_H
+#ifndef BITCOINIII_KERNEL_DISCONNECTED_TRANSACTIONS_H
+#define BITCOINIII_KERNEL_DISCONNECTED_TRANSACTIONS_H
 
 #include <primitives/transaction.h>
 #include <util/hasher.h>
@@ -73,4 +73,4 @@ public:
     /** Clear all data structures and return the list of transactions. */
     std::list<CTransactionRef> take();
 };
-#endif // BITCOINII_KERNEL_DISCONNECTED_TRANSACTIONS_H
+#endif // BITCOINIII_KERNEL_DISCONNECTED_TRANSACTIONS_H

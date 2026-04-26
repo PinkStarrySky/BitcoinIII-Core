@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-present The BitcoinII Core developers
+// Copyright (c) 2009-present The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UTIL_TIME_H
-#define BITCOINII_UTIL_TIME_H
+#ifndef BITCOINIII_UTIL_TIME_H
+#define BITCOINIII_UTIL_TIME_H
 
 #include <chrono> // IWYU pragma: export
 #include <cstdint>
@@ -144,4 +144,4 @@ struct timeval MillisToTimeval(int64_t nTimeout);
  */
 struct timeval MillisToTimeval(std::chrono::milliseconds ms);
 
-#endif // BITCOINII_UTIL_TIME_H
+#endif // BITCOINIII_UTIL_TIME_H

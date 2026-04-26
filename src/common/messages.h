@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2020 The BitcoinII Core developers
+// Copyright (c) 2009-2020 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -8,8 +8,8 @@
 //! messages, and are called in different parts of the codebase across
 //! node/wallet/gui boundaries.
 
-#ifndef BITCOINII_COMMON_MESSAGES_H
-#define BITCOINII_COMMON_MESSAGES_H
+#ifndef BITCOINIII_COMMON_MESSAGES_H
+#define BITCOINIII_COMMON_MESSAGES_H
 
 #include <string>
 
@@ -37,4 +37,4 @@ bilingual_str AmountHighWarn(const std::string& optname);
 bilingual_str AmountErrMsg(const std::string& optname, const std::string& strValue);
 } // namespace common
 
-#endif // BITCOINII_COMMON_MESSAGES_H
+#endif // BITCOINIII_COMMON_MESSAGES_H

@@ -1,13 +1,13 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: BitcoinII
+Upstream-Name: BitcoinIII
 Upstream-Contact: Satoshi Nakamoto <satoshin@gmx.com>
- irc://#bitcoinII-core-dev@libera.chat
-Source: https://github.com/bitcoinII/bitcoinII
+ irc://#bitcoinIII-core-dev@libera.chat
+Source: https://github.com/bitcoinIII/bitcoinIII
 
 Files: *
-Copyright: 2009-2025, BitcoinII Core Developers
+Copyright: 2009-2025, BitcoinIII Core Developers
 License: Expat
-Comment: The BitcoinII Core Developers encompasses all contributors to the
+Comment: The BitcoinIII Core Developers encompasses all contributors to the
          project, listed in the release notes or the git log.
 
 Files: debian/*
@@ -67,12 +67,12 @@ Copyright: Stephen Hutchings, Jonas Schnelli
 License: Expat
 Comment: Modifications of Stephen Hutchings' Typicons
 
-Files: src/qt/res/icons/bitcoinII.*
-       share/pixmaps/bitcoinII*
-       src/qt/res/src/bitcoinII.svg
+Files: src/qt/res/icons/bitcoinIII.*
+       share/pixmaps/bitcoinIII*
+       src/qt/res/src/bitcoinIII.svg
 Copyright: Bitboy, Jonas Schnelli
 License: public-domain
-Comment: Site: https://bitcoinIItalk.org/?topic=1756.0
+Comment: Site: https://bitcoinIIItalk.org/?topic=1756.0
 
 Files: src/qt/res/icons/proxy.png
        src/qt/res/src/proxy.svg

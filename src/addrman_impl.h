@@ -1,9 +1,9 @@
-// Copyright (c) 2021-2022 The BitcoinII Core developers
+// Copyright (c) 2021-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_ADDRMAN_IMPL_H
-#define BITCOINII_ADDRMAN_IMPL_H
+#ifndef BITCOINIII_ADDRMAN_IMPL_H
+#define BITCOINIII_ADDRMAN_IMPL_H
 
 #include <logging.h>
 #include <logging/timer.h>
@@ -292,4 +292,4 @@ private:
     int CheckAddrman() const EXCLUSIVE_LOCKS_REQUIRED(cs);
 };
 
-#endif // BITCOINII_ADDRMAN_IMPL_H
+#endif // BITCOINIII_ADDRMAN_IMPL_H

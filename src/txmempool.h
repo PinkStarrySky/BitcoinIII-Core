@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_TXMEMPOOL_H
-#define BITCOINII_TXMEMPOOL_H
+#ifndef BITCOINIII_TXMEMPOOL_H
+#define BITCOINIII_TXMEMPOOL_H
 
 #include <coins.h>
 #include <consensus/amount.h>
@@ -950,4 +950,4 @@ public:
     /** Clear m_temp_added and m_non_base_coins. */
     void Reset();
 };
-#endif // BITCOINII_TXMEMPOOL_H
+#endif // BITCOINIII_TXMEMPOOL_H

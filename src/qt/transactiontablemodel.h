@@ -1,11 +1,11 @@
-// Copyright (c) 2011-2020 The BitcoinII Core developers
+// Copyright (c) 2011-2020 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_TRANSACTIONTABLEMODEL_H
-#define BITCOINII_QT_TRANSACTIONTABLEMODEL_H
+#ifndef BITCOINIII_QT_TRANSACTIONTABLEMODEL_H
+#define BITCOINIII_QT_TRANSACTIONTABLEMODEL_H
 
-#include <qt/bitcoinIIunits.h>
+#include <qt/bitcoinIIIunits.h>
 
 #include <QAbstractTableModel>
 #include <QStringList>
@@ -101,7 +101,7 @@ private:
     QString formatTxDate(const TransactionRecord *wtx) const;
     QString formatTxType(const TransactionRecord *wtx) const;
     QString formatTxToAddress(const TransactionRecord *wtx, bool tooltip) const;
-    QString formatTxAmount(const TransactionRecord *wtx, bool showUnconfirmed=true, BitcoinIIUnits::SeparatorStyle separators=BitcoinIIUnits::SeparatorStyle::STANDARD) const;
+    QString formatTxAmount(const TransactionRecord *wtx, bool showUnconfirmed=true, BitcoinIIIUnits::SeparatorStyle separators=BitcoinIIIUnits::SeparatorStyle::STANDARD) const;
     QString formatTooltip(const TransactionRecord *rec) const;
     QVariant txStatusDecoration(const TransactionRecord *wtx) const;
     QVariant txWatchonlyDecoration(const TransactionRecord *wtx) const;
@@ -120,4 +120,4 @@ public Q_SLOTS:
     friend class TransactionTablePriv;
 };
 
-#endif // BITCOINII_QT_TRANSACTIONTABLEMODEL_H
+#endif // BITCOINIII_QT_TRANSACTIONTABLEMODEL_H

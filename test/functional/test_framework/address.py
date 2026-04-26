@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-# Copyright (c) 2016-2022 The BitcoinII Core developers
+# Copyright (c) 2016-2022 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-"""Encode and decode BitcoinII addresses.
+"""Encode and decode BitcoinIII addresses.
 
 - base58 P2PKH and P2SH addresses.
 - bech32 segwit v0 P2WPKH and P2WSH addresses.

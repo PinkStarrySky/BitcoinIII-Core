@@ -1,24 +1,24 @@
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_CLIENTVERSION_H
-#define BITCOINII_CLIENTVERSION_H
+#ifndef BITCOINIII_CLIENTVERSION_H
+#define BITCOINIII_CLIENTVERSION_H
 
 #include <util/macros.h>
 
-#include <bitcoinII-build-config.h> // IWYU pragma: keep
+#include <bitcoinIII-build-config.h> // IWYU pragma: keep
 
 // Check that required client information is defined
 #if !defined(CLIENT_VERSION_MAJOR) || !defined(CLIENT_VERSION_MINOR) || !defined(CLIENT_VERSION_BUILD) || !defined(CLIENT_VERSION_IS_RELEASE) || !defined(COPYRIGHT_YEAR)
-#error Client version information missing: version is not defined by bitcoinII-build-config.h or in any other way
+#error Client version information missing: version is not defined by bitcoinIII-build-config.h or in any other way
 #endif
 
 //! Copyright string used in Windows .rc files
 #define COPYRIGHT_STR "2009-" STRINGIZE(COPYRIGHT_YEAR) " " COPYRIGHT_HOLDERS_FINAL
 
 /**
- * bitcoinIId-res.rc includes this file, but it cannot cope with real c++ code.
+ * bitcoinIIId-res.rc includes this file, but it cannot cope with real c++ code.
  * WINDRES_PREPROC is defined to indicate that its pre-processor is running.
  * Anything other than a define should be guarded below.
  */
@@ -46,4 +46,4 @@ std::string LicenseInfo();
 
 #endif // WINDRES_PREPROC
 
-#endif // BITCOINII_CLIENTVERSION_H
+#endif // BITCOINIII_CLIENTVERSION_H

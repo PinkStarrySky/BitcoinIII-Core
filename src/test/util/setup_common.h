@@ -1,9 +1,9 @@
-// Copyright (c) 2015-present The BitcoinII Core developers
+// Copyright (c) 2015-present The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_TEST_UTIL_SETUP_COMMON_H
-#define BITCOINII_TEST_UTIL_SETUP_COMMON_H
+#ifndef BITCOINIII_TEST_UTIL_SETUP_COMMON_H
+#define BITCOINIII_TEST_UTIL_SETUP_COMMON_H
 
 #include <common/args.h> // IWYU pragma: export
 #include <kernel/caches.h>
@@ -94,7 +94,7 @@ struct BasicTestingSetup {
      * compatibility. In the future, it will point to m_args to further isolate
      * test environments.
      *
-     * @see https://github.com/bitcoinII/bitcoinII/issues/25055 for additional context.
+     * @see https://github.com/bitcoinIII/bitcoinIII/issues/25055 for additional context.
      */
     ArgsManager m_args;
 };
@@ -303,4 +303,4 @@ private:
     const std::string m_reason;
 };
 
-#endif // BITCOINII_TEST_UTIL_SETUP_COMMON_H
+#endif // BITCOINIII_TEST_UTIL_SETUP_COMMON_H

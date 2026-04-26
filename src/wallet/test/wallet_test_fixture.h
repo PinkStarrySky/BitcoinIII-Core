@@ -1,9 +1,9 @@
-// Copyright (c) 2016-2022 The BitcoinII Core developers
+// Copyright (c) 2016-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_WALLET_TEST_WALLET_TEST_FIXTURE_H
-#define BITCOINII_WALLET_TEST_WALLET_TEST_FIXTURE_H
+#ifndef BITCOINIII_WALLET_TEST_WALLET_TEST_FIXTURE_H
+#define BITCOINIII_WALLET_TEST_WALLET_TEST_FIXTURE_H
 
 #include <test/util/setup_common.h>
 
@@ -29,4 +29,4 @@ struct WalletTestingSetup : public TestingSetup {
 };
 } // namespace wallet
 
-#endif // BITCOINII_WALLET_TEST_WALLET_TEST_FIXTURE_H
+#endif // BITCOINIII_WALLET_TEST_WALLET_TEST_FIXTURE_H

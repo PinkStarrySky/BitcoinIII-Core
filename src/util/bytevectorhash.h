@@ -1,9 +1,9 @@
-// Copyright (c) 2018-2022 The BitcoinII Core developers
+// Copyright (c) 2018-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UTIL_BYTEVECTORHASH_H
-#define BITCOINII_UTIL_BYTEVECTORHASH_H
+#ifndef BITCOINIII_UTIL_BYTEVECTORHASH_H
+#define BITCOINIII_UTIL_BYTEVECTORHASH_H
 
 #include <cstdint>
 #include <cstddef>
@@ -24,4 +24,4 @@ public:
     size_t operator()(const std::vector<unsigned char>& input) const;
 };
 
-#endif // BITCOINII_UTIL_BYTEVECTORHASH_H
+#endif // BITCOINIII_UTIL_BYTEVECTORHASH_H

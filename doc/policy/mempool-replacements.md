@@ -59,21 +59,21 @@ This set of rules is similar but distinct from BIP125.
 ## History
 
 * Opt-in full replace-by-fee (without inherited signaling) honoured in mempool and mining as of
-  **v0.12.0** ([PR 6871](https://github.com/bitcoinII/bitcoinII/pull/6871)).
+  **v0.12.0** ([PR 6871](https://github.com/bitcoinIII/bitcoinIII/pull/6871)).
 
-* [BIP125](https://github.com/bitcoinII/bips/blob/master/bip-0125.mediawiki) defined based on
-  BitcoinII Core implementation.
+* [BIP125](https://github.com/bitcoinIII/bips/blob/master/bip-0125.mediawiki) defined based on
+  BitcoinIII Core implementation.
 
 * The incremental relay feerate used to calculate the required additional fees is distinct from
   `-minrelaytxfee` and configurable using `-incrementalrelayfee`
-  ([PR #9380](https://github.com/bitcoinII/bitcoinII/pull/9380)).
+  ([PR #9380](https://github.com/bitcoinIII/bitcoinIII/pull/9380)).
 
 * RBF enabled by default in the wallet GUI as of **v0.18.1** ([PR
-  #11605](https://github.com/bitcoinII/bitcoinII/pull/11605)).
+  #11605](https://github.com/bitcoinIII/bitcoinIII/pull/11605)).
 
 * Full replace-by-fee enabled as a configurable mempool policy as of **v24.0** ([PR
-  #25353](https://github.com/bitcoinII/bitcoinII/pull/25353)).
+  #25353](https://github.com/bitcoinIII/bitcoinIII/pull/25353)).
 
-* Full replace-by-fee is the default policy as of **v28.0** ([PR #30493](https://github.com/bitcoinII/bitcoinII/pull/30493)).
+* Full replace-by-fee is the default policy as of **v28.0** ([PR #30493](https://github.com/bitcoinIII/bitcoinIII/pull/30493)).
 
-* Signaling for replace-by-fee is no longer required as of [PR 30592](https://github.com/bitcoinII/bitcoinII/pull/30592).
+* Signaling for replace-by-fee is no longer required as of [PR 30592](https://github.com/bitcoinIII/bitcoinIII/pull/30592).

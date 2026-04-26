@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_CUCKOOCACHE_H
-#define BITCOINII_CUCKOOCACHE_H
+#ifndef BITCOINIII_CUCKOOCACHE_H
+#define BITCOINIII_CUCKOOCACHE_H
 
 #include <util/fastrange.h>
 
@@ -485,4 +485,4 @@ public:
 };
 } // namespace CuckooCache
 
-#endif // BITCOINII_CUCKOOCACHE_H
+#endif // BITCOINIII_CUCKOOCACHE_H

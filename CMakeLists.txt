@@ -1,4 +1,4 @@
-# Copyright (c) 2023-present The BitcoinII Core developers
+# Copyright (c) 2023-present The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://opensource.org/license/mit/.
 
@@ -22,7 +22,7 @@ endif()
 #=============================
 # Project / Package metadata
 #=============================
-set(CLIENT_NAME "BitcoinII Core")
+set(CLIENT_NAME "BitcoinIII Core")
 set(CLIENT_VERSION_MAJOR 29)
 set(CLIENT_VERSION_MINOR 1)
 set(CLIENT_VERSION_BUILD 0)
@@ -46,10 +46,10 @@ set(CMAKE_TRY_COMPILE_PLATFORM_VARIABLES
   CMAKE_CXX_LINK_EXECUTABLE
 )
 
-project(BitcoinIICore
+project(BitcoinIIICore
   VERSION ${CLIENT_VERSION_MAJOR}.${CLIENT_VERSION_MINOR}.${CLIENT_VERSION_BUILD}
-  DESCRIPTION "BitcoinII client software"
-  HOMEPAGE_URL "https://Bitcoin-II.org/"
+  DESCRIPTION "BitcoinIII client software"
+  HOMEPAGE_URL "https://Bitcoin-III.org/"
   LANGUAGES NONE
 )
 
@@ -90,16 +90,16 @@ endif()
 #=============================
 include(CMakeDependentOption)
 # When adding a new option, end the <help_text> with a full stop for consistency.
-option(BUILD_DAEMON "Build bitcoinIId executable." ON)
-option(BUILD_GUI "Build bitcoinII-qt executable." OFF)
-option(BUILD_CLI "Build bitcoinII-cli executable." ON)
+option(BUILD_DAEMON "Build bitcoinIIId executable." ON)
+option(BUILD_GUI "Build bitcoinIII-qt executable." OFF)
+option(BUILD_CLI "Build bitcoinIII-cli executable." ON)
 
-option(BUILD_TESTS "Build test_bitcoinII executable." ON)
-option(BUILD_TX "Build bitcoinII-tx executable." ${BUILD_TESTS})
-option(BUILD_UTIL "Build bitcoinII-util executable." ${BUILD_TESTS})
+option(BUILD_TESTS "Build test_bitcoinIII executable." ON)
+option(BUILD_TX "Build bitcoinIII-tx executable." ${BUILD_TESTS})
+option(BUILD_UTIL "Build bitcoinIII-util executable." ${BUILD_TESTS})
 
-option(BUILD_UTIL_CHAINSTATE "Build experimental bitcoinII-chainstate executable." OFF)
-option(BUILD_KERNEL_LIB "Build experimental bitcoinIIkernel library." ${BUILD_UTIL_CHAINSTATE})
+option(BUILD_UTIL_CHAINSTATE "Build experimental bitcoinIII-chainstate executable." OFF)
+option(BUILD_KERNEL_LIB "Build experimental bitcoinIIIkernel library." ${BUILD_UTIL_CHAINSTATE})
 
 option(ENABLE_WALLET "Enable wallet." ON)
 option(WITH_SQLITE "Enable SQLite wallet support." ${ENABLE_WALLET})
@@ -128,7 +128,7 @@ if(WITH_BDB)
     endif()
   endif()
 endif()
-cmake_dependent_option(BUILD_WALLET_TOOL "Build bitcoinII-wallet tool." ${BUILD_TESTS} "ENABLE_WALLET" OFF)
+cmake_dependent_option(BUILD_WALLET_TOOL "Build bitcoinIII-wallet tool." ${BUILD_TESTS} "ENABLE_WALLET" OFF)
 
 option(ENABLE_HARDENING "Attempt to harden the resulting executables." ON)
 option(REDUCE_EXPORTS "Attempt to reduce exported symbols in the resulting executables." OFF)
@@ -155,7 +155,7 @@ endif()
 
 cmake_dependent_option(WITH_DBUS "Enable DBus support." ON "CMAKE_SYSTEM_NAME STREQUAL \"Linux\" AND BUILD_GUI" OFF)
 
-option(WITH_MULTIPROCESS "Build multiprocess bitcoinII-node and bitcoinII-gui executables in addition to monolithic bitcoinIId and bitcoinII-qt executables. Requires libmultiprocess library. Experimental." OFF)
+option(WITH_MULTIPROCESS "Build multiprocess bitcoinIII-node and bitcoinIII-gui executables in addition to monolithic bitcoinIIId and bitcoinIII-qt executables. Requires libmultiprocess library. Experimental." OFF)
 if(WITH_MULTIPROCESS)
   find_package(Libmultiprocess REQUIRED COMPONENTS Lib)
   find_package(LibmultiprocessNative REQUIRED COMPONENTS Bin
@@ -163,7 +163,7 @@ if(WITH_MULTIPROCESS)
   )
 endif()
 
-cmake_dependent_option(BUILD_GUI_TESTS "Build test_bitcoinII-qt executable." ON "BUILD_GUI;BUILD_TESTS" OFF)
+cmake_dependent_option(BUILD_GUI_TESTS "Build test_bitcoinIII-qt executable." ON "BUILD_GUI;BUILD_TESTS" OFF)
 if(BUILD_GUI)
   set(qt_components Core Gui Widgets LinguistTools)
   if(ENABLE_WALLET)
@@ -182,7 +182,7 @@ if(BUILD_GUI)
   unset(qt_components)
 endif()
 
-option(BUILD_BENCH "Build bench_bitcoinII executable." OFF)
+option(BUILD_BENCH "Build bench_bitcoinIII executable." OFF)
 option(BUILD_FUZZ_BINARY "Build fuzz binary." OFF)
 option(BUILD_FOR_FUZZING "Build for fuzzing. Enabling this will disable all other targets and override BUILD_FUZZ_BINARY." OFF)
 
@@ -314,7 +314,7 @@ if(WIN32)
 
   # Workaround producing large object files, which cannot be handled by the assembler.
   # More likely to happen with no, or lower levels of optimisation.
-  # See discussion in https://github.com/bitcoinII/bitcoinII/issues/28109.
+  # See discussion in https://github.com/bitcoinIII/bitcoinIII/issues/28109.
   if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
     try_append_cxx_flags("/bigobj" TARGET core_interface_debug SKIP_LINK)
   else()
@@ -605,7 +605,7 @@ endif()
 #       perform binary checks after the installation step.
 # Relevant discussions:
 # - https://github.com/hebasto/bitcoin/pull/236#issuecomment-2183120953
-# - https://github.com/bitcoinII/bitcoin/pull/30312#issuecomment-2191235833
+# - https://github.com/bitcoinIII/bitcoin/pull/30312#issuecomment-2191235833
 # NetBSD always requires runtime paths to be set for executables.
 if(CMAKE_SYSTEM_NAME STREQUAL "NetBSD")
   set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
@@ -630,26 +630,26 @@ message("\n")
 message("Configure summary")
 message("=================")
 message("Executables:")
-message("  bitcoinIId ............................ ${BUILD_DAEMON}")
+message("  bitcoinIIId ............................ ${BUILD_DAEMON}")
 if(BUILD_DAEMON AND WITH_MULTIPROCESS)
-  set(bitcoinII_daemon_status ON)
+  set(bitcoinIII_daemon_status ON)
 else()
-  set(bitcoinII_daemon_status OFF)
+  set(bitcoinIII_daemon_status OFF)
 endif()
-message("  bitcoinII-node (multiprocess) ......... ${bitcoinII_daemon_status}")
-message("  bitcoinII-qt (GUI) .................... ${BUILD_GUI}")
+message("  bitcoinIII-node (multiprocess) ......... ${bitcoinIII_daemon_status}")
+message("  bitcoinIII-qt (GUI) .................... ${BUILD_GUI}")
 if(BUILD_GUI AND WITH_MULTIPROCESS)
-  set(bitcoinII_gui_status ON)
+  set(bitcoinIII_gui_status ON)
 else()
-  set(bitcoinII_gui_status OFF)
+  set(bitcoinIII_gui_status OFF)
 endif()
-message("  bitcoinII-gui (GUI, multiprocess) ..... ${bitcoinII_gui_status}")
-message("  bitcoinII-cli ......................... ${BUILD_CLI}")
-message("  bitcoinII-tx .......................... ${BUILD_TX}")
-message("  bitcoinII-util ........................ ${BUILD_UTIL}")
-message("  bitcoinII-wallet ...................... ${BUILD_WALLET_TOOL}")
-message("  bitcoinII-chainstate (experimental) ... ${BUILD_UTIL_CHAINSTATE}")
-message("  libbitcoinIIkernel (experimental) ..... ${BUILD_KERNEL_LIB}")
+message("  bitcoinIII-gui (GUI, multiprocess) ..... ${bitcoinIII_gui_status}")
+message("  bitcoinIII-cli ......................... ${BUILD_CLI}")
+message("  bitcoinIII-tx .......................... ${BUILD_TX}")
+message("  bitcoinIII-util ........................ ${BUILD_UTIL}")
+message("  bitcoinIII-wallet ...................... ${BUILD_WALLET_TOOL}")
+message("  bitcoinIII-chainstate (experimental) ... ${BUILD_UTIL_CHAINSTATE}")
+message("  libbitcoinIIIkernel (experimental) ..... ${BUILD_KERNEL_LIB}")
 message("Optional features:")
 message("  wallet support ...................... ${ENABLE_WALLET}")
 if(ENABLE_WALLET)
@@ -662,9 +662,9 @@ message("  USDT tracing ........................ ${WITH_USDT}")
 message("  QR code (GUI) ....................... ${WITH_QRENCODE}")
 message("  DBus (GUI, Linux only) .............. ${WITH_DBUS}")
 message("Tests:")
-message("  test_bitcoinII ........................ ${BUILD_TESTS}")
-message("  test_bitcoinII-qt ..................... ${BUILD_GUI_TESTS}")
-message("  bench_bitcoinII ....................... ${BUILD_BENCH}")
+message("  test_bitcoinIII ........................ ${BUILD_TESTS}")
+message("  test_bitcoinIII-qt ..................... ${BUILD_GUI_TESTS}")
+message("  bench_bitcoinIII ....................... ${BUILD_BENCH}")
 message("  fuzz binary ......................... ${BUILD_FUZZ_BINARY}")
 message("")
 if(CMAKE_CROSSCOMPILING)

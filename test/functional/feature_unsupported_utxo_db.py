@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2022 The BitcoinII Core developers
+# Copyright (c) 2022 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test that unsupported utxo db causes an init error.
@@ -9,11 +9,11 @@ Previous releases are required by this test, see test/README.md.
 
 import shutil
 
-from test_framework.test_framework import BitcoinIITestFramework
+from test_framework.test_framework import BitcoinIIITestFramework
 from test_framework.util import assert_equal
 
 
-class UnsupportedUtxoDbTest(BitcoinIITestFramework):
+class UnsupportedUtxoDbTest(BitcoinIIITestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 2

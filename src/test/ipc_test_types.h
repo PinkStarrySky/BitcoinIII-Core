@@ -1,12 +1,12 @@
-// Copyright (c) 2024 The BitcoinII Core developers
+// Copyright (c) 2024 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_TEST_IPC_TEST_TYPES_H
-#define BITCOINII_TEST_IPC_TEST_TYPES_H
+#ifndef BITCOINIII_TEST_IPC_TEST_TYPES_H
+#define BITCOINIII_TEST_IPC_TEST_TYPES_H
 
 #include <ipc/capnp/common-types.h>
 #include <ipc/capnp/mining-types.h>
 #include <test/ipc_test.capnp.h>
 
-#endif // BITCOINII_TEST_IPC_TEST_TYPES_H
+#endif // BITCOINIII_TEST_IPC_TEST_TYPES_H

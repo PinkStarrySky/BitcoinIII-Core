@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
-# Copyright (c) 2022 The BitcoinII Core developers
+# Copyright (c) 2022 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 from decimal import Decimal, getcontext
 
-from test_framework.test_framework import BitcoinIITestFramework
+from test_framework.test_framework import BitcoinIIITestFramework
 from test_framework.util import (
     assert_greater_than_or_equal,
     assert_equal,
     find_vout_for_address,
 )
 
-class UnconfirmedInputTest(BitcoinIITestFramework):
+class UnconfirmedInputTest(BitcoinIIITestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser)
 
@@ -425,10 +425,10 @@ class UnconfirmedInputTest(BitcoinIITestFramework):
         self.log.info("Start test with one unconfirmed and one confirmed input")
         wallet = self.setup_and_fund_wallet("confirmed_and_unconfirmed_wallet")
         confirmed_parent_txid = wallet.sendtoaddress(address=wallet.getnewaddress(), amount=1, fee_rate=self.target_fee_rate)
-        self.generate(self.nodes[0], 1) # Wallet has two confirmed UTXOs of ~1BC2 each
+        self.generate(self.nodes[0], 1) # Wallet has two confirmed UTXOs of ~1BC3 each
         unconfirmed_parent_txid = wallet.sendtoaddress(address=wallet.getnewaddress(), amount=0.5, fee_rate=0.5*self.target_fee_rate)
 
-        # wallet has one confirmed UTXO of 1BC2 and two unconfirmed UTXOs of ~0.5BC2 each
+        # wallet has one confirmed UTXO of 1BC3 and two unconfirmed UTXOs of ~0.5BC3 each
         ancestor_aware_txid = wallet.sendtoaddress(address=self.def_wallet.getnewaddress(), amount=1.4, fee_rate=self.target_fee_rate)
         ancestor_aware_tx = wallet.gettransaction(txid=ancestor_aware_txid, verbose=True)
         self.assert_spends_only_parents(ancestor_aware_tx, [confirmed_parent_txid, unconfirmed_parent_txid])

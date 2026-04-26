@@ -1,11 +1,11 @@
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_RPC_REGISTER_H
-#define BITCOINII_RPC_REGISTER_H
+#ifndef BITCOINIII_RPC_REGISTER_H
+#define BITCOINIII_RPC_REGISTER_H
 
-#include <bitcoinII-build-config.h> // IWYU pragma: keep
+#include <bitcoinIII-build-config.h> // IWYU pragma: keep
 
 /** These are in one header file to avoid creating tons of single-function
  * headers for everything under src/rpc/ */
@@ -40,4 +40,4 @@ static inline void RegisterAllCoreRPCCommands(CRPCTable &t)
     RegisterTxoutProofRPCCommands(t);
 }
 
-#endif // BITCOINII_RPC_REGISTER_H
+#endif // BITCOINIII_RPC_REGISTER_H

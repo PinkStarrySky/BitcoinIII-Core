@@ -1,9 +1,9 @@
-// Copyright (c) 2021-2022 The BitcoinII Core developers
+// Copyright (c) 2021-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UTIL_SERFLOAT_H
-#define BITCOINII_UTIL_SERFLOAT_H
+#ifndef BITCOINIII_UTIL_SERFLOAT_H
+#define BITCOINIII_UTIL_SERFLOAT_H
 
 #include <cstdint>
 
@@ -13,4 +13,4 @@ uint64_t EncodeDouble(double f) noexcept;
 /* Reverse operation of DecodeDouble. DecodeDouble(EncodeDouble(f))==f unless isnan(f). */
 double DecodeDouble(uint64_t v) noexcept;
 
-#endif // BITCOINII_UTIL_SERFLOAT_H
+#endif // BITCOINIII_UTIL_SERFLOAT_H

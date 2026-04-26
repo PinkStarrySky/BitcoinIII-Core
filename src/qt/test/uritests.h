@@ -1,9 +1,9 @@
-// Copyright (c) 2009-2015 The BitcoinII Core developers
+// Copyright (c) 2009-2015 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_TEST_URITESTS_H
-#define BITCOINII_QT_TEST_URITESTS_H
+#ifndef BITCOINIII_QT_TEST_URITESTS_H
+#define BITCOINIII_QT_TEST_URITESTS_H
 
 #include <QObject>
 #include <QTest>
@@ -16,4 +16,4 @@ private Q_SLOTS:
     void uriTests();
 };
 
-#endif // BITCOINII_QT_TEST_URITESTS_H
+#endif // BITCOINIII_QT_TEST_URITESTS_H

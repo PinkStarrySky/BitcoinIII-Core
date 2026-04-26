@@ -1,9 +1,9 @@
-// Copyright (c) 2009-2021 The BitcoinII Core developers
+// Copyright (c) 2009-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_TEST_FUZZ_FUZZ_H
-#define BITCOINII_TEST_FUZZ_FUZZ_H
+#ifndef BITCOINIII_TEST_FUZZ_FUZZ_H
+#define BITCOINIII_TEST_FUZZ_FUZZ_H
 
 #include <cstdint>
 #include <functional>
@@ -44,4 +44,4 @@ void FuzzFrameworkRegisterTarget(std::string_view name, TypeTestOneInput target,
     } const static g_##name##_before_main;                                            \
     void name##_fuzz_target(FuzzBufferType buffer)
 
-#endif // BITCOINII_TEST_FUZZ_FUZZ_H
+#endif // BITCOINIII_TEST_FUZZ_FUZZ_H

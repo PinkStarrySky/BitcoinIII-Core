@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
-# Copyright (c) 2014-2022 The BitcoinII Core developers
+# Copyright (c) 2014-2022 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test the wallet accounts properly when there is a double-spend conflict."""
 from decimal import Decimal
 
-from test_framework.test_framework import BitcoinIITestFramework
+from test_framework.test_framework import BitcoinIIITestFramework
 from test_framework.util import (
     assert_equal,
 )
 
 
-class TxnMallTest(BitcoinIITestFramework):
+class TxnMallTest(BitcoinIIITestFramework):
     def set_test_params(self):
         self.num_nodes = 3
         self.supports_cli = False
@@ -37,7 +37,7 @@ class TxnMallTest(BitcoinIITestFramework):
         return self.nodes[0].sendrawtransaction(tx['hex'])
 
     def run_test(self):
-        # All nodes should start with 1,250 BC2:
+        # All nodes should start with 1,250 BC3:
         starting_balance = 1250
 
         # All nodes should be out of IBD.
@@ -66,7 +66,7 @@ class TxnMallTest(BitcoinIITestFramework):
         # Coins are sent to node1_address
         node1_address = self.nodes[1].getnewaddress()
 
-        # First: use raw transaction API to send 1240 BC2 to node1_address,
+        # First: use raw transaction API to send 1240 BC3 to node1_address,
         # but don't broadcast:
         doublespend_fee = Decimal('-.02')
         inputs = [fund_foo_utxo, fund_bar_utxo]
@@ -78,7 +78,7 @@ class TxnMallTest(BitcoinIITestFramework):
         doublespend = self.nodes[0].signrawtransactionwithwallet(rawtx)
         assert_equal(doublespend["complete"], True)
 
-        # Create two spends using 1 50 BC2 coin each
+        # Create two spends using 1 50 BC3 coin each
         txid1 = self.spend_utxo(fund_foo_utxo, {node1_address: 40})
         txid2 = self.spend_utxo(fund_bar_utxo, {node1_address: 20})
 
@@ -89,7 +89,7 @@ class TxnMallTest(BitcoinIITestFramework):
         tx1 = self.nodes[0].gettransaction(txid1)
         tx2 = self.nodes[0].gettransaction(txid2)
 
-        # Node0's balance should be starting balance, plus 50BC2 for another
+        # Node0's balance should be starting balance, plus 50BC3 for another
         # matured block, minus 40, minus 20, and minus transaction fees:
         expected = starting_balance + fund_foo_tx["fee"] + fund_bar_tx["fee"]
         if self.options.mine_block:
@@ -127,7 +127,7 @@ class TxnMallTest(BitcoinIITestFramework):
         assert_equal(tx1["confirmations"], -2)
         assert_equal(tx2["confirmations"], -2)
 
-        # Node0's total balance should be starting balance, plus 100BC2 for
+        # Node0's total balance should be starting balance, plus 100BC3 for
         # two more matured blocks, minus 1240 for the double-spend, plus fees (which are
         # negative):
         expected = starting_balance + 100 - 1240 + fund_foo_tx["fee"] + fund_bar_tx["fee"] + doublespend_fee

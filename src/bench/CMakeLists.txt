@@ -1,9 +1,9 @@
-# Copyright (c) 2023-present The BitcoinII Core developers
+# Copyright (c) 2023-present The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://opensource.org/license/mit/.
 
-add_executable(bench_bitcoinII
-  bench_bitcoinII.cpp
+add_executable(bench_bitcoinIII
+  bench_bitcoinIII.cpp
   bench.cpp
   nanobench.cpp
 # Benchmarks:
@@ -53,19 +53,19 @@ add_executable(bench_bitcoinII
 )
 
 include(TargetDataSources)
-target_raw_data_sources(bench_bitcoinII NAMESPACE benchmark::data
+target_raw_data_sources(bench_bitcoinIII NAMESPACE benchmark::data
   data/block413567.raw
 )
 
-target_link_libraries(bench_bitcoinII
+target_link_libraries(bench_bitcoinIII
   core_interface
   test_util
-  bitcoinII_node
+  bitcoinIII_node
   Boost::headers
 )
 
 if(ENABLE_WALLET)
-  target_sources(bench_bitcoinII
+  target_sources(bench_bitcoinIII
     PRIVATE
       coin_selection.cpp
       wallet_balance.cpp
@@ -75,11 +75,11 @@ if(ENABLE_WALLET)
       wallet_ismine.cpp
       wallet_migration.cpp
   )
-  target_link_libraries(bench_bitcoinII bitcoinII_wallet)
+  target_link_libraries(bench_bitcoinIII bitcoinIII_wallet)
 endif()
 
 add_test(NAME bench_sanity_check_high_priority
-  COMMAND bench_bitcoinII -sanity-check -priority-level=high
+  COMMAND bench_bitcoinIII -sanity-check -priority-level=high
 )
 
-install_binary_component(bench_bitcoinII)
+install_binary_component(bench_bitcoinIII)

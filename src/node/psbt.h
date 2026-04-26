@@ -1,9 +1,9 @@
-// Copyright (c) 2009-2021 The BitcoinII Core developers
+// Copyright (c) 2009-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_NODE_PSBT_H
-#define BITCOINII_NODE_PSBT_H
+#ifndef BITCOINIII_NODE_PSBT_H
+#define BITCOINIII_NODE_PSBT_H
 
 #include <psbt.h>
 
@@ -55,4 +55,4 @@ struct PSBTAnalysis {
 PSBTAnalysis AnalyzePSBT(PartiallySignedTransaction psbtx);
 } // namespace node
 
-#endif // BITCOINII_NODE_PSBT_H
+#endif // BITCOINIII_NODE_PSBT_H

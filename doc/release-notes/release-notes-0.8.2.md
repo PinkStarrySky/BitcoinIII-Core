@@ -1,11 +1,11 @@
-BitcoinII-Qt version 0.8.2 is now available from:
-  http://sourceforge.net/projects/bitcoinII/files/BitcoinII/bitcoinII-0.8.2/
+BitcoinIII-Qt version 0.8.2 is now available from:
+  http://sourceforge.net/projects/bitcoinIII/files/BitcoinIII/bitcoinIII-0.8.2/
 
 This is a maintenance release that fixes many bugs and includes
 a few small new features.
 
 Please report bugs using the issue tracker at github:
-  https://github.com/bitcoinII/bitcoinII/issues
+  https://github.com/bitcoinIII/bitcoinIII/issues
 
 
 How to Upgrade
@@ -13,7 +13,7 @@ How to Upgrade
 If you are running an older version, shut it down. Wait
 until it has completely shut down (which might take a few minutes for older
 versions), then run the installer (on Windows) or just copy over
-/Applications/BitcoinII-Qt (on Mac) or bitcoinIId/bitcoinII-qt (on Linux).
+/Applications/BitcoinIII-Qt (on Mac) or bitcoinIIId/bitcoinIII-qt (on Linux).
 
 If you are upgrading from version 0.7.2 or earlier, the first time you
 run 0.8.2 your blockchain files will be re-indexed, which will take
@@ -24,12 +24,12 @@ your machine.
 
 Fee Policy changes
 
-The default fee for low-priority transactions is lowered from 0.0005 BC2 
+The default fee for low-priority transactions is lowered from 0.0005 BC3 
 (for each 1,000 bytes in the transaction; an average transaction is
-about 500 bytes) to 0.0001 BC2.
+about 500 bytes) to 0.0001 BC3.
 
 Payments (transaction outputs) of 0.543 times the minimum relay fee
-(0.00005430 BC2) are now considered 'non-standard', because storing them
+(0.00005430 BC3) are now considered 'non-standard', because storing them
 costs the network more than they are worth and spending them will usually
 cost their owner more in transaction fees than they are worth.
 
@@ -43,7 +43,7 @@ with code that automatically calculates and suggests appropriate fees in the
 0.9 release and note that if you set a fee policy significantly different from
 the rest of the network your transactions may never confirm.
 
-BitcoinII-Qt changes
+BitcoinIII-Qt changes
 
 * New icon and splash screen
 * Improve reporting of synchronization process
@@ -58,7 +58,7 @@ BitcoinII-Qt changes
   to current translations
 
 MacOSX:
-* OSX support for click-to-pay (bitcoinII:) links
+* OSX support for click-to-pay (bitcoinIII:) links
 * Fix GUI disappearing problem on MacOSX (issue #1522)
 
 Linux/Unix:
@@ -97,8 +97,8 @@ Wallet compatibility/rescuing
 
 Known Bugs
 
-* Entering the 'getblocktemplate' or 'getwork' RPC commands into the BitcoinII-Qt debug
-console will cause BitcoinII-Qt to crash. Run BitcoinII-Qt with the -server command-line
+* Entering the 'getblocktemplate' or 'getwork' RPC commands into the BitcoinIII-Qt debug
+console will cause BitcoinIII-Qt to crash. Run BitcoinIII-Qt with the -server command-line
 option to workaround.
 
 Thanks to everybody who contributed to the 0.8.2 release!

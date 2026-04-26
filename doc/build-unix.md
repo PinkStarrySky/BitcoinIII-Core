@@ -1,6 +1,6 @@
 UNIX BUILD NOTES
 ====================
-Some notes on how to build BitcoinII Core in Unix.
+Some notes on how to build BitcoinIII Core in Unix.
 
 (For BSD specific instructions, see `build-*bsd.md` in this directory.)
 
@@ -20,7 +20,7 @@ distributions](#linux-distribution-specific-instructions), or the
 ## Memory Requirements
 
 C++ compilers are memory-hungry. It is recommended to have at least 1.5 GB of
-memory available when compiling BitcoinII Core. On systems with less, gcc can be
+memory available when compiling BitcoinIII Core. On systems with less, gcc can be
 tuned to conserve memory with additional `CMAKE_CXX_FLAGS`:
 
 
@@ -58,7 +58,7 @@ Berkeley DB is only required for the legacy wallet. Ubuntu and Debian have their
 but these will install Berkeley DB 5.3 or later. This will break binary wallet compatibility with the distributed
 executables, which are based on BerkeleyDB 4.8. Otherwise, you can build Berkeley DB [yourself](#berkeley-db).
 
-To build BitcoinII Core without wallet, see [*Disable-wallet mode*](#disable-wallet-mode)
+To build BitcoinIII Core without wallet, see [*Disable-wallet mode*](#disable-wallet-mode)
 
 ZMQ dependencies (provides ZMQ API):
 
@@ -70,7 +70,7 @@ User-Space, Statically Defined Tracing (USDT) dependencies:
 
 GUI dependencies:
 
-BitcoinII Core includes a GUI built with the cross-platform Qt Framework. To compile the GUI, we need to install
+BitcoinIII Core includes a GUI built with the cross-platform Qt Framework. To compile the GUI, we need to install
 the necessary parts of Qt, the libqrencode and pass `-DBUILD_GUI=ON`. Skip if you don't intend to use the GUI.
 
     sudo apt-get install qtbase5-dev qttools5-dev qttools5-dev-tools
@@ -106,7 +106,7 @@ Berkeley DB is only required for the legacy wallet. Fedora releases have only `l
 Berkeley DB 5.3 or later. This will break binary wallet compatibility with the distributed executables, which
 are based on Berkeley DB 4.8. Otherwise, you can build Berkeley DB [yourself](#berkeley-db).
 
-To build BitcoinII Core without wallet, see [*Disable-wallet mode*](#disable-wallet-mode)
+To build BitcoinIII Core without wallet, see [*Disable-wallet mode*](#disable-wallet-mode)
 
 ZMQ dependencies (provides ZMQ API):
 
@@ -118,7 +118,7 @@ User-Space, Statically Defined Tracing (USDT) dependencies:
 
 GUI dependencies:
 
-BitcoinII Core includes a GUI built with the cross-platform Qt Framework. To compile the GUI, we need to install
+BitcoinIII Core includes a GUI built with the cross-platform Qt Framework. To compile the GUI, we need to install
 the necessary parts of Qt, the libqrencode and pass `-DBUILD_GUI=ON`. Skip if you don't intend to use the GUI.
 
     sudo dnf install qt5-qttools-devel qt5-qtbase-devel
@@ -147,11 +147,11 @@ want to use any other libraries built in depends, you can do:
 ```bash
 make -C depends NO_BOOST=1 NO_LIBEVENT=1 NO_QT=1 NO_SQLITE=1 NO_ZMQ=1 NO_USDT=1
 ...
-to: /path/to/bitcoinII/depends/x86_64-pc-linux-gnu
+to: /path/to/bitcoinIII/depends/x86_64-pc-linux-gnu
 ```
 and configure using the following:
 ```bash
-export BDB_PREFIX="/path/to/bitcoinII/depends/x86_64-pc-linux-gnu"
+export BDB_PREFIX="/path/to/bitcoinIII/depends/x86_64-pc-linux-gnu"
 
 cmake -B build -DBerkeleyDB_INCLUDE_DIR:PATH="${BDB_PREFIX}/include" -DWITH_BDB=ON
 ```
@@ -162,7 +162,7 @@ cmake -B build -DBerkeleyDB_INCLUDE_DIR:PATH="${BDB_PREFIX}/include" -DWITH_BDB=
 
 Disable-wallet mode
 --------------------
-When the intention is to only run a P2P node, without a wallet, BitcoinII Core can
+When the intention is to only run a P2P node, without a wallet, BitcoinIII Core can
 be compiled in disable-wallet mode with:
 
     cmake -B build -DENABLE_WALLET=OFF
@@ -183,11 +183,11 @@ Setup and Build Example: Arch Linux
 This example lists the steps necessary to setup and build a command line only distribution of the latest changes on Arch Linux:
 
     pacman --sync --needed cmake boost gcc git libevent make python sqlite
-    git clone https://github.com/bitcoinII/bitcoinII.git
-    cd bitcoinII/
+    git clone https://github.com/bitcoinIII/bitcoinIII.git
+    cd bitcoinIII/
     cmake -B build
     cmake --build build
     ctest --test-dir build
-    ./build/bin/bitcoinIId
+    ./build/bin/bitcoinIIId
 
 If you intend to work with legacy Berkeley DB wallets, see [Berkeley DB](#berkeley-db) section.

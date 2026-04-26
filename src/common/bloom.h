@@ -1,9 +1,9 @@
-// Copyright (c) 2012-2021 The BitcoinII Core developers
+// Copyright (c) 2012-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_COMMON_BLOOM_H
-#define BITCOINII_COMMON_BLOOM_H
+#ifndef BITCOINIII_COMMON_BLOOM_H
+#define BITCOINIII_COMMON_BLOOM_H
 
 #include <serialize.h>
 #include <span.h>
@@ -124,4 +124,4 @@ private:
     int nHashFuncs;
 };
 
-#endif // BITCOINII_COMMON_BLOOM_H
+#endif // BITCOINIII_COMMON_BLOOM_H

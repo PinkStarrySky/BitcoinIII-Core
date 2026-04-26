@@ -1,9 +1,9 @@
-// Copyright (c) 2025-present The BitcoinII Core developers
+// Copyright (c) 2025-present The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UTIL_BYTE_UNITS_H
-#define BITCOINII_UTIL_BYTE_UNITS_H
+#ifndef BITCOINIII_UTIL_BYTE_UNITS_H
+#define BITCOINIII_UTIL_BYTE_UNITS_H
 
 #include <util/overflow.h>
 
@@ -19,4 +19,4 @@ constexpr size_t operator""_MiB(unsigned long long mebibytes)
     return *bytes;
 }
 
-#endif // BITCOINII_UTIL_BYTE_UNITS_H
+#endif // BITCOINIII_UTIL_BYTE_UNITS_H

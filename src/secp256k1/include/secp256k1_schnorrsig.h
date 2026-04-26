@@ -9,8 +9,8 @@ extern "C" {
 #endif
 
 /** This module implements a variant of Schnorr signatures compliant with
- *  BitcoinII Improvement Proposal 340 "Schnorr Signatures for secp256k1"
- *  (https://github.com/bitcoinII/bips/blob/master/bip-0340.mediawiki).
+ *  BitcoinIII Improvement Proposal 340 "Schnorr Signatures for secp256k1"
+ *  (https://github.com/bitcoinIII/bips/blob/master/bip-0340.mediawiki).
  */
 
 /** A pointer to a function to deterministically generate a nonce.
@@ -49,9 +49,9 @@ typedef int (*secp256k1_nonce_function_hardened)(
     void *data
 );
 
-/** An implementation of the nonce generation function as defined in BitcoinII
+/** An implementation of the nonce generation function as defined in BitcoinIII
  *  Improvement Proposal 340 "Schnorr Signatures for secp256k1"
- *  (https://github.com/bitcoinII/bips/blob/master/bip-0340.mediawiki).
+ *  (https://github.com/bitcoinIII/bips/blob/master/bip-0340.mediawiki).
  *
  *  If a data pointer is passed, it is assumed to be a pointer to 32 bytes of
  *  auxiliary random data as defined in BIP-340. If the data pointer is NULL,

@@ -1,9 +1,9 @@
-// Copyright (c) 2020-2022 The BitcoinII Core developers
+// Copyright (c) 2020-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_CRYPTO_SHA3_H
-#define BITCOINII_CRYPTO_SHA3_H
+#ifndef BITCOINIII_CRYPTO_SHA3_H
+#define BITCOINIII_CRYPTO_SHA3_H
 
 #include <span.h>
 
@@ -38,4 +38,4 @@ public:
     SHA3_256& Reset();
 };
 
-#endif // BITCOINII_CRYPTO_SHA3_H
+#endif // BITCOINIII_CRYPTO_SHA3_H

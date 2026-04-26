@@ -1,9 +1,9 @@
-// Copyright (c) 2023 The BitcoinII Core developers
+// Copyright (c) 2023 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_ADDRESSTYPE_H
-#define BITCOINII_ADDRESSTYPE_H
+#ifndef BITCOINIII_ADDRESSTYPE_H
+#define BITCOINIII_ADDRESSTYPE_H
 
 #include <attributes.h>
 #include <pubkey.h>
@@ -135,7 +135,7 @@ struct PayToAnchor : public WitnessUnknown
  *  * WitnessV1Taproot: TxoutType::WITNESS_V1_TAPROOT destination (P2TR address)
  *  * PayToAnchor: TxoutType::ANCHOR destination (P2A address)
  *  * WitnessUnknown: TxoutType::WITNESS_UNKNOWN destination (P2W??? address)
- *  A CTxDestination is the internal data type encoded in a bitcoinII address
+ *  A CTxDestination is the internal data type encoded in a bitcoinIII address
  */
 using CTxDestination = std::variant<CNoDestination, PubKeyDestination, PKHash, ScriptHash, WitnessV0ScriptHash, WitnessV0KeyHash, WitnessV1Taproot, PayToAnchor, WitnessUnknown>;
 
@@ -155,10 +155,10 @@ bool IsValidDestination(const CTxDestination& dest);
 bool ExtractDestination(const CScript& scriptPubKey, CTxDestination& addressRet);
 
 /**
- * Generate a BitcoinII scriptPubKey for the given CTxDestination. Returns a P2PKH
+ * Generate a BitcoinIII scriptPubKey for the given CTxDestination. Returns a P2PKH
  * script for a CKeyID destination, a P2SH script for a CScriptID, and an empty
  * script for CNoDestination.
  */
 CScript GetScriptForDestination(const CTxDestination& dest);
 
-#endif // BITCOINII_ADDRESSTYPE_H
+#endif // BITCOINIII_ADDRESSTYPE_H

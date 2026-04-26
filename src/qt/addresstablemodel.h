@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2020 The BitcoinII Core developers
+// Copyright (c) 2011-2020 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_ADDRESSTABLEMODEL_H
-#define BITCOINII_QT_ADDRESSTABLEMODEL_H
+#ifndef BITCOINIII_QT_ADDRESSTABLEMODEL_H
+#define BITCOINIII_QT_ADDRESSTABLEMODEL_H
 
 #include <optional>
 
@@ -35,7 +35,7 @@ public:
 
     enum ColumnIndex {
         Label = 0,   /**< User specified label */
-        Address = 1  /**< BitcoinII address */
+        Address = 1  /**< BitcoinIII address */
     };
 
     enum RoleIndex {
@@ -109,4 +109,4 @@ public Q_SLOTS:
     friend class AddressTablePriv;
 };
 
-#endif // BITCOINII_QT_ADDRESSTABLEMODEL_H
+#endif // BITCOINIII_QT_ADDRESSTABLEMODEL_H

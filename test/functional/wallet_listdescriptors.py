@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2014-2022 The BitcoinII Core developers
+# Copyright (c) 2014-2022 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test the listdescriptors RPC."""
@@ -10,14 +10,14 @@ from test_framework.blocktools import (
 from test_framework.descriptors import (
     descsum_create,
 )
-from test_framework.test_framework import BitcoinIITestFramework
+from test_framework.test_framework import BitcoinIIITestFramework
 from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error,
 )
 
 
-class ListDescriptorsTest(BitcoinIITestFramework):
+class ListDescriptorsTest(BitcoinIIITestFramework):
     def add_options(self, parser):
         self.add_wallet_options(parser, legacy=False)
 

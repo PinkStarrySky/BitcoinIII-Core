@@ -1,9 +1,9 @@
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_KERNEL_MEMPOOL_ENTRY_H
-#define BITCOINII_KERNEL_MEMPOOL_ENTRY_H
+#ifndef BITCOINIII_KERNEL_MEMPOOL_ENTRY_H
+#define BITCOINIII_KERNEL_MEMPOOL_ENTRY_H
 
 #include <consensus/amount.h>
 #include <consensus/validation.h>
@@ -249,4 +249,4 @@ struct NewMempoolTransactionInfo {
           m_has_no_mempool_parents{has_no_mempool_parents} {}
 };
 
-#endif // BITCOINII_KERNEL_MEMPOOL_ENTRY_H
+#endif // BITCOINIII_KERNEL_MEMPOOL_ENTRY_H

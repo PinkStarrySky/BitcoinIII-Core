@@ -1,9 +1,9 @@
-// Copyright (c) 2023 The BitcoinII Core developers
+// Copyright (c) 2023 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_COMMON_ARGS_H
-#define BITCOINII_COMMON_ARGS_H
+#ifndef BITCOINIII_COMMON_ARGS_H
+#define BITCOINIII_COMMON_ARGS_H
 
 #include <common/settings.h>
 #include <compat/compat.h>
@@ -23,8 +23,8 @@
 
 class ArgsManager;
 
-extern const char * const BITCOINII_CONF_FILENAME;
-extern const char * const BITCOINII_SETTINGS_FILENAME;
+extern const char * const BITCOINIII_CONF_FILENAME;
+extern const char * const BITCOINIII_SETTINGS_FILENAME;
 
 // Return true if -datadir option points to a valid directory or is not specified.
 bool CheckDataDirOption(const ArgsManager& args);
@@ -495,4 +495,4 @@ private:
 #endif
 } // namespace common
 
-#endif // BITCOINII_COMMON_ARGS_H
+#endif // BITCOINIII_COMMON_ARGS_H

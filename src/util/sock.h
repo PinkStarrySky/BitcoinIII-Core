@@ -1,9 +1,9 @@
-// Copyright (c) 2020-2022 The BitcoinII Core developers
+// Copyright (c) 2020-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UTIL_SOCK_H
-#define BITCOINII_UTIL_SOCK_H
+#ifndef BITCOINIII_UTIL_SOCK_H
+#define BITCOINIII_UTIL_SOCK_H
 
 #include <compat/compat.h>
 #include <util/threadinterrupt.h>
@@ -284,4 +284,4 @@ private:
 /** Return readable error string for a network error code */
 std::string NetworkErrorString(int err);
 
-#endif // BITCOINII_UTIL_SOCK_H
+#endif // BITCOINIII_UTIL_SOCK_H

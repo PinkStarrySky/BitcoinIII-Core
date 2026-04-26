@@ -1,11 +1,11 @@
-// Copyright (c) 2020-2021 The BitcoinII Core developers
+// Copyright (c) 2020-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UTIL_TRACE_H
-#define BITCOINII_UTIL_TRACE_H
+#ifndef BITCOINIII_UTIL_TRACE_H
+#define BITCOINIII_UTIL_TRACE_H
 
-#include <bitcoinII-build-config.h> // IWYU pragma: keep
+#include <bitcoinIII-build-config.h> // IWYU pragma: keep
 
 #ifdef ENABLE_TRACING
 
@@ -51,4 +51,4 @@
 #endif // ENABLE_TRACING
 
 
-#endif // BITCOINII_UTIL_TRACE_H
+#endif // BITCOINIII_UTIL_TRACE_H

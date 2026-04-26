@@ -1,9 +1,9 @@
-// Copyright (c) 2019-2021 The BitcoinII Core developers
+// Copyright (c) 2019-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_NET_TYPES_H
-#define BITCOINII_NET_TYPES_H
+#ifndef BITCOINIII_NET_TYPES_H
+#define BITCOINIII_NET_TYPES_H
 
 #include <cstdint>
 #include <map>
@@ -57,4 +57,4 @@ UniValue BanMapToJson(const banmap_t& bans);
  */
 void BanMapFromJson(const UniValue& bans_json, banmap_t& bans);
 
-#endif // BITCOINII_NET_TYPES_H
+#endif // BITCOINIII_NET_TYPES_H

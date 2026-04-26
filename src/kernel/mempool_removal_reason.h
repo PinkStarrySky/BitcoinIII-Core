@@ -1,9 +1,9 @@
-// Copyright (c) 2016-present The BitcoinII Core developers
+// Copyright (c) 2016-present The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://opensource.org/license/mit/.
 
-#ifndef BITCOINII_KERNEL_MEMPOOL_REMOVAL_REASON_H
-#define BITCOINII_KERNEL_MEMPOOL_REMOVAL_REASON_H
+#ifndef BITCOINIII_KERNEL_MEMPOOL_REMOVAL_REASON_H
+#define BITCOINIII_KERNEL_MEMPOOL_REMOVAL_REASON_H
 
 #include <string>
 
@@ -21,4 +21,4 @@ enum class MemPoolRemovalReason {
 
 std::string RemovalReasonToString(const MemPoolRemovalReason& r) noexcept;
 
-#endif // BITCOINII_KERNEL_MEMPOOL_REMOVAL_REASON_H
+#endif // BITCOINIII_KERNEL_MEMPOOL_REMOVAL_REASON_H

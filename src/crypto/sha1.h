@@ -1,9 +1,9 @@
-// Copyright (c) 2014-2022 The BitcoinII Core developers
+// Copyright (c) 2014-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_CRYPTO_SHA1_H
-#define BITCOINII_CRYPTO_SHA1_H
+#ifndef BITCOINIII_CRYPTO_SHA1_H
+#define BITCOINIII_CRYPTO_SHA1_H
 
 #include <cstdlib>
 #include <stdint.h>
@@ -25,4 +25,4 @@ public:
     CSHA1& Reset();
 };
 
-#endif // BITCOINII_CRYPTO_SHA1_H
+#endif // BITCOINIII_CRYPTO_SHA1_H

@@ -1,9 +1,9 @@
-// Copyright (c) 2019-2021 The BitcoinII Core developers
+// Copyright (c) 2019-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UTIL_ASMAP_H
-#define BITCOINII_UTIL_ASMAP_H
+#ifndef BITCOINIII_UTIL_ASMAP_H
+#define BITCOINIII_UTIL_ASMAP_H
 
 #include <util/fs.h>
 
@@ -17,4 +17,4 @@ bool SanityCheckASMap(const std::vector<bool>& asmap, int bits);
 /** Read asmap from provided binary file */
 std::vector<bool> DecodeAsmap(fs::path path);
 
-#endif // BITCOINII_UTIL_ASMAP_H
+#endif // BITCOINIII_UTIL_ASMAP_H

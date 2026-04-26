@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-# Copyright (c) 2022-present The BitcoinII Core developers
+# Copyright (c) 2022-present The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Tests around pruning rev and blk files on startup."""
 
 import platform
-from test_framework.test_framework import BitcoinIITestFramework
+from test_framework.test_framework import BitcoinIIITestFramework
 from test_framework.util import assert_equal
 
 
-class FeatureRemovePrunedFilesOnStartupTest(BitcoinIITestFramework):
+class FeatureRemovePrunedFilesOnStartupTest(BitcoinIIITestFramework):
     def set_test_params(self):
         self.num_nodes = 1
         self.extra_args = [["-fastprune", "-prune=1"]]

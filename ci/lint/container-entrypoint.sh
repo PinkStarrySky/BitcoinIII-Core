@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 #
-# Copyright (c) The BitcoinII Core developers
+# Copyright (c) The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://opensource.org/license/mit/.
 
 export LC_ALL=C
 
 # Fixes permission issues when there is a container UID/GID mismatch with the owner
-# of the mounted bitcoinII src dir.
-git config --global --add safe.directory /bitcoinII
+# of the mounted bitcoinIII src dir.
+git config --global --add safe.directory /bitcoinIII
 
 export PATH="/python_build/bin:${PATH}"
 export LINT_RUNNER_PATH="/lint_test_runner"

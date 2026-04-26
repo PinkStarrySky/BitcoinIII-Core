@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2020 The BitcoinII Core developers
+// Copyright (c) 2011-2020 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_EDITADDRESSDIALOG_H
-#define BITCOINII_QT_EDITADDRESSDIALOG_H
+#ifndef BITCOINIII_QT_EDITADDRESSDIALOG_H
+#define BITCOINIII_QT_EDITADDRESSDIALOG_H
 
 #include <QDialog>
 
@@ -56,4 +56,4 @@ private:
     QString address;
 };
 
-#endif // BITCOINII_QT_EDITADDRESSDIALOG_H
+#endif // BITCOINIII_QT_EDITADDRESSDIALOG_H

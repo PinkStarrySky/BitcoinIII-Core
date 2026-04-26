@@ -1,9 +1,9 @@
-// Copyright (c) 2015-2018 The BitcoinII Core developers
+// Copyright (c) 2015-2018 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_CORE_MEMUSAGE_H
-#define BITCOINII_CORE_MEMUSAGE_H
+#ifndef BITCOINIII_CORE_MEMUSAGE_H
+#define BITCOINIII_CORE_MEMUSAGE_H
 
 #include <primitives/transaction.h>
 #include <primitives/block.h>
@@ -68,4 +68,4 @@ static inline size_t RecursiveDynamicUsage(const std::shared_ptr<X>& p) {
     return p ? memusage::DynamicUsage(p) + RecursiveDynamicUsage(*p) : 0;
 }
 
-#endif // BITCOINII_CORE_MEMUSAGE_H
+#endif // BITCOINIII_CORE_MEMUSAGE_H

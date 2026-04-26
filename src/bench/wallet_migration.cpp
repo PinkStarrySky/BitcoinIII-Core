@@ -1,8 +1,8 @@
-// Copyright (c) 2024 The BitcoinII Core developers
+// Copyright (c) 2024 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#include <bitcoinII-build-config.h> // IWYU pragma: keep
+#include <bitcoinIII-build-config.h> // IWYU pragma: keep
 
 #include <bench/bench.h>
 #include <kernel/chain.h>

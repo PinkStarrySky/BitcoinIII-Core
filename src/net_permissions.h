@@ -1,4 +1,4 @@
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -9,8 +9,8 @@
 #include <type_traits>
 #include <vector>
 
-#ifndef BITCOINII_NET_PERMISSIONS_H
-#define BITCOINII_NET_PERMISSIONS_H
+#ifndef BITCOINIII_NET_PERMISSIONS_H
+#define BITCOINIII_NET_PERMISSIONS_H
 
 struct bilingual_str;
 
@@ -93,4 +93,4 @@ public:
     CSubNet m_subnet;
 };
 
-#endif // BITCOINII_NET_PERMISSIONS_H
+#endif // BITCOINIII_NET_PERMISSIONS_H

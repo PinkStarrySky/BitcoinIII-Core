@@ -1,9 +1,9 @@
-// Copyright (c) 2016-2022 The BitcoinII Core developers
+// Copyright (c) 2016-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_VERSIONBITS_H
-#define BITCOINII_VERSIONBITS_H
+#ifndef BITCOINIII_VERSIONBITS_H
+#define BITCOINIII_VERSIONBITS_H
 
 #include <chain.h>
 #include <sync.h>
@@ -104,4 +104,4 @@ public:
     void Clear() EXCLUSIVE_LOCKS_REQUIRED(!m_mutex);
 };
 
-#endif // BITCOINII_VERSIONBITS_H
+#endif // BITCOINIII_VERSIONBITS_H

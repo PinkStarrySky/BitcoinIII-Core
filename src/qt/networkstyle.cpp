@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2021 The BitcoinII Core developers
+// Copyright (c) 2014-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -30,7 +30,7 @@ NetworkStyle::NetworkStyle(const QString &_appName, const int iconColorHueShift,
     titleAddText(qApp->translate("SplashScreen", _titleAddText))
 {
     // load pixmap
-    QPixmap pixmap(":/icons/bitcoinII");
+    QPixmap pixmap(":/icons/bitcoinIII");
 
     if(iconColorHueShift != 0 && iconColorSaturationReduction != 0)
     {

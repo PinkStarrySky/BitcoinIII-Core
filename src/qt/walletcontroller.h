@@ -1,9 +1,9 @@
-// Copyright (c) 2019-2021 The BitcoinII Core developers
+// Copyright (c) 2019-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_WALLETCONTROLLER_H
-#define BITCOINII_QT_WALLETCONTROLLER_H
+#ifndef BITCOINIII_QT_WALLETCONTROLLER_H
+#define BITCOINIII_QT_WALLETCONTROLLER_H
 
 #include <qt/sendcoinsrecipient.h>
 #include <support/allocators/secure.h>
@@ -198,4 +198,4 @@ private:
     void finish();
 };
 
-#endif // BITCOINII_QT_WALLETCONTROLLER_H
+#endif // BITCOINIII_QT_WALLETCONTROLLER_H

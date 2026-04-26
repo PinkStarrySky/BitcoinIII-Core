@@ -1,4 +1,4 @@
-// Copyright (c) 2010-2021 The BitcoinII Core developers
+// Copyright (c) 2010-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -10,8 +10,8 @@
 //! dependencies. More complicated types should be defined in dedicated header
 //! files.
 
-#ifndef BITCOINII_NODE_TYPES_H
-#define BITCOINII_NODE_TYPES_H
+#ifndef BITCOINIII_NODE_TYPES_H
+#define BITCOINIII_NODE_TYPES_H
 
 #include <cstddef>
 #include <policy/policy.h>
@@ -63,4 +63,4 @@ struct BlockCreateOptions {
 };
 } // namespace node
 
-#endif // BITCOINII_NODE_TYPES_H
+#endif // BITCOINIII_NODE_TYPES_H

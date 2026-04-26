@@ -1,9 +1,9 @@
-// Copyright (c) 2021-2022 The BitcoinII Core developers
+// Copyright (c) 2021-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UTIL_OVERFLOW_H
-#define BITCOINII_UTIL_OVERFLOW_H
+#ifndef BITCOINIII_UTIL_OVERFLOW_H
+#define BITCOINIII_UTIL_OVERFLOW_H
 
 #include <climits>
 #include <concepts>
@@ -83,4 +83,4 @@ constexpr T SaturatingLeftShift(T input, unsigned shift) noexcept
     return input < 0 ? std::numeric_limits<T>::min() : std::numeric_limits<T>::max();
 }
 
-#endif // BITCOINII_UTIL_OVERFLOW_H
+#endif // BITCOINIII_UTIL_OVERFLOW_H

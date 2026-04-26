@@ -1,9 +1,9 @@
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_TEST_FUZZ_UTIL_H
-#define BITCOINII_TEST_FUZZ_UTIL_H
+#ifndef BITCOINIII_TEST_FUZZ_UTIL_H
+#define BITCOINIII_TEST_FUZZ_UTIL_H
 
 #include <addresstype.h>
 #include <arith_uint256.h>
@@ -340,4 +340,4 @@ void ReadFromStream(FuzzedDataProvider& fuzzed_data_provider, Stream& stream) no
     }
 }
 
-#endif // BITCOINII_TEST_FUZZ_UTIL_H
+#endif // BITCOINIII_TEST_FUZZ_UTIL_H

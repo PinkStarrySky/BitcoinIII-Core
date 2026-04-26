@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2014-present The BitcoinII Core developers
+# Copyright (c) 2014-present The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Base class for RPC testing."""
@@ -46,7 +46,7 @@ TEST_EXIT_PASSED = 0
 TEST_EXIT_FAILED = 1
 TEST_EXIT_SKIPPED = 77
 
-TMPDIR_PREFIX = "bitcoinII_func_test_"
+TMPDIR_PREFIX = "bitcoinIII_func_test_"
 
 
 class SkipTest(Exception):
@@ -56,30 +56,30 @@ class SkipTest(Exception):
         self.message = message
 
 
-class BitcoinIITestMetaClass(type):
-    """Metaclass for BitcoinIITestFramework.
+class BitcoinIIITestMetaClass(type):
+    """Metaclass for BitcoinIIITestFramework.
 
-    Ensures that any attempt to register a subclass of `BitcoinIITestFramework`
+    Ensures that any attempt to register a subclass of `BitcoinIIITestFramework`
     adheres to a standard whereby the subclass overrides `set_test_params` and
     `run_test` but DOES NOT override either `__init__` or `main`. If any of
     those standards are violated, a ``TypeError`` is raised."""
 
     def __new__(cls, clsname, bases, dct):
-        if not clsname == 'BitcoinIITestFramework':
+        if not clsname == 'BitcoinIIITestFramework':
             if not ('run_test' in dct and 'set_test_params' in dct):
-                raise TypeError("BitcoinIITestFramework subclasses must override "
+                raise TypeError("BitcoinIIITestFramework subclasses must override "
                                 "'run_test' and 'set_test_params'")
             if '__init__' in dct or 'main' in dct:
-                raise TypeError("BitcoinIITestFramework subclasses may not override "
+                raise TypeError("BitcoinIIITestFramework subclasses may not override "
                                 "'__init__' or 'main'")
 
         return super().__new__(cls, clsname, bases, dct)
 
 
-class BitcoinIITestFramework(metaclass=BitcoinIITestMetaClass):
-    """Base class for a bitcoinII test script.
+class BitcoinIIITestFramework(metaclass=BitcoinIIITestMetaClass):
+    """Base class for a bitcoinIII test script.
 
-    Individual bitcoinII test scripts should subclass this class and override the set_test_params() and run_test() methods.
+    Individual bitcoinIII test scripts should subclass this class and override the set_test_params() and run_test() methods.
 
     Individual tests can also override the following methods to customize the test setup:
 
@@ -170,7 +170,7 @@ class BitcoinIITestFramework(metaclass=BitcoinIITestMetaClass):
         previous_releases_path = os.getenv("PREVIOUS_RELEASES_DIR") or os.getcwd() + "/releases"
         parser = argparse.ArgumentParser(usage="%(prog)s [options]")
         parser.add_argument("--nocleanup", dest="nocleanup", default=False, action="store_true",
-                            help="Leave bitcoinIIds and test.* datadir on exit or error")
+                            help="Leave bitcoinIIIds and test.* datadir on exit or error")
         parser.add_argument("--cachedir", dest="cachedir", default=os.path.abspath(os.path.dirname(test_file) + "/../cache"),
                             help="Directory for caching pregenerated datadirs (default: %(default)s)")
         parser.add_argument("--tmpdir", dest="tmpdir", help="Root directory for datadirs (must not exist)")
@@ -191,7 +191,7 @@ class BitcoinIITestFramework(metaclass=BitcoinIITestMetaClass):
         parser.add_argument("--pdbonfailure", dest="pdbonfailure", default=False, action="store_true",
                             help="Attach a python debugger if test fails")
         parser.add_argument("--usecli", dest="usecli", default=False, action="store_true",
-                            help="use bitcoinII-cli instead of RPC for all commands")
+                            help="use bitcoinIII-cli instead of RPC for all commands")
         parser.add_argument("--perf", dest="perf", default=False, action="store_true",
                             help="profile running nodes with perf for the duration of the test")
         parser.add_argument("--valgrind", dest="valgrind", default=False, action="store_true",
@@ -247,10 +247,10 @@ class BitcoinIITestFramework(metaclass=BitcoinIITestMetaClass):
         """Update self.options with the paths of all binaries from environment variables or their default values"""
 
         binaries = {
-            "bitcoinIId": ("bitcoinIId", "BITCOINIID"),
-            "bitcoinII-cli": ("bitcoinIIcli", "BITCOINIICLI"),
-            "bitcoinII-util": ("bitcoinIIutil", "BITCOINIIUTIL"),
-            "bitcoinII-wallet": ("bitcoinIIwallet", "BITCOINIIWALLET"),
+            "bitcoinIIId": ("bitcoinIIId", "BITCOINIIID"),
+            "bitcoinIII-cli": ("bitcoinIIIcli", "BITCOINIIICLI"),
+            "bitcoinIII-util": ("bitcoinIIIutil", "BITCOINIIIUTIL"),
+            "bitcoinIII-wallet": ("bitcoinIIIwallet", "BITCOINIIIWALLET"),
         }
         for binary, [attribute_name, env_variable_name] in binaries.items():
             default_filename = os.path.join(
@@ -368,7 +368,7 @@ class BitcoinIITestFramework(metaclass=BitcoinIITestMetaClass):
             h.flush()
             h.close()
             self.log.removeHandler(h)
-        rpc_logger = logging.getLogger("BitcoinIIRPC")
+        rpc_logger = logging.getLogger("BitcoinIIIRPC")
         for h in list(rpc_logger.handlers):
             h.flush()
             rpc_logger.removeHandler(h)
@@ -518,9 +518,9 @@ class BitcoinIITestFramework(metaclass=BitcoinIITestMetaClass):
         if versions is None:
             versions = [None] * num_nodes
         if binary is None:
-            binary = [get_bin_from_version(v, 'bitcoinIId', self.options.bitcoinIId) for v in versions]
+            binary = [get_bin_from_version(v, 'bitcoinIIId', self.options.bitcoinIIId) for v in versions]
         if binary_cli is None:
-            binary_cli = [get_bin_from_version(v, 'bitcoinII-cli', self.options.bitcoinIIcli) for v in versions]
+            binary_cli = [get_bin_from_version(v, 'bitcoinIII-cli', self.options.bitcoinIIIcli) for v in versions]
         # Fail test if any of the needed release binaries is missing
         bins_missing = False
         for bin_path in binary + binary_cli:
@@ -544,8 +544,8 @@ class BitcoinIITestFramework(metaclass=BitcoinIITestMetaClass):
                 rpchost=rpchost,
                 timewait=self.rpc_timeout,
                 timeout_factor=self.options.timeout_factor,
-                bitcoinIId=binary[i],
-                bitcoinII_cli=binary_cli[i],
+                bitcoinIIId=binary[i],
+                bitcoinIII_cli=binary_cli[i],
                 version=versions[i],
                 coverage_dir=self.options.coveragedir,
                 cwd=self.options.tmpdir,
@@ -563,7 +563,7 @@ class BitcoinIITestFramework(metaclass=BitcoinIITestMetaClass):
                 test_node_i.replace_in_config([('[regtest]', '')])
 
     def start_node(self, i, *args, **kwargs):
-        """Start a bitcoinIId"""
+        """Start a bitcoinIIId"""
 
         node = self.nodes[i]
 
@@ -574,7 +574,7 @@ class BitcoinIITestFramework(metaclass=BitcoinIITestMetaClass):
             coverage.write_all_rpc_commands(self.options.coveragedir, node.rpc)
 
     def start_nodes(self, extra_args=None, *args, **kwargs):
-        """Start multiple bitcoinIIds"""
+        """Start multiple bitcoinIIIds"""
 
         if extra_args is None:
             extra_args = [None] * self.num_nodes
@@ -589,11 +589,11 @@ class BitcoinIITestFramework(metaclass=BitcoinIITestMetaClass):
                 coverage.write_all_rpc_commands(self.options.coveragedir, node.rpc)
 
     def stop_node(self, i, expected_stderr='', wait=0):
-        """Stop a bitcoinIId test node"""
+        """Stop a bitcoinIIId test node"""
         self.nodes[i].stop_node(expected_stderr, wait=wait)
 
     def stop_nodes(self, wait=0):
-        """Stop multiple bitcoinIId test nodes"""
+        """Stop multiple bitcoinIIId test nodes"""
         for node in self.nodes:
             # Issue RPC to stop nodes
             node.stop_node(wait=wait, wait_until_stopped=False)
@@ -735,7 +735,7 @@ class BitcoinIITestFramework(metaclass=BitcoinIITestMetaClass):
         return blocks
 
     def create_outpoints(self, node, *, outputs):
-        """Send funds to a given list of `{address: amount}` targets using the bitcoinIId
+        """Send funds to a given list of `{address: amount}` targets using the bitcoinIIId
         wallet and return the corresponding outpoints as a list of dictionaries
         `[{"txid": txid, "vout": vout1}, {"txid": txid, "vout": vout2}, ...]`.
         The result can be used to specify inputs for RPCs like `createrawtransaction`,
@@ -816,7 +816,7 @@ class BitcoinIITestFramework(metaclass=BitcoinIITestMetaClass):
         # User can provide log level as a number or string (eg DEBUG). loglevel was caught as a string, so try to convert it to an int
         ll = int(self.options.loglevel) if self.options.loglevel.isdigit() else self.options.loglevel.upper()
         ch.setLevel(ll)
-        # Format logs the same as bitcoinIId's debug.log with microprecision (so log files can be concatenated and sorted)
+        # Format logs the same as bitcoinIIId's debug.log with microprecision (so log files can be concatenated and sorted)
         formatter = logging.Formatter(fmt='%(asctime)s.%(msecs)03d000Z %(name)s (%(levelname)s): %(message)s', datefmt='%Y-%m-%dT%H:%M:%S')
         formatter.converter = time.gmtime
         fh.setFormatter(formatter)
@@ -826,7 +826,7 @@ class BitcoinIITestFramework(metaclass=BitcoinIITestMetaClass):
         self.log.addHandler(ch)
 
         if self.options.trace_rpc:
-            rpc_logger = logging.getLogger("BitcoinIIRPC")
+            rpc_logger = logging.getLogger("BitcoinIIIRPC")
             rpc_logger.setLevel(logging.DEBUG)
             rpc_handler = logging.StreamHandler(sys.stdout)
             rpc_handler.setLevel(logging.DEBUG)
@@ -856,8 +856,8 @@ class BitcoinIITestFramework(metaclass=BitcoinIITestMetaClass):
                     rpchost=None,
                     timewait=self.rpc_timeout,
                     timeout_factor=self.options.timeout_factor,
-                    bitcoinIId=self.options.bitcoinIId,
-                    bitcoinII_cli=self.options.bitcoinIIcli,
+                    bitcoinIIId=self.options.bitcoinIIId,
+                    bitcoinIII_cli=self.options.bitcoinIIIcli,
                     coverage_dir=None,
                     cwd=self.options.tmpdir,
                     descriptors=self.options.descriptors,
@@ -904,7 +904,7 @@ class BitcoinIITestFramework(metaclass=BitcoinIITestMetaClass):
             self.log.debug("Copy cache directory {} to node {}".format(cache_node_dir, i))
             to_dir = get_datadir_path(self.options.tmpdir, i)
             shutil.copytree(cache_node_dir, to_dir)
-            initialize_datadir(self.options.tmpdir, i, self.chain, self.disable_autoconnect)  # Overwrite port/rpcport in bitcoinII.conf
+            initialize_datadir(self.options.tmpdir, i, self.chain, self.disable_autoconnect)  # Overwrite port/rpcport in bitcoinIII.conf
 
     def _initialize_chain_clean(self):
         """Initialize empty blockchain for use by the test.
@@ -935,10 +935,10 @@ class BitcoinIITestFramework(metaclass=BitcoinIITestMetaClass):
         except ImportError:
             raise SkipTest("bcc python module not available")
 
-    def skip_if_no_bitcoinIId_tracepoints(self):
-        """Skip the running test if bitcoinIId has not been compiled with USDT tracepoint support."""
+    def skip_if_no_bitcoinIIId_tracepoints(self):
+        """Skip the running test if bitcoinIIId has not been compiled with USDT tracepoint support."""
         if not self.is_usdt_compiled():
-            raise SkipTest("bitcoinIId has not been built with USDT tracepoints enabled.")
+            raise SkipTest("bitcoinIIId has not been built with USDT tracepoints enabled.")
 
     def skip_if_no_bpf_permissions(self):
         """Skip the running test if we don't have permissions to do BPF syscalls and load BPF maps."""
@@ -956,10 +956,10 @@ class BitcoinIITestFramework(metaclass=BitcoinIITestMetaClass):
         if os.name != 'posix':
             raise SkipTest("not on a POSIX system")
 
-    def skip_if_no_bitcoinIId_zmq(self):
-        """Skip the running test if bitcoinIId has not been compiled with zmq support."""
+    def skip_if_no_bitcoinIIId_zmq(self):
+        """Skip the running test if bitcoinIIId has not been compiled with zmq support."""
         if not self.is_zmq_compiled():
-            raise SkipTest("bitcoinIId has not been built with zmq enabled.")
+            raise SkipTest("bitcoinIIId has not been built with zmq enabled.")
 
     def skip_if_no_wallet(self):
         """Skip the running test if wallet has not been compiled."""
@@ -982,19 +982,19 @@ class BitcoinIITestFramework(metaclass=BitcoinIITestMetaClass):
             raise SkipTest("BDB has not been compiled.")
 
     def skip_if_no_wallet_tool(self):
-        """Skip the running test if bitcoinII-wallet has not been compiled."""
+        """Skip the running test if bitcoinIII-wallet has not been compiled."""
         if not self.is_wallet_tool_compiled():
-            raise SkipTest("bitcoinII-wallet has not been compiled")
+            raise SkipTest("bitcoinIII-wallet has not been compiled")
 
-    def skip_if_no_bitcoinII_util(self):
-        """Skip the running test if bitcoinII-util has not been compiled."""
-        if not self.is_bitcoinII_util_compiled():
-            raise SkipTest("bitcoinII-util has not been compiled")
+    def skip_if_no_bitcoinIII_util(self):
+        """Skip the running test if bitcoinIII-util has not been compiled."""
+        if not self.is_bitcoinIII_util_compiled():
+            raise SkipTest("bitcoinIII-util has not been compiled")
 
     def skip_if_no_cli(self):
-        """Skip the running test if bitcoinII-cli has not been compiled."""
+        """Skip the running test if bitcoinIII-cli has not been compiled."""
         if not self.is_cli_compiled():
-            raise SkipTest("bitcoinII-cli has not been compiled.")
+            raise SkipTest("bitcoinIII-cli has not been compiled.")
 
     def skip_if_no_previous_releases(self):
         """Skip the running test if previous releases are not available."""
@@ -1015,7 +1015,7 @@ class BitcoinIITestFramework(metaclass=BitcoinIITestMetaClass):
             raise SkipTest("external signer support has not been compiled.")
 
     def is_cli_compiled(self):
-        """Checks whether bitcoinII-cli was compiled."""
+        """Checks whether bitcoinIII-cli was compiled."""
         return self.config["components"].getboolean("ENABLE_CLI")
 
     def is_external_signer_compiled(self):
@@ -1035,11 +1035,11 @@ class BitcoinIITestFramework(metaclass=BitcoinIITestMetaClass):
             return self.is_bdb_compiled()
 
     def is_wallet_tool_compiled(self):
-        """Checks whether bitcoinII-wallet was compiled."""
+        """Checks whether bitcoinIII-wallet was compiled."""
         return self.config["components"].getboolean("ENABLE_WALLET_TOOL")
 
-    def is_bitcoinII_util_compiled(self):
-        """Checks whether bitcoinII-util was compiled."""
+    def is_bitcoinIII_util_compiled(self):
+        """Checks whether bitcoinIII-util was compiled."""
         return self.config["components"].getboolean("ENABLE_BITCOIN_UTIL")
 
     def is_zmq_compiled(self):

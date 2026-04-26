@@ -15,9 +15,9 @@ DNS seed, virtu's crawler, and asmap community AS map data. Run the following co
 from the `/contrib/seeds` directory:
 
 ```
-curl https://bitcoinII.sipa.be/seeds.txt.gz | gzip -dc > seeds_main.txt
+curl https://bitcoinIII.sipa.be/seeds.txt.gz | gzip -dc > seeds_main.txt
 curl https://21.ninja/seeds.txt.gz | gzip -dc >> seeds_main.txt
-curl https://luke.dashjr.org/programs/bitcoinII/files/charts/seeds.txt >> seeds_main.txt
+curl https://luke.dashjr.org/programs/bitcoinIII/files/charts/seeds.txt >> seeds_main.txt
 curl https://mainnet.achownodes.xyz/seeds.txt.gz | gzip -dc >> seeds_main.txt
 curl https://signet.achownodes.xyz/seeds.txt.gz | gzip -dc > seeds_signet.txt
 curl https://testnet.achownodes.xyz/seeds.txt.gz | gzip -dc > seeds_test.txt

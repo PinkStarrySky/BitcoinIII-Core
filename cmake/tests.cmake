@@ -1,10 +1,10 @@
-# Copyright (c) 2023-present The BitcoinII Core developers
+# Copyright (c) 2023-present The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://opensource.org/license/mit/.
 
-if(TARGET bitcoinII-util AND TARGET bitcoinII-tx AND PYTHON_COMMAND)
+if(TARGET bitcoinIII-util AND TARGET bitcoinIII-tx AND PYTHON_COMMAND)
   add_test(NAME util_test_runner
-    COMMAND ${CMAKE_COMMAND} -E env BITCOINIIUTIL=$<TARGET_FILE:bitcoinII-util> BITCOINIITX=$<TARGET_FILE:bitcoinII-tx> ${PYTHON_COMMAND} ${PROJECT_BINARY_DIR}/test/util/test_runner.py
+    COMMAND ${CMAKE_COMMAND} -E env BITCOINIIIUTIL=$<TARGET_FILE:bitcoinIII-util> BITCOINIIITX=$<TARGET_FILE:bitcoinIII-tx> ${PYTHON_COMMAND} ${PROJECT_BINARY_DIR}/test/util/test_runner.py
   )
 endif()
 

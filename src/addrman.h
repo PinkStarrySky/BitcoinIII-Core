@@ -1,10 +1,10 @@
 // Copyright (c) 2012 Pieter Wuille
-// Copyright (c) 2012-2022 The BitcoinII Core developers
+// Copyright (c) 2012-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_ADDRMAN_H
-#define BITCOINII_ADDRMAN_H
+#ifndef BITCOINIII_ADDRMAN_H
+#define BITCOINIII_ADDRMAN_H
 
 #include <netaddress.h>
 #include <netgroup.h>
@@ -211,4 +211,4 @@ public:
     std::optional<AddressPosition> FindAddressEntry(const CAddress& addr);
 };
 
-#endif // BITCOINII_ADDRMAN_H
+#endif // BITCOINIII_ADDRMAN_H

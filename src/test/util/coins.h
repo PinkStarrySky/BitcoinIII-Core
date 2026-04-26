@@ -1,9 +1,9 @@
-// Copyright (c) 2023 The BitcoinII Core developers
+// Copyright (c) 2023 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_TEST_UTIL_COINS_H
-#define BITCOINII_TEST_UTIL_COINS_H
+#ifndef BITCOINIII_TEST_UTIL_COINS_H
+#define BITCOINIII_TEST_UTIL_COINS_H
 
 #include <primitives/transaction.h>
 
@@ -17,4 +17,4 @@ class FastRandomContext;
  */
 COutPoint AddTestCoin(FastRandomContext& rng, CCoinsViewCache& coins_view);
 
-#endif // BITCOINII_TEST_UTIL_COINS_H
+#endif // BITCOINIII_TEST_UTIL_COINS_H

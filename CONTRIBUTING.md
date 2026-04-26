@@ -1,12 +1,12 @@
-Contributing to BitcoinII Core
+Contributing to BitcoinIII Core
 ============================
 
-The BitcoinII Core project operates an open contributor model where anyone is
+The BitcoinIII Core project operates an open contributor model where anyone is
 welcome to contribute towards development in the form of peer review, testing
 and patches. This document explains the practical process and guidelines for
 contributing.
 
-First, in terms of structure, there is no particular concept of "BitcoinII Core
+First, in terms of structure, there is no particular concept of "BitcoinIII Core
 developers" in the sense of privileged people. Open source often naturally
 revolves around a meritocracy where contributors earn trust from the developer
 community over time. Nevertheless, some hierarchy is necessary for practical
@@ -24,19 +24,19 @@ as a new contributor. It also will teach you much more about the code and
 process than opening pull requests. Please refer to the [peer review](#peer-review)
 section below.
 
-Before you start contributing, familiarize yourself with the BitcoinII Core build
+Before you start contributing, familiarize yourself with the BitcoinIII Core build
 system and tests. Refer to the documentation in the repository on how to build
-BitcoinII Core and how to run the unit tests, functional tests, and fuzz tests.
+BitcoinIII Core and how to run the unit tests, functional tests, and fuzz tests.
 
 There are many open issues of varying difficulty waiting to be fixed.
 If you're looking for somewhere to start contributing, check out the
-[good first issue](https://github.com/bitcoinII/bitcoinII/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
+[good first issue](https://github.com/bitcoinIII/bitcoinIII/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
 list or changes that are
-[up for grabs](https://github.com/bitcoinII/bitcoinII/issues?utf8=%E2%9C%93&q=label%3A%22Up+for+grabs%22).
+[up for grabs](https://github.com/bitcoinIII/bitcoinIII/issues?utf8=%E2%9C%93&q=label%3A%22Up+for+grabs%22).
 Some of them might no longer be applicable. So if you are interested, but
 unsure, you might want to leave a comment on the issue first.
 
-You may also participate in the [BitcoinII Core PR Review Club](https://bitcoinIIcore.reviews/).
+You may also participate in the [BitcoinIII Core PR Review Club](https://bitcoinIIIcore.reviews/).
 
 ### Good First Issue Label
 
@@ -54,21 +54,21 @@ and is also an effective way to request assistance if and when you need it.
 Communication Channels
 ----------------------
 
-Most communication about BitcoinII Core development happens on IRC, in the
-`#bitcoinII-core-dev` channel on Libera Chat. The easiest way to participate on IRC is
-with the web client, [web.libera.chat](https://web.libera.chat/#bitcoinII-core-dev). Chat
+Most communication about BitcoinIII Core development happens on IRC, in the
+`#bitcoinIII-core-dev` channel on Libera Chat. The easiest way to participate on IRC is
+with the web client, [web.libera.chat](https://web.libera.chat/#bitcoinIII-core-dev). Chat
 history logs can be found
-on [https://www.erisian.com.au/bitcoinII-core-dev/](https://www.erisian.com.au/bitcoinII-core-dev/)
-and [https://gnusha.org/bitcoinII-core-dev/](https://gnusha.org/bitcoinII-core-dev/).
+on [https://www.erisian.com.au/bitcoinIII-core-dev/](https://www.erisian.com.au/bitcoinIII-core-dev/)
+and [https://gnusha.org/bitcoinIII-core-dev/](https://gnusha.org/bitcoinIII-core-dev/).
 
 Discussion about codebase improvements happens in GitHub issues and pull
 requests.
 
 The developer
-[mailing list](https://groups.google.com/g/bitcoinIIdev)
+[mailing list](https://groups.google.com/g/bitcoinIIIdev)
 should be used to discuss complicated or controversial consensus or P2P protocol changes before working on
 a patch set.
-Archives can be found on [https://gnusha.org/pi/bitcoinIIdev/](https://gnusha.org/pi/bitcoinIIdev/).
+Archives can be found on [https://gnusha.org/pi/bitcoinIIIdev/](https://gnusha.org/pi/bitcoinIIIdev/).
 
 
 Contributor Workflow
@@ -84,8 +84,8 @@ To contribute a patch, the workflow is as follows:
   1. Create topic branch
   1. Commit patches
 
-For GUI-related issues or pull requests, the https://github.com/bitcoinII-core/gui repository should be used.
-For all other issues and pull requests, the https://github.com/bitcoinII/bitcoinII node repository should be used.
+For GUI-related issues or pull requests, the https://github.com/bitcoinIII-core/gui repository should be used.
+For all other issues and pull requests, the https://github.com/bitcoinIII/bitcoinIII node repository should be used.
 
 The master branch for all monotree repositories is identical.
 
@@ -142,7 +142,7 @@ the pull request affects. Valid areas as:
 
   - `consensus` for changes to consensus critical code
   - `doc` for changes to the documentation
-  - `qt` or `gui` for changes to bitcoinII-qt
+  - `qt` or `gui` for changes to bitcoinIII-qt
   - `log` for changes to log messages
   - `mining` for changes to the mining code
   - `net` or `p2p` for changes to the peer-to-peer network code
@@ -170,13 +170,13 @@ mailing list discussions).
 The description for a new pull request should not contain any `@` mentions. The
 PR description will be included in the commit message when the PR is merged and
 any users mentioned in the description will be annoyingly notified each time a
-fork of BitcoinII Core copies the merge. Instead, make any username mentions in a
+fork of BitcoinIII Core copies the merge. Instead, make any username mentions in a
 subsequent comment to the PR.
 
 ### Translation changes
 
 Note that translations should not be submitted as pull requests. Please see
-[Translation Process](https://github.com/bitcoinII/bitcoinII/blob/master/doc/translation_process.md)
+[Translation Process](https://github.com/bitcoinIII/bitcoinIII/blob/master/doc/translation_process.md)
 for more information on helping with translations.
 
 ### Work in Progress Changes and Requests for Comments
@@ -232,7 +232,7 @@ pull request to pull request.
 
 When a pull request conflicts with the target branch, you may be asked to rebase it on top of the current target branch.
 
-    git fetch https://github.com/bitcoinII/bitcoinII  # Fetch the latest upstream commit
+    git fetch https://github.com/bitcoinIII/bitcoinIII  # Fetch the latest upstream commit
     git rebase FETCH_HEAD  # Rebuild commits on top of the new base
 
 This project aims to have a clean git history, where code changes are only made in non-merge commits. This simplifies
@@ -289,11 +289,11 @@ workload on reviewing.
 "Decision Making" Process
 -------------------------
 
-The following applies to code changes to the BitcoinII Core project (and related
-projects such as libsecp256k1), and is not to be confused with overall BitcoinII
+The following applies to code changes to the BitcoinIII Core project (and related
+projects such as libsecp256k1), and is not to be confused with overall BitcoinIII
 Network Protocol consensus changes.
 
-Whether a pull request is merged into BitcoinII Core rests with the project merge
+Whether a pull request is merged into BitcoinIII Core rests with the project merge
 maintainers.
 
 Maintainers will take into consideration if a patch is in line with the general
@@ -312,7 +312,7 @@ In general, all pull requests must:
     demonstrating the bug and also proving the fix. This helps prevent regression.
   - Change relevant comments and documentation when behaviour of code changes.
 
-Patches that change BitcoinII consensus rules are considerably more involved than
+Patches that change BitcoinIII consensus rules are considerably more involved than
 normal because they affect the entire ecosystem and so must be preceded by
 extensive mailing list discussions and have a numbered BIP. While each case will
 be different, one should be prepared to expend more time and effort than for
@@ -373,7 +373,7 @@ higher in terms of discussion and peer review requirements, keeping in mind that
 mistakes could be very costly to the wider community. This includes refactoring
 of consensus-critical code.
 
-Where a patch set proposes to change the BitcoinII consensus, it must have been
+Where a patch set proposes to change the BitcoinIII consensus, it must have been
 discussed extensively on the mailing list and IRC, be accompanied by a widely
 discussed BIP and have a generally widely perceived technical consensus of being
 a worthwhile change based on the judgement of the maintainers.
@@ -429,10 +429,10 @@ Rebased-From: <commit hash of the original commit>
 ```
 
 Have a look at [an example backport PR](
-https://github.com/bitcoinII/bitcoinII/pull/16189).
+https://github.com/bitcoinIII/bitcoinIII/pull/16189).
 
 Also see the [backport.py script](
-https://github.com/bitcoinII-core/bitcoinII-maintainer-tools#backport).
+https://github.com/bitcoinIII-core/bitcoinIII-maintainer-tools#backport).
 
 Copyright
 ---------

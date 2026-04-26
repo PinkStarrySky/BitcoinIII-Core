@@ -1,9 +1,9 @@
-// Copyright (c) 2012-present The BitcoinII Core developers
+// Copyright (c) 2012-present The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_NODE_PROTOCOL_VERSION_H
-#define BITCOINII_NODE_PROTOCOL_VERSION_H
+#ifndef BITCOINIII_NODE_PROTOCOL_VERSION_H
+#define BITCOINIII_NODE_PROTOCOL_VERSION_H
 
 /**
  * network protocol versioning
@@ -35,4 +35,4 @@ static const int INVALID_CB_NO_BAN_VERSION = 70015;
 //! "wtxidrelay" command for wtxid-based relay starts with this version
 static const int WTXID_RELAY_VERSION = 70016;
 
-#endif // BITCOINII_NODE_PROTOCOL_VERSION_H
+#endif // BITCOINIII_NODE_PROTOCOL_VERSION_H

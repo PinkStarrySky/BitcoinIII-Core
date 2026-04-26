@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-# Copyright (c) 2017-2019 The BitcoinII Core developers
+# Copyright (c) 2017-2019 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """
 A test for RPC users with restricted permissions
 """
-from test_framework.test_framework import BitcoinIITestFramework
+from test_framework.test_framework import BitcoinIIITestFramework
 from test_framework.util import (
     assert_equal,
     str_to_b64str,
@@ -29,7 +29,7 @@ def get_permissions(whitelist):
     return [perm for perm in whitelist.replace(" ", "").split(",") if perm]
 
 
-class RPCWhitelistTest(BitcoinIITestFramework):
+class RPCWhitelistTest(BitcoinIIITestFramework):
 
     def set_test_params(self):
         self.num_nodes = 1
@@ -60,7 +60,7 @@ class RPCWhitelistTest(BitcoinIITestFramework):
         ]
         # These commands shouldn't be allowed for any user to test failures
         self.never_allowed = ["getnetworkinfo"]
-        with open(self.nodes[0].datadir_path / "bitcoinII.conf", "a", encoding="utf8") as f:
+        with open(self.nodes[0].datadir_path / "bitcoinIII.conf", "a", encoding="utf8") as f:
             f.write("\nrpcwhitelistdefault=0\n")
             for user in self.users:
                 f.write("rpcauth=" + user[0] + ":" + user[1] + "\n")
@@ -95,7 +95,7 @@ class RPCWhitelistTest(BitcoinIITestFramework):
 
         # Replace file configurations
         self.nodes[0].replace_in_config([("rpcwhitelistdefault=0", "rpcwhitelistdefault=1")])
-        with open(self.nodes[0].datadir_path / "bitcoinII.conf", 'a', encoding='utf8') as f:
+        with open(self.nodes[0].datadir_path / "bitcoinIII.conf", 'a', encoding='utf8') as f:
             f.write("rpcwhitelist=__cookie__:getblockcount,getblockchaininfo,getmempoolinfo,stop\n")
         self.restart_node(0)
 

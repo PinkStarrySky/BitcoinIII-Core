@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_SCRIPT_SIGN_H
-#define BITCOINII_SCRIPT_SIGN_H
+#ifndef BITCOINIII_SCRIPT_SIGN_H
+#define BITCOINIII_SCRIPT_SIGN_H
 
 #include <attributes.h>
 #include <coins.h>
@@ -107,4 +107,4 @@ bool IsSegWitOutput(const SigningProvider& provider, const CScript& script);
 /** Sign the CMutableTransaction */
 bool SignTransaction(CMutableTransaction& mtx, const SigningProvider* provider, const std::map<COutPoint, Coin>& coins, int sighash, std::map<int, bilingual_str>& input_errors);
 
-#endif // BITCOINII_SCRIPT_SIGN_H
+#endif // BITCOINIII_SCRIPT_SIGN_H

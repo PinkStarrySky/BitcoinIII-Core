@@ -1,9 +1,9 @@
-// Copyright (c) 2020-2022 The BitcoinII Core developers
+// Copyright (c) 2020-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_TEST_UTIL_VALIDATION_H
-#define BITCOINII_TEST_UTIL_VALIDATION_H
+#ifndef BITCOINIII_TEST_UTIL_VALIDATION_H
+#define BITCOINIII_TEST_UTIL_VALIDATION_H
 
 #include <validation.h>
 
@@ -26,4 +26,4 @@ public:
         const CBlockIndex* pindex);
 };
 
-#endif // BITCOINII_TEST_UTIL_VALIDATION_H
+#endif // BITCOINIII_TEST_UTIL_VALIDATION_H

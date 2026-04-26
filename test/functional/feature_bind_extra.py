@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-# Copyright (c) 2014-2022 The BitcoinII Core developers
+# Copyright (c) 2014-2022 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """
-Test starting bitcoinIId with -bind and/or -bind=...=onion and confirm
+Test starting bitcoinIIId with -bind and/or -bind=...=onion and confirm
 that bind happens on the expected ports.
 """
 
@@ -12,7 +12,7 @@ from test_framework.netutil import (
     get_bind_addrs,
 )
 from test_framework.test_framework import (
-    BitcoinIITestFramework,
+    BitcoinIIITestFramework,
 )
 from test_framework.util import (
     assert_equal,
@@ -21,7 +21,7 @@ from test_framework.util import (
 )
 
 
-class BindExtraTest(BitcoinIITestFramework):
+class BindExtraTest(BitcoinIIITestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         # Avoid any -bind= on the command line. Force the framework to avoid
@@ -80,7 +80,7 @@ class BindExtraTest(BitcoinIITestFramework):
             # Remove IPv6 addresses because on some CI environments "::1" is not configured
             # on the system (so our test_ipv6_local() would return False), but it is
             # possible to bind on "::". This makes it unpredictable whether to expect
-            # that bitcoinIId has bound on "::1" (for RPC) and "::" (for P2P).
+            # that bitcoinIIId has bound on "::1" (for RPC) and "::" (for P2P).
             ipv6_addr_len_bytes = 32
             binds = set(filter(lambda e: len(e[0]) != ipv6_addr_len_bytes, binds))
             # Remove RPC ports. They are not relevant for this test.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2014-2021 The BitcoinII Core developers
+# Copyright (c) 2014-2021 The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test the getchaintips RPC.
@@ -14,10 +14,10 @@ from test_framework.blocktools import (
     create_block,
     create_coinbase,
 )
-from test_framework.test_framework import BitcoinIITestFramework
+from test_framework.test_framework import BitcoinIIITestFramework
 from test_framework.util import assert_equal
 
-class GetChainTipsTest (BitcoinIITestFramework):
+class GetChainTipsTest (BitcoinIIITestFramework):
     def set_test_params(self):
         self.num_nodes = 4
 

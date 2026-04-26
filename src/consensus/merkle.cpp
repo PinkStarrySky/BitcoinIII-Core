@@ -1,4 +1,4 @@
-// Copyright (c) 2015-2020 The BitcoinII Core developers
+// Copyright (c) 2015-2020 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -145,7 +145,7 @@ static void MerkleComputation(const std::vector<uint256>& leaves, uint256* proot
     bool matchh = matchlevel == level;
     while (count != ((uint32_t{1}) << level)) {
         // If we reach this point, h is an inner value that is not the top.
-        // We combine it with itself (BitcoinII's special rule for odd levels in
+        // We combine it with itself (BitcoinIII's special rule for odd levels in
         // the tree) to produce a higher level one.
         if (path && matchh) {
             path->push_back(h);

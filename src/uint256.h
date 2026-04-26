@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-present The BitcoinII Core developers
+// Copyright (c) 2009-present The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UINT256_H
-#define BITCOINII_UINT256_H
+#ifndef BITCOINIII_UINT256_H
+#define BITCOINIII_UINT256_H
 
 #include <crypto/common.h>
 #include <span.h>
@@ -210,4 +210,4 @@ public:
     static const uint256 ONE;
 };
 
-#endif // BITCOINII_UINT256_H
+#endif // BITCOINIII_UINT256_H

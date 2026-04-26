@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_SYNC_H
-#define BITCOINII_SYNC_H
+#ifndef BITCOINIII_SYNC_H
+#define BITCOINIII_SYNC_H
 
 #ifdef DEBUG_LOCKCONTENTION
 #include <logging.h>
@@ -135,7 +135,7 @@ using Mutex = AnnotatedMixin<std::mutex>;
  * eventually move all the mutexes into classes so they are not globally
  * visible.
  *
- * See: https://github.com/bitcoinII/bitcoinII/pull/20272#issuecomment-720755781
+ * See: https://github.com/bitcoinIII/bitcoinIII/pull/20272#issuecomment-720755781
  */
 class GlobalMutex : public Mutex { };
 
@@ -427,4 +427,4 @@ public:
     }
 };
 
-#endif // BITCOINII_SYNC_H
+#endif // BITCOINIII_SYNC_H

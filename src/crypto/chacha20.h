@@ -1,9 +1,9 @@
-// Copyright (c) 2017-2022 The BitcoinII Core developers
+// Copyright (c) 2017-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_CRYPTO_CHACHA20_H
-#define BITCOINII_CRYPTO_CHACHA20_H
+#ifndef BITCOINIII_CRYPTO_CHACHA20_H
+#define BITCOINIII_CRYPTO_CHACHA20_H
 
 #include <span.h>
 
@@ -156,4 +156,4 @@ public:
     void Crypt(Span<const std::byte> input, Span<std::byte> output) noexcept;
 };
 
-#endif // BITCOINII_CRYPTO_CHACHA20_H
+#endif // BITCOINIII_CRYPTO_CHACHA20_H

@@ -1,4 +1,4 @@
-AC_INIT([minisketch], [0.0.1], [http://github.com/bitcoinII-core/minisketch/])
+AC_INIT([minisketch], [0.0.1], [http://github.com/bitcoinIII-core/minisketch/])
 
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 

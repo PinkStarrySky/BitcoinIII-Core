@@ -1,4 +1,4 @@
-// Copyright (c) 2016-2022 The BitcoinII Core developers
+// Copyright (c) 2016-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -20,7 +20,7 @@
 // many times micro-benchmarks of the database showed completely different
 // characteristics than e.g. reindex timings. But that's not a requirement of
 // every benchmark."
-// (https://github.com/bitcoinII/bitcoinII/issues/7883#issuecomment-224807484)
+// (https://github.com/bitcoinIII/bitcoinIII/issues/7883#issuecomment-224807484)
 static void CCoinsCaching(benchmark::Bench& bench)
 {
     ECC_Context ecc_context{};

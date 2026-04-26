@@ -1,9 +1,9 @@
-// Copyright (c) 2023 The BitcoinII Core developers
+// Copyright (c) 2023 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UTIL_ANY_H
-#define BITCOINII_UTIL_ANY_H
+#ifndef BITCOINIII_UTIL_ANY_H
+#define BITCOINIII_UTIL_ANY_H
 
 #include <any>
 
@@ -23,4 +23,4 @@ T* AnyPtr(const std::any& any) noexcept
 
 } // namespace util
 
-#endif // BITCOINII_UTIL_ANY_H
+#endif // BITCOINIII_UTIL_ANY_H

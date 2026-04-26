@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_VALIDATIONINTERFACE_H
-#define BITCOINII_VALIDATIONINTERFACE_H
+#ifndef BITCOINIII_VALIDATIONINTERFACE_H
+#define BITCOINIII_VALIDATIONINTERFACE_H
 
 #include <kernel/chain.h>
 #include <kernel/cs_main.h>
@@ -229,4 +229,4 @@ public:
     void NewPoWValidBlock(const CBlockIndex *, const std::shared_ptr<const CBlock>&);
 };
 
-#endif // BITCOINII_VALIDATIONINTERFACE_H
+#endif // BITCOINIII_VALIDATIONINTERFACE_H

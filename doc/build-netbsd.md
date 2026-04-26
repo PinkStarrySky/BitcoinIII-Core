@@ -2,7 +2,7 @@
 
 **Updated for NetBSD [10.1](https://netbsd.org/releases/formal-10/NetBSD-10.1.html)**
 
-This guide describes how to build bitcoinIId, command-line utilities, and GUI on NetBSD.
+This guide describes how to build bitcoinIIId, command-line utilities, and GUI on NetBSD.
 
 ## Preparation
 
@@ -33,23 +33,23 @@ cmake -B build
 
 See [dependencies.md](dependencies.md) for a complete overview.
 
-### 2. Clone BitcoinII Repo
+### 2. Clone BitcoinIII Repo
 
-Clone the BitcoinII Core repository to a directory. All build scripts and commands will run from this directory.
+Clone the BitcoinIII Core repository to a directory. All build scripts and commands will run from this directory.
 
 ```bash
-git clone https://github.com/bitcoinII/bitcoinII.git
+git clone https://github.com/bitcoinIII/bitcoinIII.git
 ```
 
 ### 3. Install Optional Dependencies
 
 #### Wallet Dependencies
 
-It is not necessary to build wallet functionality to run bitcoinIId or the GUI.
+It is not necessary to build wallet functionality to run bitcoinIIId or the GUI.
 
 ###### Descriptor Wallet Support
 
-`sqlite3` is required to enable support for [descriptor wallets](https://github.com/bitcoinII/bitcoinII/blob/master/doc/descriptors.md).
+`sqlite3` is required to enable support for [descriptor wallets](https://github.com/bitcoinIII/bitcoinIII/blob/master/doc/descriptors.md).
 
 ```bash
 pkgin install sqlite3
@@ -66,7 +66,7 @@ pkgin install db4
 #### GUI Dependencies
 ###### Qt5
 
-BitcoinII Core includes a GUI built with the cross-platform Qt Framework. To compile the GUI, we need to install
+BitcoinIII Core includes a GUI built with the cross-platform Qt Framework. To compile the GUI, we need to install
 the necessary parts of Qt, the libqrencode and pass `-DBUILD_GUI=ON`. Skip if you don't intend to use the GUI.
 
 ```bash
@@ -86,7 +86,7 @@ Otherwise, if you don't need QR encoding support, use the `-DWITH_QRENCODE=OFF` 
 #### Notifications
 ###### ZeroMQ
 
-BitcoinII Core can provide notifications via ZeroMQ. If the package is installed, support will be compiled in.
+BitcoinIII Core can provide notifications via ZeroMQ. If the package is installed, support will be compiled in.
 ```bash
 pkgin zeromq
 ```
@@ -100,11 +100,11 @@ To run the test suite (recommended), you will need to have Python 3 installed:
 pkgin install python310 py310-zmq
 ```
 
-## Building BitcoinII Core
+## Building BitcoinIII Core
 
 ### 1. Configuration
 
-There are many ways to configure BitcoinII Core. Here is an example that
+There are many ways to configure BitcoinIII Core. Here is an example that
 explicitly disables the wallet and GUI:
 
 ```bash

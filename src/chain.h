@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_CHAIN_H
-#define BITCOINII_CHAIN_H
+#ifndef BITCOINIII_CHAIN_H
+#define BITCOINIII_CHAIN_H
 
 #include <arith_uint256.h>
 #include <consensus/params.h>
@@ -40,7 +40,7 @@ static constexpr int64_t TIMESTAMP_WINDOW = MAX_FUTURE_BLOCK_TIME;
  * Maximum gap between node time and block time used
  * for the "Catching up..." mode in GUI.
  *
- * Ref: https://github.com/bitcoinII/bitcoinII/pull/1026
+ * Ref: https://github.com/bitcoinIII/bitcoinIII/pull/1026
  */
 static constexpr int64_t MAX_BLOCK_TIME_GAP = 90 * 60;
 
@@ -483,4 +483,4 @@ CBlockLocator GetLocator(const CBlockIndex* index);
 /** Construct a list of hash entries to put in a locator.  */
 std::vector<uint256> LocatorEntries(const CBlockIndex* index);
 
-#endif // BITCOINII_CHAIN_H
+#endif // BITCOINIII_CHAIN_H

@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-present The BitcoinII Core developers
+// Copyright (c) 2009-present The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_SUPPORT_ALLOCATORS_SECURE_H
-#define BITCOINII_SUPPORT_ALLOCATORS_SECURE_H
+#ifndef BITCOINIII_SUPPORT_ALLOCATORS_SECURE_H
+#define BITCOINIII_SUPPORT_ALLOCATORS_SECURE_H
 
 #include <support/lockedpool.h>
 #include <support/cleanse.h>
@@ -81,4 +81,4 @@ secure_unique_ptr<T> make_secure_unique(Args&&... as)
     }
 }
 
-#endif // BITCOINII_SUPPORT_ALLOCATORS_SECURE_H
+#endif // BITCOINIII_SUPPORT_ALLOCATORS_SECURE_H

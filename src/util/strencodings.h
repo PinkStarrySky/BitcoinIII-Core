@@ -1,13 +1,13 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 /**
  * Utilities for converting data from/to strings.
  */
-#ifndef BITCOINII_UTIL_STRENCODINGS_H
-#define BITCOINII_UTIL_STRENCODINGS_H
+#ifndef BITCOINIII_UTIL_STRENCODINGS_H
+#define BITCOINIII_UTIL_STRENCODINGS_H
 
 #include <crypto/hex_base.h> // IWYU pragma: export
 #include <span.h>
@@ -441,4 +441,4 @@ inline auto operator""_hex_v_u8() { return std::vector<uint8_t>{UCharCast(str.by
 } // inline namespace hex_literals
 } // namespace util
 
-#endif // BITCOINII_UTIL_STRENCODINGS_H
+#endif // BITCOINIII_UTIL_STRENCODINGS_H

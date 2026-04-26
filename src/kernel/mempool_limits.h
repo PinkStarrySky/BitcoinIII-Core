@@ -1,8 +1,8 @@
-// Copyright (c) 2022 The BitcoinII Core developers
+// Copyright (c) 2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef BITCOINII_KERNEL_MEMPOOL_LIMITS_H
-#define BITCOINII_KERNEL_MEMPOOL_LIMITS_H
+#ifndef BITCOINIII_KERNEL_MEMPOOL_LIMITS_H
+#define BITCOINIII_KERNEL_MEMPOOL_LIMITS_H
 
 #include <policy/policy.h>
 
@@ -36,4 +36,4 @@ struct MemPoolLimits {
 };
 } // namespace kernel
 
-#endif // BITCOINII_KERNEL_MEMPOOL_LIMITS_H
+#endif // BITCOINIII_KERNEL_MEMPOOL_LIMITS_H

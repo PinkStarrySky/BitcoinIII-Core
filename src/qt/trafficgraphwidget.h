@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2022 The BitcoinII Core developers
+// Copyright (c) 2011-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_TRAFFICGRAPHWIDGET_H
-#define BITCOINII_QT_TRAFFICGRAPHWIDGET_H
+#ifndef BITCOINIII_QT_TRAFFICGRAPHWIDGET_H
+#define BITCOINIII_QT_TRAFFICGRAPHWIDGET_H
 
 #include <QWidget>
 #include <QQueue>
@@ -47,4 +47,4 @@ private:
     ClientModel* clientModel{nullptr};
 };
 
-#endif // BITCOINII_QT_TRAFFICGRAPHWIDGET_H
+#endif // BITCOINIII_QT_TRAFFICGRAPHWIDGET_H

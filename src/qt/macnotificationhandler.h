@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2018 The BitcoinII Core developers
+// Copyright (c) 2011-2018 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_MACNOTIFICATIONHANDLER_H
-#define BITCOINII_QT_MACNOTIFICATIONHANDLER_H
+#ifndef BITCOINIII_QT_MACNOTIFICATIONHANDLER_H
+#define BITCOINIII_QT_MACNOTIFICATIONHANDLER_H
 
 #include <QObject>
 
@@ -24,4 +24,4 @@ public:
 };
 
 
-#endif // BITCOINII_QT_MACNOTIFICATIONHANDLER_H
+#endif // BITCOINIII_QT_MACNOTIFICATIONHANDLER_H

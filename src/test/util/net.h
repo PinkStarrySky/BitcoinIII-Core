@@ -1,9 +1,9 @@
-// Copyright (c) 2020-2022 The BitcoinII Core developers
+// Copyright (c) 2020-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_TEST_UTIL_NET_H
-#define BITCOINII_TEST_UTIL_NET_H
+#ifndef BITCOINIII_TEST_UTIL_NET_H
+#define BITCOINIII_TEST_UTIL_NET_H
 
 #include <compat/compat.h>
 #include <netmessagemaker.h>
@@ -358,4 +358,4 @@ void DynSock::Pipe::PushNetMsg(const std::string& type, Args&&... payload)
 
 std::vector<NodeEvictionCandidate> GetRandomNodeEvictionCandidates(int n_candidates, FastRandomContext& random_context);
 
-#endif // BITCOINII_TEST_UTIL_NET_H
+#endif // BITCOINIII_TEST_UTIL_NET_H

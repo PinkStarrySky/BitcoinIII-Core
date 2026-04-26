@@ -1,9 +1,9 @@
-// Copyright (c) 2021 The BitcoinII Core developers
+// Copyright (c) 2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_WALLET_MIGRATE_H
-#define BITCOINII_WALLET_MIGRATE_H
+#ifndef BITCOINIII_WALLET_MIGRATE_H
+#define BITCOINIII_WALLET_MIGRATE_H
 
 #include <wallet/db.h>
 
@@ -122,4 +122,4 @@ public:
 std::unique_ptr<BerkeleyRODatabase> MakeBerkeleyRODatabase(const fs::path& path, const DatabaseOptions& options, DatabaseStatus& status, bilingual_str& error);
 } // namespace wallet
 
-#endif // BITCOINII_WALLET_MIGRATE_H
+#endif // BITCOINIII_WALLET_MIGRATE_H

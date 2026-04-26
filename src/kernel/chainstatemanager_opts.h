@@ -1,9 +1,9 @@
-// Copyright (c) 2022 The BitcoinII Core developers
+// Copyright (c) 2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_KERNEL_CHAINSTATEMANAGER_OPTS_H
-#define BITCOINII_KERNEL_CHAINSTATEMANAGER_OPTS_H
+#ifndef BITCOINIII_KERNEL_CHAINSTATEMANAGER_OPTS_H
+#define BITCOINIII_KERNEL_CHAINSTATEMANAGER_OPTS_H
 
 #include <kernel/notifications_interface.h>
 
@@ -54,4 +54,4 @@ struct ChainstateManagerOpts {
 
 } // namespace kernel
 
-#endif // BITCOINII_KERNEL_CHAINSTATEMANAGER_OPTS_H
+#endif // BITCOINIII_KERNEL_CHAINSTATEMANAGER_OPTS_H

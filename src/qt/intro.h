@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2021 The BitcoinII Core developers
+// Copyright (c) 2011-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_INTRO_H
-#define BITCOINII_QT_INTRO_H
+#ifndef BITCOINIII_QT_INTRO_H
+#define BITCOINIII_QT_INTRO_H
 
 #include <QDialog>
 #include <QMutex>
@@ -85,4 +85,4 @@ private:
     friend class FreespaceChecker;
 };
 
-#endif // BITCOINII_QT_INTRO_H
+#endif // BITCOINIII_QT_INTRO_H

@@ -1,9 +1,9 @@
-// Copyright (c) 2023 The BitcoinII Core developers
+// Copyright (c) 2023 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_KERNEL_CS_MAIN_H
-#define BITCOINII_KERNEL_CS_MAIN_H
+#ifndef BITCOINIII_KERNEL_CS_MAIN_H
+#define BITCOINIII_KERNEL_CS_MAIN_H
 
 #include <sync.h>
 
@@ -19,4 +19,4 @@
  */
 extern RecursiveMutex cs_main;
 
-#endif // BITCOINII_KERNEL_CS_MAIN_H
+#endif // BITCOINIII_KERNEL_CS_MAIN_H

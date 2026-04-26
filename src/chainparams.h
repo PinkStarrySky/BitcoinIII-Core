@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2021 The BitcoinII Core developers
+// Copyright (c) 2009-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_CHAINPARAMS_H
-#define BITCOINII_CHAINPARAMS_H
+#ifndef BITCOINIII_CHAINPARAMS_H
+#define BITCOINIII_CHAINPARAMS_H
 
 #include <kernel/chainparams.h> // IWYU pragma: export
 
@@ -28,4 +28,4 @@ const CChainParams &Params();
  */
 void SelectParams(const ChainType chain);
 
-#endif // BITCOINII_CHAINPARAMS_H
+#endif // BITCOINIII_CHAINPARAMS_H

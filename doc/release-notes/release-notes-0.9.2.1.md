@@ -1,4 +1,4 @@
-BitcoinII Core version 0.9.2.1 is now available from:
+BitcoinIII Core version 0.9.2.1 is now available from:
 
   https://bitcoin.org/bin/0.9.2.1/
 
@@ -8,15 +8,15 @@ Upgrading to this release is recommended.
 
 Please report bugs using the issue tracker at github:
 
-  https://github.com/bitcoinII/bitcoinII/issues
+  https://github.com/bitcoinIII/bitcoinIII/issues
 
 How to Upgrade
 --------------
 
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the
-installer (on Windows) or just copy over /Applications/BitcoinII-Qt (on Mac) or
-bitcoinIId/bitcoinII-qt (on Linux).
+installer (on Windows) or just copy over /Applications/BitcoinIII-Qt (on Mac) or
+bitcoinIIId/bitcoinIII-qt (on Linux).
 
 If you are upgrading from version 0.7.2 or earlier, the first time you run
 0.9.2.1 your blockchain files will be re-indexed, which will take anywhere from 
@@ -93,7 +93,7 @@ Protocol and network code:
 Wallet:
 
 - Make GetAvailableCredit run GetHash() only once per transaction (performance improvement)
-- Lower paytxfee warning threshold from 0.25 BC2 to 0.01 BC2
+- Lower paytxfee warning threshold from 0.25 BC3 to 0.01 BC3
 - Fix importwallet nTimeFirstKey (trigger necessary rescans)
 - Log BerkeleyDB version at startup
 - CWallet init fix
@@ -130,7 +130,7 @@ GUI:
 - Catch Windows shutdown events while client is running
 - Optionally add third party links to transaction context menu
 - Check for !pixmap() before trying to export QR code (avoids crashes when no QR code could be generated)
-- Fix "Start bitcoinII on system login"
+- Fix "Start bitcoinIII on system login"
 
 Miscellaneous:
 

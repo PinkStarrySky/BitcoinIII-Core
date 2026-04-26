@@ -1,10 +1,10 @@
-BitcoinII version 0.7.2 is now available from:
-  http://sourceforge.net/projects/bitcoinII/files/BitcoinII/bitcoinII-0.7.2
+BitcoinIII version 0.7.2 is now available from:
+  http://sourceforge.net/projects/bitcoinIII/files/BitcoinIII/bitcoinIII-0.7.2
 
 This is a bug-fix minor release.
 
 Please report bugs using the issue tracker at github:
-  https://github.com/bitcoinII/bitcoinII/issues
+  https://github.com/bitcoinIII/bitcoinIII/issues
 
 How to Upgrade
 --------------
@@ -12,7 +12,7 @@ How to Upgrade
 If you are running an older version, shut it down. Wait
 until it has completely shut down (which might take a few minutes for older
 versions), then run the installer (on Windows) or just copy over
-/Applications/BitcoinII-Qt (on Mac) or bitcoinIId/bitcoinII-qt (on Linux).
+/Applications/BitcoinIII-Qt (on Mac) or bitcoinIIId/bitcoinIII-qt (on Linux).
 
 If you were running on Linux with a version that might have been compiled
 with a different version of Berkeley DB (for example, if you were using an
@@ -40,7 +40,7 @@ Bug fixes
   database twice.
 
 * Fix use-after-free problems in initialization and shutdown, the latter of
-  which caused BitcoinII-Qt to crash on Windows when exiting.
+  which caused BitcoinIII-Qt to crash on Windows when exiting.
 
 * Correct library linking so building on Windows natively works.
 

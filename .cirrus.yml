@@ -37,7 +37,7 @@ env:  # Global defaults
 #
 # Futhermore:
 # - podman-docker-4.1+ is required due to the bugfix in 4.1
-#   (https://github.com/bitcoinII/bitcoinII/pull/21652#issuecomment-1657098200)
+#   (https://github.com/bitcoinIII/bitcoinIII/pull/21652#issuecomment-1657098200)
 # - The ./ci/ dependencies (with cirrus-cli) should be installed. One-liner example
 #   for a single user setup with sudo permission:
 #
@@ -90,7 +90,7 @@ global_task_template: &GLOBAL_TASK_TEMPLATE
 compute_credits_template: &CREDITS_TEMPLATE
   # https://cirrus-ci.org/pricing/#compute-credits
   # Only use credits for pull requests to the main repo
-  use_compute_credits: $CIRRUS_REPO_FULL_NAME == 'bitcoinII/bitcoinII' && $CIRRUS_PR != ""
+  use_compute_credits: $CIRRUS_REPO_FULL_NAME == 'bitcoinIII/bitcoinIII' && $CIRRUS_PR != ""
 
 task:
   name: 'lint'
@@ -126,7 +126,7 @@ task:
   << : *GLOBAL_TASK_TEMPLATE
   persistent_worker:
     labels:
-      type: arm64  # Use arm64 worker to sidestep qemu and avoid a slow CI: https://github.com/bitcoinII/bitcoinII/pull/28087#issuecomment-1649399453
+      type: arm64  # Use arm64 worker to sidestep qemu and avoid a slow CI: https://github.com/bitcoinIII/bitcoinIII/pull/28087#issuecomment-1649399453
   env:
     FILE_ENV: "./ci/test/00_setup_env_arm.sh"
 
@@ -196,13 +196,13 @@ task:
     FILE_ENV: "./ci/test/00_setup_env_i686_multiprocess.sh"
 
 task:
-  name: 'no wallet, libbitcoinIIkernel'
+  name: 'no wallet, libbitcoinIIIkernel'
   << : *GLOBAL_TASK_TEMPLATE
   persistent_worker:
     labels:
       type: small
   env:
-    FILE_ENV: "./ci/test/00_setup_env_native_nowallet_libbitcoinIIkernel.sh"
+    FILE_ENV: "./ci/test/00_setup_env_native_nowallet_libbitcoinIIIkernel.sh"
 
 task:
   name: 'macOS-cross, gui, no tests'

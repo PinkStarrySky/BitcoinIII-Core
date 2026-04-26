@@ -1,9 +1,9 @@
-// Copyright (c) 2010-2022 The BitcoinII Core developers
+// Copyright (c) 2010-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UTIL_SYSERROR_H
-#define BITCOINII_UTIL_SYSERROR_H
+#ifndef BITCOINIII_UTIL_SYSERROR_H
+#define BITCOINIII_UTIL_SYSERROR_H
 
 #include <string>
 
@@ -17,4 +17,4 @@ std::string SysErrorString(int err);
 std::string Win32ErrorString(int err);
 #endif
 
-#endif // BITCOINII_UTIL_SYSERROR_H
+#endif // BITCOINIII_UTIL_SYSERROR_H

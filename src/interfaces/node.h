@@ -1,9 +1,9 @@
-// Copyright (c) 2018-2022 The BitcoinII Core developers
+// Copyright (c) 2018-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_INTERFACES_NODE_H
-#define BITCOINII_INTERFACES_NODE_H
+#ifndef BITCOINIII_INTERFACES_NODE_H
+#define BITCOINIII_INTERFACES_NODE_H
 
 #include <common/settings.h>
 #include <consensus/amount.h>          // For CAmount
@@ -66,7 +66,7 @@ public:
     virtual std::string getName() = 0;
 };
 
-//! Top-level interface for a bitcoinII node (bitcoinIId process).
+//! Top-level interface for a bitcoinIII node (bitcoinIIId process).
 class Node
 {
 public:
@@ -106,7 +106,7 @@ public:
     //! would be ignored because it is also specified in the command line.
     virtual bool isSettingIgnored(const std::string& name) = 0;
 
-    //! Return setting value from <datadir>/settings.json or bitcoinII.conf.
+    //! Return setting value from <datadir>/settings.json or bitcoinIII.conf.
     virtual common::SettingsValue getPersistentSetting(const std::string& name) = 0;
 
     //! Update a setting in <datadir>/settings.json.
@@ -288,4 +288,4 @@ struct BlockTip {
 
 } // namespace interfaces
 
-#endif // BITCOINII_INTERFACES_NODE_H
+#endif // BITCOINIII_INTERFACES_NODE_H

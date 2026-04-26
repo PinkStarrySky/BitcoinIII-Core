@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2020 The BitcoinII Core developers
+// Copyright (c) 2011-2020 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,7 +13,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"org.bitcoinIIfoundation.BitcoinII-Qt";
+        return @"org.bitcoinIIIfoundation.BitcoinIII-Qt";
     } else {
         return [self __bundleIdentifier];
     }

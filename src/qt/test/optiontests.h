@@ -1,9 +1,9 @@
-// Copyright (c) 2019-2022 The BitcoinII Core developers
+// Copyright (c) 2019-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_TEST_OPTIONTESTS_H
-#define BITCOINII_QT_TEST_OPTIONTESTS_H
+#ifndef BITCOINIII_QT_TEST_OPTIONTESTS_H
+#define BITCOINIII_QT_TEST_OPTIONTESTS_H
 
 #include <common/settings.h>
 #include <qt/optionsmodel.h>
@@ -29,4 +29,4 @@ private:
     common::Settings m_previous_settings;
 };
 
-#endif // BITCOINII_QT_TEST_OPTIONTESTS_H
+#endif // BITCOINIII_QT_TEST_OPTIONTESTS_H

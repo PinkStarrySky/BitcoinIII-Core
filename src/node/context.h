@@ -1,9 +1,9 @@
-// Copyright (c) 2019-2022 The BitcoinII Core developers
+// Copyright (c) 2019-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_NODE_CONTEXT_H
-#define BITCOINII_NODE_CONTEXT_H
+#ifndef BITCOINIII_NODE_CONTEXT_H
+#define BITCOINIII_NODE_CONTEXT_H
 
 #include <atomic>
 #include <cstdlib>
@@ -54,7 +54,7 @@ class Warnings;
 //! any member functions. It should just be a collection of references that can
 //! be used without pulling in unwanted dependencies or functionality.
 struct NodeContext {
-    //! libbitcoinII_kernel context
+    //! libbitcoinIII_kernel context
     std::unique_ptr<kernel::Context> kernel;
     std::unique_ptr<ECC_Context> ecc_context;
     //! Init interface for initializing current process and connecting to other processes.
@@ -99,4 +99,4 @@ struct NodeContext {
 };
 } // namespace node
 
-#endif // BITCOINII_NODE_CONTEXT_H
+#endif // BITCOINIII_NODE_CONTEXT_H

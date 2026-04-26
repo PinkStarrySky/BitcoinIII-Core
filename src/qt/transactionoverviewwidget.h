@@ -1,9 +1,9 @@
-// Copyright (c) 2021-2022 The BitcoinII Core developers
+// Copyright (c) 2021-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_TRANSACTIONOVERVIEWWIDGET_H
-#define BITCOINII_QT_TRANSACTIONOVERVIEWWIDGET_H
+#ifndef BITCOINIII_QT_TRANSACTIONOVERVIEWWIDGET_H
+#define BITCOINIII_QT_TRANSACTIONOVERVIEWWIDGET_H
 
 #include <QListView>
 #include <QSize>
@@ -25,4 +25,4 @@ protected:
     void showEvent(QShowEvent* event) override;
 };
 
-#endif // BITCOINII_QT_TRANSACTIONOVERVIEWWIDGET_H
+#endif // BITCOINIII_QT_TRANSACTIONOVERVIEWWIDGET_H

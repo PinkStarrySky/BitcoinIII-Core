@@ -1,9 +1,9 @@
-// Copyright (c) 2014-2021 The BitcoinII Core developers
+// Copyright (c) 2014-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_INITEXECUTOR_H
-#define BITCOINII_QT_INITEXECUTOR_H
+#ifndef BITCOINIII_QT_INITEXECUTOR_H
+#define BITCOINIII_QT_INITEXECUTOR_H
 
 #include <interfaces/node.h>
 
@@ -16,7 +16,7 @@ QT_BEGIN_NAMESPACE
 class QString;
 QT_END_NAMESPACE
 
-/** Class encapsulating BitcoinII Core startup and shutdown.
+/** Class encapsulating BitcoinIII Core startup and shutdown.
  * Allows running startup and shutdown in a different thread from the UI thread.
  */
 class InitExecutor : public QObject
@@ -44,4 +44,4 @@ private:
     QThread m_thread;
 };
 
-#endif // BITCOINII_QT_INITEXECUTOR_H
+#endif // BITCOINIII_QT_INITEXECUTOR_H

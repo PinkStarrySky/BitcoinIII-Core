@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_CONSENSUS_VALIDATION_H
-#define BITCOINII_CONSENSUS_VALIDATION_H
+#ifndef BITCOINIII_CONSENSUS_VALIDATION_H
+#define BITCOINIII_CONSENSUS_VALIDATION_H
 
 #include <string>
 #include <consensus/consensus.h>
@@ -165,4 +165,4 @@ inline int GetWitnessCommitmentIndex(const CBlock& block)
     return commitpos;
 }
 
-#endif // BITCOINII_CONSENSUS_VALIDATION_H
+#endif // BITCOINIII_CONSENSUS_VALIDATION_H

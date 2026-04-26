@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2022 The BitcoinII Core developers
+// Copyright (c) 2009-2022 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_WALLET_BDB_H
-#define BITCOINII_WALLET_BDB_H
+#ifndef BITCOINIII_WALLET_BDB_H
+#define BITCOINIII_WALLET_BDB_H
 
 #include <clientversion.h>
 #include <common/system.h>
@@ -222,4 +222,4 @@ bool BerkeleyDatabaseSanityCheck();
 std::unique_ptr<BerkeleyDatabase> MakeBerkeleyDatabase(const fs::path& path, const DatabaseOptions& options, DatabaseStatus& status, bilingual_str& error);
 } // namespace wallet
 
-#endif // BITCOINII_WALLET_BDB_H
+#endif // BITCOINIII_WALLET_BDB_H

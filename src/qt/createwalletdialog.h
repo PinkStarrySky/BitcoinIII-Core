@@ -1,9 +1,9 @@
-// Copyright (c) 2019-2021 The BitcoinII Core developers
+// Copyright (c) 2019-2021 The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_QT_CREATEWALLETDIALOG_H
-#define BITCOINII_QT_CREATEWALLETDIALOG_H
+#ifndef BITCOINIII_QT_CREATEWALLETDIALOG_H
+#define BITCOINIII_QT_CREATEWALLETDIALOG_H
 
 #include <QDialog>
 
@@ -42,4 +42,4 @@ private:
     bool m_has_signers = false;
 };
 
-#endif // BITCOINII_QT_CREATEWALLETDIALOG_H
+#endif // BITCOINIII_QT_CREATEWALLETDIALOG_H

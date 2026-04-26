@@ -1,15 +1,15 @@
-# Copyright (c) 2024-present The BitcoinII Core developers
+# Copyright (c) 2024-present The BitcoinIII Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://opensource.org/license/mit/.
 
 include(GNUInstallDirs)
 
-# TODO: libbitcoinIIkernel is a work in progress consensus engine
+# TODO: libbitcoinIIIkernel is a work in progress consensus engine
 #       library, as more and more modules are decoupled from the
 #       consensus engine, this list will shrink to only those
 #       which are absolutely necessary.
-add_library(bitcoinIIkernel
-  bitcoinIIkernel.cpp
+add_library(bitcoinIIIkernel
+  bitcoinIIIkernel.cpp
   chain.cpp
   checks.cpp
   chainparams.cpp
@@ -80,11 +80,11 @@ add_library(bitcoinIIkernel
   ../validationinterface.cpp
   ../versionbits.cpp
 )
-target_link_libraries(bitcoinIIkernel
+target_link_libraries(bitcoinIIIkernel
   PRIVATE
     core_interface
-    bitcoinII_clientversion
-    bitcoinII_crypto
+    bitcoinIII_clientversion
+    bitcoinIII_crypto
     leveldb
     secp256k1
     $<TARGET_NAME_IF_EXISTS:USDT::headers>
@@ -92,29 +92,29 @@ target_link_libraries(bitcoinIIkernel
     Boost::headers
 )
 
-# libbitcoinIIkernel requires default symbol visibility, explicitly
+# libbitcoinIIIkernel requires default symbol visibility, explicitly
 # specify that here so that things still work even when user
 # configures with -DREDUCE_EXPORTS=ON
 #
 # Note this is a quick hack that will be removed as we
 # incrementally define what to export from the library.
-set_target_properties(bitcoinIIkernel PROPERTIES
+set_target_properties(bitcoinIIIkernel PROPERTIES
   CXX_VISIBILITY_PRESET default
 )
 
-# Add a convenience libbitcoinIIkernel target as a synonym for bitcoinIIkernel.
-add_custom_target(libbitcoinIIkernel)
-add_dependencies(libbitcoinIIkernel bitcoinIIkernel)
+# Add a convenience libbitcoinIIIkernel target as a synonym for bitcoinIIIkernel.
+add_custom_target(libbitcoinIIIkernel)
+add_dependencies(libbitcoinIIIkernel bitcoinIIIkernel)
 
 # When building the static library, install all static libraries the
-# bitcoinIIkernel depends on.
+# bitcoinIIIkernel depends on.
 if(NOT BUILD_SHARED_LIBS)
   # Recursively get all the static libraries a target depends on and put them in libs_out
   function(get_target_static_link_libs target libs_out)
     get_target_property(linked_libraries ${target} LINK_LIBRARIES)
     foreach(dep ${linked_libraries})
       if(TARGET ${dep})
-        add_dependencies(libbitcoinIIkernel ${dep})
+        add_dependencies(libbitcoinIIIkernel ${dep})
         get_target_property(dep_type ${dep} TYPE)
         if(dep_type STREQUAL "STATIC_LIBRARY")
           list(APPEND ${libs_out} ${dep})
@@ -126,25 +126,25 @@ if(NOT BUILD_SHARED_LIBS)
   endfunction()
 
   set(all_kernel_static_link_libs "")
-  get_target_static_link_libs(bitcoinIIkernel all_kernel_static_link_libs)
+  get_target_static_link_libs(bitcoinIIIkernel all_kernel_static_link_libs)
 
-  install(TARGETS ${all_kernel_static_link_libs} ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR} COMPONENT libbitcoinIIkernel)
+  install(TARGETS ${all_kernel_static_link_libs} ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR} COMPONENT libbitcoinIIIkernel)
   list(TRANSFORM all_kernel_static_link_libs PREPEND "-l")
   # LIBS_PRIVATE is substituted in the pkg-config file.
   list(JOIN all_kernel_static_link_libs " " LIBS_PRIVATE)
 endif()
 
-configure_file(${PROJECT_SOURCE_DIR}/libbitcoinIIkernel.pc.in ${PROJECT_BINARY_DIR}/libbitcoinIIkernel.pc @ONLY)
-install(FILES ${PROJECT_BINARY_DIR}/libbitcoinIIkernel.pc DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig" COMPONENT libbitcoinIIkernel)
+configure_file(${PROJECT_SOURCE_DIR}/libbitcoinIIIkernel.pc.in ${PROJECT_BINARY_DIR}/libbitcoinIIIkernel.pc @ONLY)
+install(FILES ${PROJECT_BINARY_DIR}/libbitcoinIIIkernel.pc DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig" COMPONENT libbitcoinIIIkernel)
 
-install(TARGETS bitcoinIIkernel
+install(TARGETS bitcoinIIIkernel
   RUNTIME
     DESTINATION ${CMAKE_INSTALL_BINDIR}
-    COMPONENT libbitcoinIIkernel
+    COMPONENT libbitcoinIIIkernel
   LIBRARY
     DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    COMPONENT libbitcoinIIkernel
+    COMPONENT libbitcoinIIIkernel
   ARCHIVE
     DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    COMPONENT libbitcoinIIkernel
+    COMPONENT libbitcoinIIIkernel
 )

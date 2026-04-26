@@ -12,7 +12,7 @@ extern "C" {
 
 /** This module implements BIP 327 "MuSig2 for BIP340-compatible
  *  Multi-Signatures"
- *  (https://github.com/bitcoinII/bips/blob/master/bip-0327.mediawiki)
+ *  (https://github.com/bitcoinIII/bips/blob/master/bip-0327.mediawiki)
  *  v1.0.0. You can find an example demonstrating the musig module in
  *  examples/musig.c.
  *

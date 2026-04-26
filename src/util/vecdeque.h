@@ -1,9 +1,9 @@
-// Copyright (c) The BitcoinII Core developers
+// Copyright (c) The BitcoinIII Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOINII_UTIL_VECDEQUE_H
-#define BITCOINII_UTIL_VECDEQUE_H
+#ifndef BITCOINIII_UTIL_VECDEQUE_H
+#define BITCOINIII_UTIL_VECDEQUE_H
 
 #include <util/check.h>
 
@@ -314,4 +314,4 @@ public:
     size_t capacity() const noexcept { return m_capacity; }
 };
 
-#endif // BITCOINII_UTIL_VECDEQUE_H
+#endif // BITCOINIII_UTIL_VECDEQUE_H
