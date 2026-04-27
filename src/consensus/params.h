@@ -53,6 +53,9 @@ struct BIP9Deployment {
      */
     int min_activation_height{0};
 
+    uint32_t period{2016};
+    uint32_t threshold{1916};
+
     /** Constant for nTimeout very far in the future. */
     static constexpr int64_t NO_TIMEOUT = std::numeric_limits<int64_t>::max();
 
