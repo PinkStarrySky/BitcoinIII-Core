@@ -100,7 +100,7 @@ static void MineGenesisBlockThread(CBlock *global_genesis,
             if (local_best < *global_best) {
                 mutex->lock();
                 std::fprintf(stdout,
-                             "New best: %s\nnNonce: %u\nnTime: %u\n----------------\n",
+                             "New best: %s\nnNonce: %u\nnTime: %u\n--------\n",
                              genesis.GetHash().ToString().c_str(),
                              genesis.nNonce,
                              genesis.nTime);
@@ -242,7 +242,7 @@ public:
         consensus.script_flag_exceptions.emplace( // Taproot exception
             uint256{"000000000c226a41e70717f6d4fbdcb6bfb4fdc40831ccc87fa9cfdd2c57bff6"}, SCRIPT_VERIFY_P2SH | SCRIPT_VERIFY_WITNESS); */
         consensus.BIP34Height = 250;
-        consensus.BIP34Hash = uint256{}; // CHANGE - REPLACE WITH ACTUAL HASH
+        consensus.BIP34Hash = uint256{"0000000000009aaeefa1cf580a717eb5b87a2f03bb93692f639cf72eb1e888ee"};
         consensus.BIP65Height = 260; //
         consensus.BIP66Height = 270; //
         consensus.CSVHeight = 280; //
@@ -269,8 +269,8 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].threshold = 1815; // 90%
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].period    = 2016;
 
-        consensus.nMinimumChainWork = uint256{"0000000000000000000000000000000000000000000000000000000000000000"};
-        consensus.defaultAssumeValid = uint256{"000000000c226a41e70717f6d4fbdcb6bfb4fdc40831ccc87fa9cfdd2c57bff6"};
+        consensus.nMinimumChainWork = uint256{"00000000000000000000000000000000000000000000000000002b702b702b70"}; // Chainwork at block 4096
+        consensus.defaultAssumeValid = uint256{"0000000000000491b329c02a5d3b870f781a598f6dc73147cfaee907b27d2caf"}; // Block 4096
 
         pchMessageStart[0] = 0x8a;
         pchMessageStart[1] = 0x34;
@@ -313,7 +313,15 @@ public:
 
         checkpointData = {
             {
-                { 0, uint256{"000000000c226a41e70717f6d4fbdcb6bfb4fdc40831ccc87fa9cfdd2c57bff6"}}
+                {     0, uint256{"000000000c226a41e70717f6d4fbdcb6bfb4fdc40831ccc87fa9cfdd2c57bff6"}},
+                {   250, uint256{"0000000000009aaeefa1cf580a717eb5b87a2f03bb93692f639cf72eb1e888ee"}}, // BIP34 activation height
+                {   256, uint256{"000000001346683ec691296457ef5e64aa7f70fa041a56731f2cbdb651fee746"}},
+                {   512, uint256{"0000000032ec0a31ac6fa599bebc9202ab1c196edd4a919c33f8324df3dee46a"}},
+                {  1024, uint256{"00000000b9e8f3af6d7f9cd48e18ee66b91fe4d281f968f1efc475f09a6b99a3"}},
+                {  2016, uint256{"000000000001e14d2befeee1446b8c908f62a4d147088e82cc1001f8d585ea2f"}}, // Epoch 1 start
+                {  2048, uint256{"0000000026633fe101b56ec7a3c3423e3e29ea37184cd78c1ece16005e26073c"}},
+                {  4032, uint256{"00000000085eb69bcd6ecb2d9f0063efb59fc19ab82d3afa2733b6fdbff1e7eb"}}, // Epoch 2 start
+                {  4096, uint256{"0000000000000491b329c02a5d3b870f781a598f6dc73147cfaee907b27d2caf"}}
                 
             }
         };
