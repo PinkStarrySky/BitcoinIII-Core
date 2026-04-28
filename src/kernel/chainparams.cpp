@@ -269,8 +269,8 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].threshold = 1815; // 90%
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].period    = 2016;
 
-        consensus.nMinimumChainWork = uint256{"00000000000000000000000000000000000000000000000000002b702b702b70"}; // Chainwork at block 4096
-        consensus.defaultAssumeValid = uint256{"0000000000000491b329c02a5d3b870f781a598f6dc73147cfaee907b27d2caf"}; // Block 4096
+        consensus.nMinimumChainWork = uint256{"00000000000000000000000000000000000000000000000146c1442144214180"}; // Chainwork at block 22810
+        consensus.defaultAssumeValid = uint256{"00000000000003a8c623c46ffb4c99bef3c9b662b6de81364d41be0c56f988cf"}; // Block 22810
 
         pchMessageStart[0] = 0x8a;
         pchMessageStart[1] = 0x34;
@@ -313,7 +313,7 @@ public:
 
         checkpointData = {
             {
-                {     0, uint256{"000000000c226a41e70717f6d4fbdcb6bfb4fdc40831ccc87fa9cfdd2c57bff6"}},
+                {     0, uint256{"000000000c226a41e70717f6d4fbdcb6bfb4fdc40831ccc87fa9cfdd2c57bff6"}}, // Genesis block
                 {   250, uint256{"0000000000009aaeefa1cf580a717eb5b87a2f03bb93692f639cf72eb1e888ee"}}, // BIP34 activation height
                 {   256, uint256{"000000001346683ec691296457ef5e64aa7f70fa041a56731f2cbdb651fee746"}},
                 {   512, uint256{"0000000032ec0a31ac6fa599bebc9202ab1c196edd4a919c33f8324df3dee46a"}},
@@ -321,7 +321,11 @@ public:
                 {  2016, uint256{"000000000001e14d2befeee1446b8c908f62a4d147088e82cc1001f8d585ea2f"}}, // Epoch 1 start
                 {  2048, uint256{"0000000026633fe101b56ec7a3c3423e3e29ea37184cd78c1ece16005e26073c"}},
                 {  4032, uint256{"00000000085eb69bcd6ecb2d9f0063efb59fc19ab82d3afa2733b6fdbff1e7eb"}}, // Epoch 2 start
-                {  4096, uint256{"0000000000000491b329c02a5d3b870f781a598f6dc73147cfaee907b27d2caf"}}
+                {  4096, uint256{"0000000000000491b329c02a5d3b870f781a598f6dc73147cfaee907b27d2caf"}},
+                {  6048, uint256{"00000000018c3a9ca9e8b750c1c052141abb7d5f0904de45a9678ff21d14c2f6"}}, // Taproot activation height
+                {  8192, uint256{"0000000000054fc3668111eb9da553ea90cc1588e0353b507d0ab21e54b427a6"}},
+                { 16384, uint256{"00000000000051c8cab3a4e06d637de00eef696596f462ec51b25e7b0ceacaf9"}},
+                { 22810, uint256{"00000000000003a8c623c46ffb4c99bef3c9b662b6de81364d41be0c56f988cf"}}
                 
             }
         };
