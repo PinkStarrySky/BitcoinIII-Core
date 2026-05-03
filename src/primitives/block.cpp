@@ -8,9 +8,14 @@
 #include <hash.h>
 #include <tinyformat.h>
 
-uint256 CBlockHeader::GetHash() const
+uint256 CBlockHeader::GetSHA256dHash() const
 {
     return (HashWriter{} << *this).GetHash();
+}
+
+uint256 CBlockHeader::GetSHA3_256dHash() const
+{
+    return (HashWriterSHA3{} << *this).GetHash();
 }
 
 std::string CBlock::ToString() const

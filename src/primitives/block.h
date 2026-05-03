@@ -51,7 +51,8 @@ public:
         return (nBits == 0);
     }
 
-    uint256 GetHash() const;
+    uint256 GetSHA256dHash() const;
+    uint256 GetSHA3_256dHash() const;
 
     NodeSeconds Time() const
     {

@@ -3,6 +3,10 @@
 !/build-aux
 !/build_msvc
 
+# File hashes
+/*SHA512SUMS*
+/*SHA256SUMS*
+
 *.pyc
 
 # Only ignore unexpected patches

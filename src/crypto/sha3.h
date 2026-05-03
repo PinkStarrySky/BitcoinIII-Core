@@ -38,4 +38,29 @@ public:
     SHA3_256& Reset();
 };
 
+class CSHA3_256
+{
+private:
+    uint64_t m_state[25] = {0};
+    unsigned char m_buffer[8];
+    unsigned m_bufsize = 0;
+    unsigned m_pos = 0;
+
+    //! Sponge rate in bits.
+    static constexpr unsigned RATE_BITS = 1088;
+
+    //! Sponge rate expressed as a multiple of the buffer size.
+    static constexpr unsigned RATE_BUFFERS = RATE_BITS / (8 * sizeof(m_buffer));
+
+    static_assert(RATE_BITS % (8 * sizeof(m_buffer)) == 0, "Rate must be a multiple of 8 bytes");
+
+public:
+    static constexpr size_t OUTPUT_SIZE = 32;
+
+    CSHA3_256() = default;
+    CSHA3_256& Write(const unsigned char *data, uint64_t len);
+    CSHA3_256& Finalize(unsigned char *output); // output must be of size 32
+    CSHA3_256& Reset();
+};
+
 #endif // BITCOINIII_CRYPTO_SHA3_H
