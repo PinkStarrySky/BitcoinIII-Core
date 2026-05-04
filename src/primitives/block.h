@@ -51,8 +51,9 @@ public:
         return (nBits == 0);
     }
 
-    uint256 GetSHA256dHash() const;
-    uint256 GetSHA3_256dHash() const;
+    uint256 GetHash(int, Consensus::Params&) const;
+    // uint256 GetSHA256dHash() const;
+    // uint256 GetSHA3_256dHash() const;
 
     NodeSeconds Time() const
     {

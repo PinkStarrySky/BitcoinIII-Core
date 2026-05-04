@@ -248,6 +248,7 @@ public:
         consensus.CSVHeight = 280; //
         consensus.SegwitHeight = 290; //
         consensus.MinBIP9WarningHeight = 2306; // segwit activation height + miner confirmation window
+        consensus.SHA3Height = 28'224; // SHA3-256d PoW Fork Height (placeholder)
         consensus.powLimit = uint256{"00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"};
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
         consensus.nPowTargetSpacing = 10 * 60;

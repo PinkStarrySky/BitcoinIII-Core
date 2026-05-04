@@ -21,7 +21,7 @@ std::unique_ptr<const CChainParams> CreateChainParams(const ArgsManager& args, c
  * Return the currently selected parameters. This won't change after app
  * startup, except for unit tests.
  */
-const CChainParams &Params();
+const CChainParams &Params(); // This will be used to determine the block hash algorithm (based on height)
 
 /**
  * Sets the params returned by Params() to those for the given chain type.

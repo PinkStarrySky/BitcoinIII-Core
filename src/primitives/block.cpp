@@ -8,6 +8,14 @@
 #include <hash.h>
 #include <tinyformat.h>
 
+uint256 CBlockHeader::GetHash(int _height, Consensus::Params& _params) const
+{
+    if (_height >= _params.SHA3Height)
+        return (HashWriterSHA3{} << *this).GetHash();
+    return (HashWriter{} << *this).GetHash();
+}
+
+/*
 uint256 CBlockHeader::GetSHA256dHash() const
 {
     return (HashWriter{} << *this).GetHash();
@@ -17,6 +25,7 @@ uint256 CBlockHeader::GetSHA3_256dHash() const
 {
     return (HashWriterSHA3{} << *this).GetHash();
 }
+*/
 
 std::string CBlock::ToString() const
 {
