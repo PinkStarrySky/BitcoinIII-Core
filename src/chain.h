@@ -396,7 +396,7 @@ public:
         READWRITE(obj.nNonce);
     }
 
-    uint256 ConstructBlockHash() const
+    uint256 ConstructBlockHash(const Consensus::Params& _params) const
     {
         CBlockHeader block;
         block.nVersion = nVersion;
@@ -405,7 +405,7 @@ public:
         block.nTime = nTime;
         block.nBits = nBits;
         block.nNonce = nNonce;
-        return block.GetHash();
+        return block.GetHash(this->nHeight, _params);
     }
 
     uint256 GetBlockHash() = delete;

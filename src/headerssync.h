@@ -240,7 +240,7 @@ private:
     CBlockHeader m_last_header_received;
 
     /** Height of m_last_header_received */
-    int64_t m_current_height{0};
+    int64_t m_current_height{0}; // KEY!
 
     /** During phase 2 (REDOWNLOAD), we buffer redownloaded headers in memory
      *  until enough commitments have been verified; those are stored in
@@ -248,7 +248,7 @@ private:
     std::deque<CompressedHeader> m_redownloaded_headers;
 
     /** Height of last header in m_redownloaded_headers */
-    int64_t m_redownload_buffer_last_height{0};
+    int64_t m_redownload_buffer_last_height{0}; // KEY!
 
     /** Hash of last header in m_redownloaded_headers (initialized to
      * m_chain_start). We have to cache it because we don't have hashPrevBlock

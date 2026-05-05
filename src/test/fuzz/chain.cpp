@@ -21,9 +21,10 @@ FUZZ_TARGET(chain)
 
     const uint256 zero{};
     disk_block_index->phashBlock = &zero;
+    Consensus::Params _useless_params{};
     {
         LOCK(::cs_main);
-        (void)disk_block_index->ConstructBlockHash();
+        (void)disk_block_index->ConstructBlockHash(_useless_params); // required to give the fuzzer something
         (void)disk_block_index->GetBlockPos();
         (void)disk_block_index->GetBlockTime();
         (void)disk_block_index->GetBlockTimeMax();

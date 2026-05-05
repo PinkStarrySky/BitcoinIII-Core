@@ -173,7 +173,7 @@ CSHA3_256& CSHA3_256::Write(const unsigned char *data, uint64_t len)
     }
     while (len >= sizeof(m_buffer)) {
         // Process chunks directly from the buffer.
-        m_state[m_pos++] ^= ReadLE64(data.data());
+        m_state[m_pos++] ^= ReadLE64(data);
         data += 8;
         len -= 8;
         if (m_pos == RATE_BUFFERS) {

@@ -36,6 +36,10 @@ namespace node {
 struct NodeContext;
 } // namespace node
 
+namespace Consensus {
+    struct Params; // have to declare here in order to be able to access it below
+}
+
 namespace interfaces {
 
 class Handler;
@@ -129,6 +133,12 @@ class Chain
 {
 public:
     virtual ~Chain() = default;
+
+    /* Consensus/chain parameters are needed in src/wallet/rpc/backup.cpp.
+     * Params() should not be called directly from wallet code.
+     * Thus, the solution is to expose the consensus parameters through an interface.
+     */
+    virtual const Consensus::Params& getConsensusParams() const = 0;
 
     //! Get current chain height, not including genesis block (returns 0 if
     //! chain only contains genesis block, nullopt if chain does not contain

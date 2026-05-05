@@ -167,7 +167,7 @@ ReadStatus PartiallyDownloadedBlock::InitData(const CBlockHeaderAndShortTxIDs& c
             break;
     }
 
-    LogDebug(BCLog::CMPCTBLOCK, "Initialized PartiallyDownloadedBlock for block %s using a cmpctblock of size %lu\n", cmpctblock.header.GetHash().ToString(), GetSerializeSize(cmpctblock));
+    LogDebug(BCLog::CMPCTBLOCK, "Initialized PartiallyDownloadedBlock for block %s,%s using a cmpctblock of size %lu\n", cmpctblock.header.GetSHA256dHash().ToString(), cmpctblock.header.GetSHA3_256dHash().ToString(), GetSerializeSize(cmpctblock));
 
     return READ_STATUS_OK;
 }
@@ -184,7 +184,9 @@ ReadStatus PartiallyDownloadedBlock::FillBlock(CBlock& block, const std::vector<
 {
     if (header.IsNull()) return READ_STATUS_INVALID;
 
-    uint256 hash = header.GetHash();
+    // uint256 hash = header.GetHash();
+    uint256 _sha2hash = header.GetSHA256dHash();
+    uint256 _sha3hash = header.GetSHA3_256dHash();
     block = header;
     block.vtx.resize(txn_available.size());
 
@@ -217,10 +219,10 @@ ReadStatus PartiallyDownloadedBlock::FillBlock(CBlock& block, const std::vector<
         return READ_STATUS_CHECKBLOCK_FAILED;
     }
 
-    LogDebug(BCLog::CMPCTBLOCK, "Successfully reconstructed block %s with %lu txn prefilled, %lu txn from mempool (incl at least %lu from extra pool) and %lu txn requested\n", hash.ToString(), prefilled_count, mempool_count, extra_count, vtx_missing.size());
+    LogDebug(BCLog::CMPCTBLOCK, "Successfully reconstructed block %s,%s with %lu txn prefilled, %lu txn from mempool (incl at least %lu from extra pool) and %lu txn requested\n", _sha2hash.ToString(), _sha3hash.ToString(), prefilled_count, mempool_count, extra_count, vtx_missing.size());
     if (vtx_missing.size() < 5) {
         for (const auto& tx : vtx_missing) {
-            LogDebug(BCLog::CMPCTBLOCK, "Reconstructed block %s required tx %s\n", hash.ToString(), tx->GetHash().ToString());
+            LogDebug(BCLog::CMPCTBLOCK, "Reconstructed block %s,%s required tx %s\n", _sha2hash.ToString(), _sha3hash.ToString(), tx->GetHash().ToString());
         }
     }
 

@@ -49,6 +49,11 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
 
 unsigned int CalculateNextWorkRequired(const CBlockIndex* pindexLast, int64_t nFirstBlockTime, const Consensus::Params& params)
 {
+    if (pindexLast->nHeight + 1 == params.SHA3Height) { // Difficulty adjustment at SHA3-256d fork height
+        arith_uint256 bnNew;
+        bnNew.SetCompact(params.nBitsSHA3Height);
+        return bnNew.GetCompact();
+    }
     if (params.fPowNoRetargeting)
         return pindexLast->nBits;
 
@@ -89,6 +94,12 @@ unsigned int CalculateNextWorkRequired(const CBlockIndex* pindexLast, int64_t nF
 bool PermittedDifficultyTransition(const Consensus::Params& params, int64_t height, uint32_t old_nbits, uint32_t new_nbits)
 {
     if (params.fPowAllowMinDifficultyBlocks) return true;
+
+    if (height == params.SHA3Height) {
+        if (new_nbits != params.nBitsSHA3Height)
+            return false;
+        return true;
+    }
 
     if (height % params.DifficultyAdjustmentInterval() == 0) {
         int64_t smallest_timespan = params.nPowTargetTimespan/4;

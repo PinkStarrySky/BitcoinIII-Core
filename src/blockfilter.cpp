@@ -217,8 +217,8 @@ BlockFilter::BlockFilter(BlockFilterType filter_type, const uint256& block_hash,
     m_filter = GCSFilter(params, std::move(filter), skip_decode_check);
 }
 
-BlockFilter::BlockFilter(BlockFilterType filter_type, const CBlock& block, const CBlockUndo& block_undo)
-    : m_filter_type(filter_type), m_block_hash(block.GetHash())
+BlockFilter::BlockFilter(BlockFilterType filter_type, const CBlock& block, const CBlockUndo& block_undo, int _height, const Consensus::Params& _params)
+    : m_filter_type(filter_type), m_block_hash(block.GetHash(_height, _params))
 {
     GCSFilter::Params params;
     if (!BuildParams(params)) {

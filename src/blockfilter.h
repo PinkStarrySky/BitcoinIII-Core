@@ -18,6 +18,8 @@
 #include <uint256.h>
 #include <util/bytevectorhash.h>
 
+#include <consensus/params.h>
+
 class CBlock;
 class CBlockUndo;
 
@@ -129,7 +131,7 @@ public:
                 std::vector<unsigned char> filter, bool skip_decode_check);
 
     //! Construct a new BlockFilter of the specified type from a block.
-    BlockFilter(BlockFilterType filter_type, const CBlock& block, const CBlockUndo& block_undo);
+    BlockFilter(BlockFilterType filter_type, const CBlock& block, const CBlockUndo& block_undo, int _height, const Consensus::Params& _params);
 
     BlockFilterType GetFilterType() const { return m_filter_type; }
     const uint256& GetBlockHash() const LIFETIMEBOUND { return m_block_hash; }

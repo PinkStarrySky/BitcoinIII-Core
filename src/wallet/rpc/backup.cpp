@@ -352,9 +352,18 @@ RPCHelpMan importprunedfunds()
 
     LOCK(pwallet->cs_wallet);
     int height;
-    if (!pwallet->chain().findAncestorByHash(pwallet->GetLastBlockHash(), merkleBlock.header.GetHash(), FoundBlock().height(height))) {
+    /* int merkleBlockHeight = -1;
+    const Consensus::Params& _consensus_params = pwallet->chain().getConsensusParams(); */
+    /* Since height is not readily available here, compute both block hashes. */
+    const uint256 _sha2MerkleBlockHash = merkleBlock.header.GetSHA256dHash(); // CHANGE THIS
+    const uint256 _sha3MerkleBlockHash = merkleBlock.header.GetSHA3_256dHash();
+    uint256 _merkleBlockHash;
+    if (pwallet->chain().findAncestorByHash(pwallet->GetLastBlockHash(), _sha3MerkleBlockHash, FoundBlock().height(height))) { // first SHA3-256d -> will be most in the long run
+        _merkleBlockHash = _sha3MerkleBlockHash;
+    } else if (pwallet->chain().findAncestorByHash(pwallet->GetLastBlockHash(), _sha2MerkleBlockHash, FoundBlock().height(height))) {
+        _merkleBlockHash = _sha2MerkleBlockHash;
+    } else
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Block not found in chain");
-    }
 
     std::vector<uint256>::const_iterator it;
     if ((it = std::find(vMatch.begin(), vMatch.end(), hashTx)) == vMatch.end()) {
@@ -365,7 +374,7 @@ RPCHelpMan importprunedfunds()
 
     CTransactionRef tx_ref = MakeTransactionRef(tx);
     if (pwallet->IsMine(*tx_ref)) {
-        pwallet->AddToWallet(std::move(tx_ref), TxStateConfirmed{merkleBlock.header.GetHash(), height, static_cast<int>(txnIndex)});
+        pwallet->AddToWallet(std::move(tx_ref), TxStateConfirmed{_merkleBlockHash, height, static_cast<int>(txnIndex)});
         return UniValue::VNULL;
     }
 

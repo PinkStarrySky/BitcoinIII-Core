@@ -544,6 +544,9 @@ class ChainImpl : public Chain
 {
 public:
     explicit ChainImpl(NodeContext& node) : m_node(node) {}
+    const Consensus::Params& getConsensusParams() const override { // Required for exposing consensus SHA3Height to wallet code
+        return Params().GetConsensus();
+    }
     std::optional<int> getHeight() override
     {
         const int height{WITH_LOCK(::cs_main, return chainman().ActiveChain().Height())};
