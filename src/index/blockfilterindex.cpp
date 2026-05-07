@@ -261,7 +261,8 @@ bool BlockFilterIndex::CustomAppend(const interfaces::BlockInfo& block)
         }
     }
 
-    BlockFilter filter(m_filter_type, *Assert(block.data), block_undo);
+    // Check in "src/validation.h" -> 'class Chainstate' and 'class ChainstateManager':
+    BlockFilter filter(m_filter_type, *Assert(block.data), block_undo, block.height, m_chainstate->m_chainman.GetConsensus());
 
     const uint256& header = filter.ComputeHeader(m_last_header);
     bool res = Write(filter, block.height, header);

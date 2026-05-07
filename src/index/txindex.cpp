@@ -11,6 +11,8 @@
 #include <node/blockstorage.h>
 #include <validation.h>
 
+#include <sync.h>
+
 constexpr uint8_t DB_TXINDEX{'t'};
 
 std::unique_ptr<TxIndex> g_txindex;
@@ -97,6 +99,19 @@ bool TxIndex::FindTx(const uint256& tx_hash, uint256& block_hash, CTransactionRe
         LogError("%s: txid mismatch\n", __func__);
         return false;
     }
-    block_hash = header.GetHash();
-    return true;
+    /* Unfortunately, it seems there is no easy way to get height here, so both block hashes must be tested. */
+    /* At some point, I may wish to consider storing the hash/height on disk. */
+    block_hash = header.GetSHA3_256dHash();
+    const CBlockIndex* pindex = WITH_LOCK(::cs_main,
+                                          return m_chainstate->m_blockman.LookupBlockIndex(block_hash));
+    if (pindex)
+        return true;
+    block_hash = header.GetSHA256dHash();
+    pindex = WITH_LOCK(::cs_main,
+                       return m_chainstate->m_blockman.LookupBlockIndex(block_hash));
+    if (pindex)
+        return true;
+    block_hash = uint256{};
+    LogError("block not found in block index\n");
+    return false;
 }

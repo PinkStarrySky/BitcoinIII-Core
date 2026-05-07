@@ -1991,7 +1991,7 @@ void PeerManagerImpl::NewPoWValidBlock(const CBlockIndex *pindex, const std::sha
 
     if (!DeploymentActiveAt(*pindex, m_chainman, Consensus::DEPLOYMENT_SEGWIT)) return;
 
-    uint256 hashBlock(pblock->GetHash());
+    uint256 hashBlock{pblock->GetHash(pindex->nHeight, m_chainparams.GetConsensus())};
     const std::shared_future<CSerializedNetMsg> lazy_ser{
         std::async(std::launch::deferred, [&] { return NetMsg::Make(NetMsgType::CMPCTBLOCK, *pcmpctblock); })};
 
@@ -2076,8 +2076,35 @@ void PeerManagerImpl::BlockChecked(const CBlock& block, const BlockValidationSta
 {
     LOCK(cs_main);
 
-    const uint256 hash(block.GetHash());
-    std::map<uint256, std::pair<NodeId, bool>>::iterator it = mapBlockSource.find(hash);
+    uint256 _hash;
+    CBlockIndex *_idx = nullptr;
+    std::map<uint256, std::pair<NodeId, bool>>::iterator it;
+
+    if (block.hashPrevBlock.IsNull()) { // means the block is the Genesis block -> should never fire
+        _hash = block.GetHash(0, m_chainparams.GetConsensus());
+        it = mapBlockSource.find(_hash);
+        goto normal_rest;
+    }
+
+    _idx = m_chainman.m_blockman.LookupBlockIndex(block.hashPrevBlock);
+
+    if (_idx) {
+        _hash = block.GetHash(_idx->nHeight + 1, m_chainparams.GetConsensus());
+        it = mapBlockSource.find(_hash);
+        goto normal_rest;
+    }
+
+    _hash = block.GetSHA3_256dHash();
+    it = mapBlockSource.find(_hash);
+    if (it != mapBlockSource.end())
+        goto normal_rest;
+
+    _hash = block.GetSHA256dHash();
+    it = mapBlockSource.find(_hash);
+
+normal_rest:
+    const uint256 hash = _hash; //(block.GetHash());
+    // std::map<uint256, std::pair<NodeId, bool>>::iterator it = mapBlockSource.find(hash);
 
     // If the block failed validation, we know where it came from and we're still connected
     // to that peer, maybe punish.
@@ -2267,7 +2294,7 @@ void PeerManagerImpl::ProcessGetBlockData(CNode& pfrom, Peer& peer, const CInv& 
     }
 
     std::shared_ptr<const CBlock> pblock;
-    if (a_recent_block && a_recent_block->GetHash() == pindex->GetBlockHash()) {
+    if (a_recent_block && a_recent_block->GetHash(pindex->nHeight, m_chainparams.GetConsensus()) == pindex->GetBlockHash()) {
         pblock = a_recent_block;
     } else if (inv.IsMsgWitnessBlk()) {
         // Fast-path: in this case it is possible to serve the block directly from disk,
@@ -2333,7 +2360,7 @@ void PeerManagerImpl::ProcessGetBlockData(CNode& pfrom, Peer& peer, const CInv& 
             // and we don't feel like constructing the object for them, so
             // instead we respond with the full, non-compact block.
             if (can_direct_fetch && pindex->nHeight >= tip->nHeight - MAX_CMPCTBLOCK_DEPTH) {
-                if (a_recent_compact_block && a_recent_compact_block->header.GetHash() == pindex->GetBlockHash()) {
+                if (a_recent_compact_block && a_recent_compact_block->header.GetHash(pindex->nHeight, m_chainparams.GetConsensus()) == pindex->GetBlockHash()) {
                     MakeAndPushMessage(pfrom, NetMsgType::CMPCTBLOCK, *a_recent_compact_block);
                 } else {
                     CBlockHeaderAndShortTxIDs cmpctblock{*pblock, m_rng.rand64()};

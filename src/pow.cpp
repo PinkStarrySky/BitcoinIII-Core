@@ -95,11 +95,8 @@ bool PermittedDifficultyTransition(const Consensus::Params& params, int64_t heig
 {
     if (params.fPowAllowMinDifficultyBlocks) return true;
 
-    if (height == params.SHA3Height) {
-        if (new_nbits != params.nBitsSHA3Height)
-            return false;
-        return true;
-    }
+    if (height == params.SHA3Height)
+        return new_nbits == params.nBitsSHA3Height;
 
     if (height % params.DifficultyAdjustmentInterval() == 0) {
         int64_t smallest_timespan = params.nPowTargetTimespan/4;
