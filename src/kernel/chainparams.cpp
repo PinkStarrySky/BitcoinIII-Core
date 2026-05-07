@@ -3,6 +3,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+/* ALL GENESIS BLOCK HASHES ARE COMPUTED VIA SHA-256d!
+ * This includes all testnets, as all of their fork heights are still non-zero.
+ * Therefore, they would always require the Genesis block hash to be SHA-256d.
+*/
+
 #include <kernel/chainparams.h>
 
 #include <chainparamsseeds.h>
@@ -94,14 +99,14 @@ static void MineGenesisBlockThread(CBlock *global_genesis,
     arith_uint256 hash;
     genesis.nNonce += soffset;
     uint32_t prev;
-    while (!bye->load() && (hash = UintToArith256(genesis.GetHash())) > *target) {
+    while (!bye->load() && (hash = UintToArith256(genesis.GetSHA256dHash())) > *target) {
         if (hash < local_best) {
             local_best = hash;
             if (local_best < *global_best) {
                 mutex->lock();
                 std::fprintf(stdout,
                              "New best: %s\nnNonce: %u\nnTime: %u\n--------\n",
-                             genesis.GetHash().ToString().c_str(),
+                             genesis.GetSHA256dHash().ToString().c_str(),
                              genesis.nNonce,
                              genesis.nTime);
                 *global_best = local_best;
@@ -161,7 +166,7 @@ static void MineGenesisBlock(CBlock &genesis,
     std::fprintf(stdout,
                  "FOUND %s GENESIS BLOCK!\nHash: %s\nnNonce: %u\nnTime: %u\nMerkleRoot: %s\n",
                  network,
-                 genesis.GetHash().ToString().c_str(),
+                 genesis.GetSHA256dHash().ToString().c_str(),
                  genesis.nNonce,
                  genesis.nTime,
                  genesis.hashMerkleRoot.ToString().c_str());
@@ -169,7 +174,7 @@ static void MineGenesisBlock(CBlock &genesis,
     opath += "-GENESIS.json";
     std::ofstream out{opath, std::ios_base::out | std::ios_base::trunc};
     if (out.good())
-        out << "{\n  \"network\": \"" << network << "\",\n  \"hash\": \"" << genesis.GetHash().ToString() << "\",\n  \"nNonce\": " << genesis.nNonce << ",\n \"nTime\": " << genesis.nTime << ",\n  \"merkle_root\": \"" << genesis.hashMerkleRoot.ToString() << "\"\n}\n";
+        out << "{\n  \"network\": \"" << network << "\",\n  \"hash\": \"" << genesis.GetSHA256dHash().ToString() << "\",\n  \"nNonce\": " << genesis.nNonce << ",\n \"nTime\": " << genesis.nTime << ",\n  \"merkle_root\": \"" << genesis.hashMerkleRoot.ToString() << "\"\n}\n";
     out.close();
     std::abort();
 }
@@ -192,11 +197,11 @@ static void MineGenesisBlock(CBlock &genesis,
         genesis.nTime  += (its / bigg);
         genesis.nNonce += (its % bigg); // I will not add 1, so the very first hash will be a repeat.
     }
-    while ((hash = UintToArith256(genesis.GetHash())) > target) {
+    while ((hash = UintToArith256(genesis.GetSHA256dHash())) > target) {
         if (hash < best) {
             std::fprintf(stdout,
                          "New best: %s\nnNonce: %u\nnTime: %u\n----------------\n",
-                         genesis.GetHash().ToString().c_str(),
+                         genesis.GetSHA256dHash().ToString().c_str(),
                          genesis.nNonce,
                          genesis.nTime);
             best = hash;
@@ -213,7 +218,7 @@ static void MineGenesisBlock(CBlock &genesis,
     std::fprintf(stdout,
                  "FOUND %s GENESIS BLOCK!\nHash: %s\nnNonce: %u\nnTime: %u\nMerkleRoot: %s\nIterations: %" PRIu64 "\n",
                  network,
-                 genesis.GetHash().ToString().c_str(),
+                 genesis.GetSHA256dHash().ToString().c_str(),
                  genesis.nNonce,
                  genesis.nTime,
                  genesis.hashMerkleRoot.ToString().c_str(),
@@ -222,7 +227,7 @@ static void MineGenesisBlock(CBlock &genesis,
     opath += "-GENESIS.json";
     std::ofstream out{opath, std::ios_base::out | std::ios_base::trunc};
     if (out.good())
-        out << "{\n  \"network\": \"" << network << "\",\n  \"hash\": \"" << genesis.GetHash().ToString() << "\",\n  \"nNonce\": " << genesis.nNonce << ",\n \"nTime\": " << genesis.nTime << ",\n  \"merkle_root\": \"" << genesis.hashMerkleRoot.ToString() << "\"\n}\n";
+        out << "{\n  \"network\": \"" << network << "\",\n  \"hash\": \"" << genesis.GetSHA256dHash().ToString() << "\",\n  \"nNonce\": " << genesis.nNonce << ",\n \"nTime\": " << genesis.nTime << ",\n  \"merkle_root\": \"" << genesis.hashMerkleRoot.ToString() << "\"\n}\n";
     out.close();
     std::abort();
 } */
@@ -247,6 +252,8 @@ public:
         consensus.BIP66Height = 270; //
         consensus.CSVHeight = 280; //
         consensus.SegwitHeight = 290; //
+        consensus.SHA3Height = 28'224; // SHA3-256d PoW Fork Height (placeholder)
+        consensus.nBitsSHA3Height = 0x1d00ffff; // nBits at SHA3-256d fork height (diff=1)
         consensus.MinBIP9WarningHeight = 2306; // segwit activation height + miner confirmation window
         consensus.powLimit = uint256{"00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"};
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
@@ -284,7 +291,7 @@ public:
         // genesis = CreateGenesisBlock(1777245001, 360582665, 0x1d00ffff, 1, 50 * COIN);
         genesis = CreateGenesisBlock(1777245555, 2442659435, 0x1d00ffff, 1, 50 * COIN);
         // MineGenesisBlock(genesis, "MAINNET", 0x1c00ffff);
-        consensus.hashGenesisBlock = genesis.GetHash();
+        consensus.hashGenesisBlock = genesis.GetSHA256dHash();
         assert(consensus.hashGenesisBlock == uint256{"000000000c226a41e70717f6d4fbdcb6bfb4fdc40831ccc87fa9cfdd2c57bff6"});
         assert(genesis.hashMerkleRoot == uint256{"8e1df52fddd25c460304ff8ea7bcb570850bf0b0c027eecf8ebf8ab17d3e93b1"});
 
@@ -359,6 +366,8 @@ public:
         consensus.BIP66Height = 270; //
         consensus.CSVHeight = 280; //
         consensus.SegwitHeight = 290; //
+        consensus.SHA3Height = 2016;
+        consensus.nBitsSHA3Height = 0x1d00ffff; // nBits at SHA3-256d fork height (diff=1)
         consensus.MinBIP9WarningHeight = 2306; // segwit activation height + miner confirmation window
         consensus.powLimit = uint256{"00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"};
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
@@ -401,7 +410,7 @@ public:
          */
         genesis = CreateGenesisBlock(1777250000, 102859864, 0x1d00ffff, 1, 50 * COIN); // same Merkle root, different block hash
         // MineGenesisBlock(genesis, "TESTNET");
-        consensus.hashGenesisBlock = genesis.GetHash();
+        consensus.hashGenesisBlock = genesis.GetSHA256dHash();
         assert(consensus.hashGenesisBlock == uint256{"0000000022d1be6a55d804e774153f263f29523ff058cb2a00376362da78a8f6"});
         assert(genesis.hashMerkleRoot == uint256{"8e1df52fddd25c460304ff8ea7bcb570850bf0b0c027eecf8ebf8ab17d3e93b1"});
         
@@ -462,6 +471,8 @@ public:
         consensus.BIP66Height = 270; //
         consensus.CSVHeight = 280; //
         consensus.SegwitHeight = 290; //
+        consensus.SHA3Height = 2016;
+        consensus.nBitsSHA3Height = 0x1d00ffff; // nBits at SHA3-256d fork height (diff=1)
         consensus.MinBIP9WarningHeight = 2306; // segwit activation height + miner confirmation window
         consensus.powLimit = uint256{"00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"};
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
@@ -512,7 +523,7 @@ public:
          * 1777257000
          * 6f24d7660ff79dad7cbab144b3da40e063ea34c50ce959b0efcc9bc8d2bbef50
          */
-        consensus.hashGenesisBlock = genesis.GetHash();
+        consensus.hashGenesisBlock = genesis.GetSHA256dHash();
         assert(consensus.hashGenesisBlock == uint256{"0000000011290b093f8422d064715932d33a17c7ff35a9f965feb3ac73b8dbdc"});
         assert(genesis.hashMerkleRoot == uint256{"6f24d7660ff79dad7cbab144b3da40e063ea34c50ce959b0efcc9bc8d2bbef50"});
 
@@ -607,6 +618,8 @@ public:
         consensus.BIP66Height = 1;
         consensus.CSVHeight = 1;
         consensus.SegwitHeight = 1;
+        consensus.SHA3Height = 2016;
+        consensus.nBitsSHA3Height = 0x1d00ffff; // nBits at SHA3-256d fork height (diff=1)
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
         consensus.nPowTargetSpacing = 10 * 60;
         consensus.fPowAllowMinDifficultyBlocks = false;
@@ -647,7 +660,7 @@ public:
 
         genesis = CreateGenesisBlock(1777260000, 753062192, 0x1d00ffff, 1, 50 * COIN);
         // MineGenesisBlock(genesis, "SIGNET");
-        consensus.hashGenesisBlock = genesis.GetHash();
+        consensus.hashGenesisBlock = genesis.GetSHA256dHash();
         assert(consensus.hashGenesisBlock == uint256{"0000000002945238d1ab4bcc22adbf6cdd9f3f72c907d298d55d70a885657854"});
         assert(genesis.hashMerkleRoot == uint256{"8e1df52fddd25c460304ff8ea7bcb570850bf0b0c027eecf8ebf8ab17d3e93b1"});
 
@@ -685,6 +698,8 @@ public:
         consensus.BIP66Height = 1;  // Always active unless overridden
         consensus.CSVHeight = 1;    // Always active unless overridden
         consensus.SegwitHeight = 0; // Always active unless overridden
+        consensus.SHA3Height = 2016;
+        consensus.nBitsSHA3Height = 0x1d00ffff; // nBits at SHA3-256d fork height (diff=1)
         consensus.MinBIP9WarningHeight = 0;
         consensus.powLimit = uint256{"7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"};
         consensus.nPowTargetTimespan = 24 * 60 * 60; // one day
@@ -759,7 +774,7 @@ public:
                                      1,
                                      50 * COIN);
         // MineGenesisBlock(genesis, "REGTEST");
-        consensus.hashGenesisBlock = genesis.GetHash();
+        consensus.hashGenesisBlock = genesis.GetSHA256dHash();
         assert(consensus.hashGenesisBlock == uint256{"000000004978cc1c47ca1c84eb26c3797691e8a3a5699736ddb57b04e8f947e5"});
         assert(genesis.hashMerkleRoot == uint256{"8e1df52fddd25c460304ff8ea7bcb570850bf0b0c027eecf8ebf8ab17d3e93b1"});
 

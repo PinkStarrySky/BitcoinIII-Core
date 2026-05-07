@@ -154,3 +154,58 @@ SHA3_256& SHA3_256::Reset()
     std::fill(std::begin(m_state), std::end(m_state), 0);
     return *this;
 }
+
+/* *************** */
+
+CSHA3_256& CSHA3_256::Write(const unsigned char *data, uint64_t len)
+{
+    if (m_bufsize && len >= sizeof(m_buffer) - m_bufsize) {
+        // Fill the buffer and process it.
+        std::copy(data, data + (sizeof(m_buffer) - m_bufsize), m_buffer + m_bufsize);
+        data += (sizeof(m_buffer) - m_bufsize);
+        len  -= (sizeof(m_buffer) - m_bufsize);
+        m_state[m_pos++] ^= ReadLE64(m_buffer);
+        m_bufsize = 0;
+        if (m_pos == RATE_BUFFERS) {
+            KeccakF(m_state);
+            m_pos = 0;
+        }
+    }
+    while (len >= sizeof(m_buffer)) {
+        // Process chunks directly from the buffer.
+        m_state[m_pos++] ^= ReadLE64(data);
+        data += 8;
+        len -= 8;
+        if (m_pos == RATE_BUFFERS) {
+            KeccakF(m_state);
+            m_pos = 0;
+        }
+    }
+    if (len) {
+        // Keep the remainder in the buffer.
+        std::copy(data, data + len, m_buffer + m_bufsize);
+        m_bufsize += len;
+    }
+    return *this;
+}
+
+CSHA3_256& CSHA3_256::Finalize(unsigned char *output)
+{
+    // assert(output.size() == OUTPUT_SIZE);
+    std::fill(m_buffer + m_bufsize, m_buffer + sizeof(m_buffer), 0);
+    m_buffer[m_bufsize] ^= 0x06;
+    m_state[m_pos] ^= ReadLE64(m_buffer);
+    m_state[RATE_BUFFERS - 1] ^= 0x8000000000000000;
+    KeccakF(m_state);
+    for (unsigned i = 0; i < 4; ++i)
+        WriteLE64(output + 8*i, m_state[i]);
+    return *this;
+}
+
+CSHA3_256& CSHA3_256::Reset()
+{
+    m_bufsize = 0;
+    m_pos = 0;
+    std::fill(std::begin(m_state), std::end(m_state), 0);
+    return *this;
+}
