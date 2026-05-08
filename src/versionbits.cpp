@@ -227,6 +227,8 @@ int32_t VersionBitsCache::ComputeBlockVersion(const CBlockIndex* pindexPrev, con
     LOCK(m_mutex);
     int32_t nVersion = VERSIONBITS_TOP_BITS;
 
+    assert(pindexPrev != nullptr);
+
     for (int i = 0; i < (int)Consensus::MAX_VERSION_BITS_DEPLOYMENTS; i++) {
         Consensus::DeploymentPos pos = static_cast<Consensus::DeploymentPos>(i);
         ThresholdState state = VersionBitsConditionChecker(pos).GetStateFor(pindexPrev, params, m_caches[pos]);
@@ -234,6 +236,11 @@ int32_t VersionBitsCache::ComputeBlockVersion(const CBlockIndex* pindexPrev, con
             nVersion |= Mask(params, pos);
         }
     }
+
+    if (pindexPrev->nHeight + 1 >= params.SHA3Height)
+        nVersion |=  params.SHA3VersionBit;
+    else
+        nVersion &= ~params.SHA3VersionBit; // assert((nVersion & params.SHA3VersionBit) == 0);
 
     return nVersion;
 }

@@ -254,6 +254,7 @@ public:
         consensus.SegwitHeight = 290; //
         consensus.SHA3Height = 28'224; // SHA3-256d PoW Fork Height (placeholder)
         consensus.nBitsSHA3Height = 0x1d00ffff; // nBits at SHA3-256d fork height (diff=1)
+        consensus.SHA3VersionBit = SHA3_VBIT; // version bit required to be set in all post-fork blocks
         consensus.MinBIP9WarningHeight = 2306; // segwit activation height + miner confirmation window
         consensus.powLimit = uint256{"00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"};
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
@@ -368,6 +369,7 @@ public:
         consensus.SegwitHeight = 290; //
         consensus.SHA3Height = 2016;
         consensus.nBitsSHA3Height = 0x1d00ffff; // nBits at SHA3-256d fork height (diff=1)
+        consensus.SHA3VersionBit = SHA3_VBIT; // version bit required to be set in all post-fork blocks
         consensus.MinBIP9WarningHeight = 2306; // segwit activation height + miner confirmation window
         consensus.powLimit = uint256{"00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"};
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
@@ -473,6 +475,7 @@ public:
         consensus.SegwitHeight = 290; //
         consensus.SHA3Height = 2016;
         consensus.nBitsSHA3Height = 0x1d00ffff; // nBits at SHA3-256d fork height (diff=1)
+        consensus.SHA3VersionBit = SHA3_VBIT; // version bit required to be set in all post-fork blocks
         consensus.MinBIP9WarningHeight = 2306; // segwit activation height + miner confirmation window
         consensus.powLimit = uint256{"00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"};
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
@@ -620,6 +623,7 @@ public:
         consensus.SegwitHeight = 1;
         consensus.SHA3Height = 2016;
         consensus.nBitsSHA3Height = 0x1d00ffff; // nBits at SHA3-256d fork height (diff=1)
+        consensus.SHA3VersionBit = SHA3_VBIT; // version bit required to be set in all post-fork blocks
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
         consensus.nPowTargetSpacing = 10 * 60;
         consensus.fPowAllowMinDifficultyBlocks = false;
@@ -700,6 +704,7 @@ public:
         consensus.SegwitHeight = 0; // Always active unless overridden
         consensus.SHA3Height = 2016;
         consensus.nBitsSHA3Height = 0x1d00ffff; // nBits at SHA3-256d fork height (diff=1)
+        consensus.SHA3VersionBit = SHA3_VBIT; // version bit required to be set in all post-fork blocks
         consensus.MinBIP9WarningHeight = 0;
         consensus.powLimit = uint256{"7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"};
         consensus.nPowTargetTimespan = 24 * 60 * 60; // one day

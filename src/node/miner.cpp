@@ -135,8 +135,13 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock()
     nHeight = pindexPrev->nHeight + 1;
 
     pblock->nVersion = m_chainstate.m_chainman.m_versionbitscache.ComputeBlockVersion(pindexPrev, chainparams.GetConsensus());
+    /* if (nHeight >= chainparams.GetConsensus().SHA3Height)
+        pblock->nVersion |=  chainparams.GetConsensus().SHA3VersionBit;
+    else
+        pblock->nVersion &= ~chainparams.GetConsensus().SHA3VersionBit; */ // taken care of instead in VersionBitsCache::ComputeBlockVersion()
     // -regtest only: allow overriding block.nVersion with
     // -blockversion=N to test forking scenarios
+    // after SHA3_VBIT placement to allow deliberate creation of invalid regtest blocks, if desired
     if (chainparams.MineBlocksOnDemand()) {
         pblock->nVersion = gArgs.GetIntArg("-blockversion", pblock->nVersion);
     }

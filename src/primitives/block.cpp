@@ -10,7 +10,19 @@
 
 uint256 CBlockHeader::GetHash() const
 {
+    if (this->nVersion & SHA3_VBIT)
+        return this->GetSHA3_256dHash();
+    return this->GetSHA256dHash();
+}
+
+uint256 CBlockHeader::GetSHA256dHash() const
+{
     return (HashWriter{} << *this).GetHash();
+}
+
+uint256 CBlockHeader::GetSHA3_256dHash() const
+{
+    return (HashWriterSHA3{} << *this).GetHash();
 }
 
 std::string CBlock::ToString() const

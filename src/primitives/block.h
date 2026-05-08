@@ -11,6 +11,10 @@
 #include <uint256.h>
 #include <util/time.h>
 
+#ifndef SHA3_VBIT
+#define SHA3_VBIT 0x00001000
+#endif
+
 /** Nodes collect new transactions into a block, hash them into a hash tree,
  * and scan through nonce values to make the block's hash satisfy proof-of-work
  * requirements.  When they solve the proof-of-work, they broadcast the block
@@ -51,7 +55,9 @@ public:
         return (nBits == 0);
     }
 
-    uint256 GetHash() const;
+    uint256 GetHash() const; // version-bit-dependent hash algorithm (SHA-256d if height < fork_height, SHA3-256d if height >= fork_height)
+    uint256 GetSHA256dHash() const;
+    uint256 GetSHA3_256dHash() const;
 
     NodeSeconds Time() const
     {

@@ -2474,6 +2474,15 @@ bool Chainstate::ConnectBlock(const CBlock& block, BlockValidationState& state, 
         return false;
     }
 
+    if (pindex->nHeight >= params.GetConsensus().SHA3Height && (block.nVersion & params.GetConsensus().SHA3VersionBit) == 0) {
+        state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-version-bits", "bit 12 not set");
+        return false;
+    }
+    if (pindex->nHeight <  params.GetConsensus().SHA3Height && (block.nVersion & params.GetConsensus().SHA3VersionBit) != 0) {
+        state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-version-bits", "bit 12 set");
+        return false;
+    }
+
     // verify that the view's current state corresponds to the previous block
     uint256 hashPrevBlock = pindex->pprev == nullptr ? uint256() : pindex->pprev->GetBlockHash();
     assert(hashPrevBlock == view.GetBestBlock());
@@ -4209,8 +4218,14 @@ static bool ContextualCheckBlockHeader(const CBlockHeader& block, BlockValidatio
     assert(pindexPrev != nullptr);
     const int nHeight = pindexPrev->nHeight + 1;
 
-    // Check proof of work
     const Consensus::Params& consensusParams = chainman.GetConsensus();
+    // Check version bits for fork bit
+    if (nHeight >= consensusParams.SHA3Height && (block.nVersion & consensusParams.SHA3VersionBit) == 0)
+        return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "bad-version-bits", "bit 12 not set");
+    if (nHeight <  consensusParams.SHA3Height && (block.nVersion & consensusParams.SHA3VersionBit) != 0)
+        return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "bad-version-bits", "bit 12 set");
+
+    // Check proof of work
     if (block.nBits != GetNextWorkRequired(pindexPrev, &block, consensusParams))
         return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "bad-diffbits", "incorrect proof of work");
 

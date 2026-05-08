@@ -967,6 +967,10 @@ static RPCHelpMan getblocktemplate()
             }
         }
     }
+    if (pindexPrev->nHeight + 1 >= consensusParams.SHA3Height)
+        block.nVersion |=  consensusParams.SHA3VersionBit;
+    else
+        block.nVersion &= ~consensusParams.SHA3VersionBit;
     result.pushKV("version", block.nVersion);
     result.pushKV("rules", std::move(aRules));
     result.pushKV("vbavailable", std::move(vbavailable));

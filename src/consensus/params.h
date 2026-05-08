@@ -13,6 +13,10 @@
 #include <map>
 #include <vector>
 
+#ifndef SHA3_VBIT
+#define SHA3_VBIT 0x00001000
+#endif
+
 namespace Consensus {
 
 /**
@@ -104,6 +108,8 @@ struct Params {
     int SHA3Height;
     /* nBits at SHA3-256d Fork Height */
     uint32_t nBitsSHA3Height;
+    /* Version bit required to be set in all post-fork blocks */
+    int32_t  SHA3VersionBit;
     /**
      * Minimum blocks including miner confirmation of the total of 2016 blocks in a retargeting period,
      * (nPowTargetTimespan / nPowTargetSpacing) which is also used for BIP9 deployments.
