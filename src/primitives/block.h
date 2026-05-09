@@ -55,7 +55,7 @@ public:
         return (nBits == 0);
     }
 
-    uint256 GetHash() const; // version-bit-dependent hash algorithm (SHA-256d if height < fork_height, SHA3-256d if height >= fork_height)
+    uint256 GetHash() const; // version-bit-dependent hash algorithm (SHA-256d if height < fork_height, SHA3-256t if height >= fork_height)
     uint256 GetSHA256dHash() const;
     uint256 GetSHA3_256dHash() const;
 

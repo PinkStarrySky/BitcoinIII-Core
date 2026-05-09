@@ -157,13 +157,14 @@ public:
         ctx.Write(UCharCast(src.data()), src.size());
     }
 
-    /** Compute the SHA3-256d hash of all data written to this object.
+    /** Compute the SHA3-256t hash of all data written to this object.
      *
      * Invalidates this object.
      */
     uint256 GetHash() {
         uint256 result;
         ctx.Finalize(result.begin());
+        ctx.Reset().Write(result.begin(), CSHA3_256::OUTPUT_SIZE).Finalize(result.begin());
         ctx.Reset().Write(result.begin(), CSHA3_256::OUTPUT_SIZE).Finalize(result.begin());
         return result;
     }
@@ -175,6 +176,17 @@ public:
     uint256 GetSHA3_256() {
         uint256 result;
         ctx.Finalize(result.begin());
+        return result;
+    }
+
+    /** Compute the SHA3-256d hash of all data written to this object.
+     *
+     * Invalidates this object.
+     */
+    uint256 GetSHA3_256d() {
+        uint256 result;
+        ctx.Finalize(result.begin());
+        ctx.Reset().Write(result.begin(), CSHA3_256::OUTPUT_SIZE).Finalize(result.begin());
         return result;
     }
 

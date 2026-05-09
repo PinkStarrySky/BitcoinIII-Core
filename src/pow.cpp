@@ -49,7 +49,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
 
 unsigned int CalculateNextWorkRequired(const CBlockIndex* pindexLast, int64_t nFirstBlockTime, const Consensus::Params& params)
 {
-    if (pindexLast->nHeight + 1 == params.SHA3Height) { // Difficulty adjustment at SHA3-256d fork height
+    if (pindexLast->nHeight + 1 == params.SHA3Height) { // Difficulty adjustment at SHA3-256t fork height
         arith_uint256 bnNew;
         bnNew.SetCompact(params.nBitsSHA3Height);
         return bnNew.GetCompact();

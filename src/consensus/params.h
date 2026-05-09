@@ -104,9 +104,9 @@ struct Params {
     /** Don't warn about unknown BIP 9 activations below this height.
      * This prevents us from warning about the CSV and segwit activations. */
     int MinBIP9WarningHeight;
-    /* SHA3-256d Fork Block Height */
+    /* SHA3-256t Fork Block Height */
     int SHA3Height;
-    /* nBits at SHA3-256d Fork Height */
+    /* nBits at SHA3-256t Fork Height */
     uint32_t nBitsSHA3Height;
     /* Version bit required to be set in all post-fork blocks */
     int32_t  SHA3VersionBit;
