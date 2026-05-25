@@ -280,8 +280,8 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].threshold = 1815; // 90%
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].period    = 2016;
 
-        consensus.nMinimumChainWork = uint256{"00000000000000000000000000000000000000000000004fe04fddafddafdac0"}; // Chainwork at block 28829
-        consensus.defaultAssumeValid = uint256{"000000000000000873d78aa1ca70007bd63a6db79de852f90f935313fe96b199"}; // Block 28829
+        consensus.nMinimumChainWork = uint256{"0000000000000000000000000000000000000000000000a800aabd6abd6aba20"}; // Chainwork at block 38337
+        consensus.defaultAssumeValid = uint256{"000000000091a6e8fa13d42afdb70e480aee879b41b3abfabb92575b9925d90c"}; // Block 38337
 
         pchMessageStart[0] = 0x8a;
         pchMessageStart[1] = 0x34;
@@ -337,7 +337,10 @@ public:
                 {  8192, uint256{"0000000000054fc3668111eb9da553ea90cc1588e0353b507d0ab21e54b427a6"}},
                 { 16384, uint256{"00000000000051c8cab3a4e06d637de00eef696596f462ec51b25e7b0ceacaf9"}},
                 { 22810, uint256{"00000000000003a8c623c46ffb4c99bef3c9b662b6de81364d41be0c56f988cf"}},
-                { 28829, uint256{"000000000000000873d78aa1ca70007bd63a6db79de852f90f935313fe96b199"}}
+                { 28829, uint256{"000000000000000873d78aa1ca70007bd63a6db79de852f90f935313fe96b199"}},
+                { 30239, uint256{"000000000000000415a74b85128a7dd1dd1fa4205bdc0ef7d155fc377676d230"}}, // Last SHA-256d block
+                { 30240, uint256{"000000007c535e87764888eaf5d38359e2ba731a9fc075d01448cd90616575ab"}}, // FORK BLOCK - first SHA3-256t block
+                { 38337, uint256{"000000000091a6e8fa13d42afdb70e480aee879b41b3abfabb92575b9925d90c"}}
                 
             }
         };
