@@ -1,7 +1,7 @@
-BitcoinIII Core integration/staging tree
-=====================================
+BitcoinIII Core
+===============
 
-https://Bitcoin-III.org
+https://bc3.network
 
 For an immediately usable, binary version of the BitcoinIII Core software, see https://github.com/PinkStarrySky/BitcoinIII-Core/releases/tag/v29.1.0
 
