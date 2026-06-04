@@ -252,3 +252,7 @@ void VersionBitsCache::Clear()
         m_caches[d].clear();
     }
 }
+
+// When/if porting the BC3 codebase to upstream Bitcoin Core, suppressing the version bit 12 check should be done here in `VersionBitsCache::CheckUnknownActivations()`,
+// rather than the current check in `Chainstate::UpdateTip()` (in `src/validation.cpp`).
+// If porting to upstream Bitcoin Knots, then additional edits in `Chainstate::UpdateTip()` would be necessary.

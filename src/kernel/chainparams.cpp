@@ -280,8 +280,8 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].threshold = 1815; // 90%
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].period    = 2016;
 
-        consensus.nMinimumChainWork = uint256{"0000000000000000000000000000000000000000000000a800aabd6abd6aba20"}; // Chainwork at block 38337
-        consensus.defaultAssumeValid = uint256{"000000000091a6e8fa13d42afdb70e480aee879b41b3abfabb92575b9925d90c"}; // Block 38337
+        consensus.nMinimumChainWork = uint256{"0000000000000000000000000000000000000000000000a800e0d7a4205d6032"}; // Chainwork at block 42612
+        consensus.defaultAssumeValid = uint256{"000000000009159ae8734b7f6ef6b51798c843f1d32cca3932d08d67523248b6"}; // Block 42612
 
         pchMessageStart[0] = 0x8a;
         pchMessageStart[1] = 0x34;
@@ -340,18 +340,32 @@ public:
                 { 28829, uint256{"000000000000000873d78aa1ca70007bd63a6db79de852f90f935313fe96b199"}},
                 { 30239, uint256{"000000000000000415a74b85128a7dd1dd1fa4205bdc0ef7d155fc377676d230"}}, // Last SHA-256d block
                 { 30240, uint256{"000000007c535e87764888eaf5d38359e2ba731a9fc075d01448cd90616575ab"}}, // FORK BLOCK - first SHA3-256t block
-                { 38337, uint256{"000000000091a6e8fa13d42afdb70e480aee879b41b3abfabb92575b9925d90c"}}
+                { 38337, uint256{"000000000091a6e8fa13d42afdb70e480aee879b41b3abfabb92575b9925d90c"}},
+                { 42222, uint256{"00000000000009186913189925fe91edf041121de6ac1bf1304f41e119d307d9"}}, // Lowest hash since fork, at time of writing
+                { 42612, uint256{"000000000009159ae8734b7f6ef6b51798c843f1d32cca3932d08d67523248b6"}}
                 
             }
         };
 
         m_assumeutxo_data = {};
 
+        /* // Raw output from `getchaintxstats 2016` at height 42612, used for `chainTxData` below:
+        {
+            "time": 1780397047,
+            "txcount": 50368,
+            "window_final_block_hash": "000000000009159ae8734b7f6ef6b51798c843f1d32cca3932d08d67523248b6",
+            "window_final_block_height": 42612,
+            "window_block_count": 2016,
+            "window_interval": 402467,
+            "window_tx_count": 2803,
+            "txrate": 0.006964546161548649
+        }
+        */
         chainTxData = ChainTxData{
-            // Data from RPC: getchaintxstats 4096 00000000000000001984b0fe236bec1ec49a14a01d8d340c31cae864d96a3b9b
-            /* .nTime    = 1764034154,
-            .tx_count = 82281,
-            .dTxRate  = 0.004174125833742384, */
+            // Data from RPC at height 42612: `getchaintxstats 2016` - only 2016 blocks, as they have finally started slowing down recently, so this should (hopefully) be a more accurate estimate of future TX rate.
+            .nTime    = 1780397047,
+            .tx_count = 50368,
+            .dTxRate  = 0.006964546161548649
         };
     }
 };
