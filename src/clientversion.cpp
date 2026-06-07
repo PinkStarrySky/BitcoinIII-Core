@@ -20,7 +20,7 @@ using util::Join;
  * for both bitcoinIIId and bitcoinIII-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string UA_NAME("Satoshi");
+const std::string UA_NAME("BitcoinIII");
 
 
 #include <bitcoinIII-build-info.h>
@@ -30,8 +30,8 @@ const std::string UA_NAME("Satoshi");
 //   - "#define BUILD_GIT_COMMIT ...", if the top commit is not tagged
 //   - "// No build information available", if proper git information is not available
 
-//! git will put "#define GIT_COMMIT_ID ..." on the next line inside archives. 
-#define GIT_COMMIT_ID "f490f5562d4b20857ef8d042c050763795fd43da"
+// git will expand the next line to "#define GIT_COMMIT_ID ..." inside archives:
+//$Format:%n#define GIT_COMMIT_ID "%H"$
 
 #ifdef BUILD_GIT_TAG
     #define BUILD_DESC BUILD_GIT_TAG
@@ -85,7 +85,7 @@ std::string CopyrightHolders(const std::string& strPrefix)
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/Bitcoin-III/BitcoinIII-Core>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/PinkStarrySky/BitcoinIII-Core>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i-%i"), 2009, COPYRIGHT_YEAR).translated + " ") + "\n" +
            "\n" +

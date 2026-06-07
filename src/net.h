@@ -68,13 +68,13 @@ static const int MAX_OUTBOUND_FULL_RELAY_CONNECTIONS = 8;
 /** Maximum number of addnode outgoing nodes */
 static const int MAX_ADDNODE_CONNECTIONS = 8;
 /** Maximum number of block-relay-only outgoing connections */
-static const int MAX_BLOCK_RELAY_ONLY_CONNECTIONS = 2;
+static const int MAX_BLOCK_RELAY_ONLY_CONNECTIONS = 4; // Conservative jump: blocks-only connections are cheap
 /** Maximum number of feeler connections */
 static const int MAX_FEELER_CONNECTIONS = 1;
 /** -listen default */
 static const bool DEFAULT_LISTEN = true;
-/** The maximum number of peer connections to maintain. */
-static const unsigned int DEFAULT_MAX_PEER_CONNECTIONS = 125;
+/** The maximum number of peer connections to maintain. */ // The network - at present - has close to 400 nodes, and approx. 40 of these are publicly-reachable nodes. With the extra block-relay connections added above, this would
+static const unsigned int DEFAULT_MAX_PEER_CONNECTIONS = 148; // naively translate to 800 extra total blocks-only connections, requiring 800/40=20 new inbound connection slots for publicly-reachable nodes + 2 for their own outbound block-only connections.
 /** The default for -maxuploadtarget. 0 = Unlimited */
 static const std::string DEFAULT_MAX_UPLOAD_TARGET{"0M"};
 /** Default for blocks only*/

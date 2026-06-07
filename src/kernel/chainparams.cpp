@@ -280,8 +280,8 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].threshold = 1815; // 90%
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].period    = 2016;
 
-        consensus.nMinimumChainWork = uint256{"0000000000000000000000000000000000000000000000a800e0d7a4205d6032"}; // Chainwork at block 42612
-        consensus.defaultAssumeValid = uint256{"000000000009159ae8734b7f6ef6b51798c843f1d32cca3932d08d67523248b6"}; // Block 42612
+        consensus.nMinimumChainWork = uint256{"0000000000000000000000000000000000000000000000a8011be7caf8d9f674"}; // Chainwork at block 43713
+        consensus.defaultAssumeValid = uint256{"000000000006e7f0308b7e608890942f9943e09ce4bb346d09a9072163831099"}; // Block 43713
 
         pchMessageStart[0] = 0x8a;
         pchMessageStart[1] = 0x34;
@@ -304,10 +304,11 @@ public:
         // This is fine at runtime as we'll fall back to using them as an addrfetch if they don't support the
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
-        // vSeeds.emplace_back("dnsseed.bitcoin-iii.org."); CHANGE - add once it exists
-        // vSeeds.emplace_back("bitcoinIII.ddns.net."); // CHANGE - add once it exists
-        vSeeds.clear();
-        // vFixedSeeds.clear();
+        vSeeds.emplace_back("seed.bc3.network.");
+        vSeeds.emplace_back("seed.bc3pool.org.");
+        // ^^^ Currently point to static A/AAAA records on Cloudflare of well-known, trusted nodes' IP addresses.
+        // I will set up proper DNS seeders soon and authoritative nameservers for "seed.bc3.network" and "seed.bc3pool.org".
+        // They will run either "sipa/bitcoin-seeder", or something more modern.
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
@@ -341,31 +342,31 @@ public:
                 { 30239, uint256{"000000000000000415a74b85128a7dd1dd1fa4205bdc0ef7d155fc377676d230"}}, // Last SHA-256d block
                 { 30240, uint256{"000000007c535e87764888eaf5d38359e2ba731a9fc075d01448cd90616575ab"}}, // FORK BLOCK - first SHA3-256t block
                 { 38337, uint256{"000000000091a6e8fa13d42afdb70e480aee879b41b3abfabb92575b9925d90c"}},
-                { 42222, uint256{"00000000000009186913189925fe91edf041121de6ac1bf1304f41e119d307d9"}}, // Lowest hash since fork, at time of writing
-                { 42612, uint256{"000000000009159ae8734b7f6ef6b51798c843f1d32cca3932d08d67523248b6"}}
-                
+                { 43489, uint256{"000000000000034396d5615f3a8e93918199d3690f7bb87466c31fc09d85d1f6"}}, // Lowest hash since fork, at time of writing
+                { 43713, uint256{"000000000006e7f0308b7e608890942f9943e09ce4bb346d09a9072163831099"}}
             }
         };
 
         m_assumeutxo_data = {};
 
-        /* // Raw output from `getchaintxstats 2016` at height 42612, used for `chainTxData` below:
+        /* // Raw output from `getchaintxstats 2016` at height 43728, used for `chainTxData` below:
         {
-            "time": 1780397047,
-            "txcount": 50368,
-            "window_final_block_hash": "000000000009159ae8734b7f6ef6b51798c843f1d32cca3932d08d67523248b6",
-            "window_final_block_height": 42612,
-            "window_block_count": 2016,
-            "window_interval": 402467,
-            "window_tx_count": 2803,
-            "txrate": 0.006964546161548649
+            "time": 1780856160,
+            "txcount": 52295,
+            "window_final_block_hash": "000000000009efe213e8a249a54ae168b072c27b3b762c7d773774e69ba09fcf",
+            "window_final_block_height": 43728,
+            "window_block_count": 4320,
+            "window_interval": 1035690,
+            "window_tx_count": 6306,
+            "txrate": 0.006088694493526055
         }
         */
+
         chainTxData = ChainTxData{
-            // Data from RPC at height 42612: `getchaintxstats 2016` - only 2016 blocks, as they have finally started slowing down recently, so this should (hopefully) be a more accurate estimate of future TX rate.
-            .nTime    = 1780397047,
-            .tx_count = 50368,
-            .dTxRate  = 0.006964546161548649
+            // Data from RPC at height 43728: `getchaintxstats 2016`.
+            .nTime    = 1780856160,
+            .tx_count = 52295,
+            .dTxRate  = 0.006088694493526055
         };
     }
 };
