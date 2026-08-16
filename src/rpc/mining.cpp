@@ -974,8 +974,7 @@ static RPCHelpMan getblocktemplate()
     result.pushKV("version", block.nVersion);
     result.pushKV("rules", std::move(aRules));
     result.pushKV("vbavailable", std::move(vbavailable));
-    result.pushKV("vbrequired", int(0));
-
+    result.pushKV("vbrequired", int((pindexPrev->nHeight + 1 >= consensusParams.SHA3Height) ? consensusParams.SHA3VersionBit : 0));
     result.pushKV("previousblockhash", block.hashPrevBlock.GetHex());
     result.pushKV("transactions", std::move(transactions));
     result.pushKV("coinbaseaux", std::move(aux));

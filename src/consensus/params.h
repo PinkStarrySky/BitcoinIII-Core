@@ -17,6 +17,12 @@
 #define SHA3_VBIT 0x00001000
 #endif
 
+#ifndef SHA3_VBIT_IDX
+#define SHA3_VBIT_IDX 12
+#endif
+
+static_assert((1 << SHA3_VBIT_IDX) == SHA3_VBIT)
+
 namespace Consensus {
 
 /**
@@ -110,6 +116,8 @@ struct Params {
     uint32_t nBitsSHA3Height;
     /* Version bit required to be set in all post-fork blocks */
     int32_t  SHA3VersionBit;
+    /* Index of SHA3 version bit */
+    uint32_t SHA3VersionBitIdx;
     /**
      * Minimum blocks including miner confirmation of the total of 2016 blocks in a retargeting period,
      * (nPowTargetTimespan / nPowTargetSpacing) which is also used for BIP9 deployments.

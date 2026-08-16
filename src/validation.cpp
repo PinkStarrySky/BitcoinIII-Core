@@ -3036,13 +3036,13 @@ void Chainstate::UpdateTip(const CBlockIndex* pindexNew)
         m_mempool->AddTransactionsUpdated(1);
     }
 
-    int sha3_vbit = m_chainman.GetConsensus().SHA3VersionBit;
+    uint32_t sha3_vbit_idx = m_chainman.GetConsensus().SHA3VersionBitIdx;
 
     std::vector<bilingual_str> warning_messages;
     if (!m_chainman.IsInitialBlockDownload()) {
         const CBlockIndex* pindex = pindexNew;
         for (int bit = 0; bit < VERSIONBITS_NUM_BITS; bit++) {
-            if (bit == sha3_vbit)
+            if (bit == sha3_vbit_idx)
                 continue; // Skip past the SHA3 version bit, or else it would be logged as an unknown BIP9 deployment
             WarningBitsConditionChecker checker(m_chainman, bit);
             ThresholdState state = checker.GetStateFor(pindex, m_chainman.GetConsensus(), m_chainman.m_warningcache.at(bit));

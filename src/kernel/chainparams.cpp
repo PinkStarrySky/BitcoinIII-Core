@@ -254,7 +254,8 @@ public:
         consensus.SegwitHeight = 290; //
         consensus.SHA3Height = 30'240; // SHA3-256t PoW Fork Height (15 epochs)
         consensus.nBitsSHA3Height = 0x1d00ffff; // nBits at SHA3-256t fork height (diff=1)
-        consensus.SHA3VersionBit = SHA3_VBIT; // version bit required to be set in all post-fork blocks
+        consensus.SHA3VersionBit    = SHA3_VBIT; // version bit required to be set in all post-fork blocks
+        consensus.SHA3VersionBitIdx = SHA3_VBIT_IDX // index of version bit (12)
         consensus.MinBIP9WarningHeight = 2306; // segwit activation height + miner confirmation window
         consensus.powLimit = uint256{"00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"};
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
@@ -280,8 +281,8 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].threshold = 1815; // 90%
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].period    = 2016;
 
-        consensus.nMinimumChainWork = uint256{"0000000000000000000000000000000000000000000000a8011be7caf8d9f674"}; // Chainwork at block 43713
-        consensus.defaultAssumeValid = uint256{"000000000006e7f0308b7e608890942f9943e09ce4bb346d09a9072163831099"}; // Block 43713
+        consensus.nMinimumChainWork = uint256{"0000000000000000000000000000000000000000000000a80729e09a5aa957f5"}; // Chainwork at block 56950
+        consensus.defaultAssumeValid = uint256{"0000000000001c407126f3c5787d8aba9d1c9f0cae48ac752ebdd2e1921bf969"}; // Block 56950
 
         pchMessageStart[0] = 0x8a;
         pchMessageStart[1] = 0x34;
@@ -342,31 +343,32 @@ public:
                 { 30239, uint256{"000000000000000415a74b85128a7dd1dd1fa4205bdc0ef7d155fc377676d230"}}, // Last SHA-256d block
                 { 30240, uint256{"000000007c535e87764888eaf5d38359e2ba731a9fc075d01448cd90616575ab"}}, // FORK BLOCK - first SHA3-256t block
                 { 38337, uint256{"000000000091a6e8fa13d42afdb70e480aee879b41b3abfabb92575b9925d90c"}},
-                { 43489, uint256{"000000000000034396d5615f3a8e93918199d3690f7bb87466c31fc09d85d1f6"}}, // Lowest hash since fork, at time of writing
-                { 43713, uint256{"000000000006e7f0308b7e608890942f9943e09ce4bb346d09a9072163831099"}}
+                { 43713, uint256{"000000000006e7f0308b7e608890942f9943e09ce4bb346d09a9072163831099"}},
+                { 50204, uint256{"000000000000000d86fac3183ea143e4296f835e77a7f00c8dd267a5217be78e"}}, // Lowest hash since fork, at time of writing
+                { 56950, uint256{"0000000000001c407126f3c5787d8aba9d1c9f0cae48ac752ebdd2e1921bf969"}}
             }
         };
 
         m_assumeutxo_data = {};
 
-        /* // Raw output from `getchaintxstats 2016` at height 43728, used for `chainTxData` below:
+        /* // Raw output from `getchaintxstats 2016` at height 56950, used for `chainTxData` below:
         {
-            "time": 1780856160,
-            "txcount": 52295,
-            "window_final_block_hash": "000000000009efe213e8a249a54ae168b072c27b3b762c7d773774e69ba09fcf",
-            "window_final_block_height": 43728,
-            "window_block_count": 4320,
-            "window_interval": 1035690,
-            "window_tx_count": 6306,
-            "txrate": 0.006088694493526055
+            "time": 1786886273,
+            "txcount": 330112,
+            "window_final_block_hash": "0000000000001c407126f3c5787d8aba9d1c9f0cae48ac752ebdd2e1921bf969",
+            "window_final_block_height": 56950,
+            "window_block_count": 2016,
+            "window_interval": 368596,
+            "window_tx_count": 4163,
+            "txrate": 0.01129420829309054
         }
         */
 
         chainTxData = ChainTxData{
-            // Data from RPC at height 43728: `getchaintxstats 2016`.
-            .nTime    = 1780856160,
-            .tx_count = 52295,
-            .dTxRate  = 0.006088694493526055
+            // Data from RPC at height 56950: `getchaintxstats 2016`.
+            .nTime    = 1786886273,
+            .tx_count = 330112,
+            .dTxRate  = 0.01129420829309054
         };
     }
 };
