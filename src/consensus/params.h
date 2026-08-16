@@ -21,7 +21,7 @@
 #define SHA3_VBIT_IDX 12
 #endif
 
-static_assert((1 << SHA3_VBIT_IDX) == SHA3_VBIT)
+static_assert((1 << SHA3_VBIT_IDX) == SHA3_VBIT);
 
 namespace Consensus {
 
