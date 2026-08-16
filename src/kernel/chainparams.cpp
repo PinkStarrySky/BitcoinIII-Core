@@ -255,7 +255,7 @@ public:
         consensus.SHA3Height = 30'240; // SHA3-256t PoW Fork Height (15 epochs)
         consensus.nBitsSHA3Height = 0x1d00ffff; // nBits at SHA3-256t fork height (diff=1)
         consensus.SHA3VersionBit    = SHA3_VBIT; // version bit required to be set in all post-fork blocks
-        consensus.SHA3VersionBitIdx = SHA3_VBIT_IDX // index of version bit (12)
+        consensus.SHA3VersionBitIdx = SHA3_VBIT_IDX; // index of version bit (12)
         consensus.MinBIP9WarningHeight = 2306; // segwit activation height + miner confirmation window
         consensus.powLimit = uint256{"00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"};
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
